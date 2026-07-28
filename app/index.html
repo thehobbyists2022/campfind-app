@@ -1079,16 +1079,8 @@
                 const themeFilter = ignoreExtraFilters ? 'all' : activeThemeFilter;
                 const typeFilter = ignoreExtraFilters ? 'all' : activeTypeFilter;
 
-                const inferredState = query ? inferStateFromQuery(query) : null;
-
-                return ALL_CAMPS.filter(c => {
-                    if (query) {
-                        const matchText = (c.name + ' ' + c.city + ' ' + c.state + ' ' + c.zip).toLowerCase();
-                        const isDirectMatch = matchText.includes(query);
-                        const isStateMatch = inferredState && c.state === inferredState;
-                        if (!isDirectMatch && !isStateMatch) return false;
-                    }
-
+                // Step 1: Base Attribute Filters
+                let baseCamps = ALL_CAMPS.filter(c => {
                     if (c.ageMin > age1 || c.ageMax < age1) return false;
 
                     if (isSibling && age2 !== null) {
@@ -1108,6 +1100,27 @@
 
                     return true;
                 });
+
+                if (!query) return baseCamps;
+
+                // Step 2: Location / Query Filtering
+                // Priority A: Direct match (c.zip, c.city, c.name, c.state)
+                const directMatches = baseCamps.filter(c => {
+                    const text = (c.zip + ' ' + c.city + ' ' + c.name + ' ' + c.state).toLowerCase();
+                    return text.includes(query);
+                });
+
+                if (directMatches.length > 0) {
+                    return directMatches;
+                }
+
+                // Priority B: State Fallback ONLY if 0 direct local matches exist
+                const inferredState = inferStateFromQuery(query);
+                if (inferredState) {
+                    return baseCamps.filter(c => c.state === inferredState);
+                }
+
+                return [];
             }
 
             // ---- RENDER ----
@@ -1390,7 +1403,11 @@
                 });
                 child2Age.addEventListener('input', render);
 
+                // Mobile & Desktop Real-time Search Event Listeners
                 searchInput.addEventListener('input', render);
+                searchInput.addEventListener('keyup', render);
+                searchInput.addEventListener('change', render);
+
                 weekSelect.addEventListener('change', render);
                 chkBeforeCare.addEventListener('change', render);
                 chkAfterCare.addEventListener('change', render);
