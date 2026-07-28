@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <!-- Anti-Cache & Mobile Refresh Meta Tags -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <!-- Anti-Scraper & Anti-Indexing Meta Tags -->
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     <meta name="googlebot" content="noindex, nofollow, noarchive">
@@ -11,8 +15,8 @@
     <!-- Leaflet CSS & JS for Interactive Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Load 1,000+ ACA Camps Dataset -->
-    <script src="aca_camps_data.js"></script>
+    <!-- Load 1,000+ ACA Camps Dataset with Cache-busting -->
+    <script src="aca_camps_data.js?v=1.0.3"></script>
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -141,6 +145,7 @@
             font-size: 1.05rem;
             font-weight: 800;
             cursor: pointer;
+            touch-action: manipulation;
             transition: var(--transition);
         }
 
@@ -316,14 +321,15 @@
             cursor: pointer;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
+            user-select: none;
             transition: var(--transition);
         }
 
         .pill-btn:hover { border-color: var(--secondary); background: #fff; }
         .pill-btn.active {
-            background: var(--secondary);
-            border-color: var(--secondary);
-            color: #fff;
+            background: var(--secondary) !important;
+            border-color: var(--secondary) !important;
+            color: #fff !important;
         }
 
         .checkbox-group {
@@ -672,32 +678,32 @@
                 <div class="filter-group">
                     <label id="lblSeason">Season</label>
                     <div class="pill-group" id="seasonPills">
-                        <button class="pill-btn active" data-season="all" id="btnSeasonAll">All Seasons</button>
-                        <button class="pill-btn" data-season="summer" id="btnSeasonSummer">🌞 Summer</button>
-                        <button class="pill-btn" data-season="winter" id="btnSeasonWinter">❄️ Winter Camp</button>
-                        <button class="pill-btn" data-season="spring" id="btnSeasonSpring">🌸 Spring Break</button>
+                        <button type="button" class="pill-btn active" data-season="all" id="btnSeasonAll">All Seasons</button>
+                        <button type="button" class="pill-btn" data-season="summer" id="btnSeasonSummer">🌞 Summer</button>
+                        <button type="button" class="pill-btn" data-season="winter" id="btnSeasonWinter">❄️ Winter Camp</button>
+                        <button type="button" class="pill-btn" data-season="spring" id="btnSeasonSpring">🌸 Spring Break</button>
                     </div>
                 </div>
 
                 <div class="filter-group">
                     <label id="lblType">Camp Type</label>
                     <div class="pill-group" id="typePills">
-                        <button class="pill-btn active" data-filter="all" id="btnTypeAll">All</button>
-                        <button class="pill-btn" data-filter="day" id="btnTypeDay">Day Camp</button>
-                        <button class="pill-btn" data-filter="overnight" id="btnTypeOvernight">Overnight</button>
-                        <button class="pill-btn" data-filter="both" id="btnTypeBoth">Both</button>
+                        <button type="button" class="pill-btn active" data-filter="all" id="btnTypeAll">All</button>
+                        <button type="button" class="pill-btn" data-filter="day" id="btnTypeDay">Day Camp</button>
+                        <button type="button" class="pill-btn" data-filter="overnight" id="btnTypeOvernight">Overnight</button>
+                        <button type="button" class="pill-btn" data-filter="both" id="btnTypeBoth">Both</button>
                     </div>
                 </div>
 
                 <div class="filter-group">
                     <label id="lblTheme">Theme & Focus</label>
                     <div class="pill-group" id="themePills">
-                        <button class="pill-btn active" data-theme="all" id="btnThemeAll">All Themes</button>
-                        <button class="pill-btn" data-theme="STEM" id="btnThemeSTEM">🔬 STEM & Code</button>
-                        <button class="pill-btn" data-theme="Sports" id="btnThemeSports">⚽ Sports</button>
-                        <button class="pill-btn" data-theme="Arts" id="btnThemeArts">🎨 Arts & Drama</button>
-                        <button class="pill-btn" data-theme="Outdoor" id="btnThemeOutdoor">🌲 Outdoor</button>
-                        <button class="pill-btn" data-theme="Academic" id="btnThemeAcademic">📚 Academic</button>
+                        <button type="button" class="pill-btn active" data-theme="all" id="btnThemeAll">All Themes</button>
+                        <button type="button" class="pill-btn" data-theme="STEM" id="btnThemeSTEM">🔬 STEM & Code</button>
+                        <button type="button" class="pill-btn" data-theme="Sports" id="btnThemeSports">⚽ Sports</button>
+                        <button type="button" class="pill-btn" data-theme="Arts" id="btnThemeArts">🎨 Arts & Drama</button>
+                        <button type="button" class="pill-btn" data-theme="Outdoor" id="btnThemeOutdoor">🌲 Outdoor</button>
+                        <button type="button" class="pill-btn" data-theme="Academic" id="btnThemeAcademic">📚 Academic</button>
                     </div>
                 </div>
             </div>
@@ -749,8 +755,8 @@
             </div>
 
             <div class="view-switchers">
-                <button class="view-btn active" id="btnListView">📋 List View</button>
-                <button class="view-btn" id="btnMapView">🗺️ Map View</button>
+                <button type="button" class="view-btn active" id="btnListView">📋 List View</button>
+                <button type="button" class="view-btn" id="btnMapView">🗺️ Map View</button>
             </div>
         </div>
 
@@ -765,20 +771,20 @@
             <span style="font-size:3rem; display:block; margin-bottom:12px;">🔍</span>
             <h3 style="font-size:1.2rem; color:var(--accent);" id="noResultsTitle">No Exact Camps Found</h3>
             <p style="color:var(--text-secondary); max-width:480px; margin:6px auto 0;" id="noResultsText">Try relaxing your season, theme or week filter to see more available camps near you.</p>
-            <button id="btnResetFilters" style="margin-top:16px; background:var(--secondary); color:#fff; border:none; padding:10px 22px; border-radius:20px; font-weight:700; cursor:pointer;">🔄 Clear Extra Filters</button>
+            <button type="button" id="btnResetFilters" style="margin-top:16px; background:var(--secondary); color:#fff; border:none; padding:10px 22px; border-radius:20px; font-weight:700; cursor:pointer;">🔄 Clear Extra Filters</button>
         </div>
     </div>
 
     <!-- FLOATING COMPARISON BAR -->
     <div class="compare-bar" id="compareBar">
         <span>⚖️ <strong id="compareCount">0</strong> <span id="txtCompareSelected">camps selected for comparison</span></span>
-        <button class="btn-compare-now" id="btnOpenCompare">Compare Side-by-Side</button>
+        <button type="button" class="btn-compare-now" id="btnOpenCompare">Compare Side-by-Side</button>
     </div>
 
     <!-- CAMP DETAIL MODAL -->
     <div class="modal-overlay" id="detailModal">
         <div class="modal-card">
-            <button class="modal-close" id="modalClose">&times;</button>
+            <button type="button" class="modal-close" id="modalClose">&times;</button>
             <div id="modalBody"></div>
         </div>
     </div>
@@ -786,7 +792,7 @@
     <!-- SIDE-BY-SIDE COMPARISON MODAL -->
     <div class="modal-overlay" id="compareModal">
         <div class="modal-card compare-modal-card">
-            <button class="modal-close" id="compareModalClose">&times;</button>
+            <button type="button" class="modal-close" id="compareModalClose">&times;</button>
             <h2 style="font-size:1.4rem; color:var(--accent); margin-bottom:12px;" id="txtCompareModalTitle">⚖️ Side-by-Side Camp Comparison</h2>
             <div id="compareTableContainer" style="overflow-x:auto;"></div>
         </div>
@@ -868,7 +874,7 @@
                     lblWeek: "暑/寒假週別選擇",
                     lblLogistics: "延托與接送服務",
                     earlyCare: "🌅 早托服務 (8 AM 前)",
-                    lateCare: "<ctrl42> 晚托服務 (5 PM 後)",
+                    lateCare: "🌆 晚托服務 (5 PM 後)",
                     shuttle: "🚌 接送巴士 (Shuttle)",
                     resultsTitle: "可預約營隊",
                     listView: "📋 列表視圖",
@@ -1192,7 +1198,7 @@
                                     <input type="checkbox" class="chk-compare" data-id="${c.id}" ${isChecked} />
                                     <span>${dict.compareToggle}</span>
                                 </label>
-                                <button class="btn-action btn-details" data-id="${c.id}">${dict.btnDetails}</button>
+                                <button type="button" class="btn-action btn-details" data-id="${c.id}">${dict.btnDetails}</button>
                             </div>
                         </div>
                     `;
@@ -1414,41 +1420,44 @@
                     render();
                 });
 
-                // Season Pills - Support touch and click
-                document.querySelectorAll('#seasonPills .pill-btn').forEach(btn => {
-                    const handler = function(e) {
-                        e.preventDefault();
+                // Event Delegation for Season Pills
+                const seasonContainer = $('seasonPills');
+                if (seasonContainer) {
+                    seasonContainer.addEventListener('click', function(e) {
+                        const btn = e.target.closest('.pill-btn');
+                        if (!btn) return;
                         document.querySelectorAll('#seasonPills .pill-btn').forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
-                        activeSeasonFilter = this.dataset.season;
+                        btn.classList.add('active');
+                        activeSeasonFilter = btn.dataset.season;
                         render();
-                    };
-                    btn.addEventListener('click', handler);
-                });
+                    });
+                }
 
-                // Type Pills - Support touch and click
-                document.querySelectorAll('#typePills .pill-btn').forEach(btn => {
-                    const handler = function(e) {
-                        e.preventDefault();
+                // Event Delegation for Type Pills
+                const typeContainer = $('typePills');
+                if (typeContainer) {
+                    typeContainer.addEventListener('click', function(e) {
+                        const btn = e.target.closest('.pill-btn');
+                        if (!btn) return;
                         document.querySelectorAll('#typePills .pill-btn').forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
-                        activeTypeFilter = this.dataset.filter;
+                        btn.classList.add('active');
+                        activeTypeFilter = btn.dataset.filter;
                         render();
-                    };
-                    btn.addEventListener('click', handler);
-                });
+                    });
+                }
 
-                // Theme Pills - Support touch and click
-                document.querySelectorAll('#themePills .pill-btn').forEach(btn => {
-                    const handler = function(e) {
-                        e.preventDefault();
+                // Event Delegation for Theme Pills
+                const themeContainer = $('themePills');
+                if (themeContainer) {
+                    themeContainer.addEventListener('click', function(e) {
+                        const btn = e.target.closest('.pill-btn');
+                        if (!btn) return;
                         document.querySelectorAll('#themePills .pill-btn').forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
-                        activeThemeFilter = this.dataset.theme;
+                        btn.classList.add('active');
+                        activeThemeFilter = btn.dataset.theme;
                         render();
-                    };
-                    btn.addEventListener('click', handler);
-                });
+                    });
+                }
 
                 btnListView.addEventListener('click', () => {
                     btnListView.classList.add('active');
