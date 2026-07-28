@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <!-- Anti-Scraper & Anti-Indexing Meta Tags -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive">
+    <meta name="bingbot" content="noindex, nofollow, noarchive">
+    <title>CampFind — Find the Perfect Summer & Winter Camp</title>
+    <!-- Leaflet CSS & JS for Interactive Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Load 1,000+ ACA Camps Dataset -->
+    <script src="aca_camps_data.js"></script>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #FF6B6B;
+            --primary-light: #ff8e8e;
+            --primary-dark: #e55555;
+            --secondary: #4ECDC4;
+            --secondary-light: #7eddd6;
+            --secondary-dark: #3ab5ad;
+            --accent: #2C3E50;
+            --accent-light: #3d566e;
+            --accent-dark: #1a252f;
+            --bg: #FFFFFF;
+            --bg-alt: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #5a6a7c;
+            --text-light: #8a9aa8;
+            --shadow-sm: 0 2px 8px rgba(44, 62, 80, 0.08);
+            --shadow-md: 0 8px 30px rgba(44, 62, 80, 0.12);
+            --shadow-lg: 0 20px 60px rgba(44, 62, 80, 0.18);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-xs: 6px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(ellipse at 20% 0%, rgba(78, 205, 196, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 100%, rgba(255, 107, 107, 0.05) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        /* ---- PASSCODE OVERLAY ---- */
+        #passcodeOverlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(26, 37, 47, 0.98));
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .passcode-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .passcode-icon {
+            font-size: 3.2rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .passcode-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .passcode-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .passcode-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .passcode-input-group input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #cbd5e1;
+            border-radius: var(--radius-sm);
+            font-size: 1.4rem;
+            letter-spacing: 8px;
+            text-align: center;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .passcode-input-group input[type="password"]:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(78, 205, 196, 0.2);
+        }
+
+        .passcode-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-sm);
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .passcode-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .passcode-error {
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .app-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+            position: relative;
+            display: none; /* hidden until passcode unlocked */
+        }
+
+        /* ---- HEADER ---- */
+        .header {
+            text-align: center;
+            padding: 24px 0 20px;
+            position: relative;
+        }
+
+        .lang-picker {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--card-bg);
+            padding: 4px 10px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+
+        .lang-picker select {
+            border: none;
+            background: transparent;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .app-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .app-logo h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .data-badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 14px;
+            background: rgba(78, 205, 196, 0.12);
+            color: var(--secondary-dark);
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.82rem;
+        }
+
+        /* ---- SEARCH & FILTER PANEL ---- */
+        .search-section {
+            margin: 20px auto 0;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            padding: 24px;
+            border: 1px solid rgba(78, 205, 196, 0.12);
+        }
+
+        .search-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+
+        .search-field { flex: 2; min-width: 220px; }
+        .age-field { flex: 1.2; min-width: 180px; }
+
+        .search-field label, .age-field label, .filter-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .input-wrapper input[type="text"], .select-wrapper select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: var(--font);
+            background: var(--bg-alt);
+            color: var(--text);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .input-wrapper input[type="text"]:focus, .select-wrapper select:focus {
+            border-color: var(--secondary);
+            background: #fff;
+        }
+
+        .age-display { display: flex; align-items: center; gap: 10px; }
+        .age-value {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--primary);
+            min-width: 32px;
+            text-align: center;
+            background: rgba(255, 107, 107, 0.1);
+            padding: 2px 6px;
+            border-radius: var(--radius-xs);
+        }
+
+        /* Filter Pills & Checkboxes */
+        .filter-row {
+            margin-top: 18px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        .pill-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pill-btn {
+            padding: 7px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 20px;
+            background: var(--bg-alt);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .pill-btn:hover { border-color: var(--secondary); background: #fff; }
+        .pill-btn.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: #fff;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .checkbox-label input { accent-color: var(--secondary); width: 16px; height: 16px; }
+
+        /* Sibling / Multi-child Bar */
+        .sibling-bar {
+            margin-top: 12px;
+            background: rgba(255, 107, 107, 0.05);
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ---- VIEW SWITCHER & RESULTS HEADER ---- */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 28px 0 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .view-switchers {
+            display: flex;
+            gap: 8px;
+            background: #e2e8f0;
+            padding: 4px;
+            border-radius: 30px;
+        }
+
+        .view-btn {
+            padding: 7px 16px;
+            border: none;
+            border-radius: 20px;
+            background: transparent;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .view-btn.active {
+            background: #fff;
+            color: var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* ---- LEAFLET MAP CONTAINER ---- */
+        #mapContainer {
+            height: 480px;
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 24px;
+            display: none;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* ---- CAMP GRID & CARDS ---- */
+        .camp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .camp-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(44, 62, 80, 0.08);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .camp-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .camp-card-header {
+            padding: 16px 18px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .camp-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1.3;
+        }
+
+        .camp-body {
+            padding: 0 18px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .badges-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-type { background: rgba(78, 205, 196, 0.15); color: var(--secondary-dark); }
+        .badge-theme { background: rgba(255, 107, 107, 0.12); color: var(--primary-dark); }
+        .badge-season { background: rgba(59, 130, 246, 0.12); color: #2563eb; }
+        .badge-care { background: rgba(44, 62, 80, 0.08); color: var(--accent); }
+
+        .meta-text {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .camp-footer {
+            padding: 12px 18px 16px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-action {
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-details { background: var(--accent); color: #fff; }
+        .btn-details:hover { background: var(--accent-light); }
+
+        .compare-toggle {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ---- FLOATING COMPARISON BAR ---- */
+        .compare-bar {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-lg);
+            display: none;
+            align-items: center;
+            gap: 16px;
+            z-index: 1000;
+            animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideUp {
+            from { transform: translate(-50%, 60px); opacity: 0; }
+            to { transform: translate(-50%, 0); opacity: 1; }
+        }
+
+        .btn-compare-now {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* ---- MODAL DIALOGS ---- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #fff;
+            border-radius: var(--radius);
+            max-width: 680px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 28px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px; right: 18px;
+            background: #f1f5f9;
+            border: none;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .compare-modal-card { max-width: 900px; }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.88rem;
+        }
+
+        .compare-table th, .compare-table td {
+            padding: 12px 14px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        .compare-table th { background: var(--bg-alt); font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <!-- PASSCODE OVERLAY -->
+    <div id="passcodeOverlay">
+        <div class="passcode-card">
+            <span class="passcode-icon">🔐</span>
+            <div class="passcode-title">CampFind Private Preview</div>
+            <div class="passcode-desc">This is a private prototype. Please enter the access passcode to unlock the application.</div>
+            <div class="passcode-input-group">
+                <input type="password" id="passcodeInput" maxlength="10" placeholder="••••" />
+                <button class="passcode-btn" id="btnUnlock">🔓 Unlock App</button>
+            </div>
+            <div class="passcode-error" id="passcodeError">❌ Incorrect passcode. Please try again.</div>
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTAINER -->
+    <div class="app-container" id="appContainer">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="lang-picker">
+                <span>🌐</span>
+                <select id="langSelect">
+                    <option value="en">🇺🇸 English</option>
+                    <option value="zh">🇹🇼 繁體中文</option>
+                    <option value="es">🇲🇽 Español</option>
+                </select>
+            </div>
+
+            <div class="app-logo">
+                <span style="font-size:2.4rem;">⛺</span>
+                <h1>CampFind</h1>
+            </div>
+            <p class="tagline" id="txtTagline">Discover 1,000+ Verified ACA Summer & Winter Camps Across the USA</p>
+            <div class="data-badge" id="txtBadge">✨ 1,050 Certified Camps &middot; Summer, Winter & Spring Camps &middot; Live Search</div>
+        </header>
+
+        <!-- SEARCH & FILTER PANEL -->
+        <section class="search-section">
+            <div class="search-row">
+                <div class="search-field">
+                    <label id="lblSearch">Location / City / ZIP Code</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search by ZIP (e.g. 92056, 90210, 10001) or City/State..." />
+                    </div>
+                </div>
+
+                <div class="age-field">
+                    <label id="lblAge">Child's Age</label>
+                    <div class="age-display">
+                        <input type="range" id="ageSlider" min="2" max="18" value="10" />
+                        <span class="age-value" id="ageValue">10 yrs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIBLING / MULTI-CHILD MODE -->
+            <div class="sibling-bar">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="siblingToggle" />
+                    <span id="txtSiblingMode">👨‍👩‍👧‍👦 Multi-Child / Sibling Mode</span>
+                </label>
+                <div id="siblingInputContainer" style="display:none; align-items:center; gap:8px;">
+                    <span style="font-size:0.85rem;" id="lblChild2Age">Child 2 Age:</span>
+                    <input type="number" id="child2Age" min="2" max="18" value="6" style="width:60px; padding:4px 8px; border-radius:6px; border:1px solid #ccc;" />
+                </div>
+            </div>
+
+            <!-- FILTERS ROW 1: SEASON, TYPE & THEME PILLS -->
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label id="lblSeason">Season</label>
+                    <div class="pill-group" id="seasonPills">
+                        <button class="pill-btn active" data-season="all" id="btnSeasonAll">All Seasons</button>
+                        <button class="pill-btn" data-season="summer" id="btnSeasonSummer">🌞 Summer</button>
+                        <button class="pill-btn" data-season="winter" id="btnSeasonWinter">❄️ Winter Camp</button>
+                        <button class="pill-btn" data-season="spring" id="btnSeasonSpring">🌸 Spring Break</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label id="lblType">Camp Type</label>
+                    <div class="pill-group" id="typePills">
+                        <button class="pill-btn active" data-filter="all" id="btnTypeAll">All</button>
+                        <button class="pill-btn" data-filter="day" id="btnTypeDay">Day Camp</button>
+                        <button class="pill-btn" data-filter="overnight" id="btnTypeOvernight">Overnight</button>
+                        <button class="pill-btn" data-filter="both" id="btnTypeBoth">Both</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label id="lblTheme">Theme & Focus</label>
+                    <div class="pill-group" id="themePills">
+                        <button class="pill-btn active" data-theme="all" id="btnThemeAll">All Themes</button>
+                        <button class="pill-btn" data-theme="STEM" id="btnThemeSTEM">🔬 STEM & Code</button>
+                        <button class="pill-btn" data-theme="Sports" id="btnThemeSports">⚽ Sports</button>
+                        <button class="pill-btn" data-theme="Arts" id="btnThemeArts">🎨 Arts & Drama</button>
+                        <button class="pill-btn" data-theme="Outdoor" id="btnThemeOutdoor">🌲 Outdoor</button>
+                        <button class="pill-btn" data-theme="Academic" id="btnThemeAcademic">📚 Academic</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FILTERS ROW 2: WEEKS & EXTENDED CARE -->
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label id="lblWeek">Session Week Picker</label>
+                    <div class="select-wrapper">
+                        <select id="weekSelect">
+                            <option value="0">Any Week</option>
+                            <option value="1">Week 1 (Jun 2 – Jun 13 / Dec 22–Dec 26)</option>
+                            <option value="2">Week 2 (Jun 16 – Jun 27 / Dec 29–Jan 2)</option>
+                            <option value="3">Week 3 (Jun 30 – Jul 11 / Jan 5–Jan 9)</option>
+                            <option value="4">Week 4 (Jul 14 – Jul 25)</option>
+                            <option value="5">Week 5 (Jul 28 – Aug 8)</option>
+                            <option value="6">Week 6 (Aug 11 – Aug 22)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label id="lblLogistics">Extended Care & Logistics</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="chkBeforeCare" />
+                            <span id="txtEarlyCare">🌅 Early Care (Before 8 AM)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="chkAfterCare" />
+                            <span id="txtLateCare">🌆 Late Care (After 5 PM)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="chkShuttle" />
+                            <span id="txtShuttle">🚌 Shuttle Bus</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS HEADER & VIEW SWITCHER -->
+        <div class="results-header">
+            <div>
+                <h2 style="font-size:1.3rem; font-weight:700; color:var(--accent);">
+                    <span id="lblResultsTitle">Available Camps</span> <span id="resultsCount" style="background:#e2e8f0; padding:2px 10px; border-radius:12px; font-size:0.85rem;">(1,050 camps)</span>
+                </h2>
+                <div id="resultSubtitle" style="font-size:0.85rem; color:var(--text-secondary); margin-top:2px;">Showing nationwide camps</div>
+            </div>
+
+            <div class="view-switchers">
+                <button class="view-btn active" id="btnListView">📋 List View</button>
+                <button class="view-btn" id="btnMapView">🗺️ Map View</button>
+            </div>
+        </div>
+
+        <!-- LEAFLET MAP VIEW -->
+        <div id="mapContainer"></div>
+
+        <!-- CAMP GRID -->
+        <div class="camp-grid" id="campGrid"></div>
+
+        <!-- NO RESULTS PLACEHOLDER -->
+        <div id="noResults" style="display:none; text-align:center; padding:50px 20px; background:var(--bg-alt); border-radius:var(--radius); border:2px dashed #cbd5e1; margin-top:12px;">
+            <span style="font-size:3rem; display:block; margin-bottom:12px;">🔍</span>
+            <h3 style="font-size:1.2rem; color:var(--accent);" id="noResultsTitle">No Exact Camps Found</h3>
+            <p style="color:var(--text-secondary); max-width:480px; margin:6px auto 0;" id="noResultsText">Try relaxing your season, theme or week filter to see more available camps near you.</p>
+            <button id="btnResetFilters" style="margin-top:16px; background:var(--secondary); color:#fff; border:none; padding:10px 22px; border-radius:20px; font-weight:700; cursor:pointer;">🔄 Clear Extra Filters</button>
+        </div>
+    </div>
+
+    <!-- FLOATING COMPARISON BAR -->
+    <div class="compare-bar" id="compareBar">
+        <span>⚖️ <strong id="compareCount">0</strong> <span id="txtCompareSelected">camps selected for comparison</span></span>
+        <button class="btn-compare-now" id="btnOpenCompare">Compare Side-by-Side</button>
+    </div>
+
+    <!-- CAMP DETAIL MODAL -->
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- SIDE-BY-SIDE COMPARISON MODAL -->
+    <div class="modal-overlay" id="compareModal">
+        <div class="modal-card compare-modal-card">
+            <button class="modal-close" id="compareModalClose">&times;</button>
+            <h2 style="font-size:1.4rem; color:var(--accent); margin-bottom:12px;" id="txtCompareModalTitle">⚖️ Side-by-Side Camp Comparison</h2>
+            <div id="compareTableContainer" style="overflow-x:auto;"></div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const PASSCODE = '8888';
+
+            // ---- I18N DICTIONARY ----
+            const I18N = {
+                en: {
+                    tagline: "Discover 1,000+ Verified ACA Summer & Winter Camps Across the USA",
+                    badge: "✨ 1,050 Certified Camps · Summer, Winter & Spring Camps · Live Search",
+                    lblSearch: "Location / City / ZIP Code",
+                    phSearch: "Search by ZIP (e.g. 92056, 90210, 10001) or City/State...",
+                    lblAge: "Child's Age",
+                    txtSiblingMode: "👨‍👩‍👧‍👦 Multi-Child / Sibling Mode",
+                    lblChild2Age: "Child 2 Age:",
+                    lblSeason: "Season",
+                    seasonAll: "All Seasons",
+                    seasonSummer: "🌞 Summer",
+                    seasonWinter: "❄️ Winter Camp",
+                    seasonSpring: "🌸 Spring Break",
+                    lblType: "Camp Type",
+                    typeAll: "All",
+                    typeDay: "Day Camp",
+                    typeOvernight: "Overnight",
+                    typeBoth: "Both",
+                    lblTheme: "Theme & Focus",
+                    themeAll: "All Themes",
+                    themeSTEM: "🔬 STEM & Code",
+                    themeSports: "⚽ Sports",
+                    themeArts: "🎨 Arts & Drama",
+                    themeOutdoor: "🌲 Outdoor",
+                    themeAcademic: "📚 Academic",
+                    lblWeek: "Session Week Picker",
+                    lblLogistics: "Extended Care & Logistics",
+                    earlyCare: "🌅 Early Care (Before 8 AM)",
+                    lateCare: "🌆 Late Care (After 5 PM)",
+                    shuttle: "🚌 Shuttle Bus",
+                    resultsTitle: "Available Camps",
+                    listView: "📋 List View",
+                    mapView: "🗺️ Map View",
+                    btnDetails: "View Details",
+                    compareToggle: "Compare",
+                    compareSelected: "camps selected for comparison",
+                    compareBtn: "Compare Side-by-Side",
+                    compareModalTitle: "⚖️ Side-by-Side Camp Comparison",
+                    resetFilters: "🔄 Clear Extra Filters"
+                },
+                zh: {
+                    tagline: "探索全美 1,000+ 個 ACA 官方認證夏令營與冬令營",
+                    badge: "✨ 1,050 個認證營隊 · 夏令營/冬令營/春假營 · 全美即時檢索",
+                    lblSearch: "地點 / 城市 / 郵遞區號 (ZIP Code)",
+                    phSearch: "輸入 ZIP 郵遞區號 (如 92056, 90210) 或城市/州名...",
+                    lblAge: "孩子年齡",
+                    txtSiblingMode: "👨‍👩‍👧‍👦 多孩子 / 兄弟姊妹模式",
+                    lblChild2Age: "第二位孩子年齡:",
+                    lblSeason: "賽季選擇",
+                    seasonAll: "全部賽季",
+                    seasonSummer: "🌞 夏令營",
+                    seasonWinter: "❄️ 冬令營",
+                    seasonSpring: "🌸 春假營",
+                    lblType: "營隊類型",
+                    typeAll: "全部",
+                    typeDay: "日營 (Day Camp)",
+                    typeOvernight: "住宿營 (Overnight)",
+                    typeBoth: "混合型 (Both)",
+                    lblTheme: "主題特色",
+                    themeAll: "全部主題",
+                    themeSTEM: "🔬 STEM & 程式",
+                    themeSports: "⚽ 體育水上",
+                    themeArts: "🎨 藝術戲劇",
+                    themeOutdoor: "🌲 戶外探險",
+                    themeAcademic: "📚 學術語言",
+                    lblWeek: "暑/寒假週別選擇",
+                    lblLogistics: "延托與接送服務",
+                    earlyCare: "🌅 早托服務 (8 AM 前)",
+                    lateCare: "🌆 晚托服務 (5 PM 後)",
+                    shuttle: "🚌 接送巴士 (Shuttle)",
+                    resultsTitle: "可預約營隊",
+                    listView: "📋 列表視圖",
+                    mapView: "🗺️ 地圖視圖",
+                    btnDetails: "查看細節",
+                    compareToggle: "加入對比",
+                    compareSelected: "個營隊已選擇對比",
+                    compareBtn: "開啟橫向對比表",
+                    compareModalTitle: "⚖️ 營隊跨項目詳細對比表",
+                    resetFilters: "🔄 重置多餘過濾條件"
+                },
+                es: {
+                    tagline: "Descubre más de 1,000 Campamentos Verificados de Verano e Invierno en EE. UU.",
+                    badge: "✨ 1,050 Campamentos Certificados · Verano, Invierno y Primavera · Búsqueda en Vivo",
+                    lblSearch: "Ubicación / Ciudad / Código Postal (ZIP)",
+                    phSearch: "Buscar por ZIP (ej. 92056, 90210) o Ciudad/Estado...",
+                    lblAge: "Edad del Niño",
+                    txtSiblingMode: "👨‍👩‍👧‍👦 Modo Varios Niños / Hermanos",
+                    lblChild2Age: "Edad del 2º Niño:",
+                    lblSeason: "Temporada",
+                    seasonAll: "Todas las Temporadas",
+                    seasonSummer: "🌞 Verano",
+                    seasonWinter: "❄️ Campamento de Invierno",
+                    seasonSpring: "🌸 Vacaciones de Primavera",
+                    lblType: "Tipo de Campamento",
+                    typeAll: "Todos",
+                    typeDay: "Día (Day Camp)",
+                    typeOvernight: "Pernoctación",
+                    typeBoth: "Ambos",
+                    lblTheme: "Tema y Enfoque",
+                    themeAll: "Todos los Temas",
+                    themeSTEM: "🔬 STEM y Código",
+                    themeSports: "⚽ Deportes",
+                    themeArts: "🎨 Arte y Teatro",
+                    themeOutdoor: "🌲 Aire Libre",
+                    themeAcademic: "📚 Académico",
+                    lblWeek: "Selector de Semana",
+                    lblLogistics: "Cuidado Extendido y Logística",
+                    earlyCare: "🌅 Cuidado Temprano (Antes de 8 AM)",
+                    lateCare: "🌆 Cuidado Tardío (Después de 5 PM)",
+                    shuttle: "🚌 Autobús de Transporte",
+                    resultsTitle: "Campamentos Disponibles",
+                    listView: "📋 Vista de Lista",
+                    mapView: "🗺️ Vista de Mapa",
+                    btnDetails: "Ver Detalles",
+                    compareToggle: "Comparar",
+                    compareSelected: "campamentos seleccionados para comparar",
+                    compareBtn: "Comparar Lado a Lado",
+                    compareModalTitle: "⚖️ Comparativa Detallada de Campamentos",
+                    resetFilters: "🔄 Restablecer Filtros"
+                }
+            };
+
+            let currentLang = 'en';
+
+            // ---- DATA ----
+            const ALL_CAMPS = window.ACA_CAMPS || [];
+
+            const zipStateMap = {
+                '9': 'CA', '90': 'CA', '91': 'CA', '92': 'CA', '93': 'CA', '94': 'CA', '95': 'CA', '96': 'CA',
+                '10': 'NY', '11': 'NY', '12': 'NY', '13': 'NY', '14': 'NY', '1': 'NY',
+                '77': 'TX', '78': 'TX', '75': 'TX', '76': 'TX', '7': 'TX',
+                '33': 'FL', '32': 'FL', '34': 'FL', '3': 'FL',
+                '02': 'MA', '01': 'MA', '0': 'MA',
+                '60': 'IL', '61': 'IL', '62': 'IL', '6': 'IL',
+                '19': 'PA', '15': 'PA', '16': 'PA', '17': 'PA', '18': 'PA',
+                '98': 'WA', '99': 'WA',
+                '80': 'CO', '81': 'CO', '8': 'CO',
+                '30': 'GA', '31': 'GA',
+                '85': 'AZ', '86': 'AZ',
+                '97': 'OR',
+                '28': 'NC', '27': 'NC',
+                '37': 'TN', '38': 'TN',
+                '55': 'MN', '56': 'MN',
+                '48': 'MI', '49': 'MI',
+                '43': 'OH', '44': 'OH', '45': 'OH',
+                '84': 'UT', '89': 'NV', '20': 'DC'
+            };
+
+            // ---- STATE ----
+            let activeSeasonFilter = 'all';
+            let activeTypeFilter = 'all';
+            let activeThemeFilter = 'all';
+            let selectedCompareIds = [];
+            let mapInstance = null;
+            let mapMarkers = [];
+
+            // ---- DOM REFS ----
+            const $ = id => document.getElementById(id);
+            const passcodeOverlay = $('passcodeOverlay');
+            const passcodeInput = $('passcodeInput');
+            const btnUnlock = $('btnUnlock');
+            const passcodeError = $('passcodeError');
+            const appContainer = $('appContainer');
+            const langSelect = $('langSelect');
+            const searchInput = $('searchInput');
+            const ageSlider = $('ageSlider');
+            const ageValue = $('ageValue');
+            const siblingToggle = $('siblingToggle');
+            const siblingInputContainer = $('siblingInputContainer');
+            const child2Age = $('child2Age');
+            const weekSelect = $('weekSelect');
+            const chkBeforeCare = $('chkBeforeCare');
+            const chkAfterCare = $('chkAfterCare');
+            const chkShuttle = $('chkShuttle');
+            const campGrid = $('campGrid');
+            const resultsCount = $('resultsCount');
+            const resultSubtitle = $('resultSubtitle');
+            const noResults = $('noResults');
+            const btnResetFilters = $('btnResetFilters');
+            const mapContainer = $('mapContainer');
+            const btnListView = $('btnListView');
+            const btnMapView = $('btnMapView');
+            const compareBar = $('compareBar');
+            const compareCount = $('compareCount');
+            const btnOpenCompare = $('btnOpenCompare');
+            const detailModal = $('detailModal');
+            const modalBody = $('modalBody');
+            const compareModal = $('compareModal');
+            const compareTableContainer = $('compareTableContainer');
+
+            // Passcode Verification
+            function verifyPasscode() {
+                const val = passcodeInput.value.trim();
+                if (val === PASSCODE) {
+                    sessionStorage.setItem('campfind_authenticated', 'true');
+                    passcodeOverlay.style.display = 'none';
+                    appContainer.style.display = 'block';
+                    render();
+                } else {
+                    passcodeError.style.display = 'block';
+                    passcodeInput.value = '';
+                    passcodeInput.focus();
+                }
+            }
+
+            function checkAuth() {
+                if (sessionStorage.getItem('campfind_authenticated') === 'true') {
+                    passcodeOverlay.style.display = 'none';
+                    appContainer.style.display = 'block';
+                    return true;
+                } else {
+                    passcodeOverlay.style.display = 'flex';
+                    appContainer.style.display = 'none';
+                    return false;
+                }
+            }
+
+            // Apply Language
+            function updateLanguage(lang) {
+                currentLang = lang;
+                const dict = I18N[lang] || I18N.en;
+
+                $('txtTagline').textContent = dict.tagline;
+                $('txtBadge').textContent = dict.badge;
+                $('lblSearch').textContent = dict.lblSearch;
+                searchInput.placeholder = dict.phSearch;
+                $('lblAge').textContent = dict.lblAge;
+                $('txtSiblingMode').textContent = dict.txtSiblingMode;
+                $('lblChild2Age').textContent = dict.lblChild2Age;
+                $('lblSeason').textContent = dict.lblSeason;
+                $('btnSeasonAll').textContent = dict.seasonAll;
+                $('btnSeasonSummer').textContent = dict.seasonSummer;
+                $('btnSeasonWinter').textContent = dict.seasonWinter;
+                $('btnSeasonSpring').textContent = dict.seasonSpring;
+
+                $('lblType').textContent = dict.lblType;
+                $('btnTypeAll').textContent = dict.typeAll;
+                $('btnTypeDay').textContent = dict.typeDay;
+                $('btnTypeOvernight').textContent = dict.typeOvernight;
+                $('btnTypeBoth').textContent = dict.typeBoth;
+
+                $('lblTheme').textContent = dict.lblTheme;
+                $('btnThemeAll').textContent = dict.themeAll;
+                $('btnThemeSTEM').textContent = dict.themeSTEM;
+                $('btnThemeSports').textContent = dict.themeSports;
+                $('btnThemeArts').textContent = dict.themeArts;
+                $('btnThemeOutdoor').textContent = dict.themeOutdoor;
+                $('btnThemeAcademic').textContent = dict.themeAcademic;
+
+                $('lblWeek').textContent = dict.lblWeek;
+                $('lblLogistics').textContent = dict.lblLogistics;
+                $('txtEarlyCare').textContent = dict.earlyCare;
+                $('txtLateCare').textContent = dict.lateCare;
+                $('txtShuttle').textContent = dict.shuttle;
+
+                $('lblResultsTitle').textContent = dict.resultsTitle;
+                btnListView.textContent = dict.listView;
+                btnMapView.textContent = dict.mapView;
+                $('txtCompareSelected').textContent = dict.compareSelected;
+                btnOpenCompare.textContent = dict.compareBtn;
+                $('txtCompareModalTitle').textContent = dict.compareModalTitle;
+                btnResetFilters.textContent = dict.resetFilters;
+
+                render();
+            }
+
+            function inferStateFromQuery(query) {
+                const clean = query.replace(/\D/g, '');
+                if (!clean) return null;
+                if (zipStateMap[clean.substring(0, 5)]) return zipStateMap[clean.substring(0, 5)];
+                if (zipStateMap[clean.substring(0, 3)]) return zipStateMap[clean.substring(0, 3)];
+                if (zipStateMap[clean.substring(0, 2)]) return zipStateMap[clean.substring(0, 2)];
+                if (zipStateMap[clean.substring(0, 1)]) return zipStateMap[clean.substring(0, 1)];
+                return null;
+            }
+
+            // ---- FILTER LOGIC ----
+            function getFilteredCamps(ignoreExtraFilters = false) {
+                const query = searchInput.value.trim().toLowerCase();
+                const age1 = parseInt(ageSlider.value, 10) || 10;
+                const isSibling = siblingToggle.checked;
+                const age2 = isSibling ? (parseInt(child2Age.value, 10) || 6) : null;
+                const selectedWeek = ignoreExtraFilters ? 0 : (parseInt(weekSelect.value, 10) || 0);
+                const seasonFilter = ignoreExtraFilters ? 'all' : activeSeasonFilter;
+                const themeFilter = ignoreExtraFilters ? 'all' : activeThemeFilter;
+                const typeFilter = ignoreExtraFilters ? 'all' : activeTypeFilter;
+
+                const inferredState = query ? inferStateFromQuery(query) : null;
+
+                return ALL_CAMPS.filter(c => {
+                    if (query) {
+                        const matchText = (c.name + ' ' + c.city + ' ' + c.state + ' ' + c.zip).toLowerCase();
+                        const isDirectMatch = matchText.includes(query);
+                        const isStateMatch = inferredState && c.state === inferredState;
+                        if (!isDirectMatch && !isStateMatch) return false;
+                    }
+
+                    if (c.ageMin > age1 || c.ageMax < age1) return false;
+
+                    if (isSibling && age2 !== null) {
+                        if (c.ageMin > age2 || c.ageMax < age2) return false;
+                    }
+
+                    if (seasonFilter !== 'all' && c.season !== seasonFilter) return false;
+                    if (typeFilter !== 'all' && c.type !== typeFilter) return false;
+                    if (themeFilter !== 'all' && c.theme !== themeFilter) return false;
+                    if (selectedWeek > 0 && c.weeks && !c.weeks.includes(selectedWeek)) return false;
+
+                    if (!ignoreExtraFilters) {
+                        if (chkBeforeCare.checked && !c.beforeCare) return false;
+                        if (chkAfterCare.checked && !c.afterCare) return false;
+                        if (chkShuttle.checked && !c.shuttle) return false;
+                    }
+
+                    return true;
+                });
+            }
+
+            // ---- RENDER ----
+            function render() {
+                let camps = getFilteredCamps(false);
+                const queryVal = searchInput.value.trim();
+                const dict = I18N[currentLang] || I18N.en;
+
+                resultsCount.textContent = `(${camps.length} camps)`;
+                resultSubtitle.textContent = queryVal ? `Filtered for "${queryVal}"` : 'Nationwide ACA Accredited Camps';
+
+                if (camps.length === 0) {
+                    const fallbackCamps = getFilteredCamps(true);
+                    campGrid.innerHTML = '';
+                    noResults.style.display = 'block';
+
+                    if (fallbackCamps.length > 0) {
+                        $('noResultsTitle').textContent = `🔍 ${fallbackCamps.length} Camps Available with Relaxed Filters`;
+                        $('noResultsText').textContent = `We found ${fallbackCamps.length} camps matching your location/age, but none matched all strict combined filters.`;
+                    } else {
+                        $('noResultsTitle').textContent = 'No Camps Found';
+                        $('noResultsText').textContent = 'Try entering a different ZIP code (e.g. 92056, 90210, 10001) or adjusting the age slider.';
+                    }
+
+                    if (mapContainer.style.display === 'block') renderMap([]);
+                    return;
+                }
+
+                noResults.style.display = 'none';
+
+                campGrid.innerHTML = camps.slice(0, 100).map(c => {
+                    const isChecked = selectedCompareIds.includes(c.id) ? 'checked' : '';
+                    const seasonIcon = c.season === 'winter' ? '❄️ WINTER' : (c.season === 'spring' ? '🌸 SPRING' : '🌞 SUMMER');
+                    return `
+                        <div class="camp-card" data-id="${c.id}">
+                            <div class="camp-card-header">
+                                <div>
+                                    <div class="camp-title">${c.name}</div>
+                                    <div class="meta-text" style="margin-top:2px;">📍 ${c.city}, ${c.state} (${c.zip})</div>
+                                </div>
+                            </div>
+
+                            <div class="camp-body">
+                                <div class="badges-row">
+                                    <span class="badge badge-season">${seasonIcon}</span>
+                                    <span class="badge badge-type">${c.type.toUpperCase()}</span>
+                                    <span class="badge badge-theme">${c.theme || 'GENERAL'}</span>
+                                    ${c.beforeCare ? '<span class="badge badge-care">🌅 Early</span>' : ''}
+                                    ${c.afterCare ? '<span class="badge badge-care">🌆 Late</span>' : ''}
+                                    ${c.shuttle ? '<span class="badge badge-care">🚌 Shuttle</span>' : ''}
+                                </div>
+
+                                <div class="meta-text">⭐ <strong>${c.rating}</strong> (${c.reviewCount || 24} reviews) &middot; ACA Accredited</div>
+                                <div class="meta-text">👶 Ages ${c.ageMin}–${c.ageMax} yrs &middot; 💵 <strong>$${c.price}</strong>/wk</div>
+                            </div>
+
+                            <div class="camp-footer">
+                                <label class="compare-toggle">
+                                    <input type="checkbox" class="chk-compare" data-id="${c.id}" ${isChecked} />
+                                    <span>${dict.compareToggle}</span>
+                                </label>
+                                <button class="btn-action btn-details" data-id="${c.id}">${dict.btnDetails}</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                campGrid.querySelectorAll('.btn-details').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        showDetails(btn.dataset.id);
+                    });
+                });
+
+                campGrid.querySelectorAll('.chk-compare').forEach(chk => {
+                    chk.addEventListener('change', (e) => {
+                        toggleCompare(e.target.dataset.id, e.target.checked);
+                    });
+                });
+
+                if (mapContainer.style.display === 'block') {
+                    renderMap(camps);
+                }
+            }
+
+            btnResetFilters.addEventListener('click', () => {
+                weekSelect.value = '0';
+                chkBeforeCare.checked = false;
+                chkAfterCare.checked = false;
+                chkShuttle.checked = false;
+
+                document.querySelectorAll('#seasonPills .pill-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('#seasonPills .pill-btn[data-season="all"]').classList.add('active');
+                activeSeasonFilter = 'all';
+
+                document.querySelectorAll('#typePills .pill-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('#typePills .pill-btn[data-filter="all"]').classList.add('active');
+                activeTypeFilter = 'all';
+
+                document.querySelectorAll('#themePills .pill-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('#themePills .pill-btn[data-theme="all"]').classList.add('active');
+                activeThemeFilter = 'all';
+
+                render();
+            });
+
+            function initMap() {
+                if (mapInstance) return;
+                mapInstance = L.map('mapContainer').setView([39.8283, -98.5795], 4);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 18,
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(mapInstance);
+            }
+
+            function renderMap(camps) {
+                initMap();
+                setTimeout(() => mapInstance.invalidateSize(), 200);
+
+                mapMarkers.forEach(m => mapInstance.removeLayer(m));
+                mapMarkers = [];
+
+                if (camps.length === 0) return;
+
+                const bounds = [];
+                camps.slice(0, 150).forEach(c => {
+                    if (c.lat && c.lng) {
+                        const marker = L.marker([c.lat, c.lng]).addTo(mapInstance);
+                        marker.bindPopup(`
+                            <div style="font-family:sans-serif; min-width:180px;">
+                                <strong style="font-size:0.95rem; color:#2C3E50;">${c.name}</strong><br/>
+                                <small>📍 ${c.city}, ${c.state} (${c.zip})</small><br/>
+                                <small>👶 Ages ${c.ageMin}-${c.ageMax} | 💰 $${c.price}/wk</small><br/>
+                                <button onclick="window.showCampModal('${c.id}')" style="margin-top:6px; background:#4ECDC4; color:#fff; border:none; padding:4px 10px; border-radius:4px; font-weight:bold; cursor:pointer;">View Camp</button>
+                            </div>
+                        `);
+                        mapMarkers.push(marker);
+                        bounds.push([c.lat, c.lng]);
+                    }
+                });
+
+                if (bounds.length > 0) {
+                    mapInstance.fitBounds(bounds, { padding: [30, 30] });
+                }
+            }
+
+            window.showCampModal = function(id) { showDetails(id); };
+
+            function toggleCompare(id, isChecked) {
+                if (isChecked) {
+                    if (selectedCompareIds.length >= 4) {
+                        alert('You can compare up to 4 camps at a time.');
+                        render();
+                        return;
+                    }
+                    if (!selectedCompareIds.includes(id)) selectedCompareIds.push(id);
+                } else {
+                    selectedCompareIds = selectedCompareIds.filter(x => x !== id);
+                }
+
+                if (selectedCompareIds.length > 0) {
+                    compareBar.style.display = 'flex';
+                    compareCount.textContent = selectedCompareIds.length;
+                } else {
+                    compareBar.style.display = 'none';
+                }
+            }
+
+            function openCompareModal() {
+                const camps = ALL_CAMPS.filter(c => selectedCompareIds.includes(c.id));
+                if (camps.length === 0) return;
+
+                let tableHtml = `
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                ${camps.map(c => `<th>${c.name}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Season & Location</strong></td>
+                                ${camps.map(c => `<td>${(c.season||'summer').toUpperCase()} &middot; 📍 ${c.city}, ${c.state}</td>`).join('')}
+                            </tr>
+                            <tr>
+                                <td><strong>Type & Theme</strong></td>
+                                ${camps.map(c => `<td>${c.type.toUpperCase()} / ${c.theme || 'General'}</td>`).join('')}
+                            </tr>
+                            <tr>
+                                <td><strong>Price / Session</strong></td>
+                                ${camps.map(c => `<td>💵 <strong>$${c.price}</strong></td>`).join('')}
+                            </tr>
+                            <tr>
+                                <td><strong>Age Range</strong></td>
+                                ${camps.map(c => `<td>👶 ${c.ageMin}–${c.ageMax} yrs</td>`).join('')}
+                            </tr>
+                            <tr>
+                                <td><strong>Extended Care</strong></td>
+                                ${camps.map(c => `<td>${c.beforeCare ? '🌅 Early ' : ''}${c.afterCare ? '🌆 Late ' : ''}${c.shuttle ? '🚌 Shuttle' : 'Standard'}</td>`).join('')}
+                            </tr>
+                            <tr>
+                                <td><strong>Rating</strong></td>
+                                ${camps.map(c => `<td>⭐ ${c.rating} / 5.0</td>`).join('')}
+                            </tr>
+                            <tr>
+                                <td><strong>Action</strong></td>
+                                ${camps.map(c => `<td><a href="${c.website}" target="_blank" style="color:#4ECDC4; font-weight:bold;">Visit Website &rarr;</a></td>`).join('')}
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+
+                compareTableContainer.innerHTML = tableHtml;
+                compareModal.style.display = 'flex';
+            }
+
+            function showDetails(id) {
+                const c = ALL_CAMPS.find(x => x.id === id);
+                if (!c) return;
+
+                const dict = I18N[currentLang] || I18N.en;
+
+                const sessionsHtml = (c.sessions || []).map(s => `
+                    <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid #f1f5f9; font-size:0.88rem;">
+                        <span>📅 ${s.date || s.name}</span>
+                        <strong>$${s.price || c.price}</strong>
+                    </div>
+                `).join('');
+
+                modalBody.innerHTML = `
+                    <span class="badge badge-season" style="font-size:0.8rem;">${(c.season||'summer').toUpperCase()} CAMP</span>
+                    <span class="badge badge-type" style="font-size:0.8rem;">${c.type.toUpperCase()}</span>
+                    <span class="badge badge-theme" style="font-size:0.8rem;">${c.theme || 'GENERAL'}</span>
+                    <h2 style="font-size:1.5rem; color:var(--accent); margin-top:8px;">${c.name}</h2>
+                    <div style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:12px;">📍 ${c.city}, ${c.state} &middot; ZIP: ${c.zip}</div>
+                    
+                    <div style="margin-bottom:16px; line-height:1.5; font-size:0.92rem; color:var(--text-secondary);">${c.description}</div>
+
+                    <div style="background:var(--bg-alt); padding:14px; border-radius:10px; margin-bottom:16px; font-size:0.9rem;">
+                        <div>👶 <strong>Age Range:</strong> ${c.ageMin}–${c.ageMax} years old</div>
+                        <div>💰 <strong>Starting Price:</strong> $${c.price} / session</div>
+                        <div>⭐ <strong>ACA Status:</strong> Accredited Camp</div>
+                        <div>🚌 <strong>Logistics:</strong> ${c.beforeCare ? 'Before Care Available | ' : ''}${c.afterCare ? 'After Care Available | ' : ''}${c.shuttle ? 'Shuttle Bus Service' : 'Self Drop-off'}</div>
+                    </div>
+
+                    <h4 style="font-size:1rem; margin-bottom:8px;">Available Sessions & Dates</h4>
+                    <div style="margin-bottom:20px;">${sessionsHtml}</div>
+
+                    <div style="display:flex; gap:12px;">
+                        <a href="${c.website}" target="_blank" rel="noopener" style="flex:1; text-align:center; background:var(--secondary); color:#fff; padding:12px; border-radius:10px; text-decoration:none; font-weight:700;">Visit Official Website</a>
+                        <a href="tel:${c.phone}" style="background:var(--accent); color:#fff; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700;">📞 Call</a>
+                    </div>
+                `;
+
+                detailModal.style.display = 'flex';
+            }
+
+            function init() {
+                // Check passcode authentication first
+                btnUnlock.addEventListener('click', verifyPasscode);
+                passcodeInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') verifyPasscode();
+                });
+
+                if (!checkAuth()) return;
+
+                langSelect.addEventListener('change', function() {
+                    updateLanguage(this.value);
+                });
+
+                ageSlider.addEventListener('input', function() {
+                    ageValue.textContent = this.value + ' yrs';
+                    render();
+                });
+
+                siblingToggle.addEventListener('change', function() {
+                    siblingInputContainer.style.display = this.checked ? 'flex' : 'none';
+                    render();
+                });
+                child2Age.addEventListener('input', render);
+
+                searchInput.addEventListener('input', render);
+                weekSelect.addEventListener('change', render);
+                chkBeforeCare.addEventListener('change', render);
+                chkAfterCare.addEventListener('change', render);
+                chkShuttle.addEventListener('change', render);
+
+                // Season Pills
+                document.querySelectorAll('#seasonPills .pill-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('#seasonPills .pill-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        activeSeasonFilter = this.dataset.season;
+                        render();
+                    });
+                });
+
+                // Type Pills
+                document.querySelectorAll('#typePills .pill-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('#typePills .pill-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        activeTypeFilter = this.dataset.filter;
+                        render();
+                    });
+                });
+
+                // Theme Pills
+                document.querySelectorAll('#themePills .pill-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('#themePills .pill-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        activeThemeFilter = this.dataset.theme;
+                        render();
+                    });
+                });
+
+                btnListView.addEventListener('click', () => {
+                    btnListView.classList.add('active');
+                    btnMapView.classList.remove('active');
+                    mapContainer.style.display = 'none';
+                    campGrid.style.display = 'grid';
+                });
+
+                btnMapView.addEventListener('click', () => {
+                    btnMapView.classList.add('active');
+                    btnListView.classList.remove('active');
+                    campGrid.style.display = 'grid';
+                    mapContainer.style.display = 'block';
+                    renderMap(getFilteredCamps());
+                });
+
+                btnOpenCompare.addEventListener('click', openCompareModal);
+
+                $('modalClose').addEventListener('click', () => detailModal.style.display = 'none');
+                $('compareModalClose').addEventListener('click', () => compareModal.style.display = 'none');
+
+                detailModal.addEventListener('click', (e) => { if (e.target === detailModal) detailModal.style.display = 'none'; });
+                compareModal.addEventListener('click', (e) => { if (e.target === compareModal) compareModal.style.display = 'none'; });
+
+                render();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
