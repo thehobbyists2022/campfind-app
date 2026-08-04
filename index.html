@@ -12,11 +12,12 @@
     <meta name="googlebot" content="noindex, nofollow, noarchive">
     <meta name="bingbot" content="noindex, nofollow, noarchive">
     <title>CampFind — Find the Perfect Summer & Winter Camp</title>
+    <link rel="manifest" href="manifest.json">
     <!-- Leaflet CSS & JS for Interactive Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Load 1,000+ ACA Camps Dataset with Cache-busting -->
-    <script src="aca_camps_data.js?v=1.0.3"></script>
+    <!-- Load CampFind Camps Dataset with Cache-busting -->
+    <script src="aca_camps_data.js?v=3.0.0"></script>
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -608,7 +609,7 @@
 <body>
 
     <!-- PASSCODE OVERLAY -->
-    <div id="passcodeOverlay">
+    <div id="passcodeOverlay" style="display: none;">
         <div class="passcode-card">
             <span class="passcode-icon">🔐</span>
             <div class="passcode-title">CampFind Private Preview</div>
@@ -622,7 +623,7 @@
     </div>
 
     <!-- MAIN APP CONTAINER -->
-    <div class="app-container" id="appContainer">
+    <div class="app-container" id="appContainer" style="display: block;">
         <!-- HEADER -->
         <header class="header">
             <div class="lang-picker">
@@ -635,12 +636,18 @@
             </div>
 
             <div class="app-logo">
-                <span style="font-size:2.4rem;">⛺</span>
-                <h1>CampFind</h1>
+                <span style="font-size:2.4rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">📍</span>
+                <h1 style="font-weight:900; font-size:2.5rem; letter-spacing:-0.5px;"><span style="color:#FF6B6B;">Camp</span><span style="color:#4ECDC4;">Find</span></h1>
             </div>
-            <p class="tagline" id="txtTagline">Discover 1,000+ Verified ACA Summer & Winter Camps Across the USA</p>
-            <div class="data-badge" id="txtBadge">✨ 1,050 Certified Camps &middot; Summer, Winter & Spring Camps &middot; Live Search</div>
+            <p class="tagline" id="txtTagline">Find Summer, Winter, Spring & Fall Camps Across the USA</p>
+            <div class="data-badge" id="txtBadge">✨ Live Search &middot; Updated 2026</div>
         </header>
+
+        <!-- APP PROMOTION BANNER (WEB TO APP FUNNEL) -->
+        <div style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4); color:#fff; padding: 12px 18px; border-radius: 14px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; box-shadow: 0 4px 15px rgba(255,107,107,0.25);">
+            <span>📱 <strong>Get CampFind Android App</strong> — Live Availability Alerts, Sibling Matching & Calendar Sync!</span>
+            <a href="#" onclick="alert('🎉 Google Play Store link will open here once approved!')" style="background:#fff; color:#1A1A2E; text-decoration:none; padding:8px 16px; border-radius:20px; font-weight:800; font-size:0.85rem; transition: transform 0.2s;">Download App &rarr;</a>
+        </div>
 
         <!-- SEARCH & FILTER PANEL -->
         <section class="search-section">
@@ -682,6 +689,7 @@
                         <button type="button" class="pill-btn" data-season="summer" id="btnSeasonSummer">🌞 Summer</button>
                         <button type="button" class="pill-btn" data-season="winter" id="btnSeasonWinter">❄️ Winter Camp</button>
                         <button type="button" class="pill-btn" data-season="spring" id="btnSeasonSpring">🌸 Spring Break</button>
+                        <button type="button" class="pill-btn" data-season="fall" id="btnSeasonFall">🍂 Fall</button>
                     </div>
                 </div>
 
@@ -807,8 +815,8 @@
             // ---- I18N DICTIONARY ----
             const I18N = {
                 en: {
-                    tagline: "Discover 1,000+ Verified ACA Summer & Winter Camps Across the USA",
-                    badge: "✨ 1,050 Certified Camps · Summer, Winter & Spring Camps · Live Search",
+                    tagline: "Find Summer, Winter, Spring & Fall Camps Across the USA",
+                    badge: "✨ Live Search · Updated 2026",
                     lblSearch: "Location / City / ZIP Code",
                     phSearch: "Search by ZIP (e.g. 92056, 90210, 10001) or City/State...",
                     lblAge: "Child's Age",
@@ -819,6 +827,7 @@
                     seasonSummer: "🌞 Summer",
                     seasonWinter: "❄️ Winter Camp",
                     seasonSpring: "🌸 Spring Break",
+                    seasonFall: "🍂 Fall",
                     lblType: "Camp Type",
                     typeAll: "All",
                     typeDay: "Day Camp",
@@ -847,8 +856,8 @@
                     resetFilters: "🔄 Clear Extra Filters"
                 },
                 zh: {
-                    tagline: "探索全美 1,000+ 個 ACA 官方認證夏令營與冬令營",
-                    badge: "✨ 1,050 個認證營隊 · 夏令營/冬令營/春假營 · 全美即時檢索",
+                    tagline: "探索全美夏令營、冬令營、春假營與秋季營",
+                    badge: "✨ 全美即時檢索 · 2026 更新",
                     lblSearch: "地點 / 城市 / 郵遞區號 (ZIP Code)",
                     phSearch: "輸入 ZIP 郵遞區號 (如 92056, 90210) 或城市/州名...",
                     lblAge: "孩子年齡",
@@ -859,6 +868,7 @@
                     seasonSummer: "🌞 夏令營",
                     seasonWinter: "❄️ 冬令營",
                     seasonSpring: "🌸 春假營",
+                    seasonFall: "🍂 秋季營",
                     lblType: "營隊類型",
                     typeAll: "全部",
                     typeDay: "日營 (Day Camp)",
@@ -887,8 +897,8 @@
                     resetFilters: "🔄 重置多餘過濾條件"
                 },
                 es: {
-                    tagline: "Descubre más de 1,000 Campamentos Verificados de Verano e Invierno en EE. UU.",
-                    badge: "✨ 1,050 Campamentos Certificados · Verano, Invierno y Primavera · Búsqueda en Vivo",
+                    tagline: "Encuentra Campamentos de Verano, Invierno, Primavera y Otoño en EE. UU.",
+                    badge: "✨ Búsqueda en Vivo · Actualizado 2026",
                     lblSearch: "Ubicación / Ciudad / Código Postal (ZIP)",
                     phSearch: "Buscar por ZIP (ej. 92056, 90210) o Ciudad/Estado...",
                     lblAge: "Edad del Niño",
@@ -899,6 +909,7 @@
                     seasonSummer: "🌞 Verano",
                     seasonWinter: "❄️ Campamento de Invierno",
                     seasonSpring: "🌸 Vacaciones de Primavera",
+                    seasonFall: "🍂 Otoño",
                     lblType: "Tipo de Campamento",
                     typeAll: "Todos",
                     typeDay: "Día (Day Camp)",
@@ -1012,15 +1023,9 @@
             }
 
             function checkAuth() {
-                if (sessionStorage.getItem('campfind_authenticated') === 'true') {
-                    passcodeOverlay.style.display = 'none';
-                    appContainer.style.display = 'block';
-                    return true;
-                } else {
-                    passcodeOverlay.style.display = 'flex';
-                    appContainer.style.display = 'none';
-                    return false;
-                }
+                passcodeOverlay.style.display = 'none';
+                appContainer.style.display = 'block';
+                return true;
             }
 
             // Apply Language
@@ -1040,6 +1045,7 @@
                 $('btnSeasonSummer').textContent = dict.seasonSummer;
                 $('btnSeasonWinter').textContent = dict.seasonWinter;
                 $('btnSeasonSpring').textContent = dict.seasonSpring;
+                $('btnSeasonFall').textContent = dict.seasonFall;
 
                 $('lblType').textContent = dict.lblType;
                 $('btnTypeAll').textContent = dict.typeAll;
@@ -1072,39 +1078,42 @@
                 render();
             }
 
-            function inferStateFromQuery(query) {
-                const clean = query.replace(/\D/g, '');
-                if (!clean) return null;
-                if (zipStateMap[clean.substring(0, 5)]) return zipStateMap[clean.substring(0, 5)];
-                if (zipStateMap[clean.substring(0, 3)]) return zipStateMap[clean.substring(0, 3)];
-                if (zipStateMap[clean.substring(0, 2)]) return zipStateMap[clean.substring(0, 2)];
-                if (zipStateMap[clean.substring(0, 1)]) return zipStateMap[clean.substring(0, 1)];
-                return null;
-            }
-
             // ---- FILTER LOGIC ----
             function getFilteredCamps(ignoreExtraFilters = false) {
                 const rawQuery = searchInput.value.trim().toLowerCase();
                 const cleanQuery = rawQuery.replace(/[^a-z0-9]/gi, '');
+                const isZipQuery = /^\d{3,5}$/.test(rawQuery);
                 const age1 = parseInt(ageSlider.value, 10) || 10;
                 const isSibling = siblingToggle.checked;
                 const age2 = isSibling ? (parseInt(child2Age.value, 10) || 6) : null;
                 const selectedWeek = ignoreExtraFilters ? 0 : (parseInt(weekSelect.value, 10) || 0);
-                const seasonFilter = ignoreExtraFilters ? 'all' : activeSeasonFilter;
-                const themeFilter = ignoreExtraFilters ? 'all' : activeThemeFilter;
-                const typeFilter = ignoreExtraFilters ? 'all' : activeTypeFilter;
+                const seasonFilter = ignoreExtraFilters ? 'all' : (activeSeasonFilter || 'all').toLowerCase();
+                const themeFilter = ignoreExtraFilters ? 'all' : (activeThemeFilter || 'all').toLowerCase();
+                const typeFilter = ignoreExtraFilters ? 'all' : (activeTypeFilter || 'all').toLowerCase();
 
                 // Step 1: Base Attribute Filters
                 let baseCamps = ALL_CAMPS.filter(c => {
-                    if (c.ageMin > age1 || c.ageMax < age1) return false;
+                    // null ageMin/ageMax = unknown age (not a filter-out)
+                    if (c.ageMin != null && c.ageMin > age1) return false;
+                    if (c.ageMax != null && c.ageMax < age1) return false;
 
                     if (isSibling && age2 !== null) {
-                        if (c.ageMin > age2 || c.ageMax < age2) return false;
+                        if (c.ageMin != null && c.ageMin > age2) return false;
+                        if (c.ageMax != null && c.ageMax < age2) return false;
                     }
 
-                    if (seasonFilter !== 'all' && c.season !== seasonFilter) return false;
-                    if (typeFilter !== 'all' && c.type !== typeFilter) return false;
-                    if (themeFilter !== 'all' && c.theme !== themeFilter) return false;
+                    if (seasonFilter !== 'all') {
+                        const cSeason = (c.season || '').toLowerCase();
+                        if (!cSeason.includes(seasonFilter)) return false;
+                    }
+                    if (typeFilter !== 'all') {
+                        const cType = (c.type || '').toLowerCase();
+                        if (!cType.includes(typeFilter)) return false;
+                    }
+                    if (themeFilter !== 'all') {
+                        const cTheme = (c.theme || '').toLowerCase();
+                        if (!cTheme.includes(themeFilter)) return false;
+                    }
                     if (selectedWeek > 0 && c.weeks && !c.weeks.includes(selectedWeek)) return false;
 
                     if (!ignoreExtraFilters) {
@@ -1118,25 +1127,32 @@
 
                 if (!rawQuery) return baseCamps;
 
-                // Step 2: Location / Query Filtering
-                // Priority A: Direct match (c.zip, c.city, c.name, c.state)
-                const directMatches = baseCamps.filter(c => {
-                    const zipClean = (c.zip || '').replace(/[^a-z0-9]/gi, '').toLowerCase();
-                    const fullText = (c.city + ' ' + c.name + ' ' + c.state).toLowerCase();
-                    return (cleanQuery && zipClean.includes(cleanQuery)) || fullText.includes(rawQuery);
+                // Step 2: Location / ZIP Query Filtering
+                if (isZipQuery) {
+                    // Priority 1: Exact 5-digit ZIP match
+                    const exactZipMatches = baseCamps.filter(c => (c.zip || '').startsWith(rawQuery));
+                    if (exactZipMatches.length > 0) return exactZipMatches;
+
+                    // Priority 2: Local 3-digit ZIP Prefix (e.g. 921xx San Diego local area)
+                    const prefix3 = rawQuery.substring(0, 3);
+                    const localPrefixMatches = baseCamps.filter(c => (c.zip || '').startsWith(prefix3));
+                    if (localPrefixMatches.length > 0) return localPrefixMatches;
+
+                    // Priority 3: Local 2-digit ZIP Prefix (e.g. 92xx San Diego County area)
+                    const prefix2 = rawQuery.substring(0, 2);
+                    const countyMatches = baseCamps.filter(c => (c.zip || '').startsWith(prefix2));
+                    if (countyMatches.length > 0) return countyMatches;
+
+                    return [];
+                }
+
+                // General Text Search (City, State, Camp Name)
+                const textMatches = baseCamps.filter(c => {
+                    const fullText = (c.city + ' ' + c.name + ' ' + c.state + ' ' + (c.zip || '')).toLowerCase();
+                    return fullText.includes(rawQuery);
                 });
 
-                if (directMatches.length > 0) {
-                    return directMatches;
-                }
-
-                // Priority B: State Fallback ONLY if 0 direct local matches exist
-                const inferredState = inferStateFromQuery(rawQuery);
-                if (inferredState) {
-                    return baseCamps.filter(c => c.state === inferredState);
-                }
-
-                return [];
+                return textMatches;
             }
 
             // ---- RENDER ----
@@ -1146,7 +1162,7 @@
                 const dict = I18N[currentLang] || I18N.en;
 
                 resultsCount.textContent = `(${camps.length} camps)`;
-                resultSubtitle.textContent = queryVal ? `Filtered for "${queryVal}"` : 'Nationwide ACA Accredited Camps';
+                resultSubtitle.textContent = queryVal ? `Filtered for "${queryVal}"` : 'Nationwide Camps';
 
                 if (camps.length === 0) {
                     const fallbackCamps = getFilteredCamps(true);
@@ -1169,13 +1185,13 @@
 
                 campGrid.innerHTML = camps.slice(0, 100).map(c => {
                     const isChecked = selectedCompareIds.includes(c.id) ? 'checked' : '';
-                    const seasonIcon = c.season === 'winter' ? '❄️ WINTER' : (c.season === 'spring' ? '🌸 SPRING' : '🌞 SUMMER');
+                    const seasonIcon = c.season === 'winter' ? '❄️ WINTER' : (c.season === 'spring' ? '🌸 SPRING' : (c.season === 'fall' ? '🍂 FALL' : '🌞 SUMMER'));
                     return `
                         <div class="camp-card" data-id="${c.id}">
                             <div class="camp-card-header">
                                 <div>
                                     <div class="camp-title">${c.name}</div>
-                                    <div class="meta-text" style="margin-top:2px;">📍 ${c.city}, ${c.state} (${c.zip})</div>
+                                    <div class="meta-text" style="margin-top:2px;">📍 ${c.city}, ${c.state}${c.zip ? ' (' + c.zip + ')' : ''}</div>
                                 </div>
                             </div>
 
@@ -1189,8 +1205,8 @@
                                     ${c.shuttle ? '<span class="badge badge-care">🚌 Shuttle</span>' : ''}
                                 </div>
 
-                                <div class="meta-text">⭐ <strong>${c.rating}</strong> (${c.reviewCount || 24} reviews) &middot; ACA Accredited</div>
-                                <div class="meta-text">👶 Ages ${c.ageMin}–${c.ageMax} yrs &middot; 💵 <strong>$${c.price}</strong>/wk</div>
+                                <div class="meta-text">${c.rating != null ? '⭐ ' + c.rating + (c.reviewCount != null ? ' (' + c.reviewCount + ' reviews)' : '') : ''}${c.acaVerified ? ' ✓ ACA Accredited' : ''}</div>
+                                <div class="meta-text">👶 Ages ${c.ageMin ?? '—'}–${c.ageMax ?? '—'} yrs ${c.price != null ? '&middot; 💵 <strong>$' + c.price + '</strong>/wk' : ''}</div>
                             </div>
 
                             <div class="camp-footer">
@@ -1247,8 +1263,8 @@
                         marker.bindPopup(`
                             <div style="font-family:sans-serif; min-width:180px;">
                                 <strong style="font-size:0.95rem; color:#2C3E50;">${c.name}</strong><br/>
-                                <small>📍 ${c.city}, ${c.state} (${c.zip})</small><br/>
-                                <small>👶 Ages ${c.ageMin}-${c.ageMax} | 💰 $${c.price}/wk</small><br/>
+                                <small>📍 ${c.city}, ${c.state}${c.zip ? ' (' + c.zip + ')' : ''}</small><br/>
+                                <small>👶 Ages ${c.ageMin != null ? c.ageMin + '-' + (c.ageMax ?? '—') : '—'} ${c.price != null ? '| 💰 $' + c.price + '/wk' : ''}</small><br/>
                                 <button onclick="window.showCampModal('${c.id}')" style="margin-top:6px; background:#4ECDC4; color:#fff; border:none; padding:4px 10px; border-radius:4px; font-weight:bold; cursor:pointer;">View Camp</button>
                             </div>
                         `);
@@ -1263,6 +1279,24 @@
             }
 
             window.showCampModal = function(id) { showDetails(id); };
+
+            function getSafeWebsiteUrl(c) {
+                if (!c || !c.website || c.website.trim() === '' || 
+                    c.website.includes('example.com') || 
+                    c.website.includes('adventurelaketahoe.org') || 
+                    c.website.includes('horizonseattle.org') || 
+                    c.website.includes('winterwondersdenver.org')) {
+                    const query = encodeURIComponent(`${c.name} ${c.city} ${c.state} camp official site`);
+                    return `https://www.google.com/search?q=${query}`;
+                }
+                let url = c.website.trim();
+                if (url.startsWith('http://')) {
+                    url = 'https://' + url.substring(7);
+                } else if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    url = 'https://' + url;
+                }
+                return url;
+            }
 
             function toggleCompare(id, isChecked) {
                 if (isChecked) {
@@ -1307,23 +1341,23 @@
                             </tr>
                             <tr>
                                 <td><strong>Price / Session</strong></td>
-                                ${camps.map(c => `<td>💵 <strong>$${c.price}</strong></td>`).join('')}
+                                ${camps.map(c => `<td>${c.price != null ? '💵 <strong>$' + c.price + '</strong>' : '—'}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Age Range</strong></td>
-                                ${camps.map(c => `<td>👶 ${c.ageMin}–${c.ageMax} yrs</td>`).join('')}
+                                ${camps.map(c => `<td>👶 ${c.ageMin != null ? c.ageMin + '–' + (c.ageMax ?? '—') : '—'}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Extended Care</strong></td>
-                                ${camps.map(c => `<td>${c.beforeCare ? '🌅 Early ' : ''}${c.afterCare ? '🌆 Late ' : ''}${c.shuttle ? '🚌 Shuttle' : 'Standard'}</td>`).join('')}
+                                ${camps.map(c => `<td>${[c.beforeCare ? '🌅 Early' : '', c.afterCare ? '🌆 Late' : '', c.shuttle ? '🚌 Shuttle' : ''].filter(Boolean).join(' ') || '—'}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Rating</strong></td>
-                                ${camps.map(c => `<td>⭐ ${c.rating} / 5.0</td>`).join('')}
+                                ${camps.map(c => `<td>${c.rating != null ? '⭐ ' + c.rating + ' / 5.0' : '—'}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Action</strong></td>
-                                ${camps.map(c => `<td><a href="${c.website}" target="_blank" style="color:#4ECDC4; font-weight:bold;">Visit Website &rarr;</a></td>`).join('')}
+                                ${camps.map(c => `<td><a href="${getSafeWebsiteUrl(c)}" target="_blank" style="color:#4ECDC4; font-weight:bold;">Visit Website &rarr;</a></td>`).join('')}
                             </tr>
                         </tbody>
                     </table>
@@ -1346,27 +1380,29 @@
                     </div>
                 `).join('');
 
+                const safeUrl = getSafeWebsiteUrl(c);
+
                 modalBody.innerHTML = `
                     <span class="badge badge-season" style="font-size:0.8rem;">${(c.season||'summer').toUpperCase()} CAMP</span>
                     <span class="badge badge-type" style="font-size:0.8rem;">${c.type.toUpperCase()}</span>
                     <span class="badge badge-theme" style="font-size:0.8rem;">${c.theme || 'GENERAL'}</span>
                     <h2 style="font-size:1.5rem; color:var(--accent); margin-top:8px;">${c.name}</h2>
-                    <div style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:12px;">📍 ${c.city}, ${c.state} &middot; ZIP: ${c.zip}</div>
+                    <div style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:12px;">📍 ${c.city}, ${c.state}${c.zip ? ' &middot; ZIP: ' + c.zip : ''}</div>
                     
-                    <div style="margin-bottom:16px; line-height:1.5; font-size:0.92rem; color:var(--text-secondary);">${c.description}</div>
+                    <div style="margin-bottom:16px; line-height:1.5; font-size:0.92rem; color:var(--text-secondary);">${c.description || ''}</div>
 
                     <div style="background:var(--bg-alt); padding:14px; border-radius:10px; margin-bottom:16px; font-size:0.9rem;">
-                        <div>👶 <strong>Age Range:</strong> ${c.ageMin}–${c.ageMax} years old</div>
-                        <div>💰 <strong>Starting Price:</strong> $${c.price} / session</div>
-                        <div>⭐ <strong>ACA Status:</strong> Accredited Camp</div>
-                        <div>🚌 <strong>Logistics:</strong> ${c.beforeCare ? 'Before Care Available | ' : ''}${c.afterCare ? 'After Care Available | ' : ''}${c.shuttle ? 'Shuttle Bus Service' : 'Self Drop-off'}</div>
+                        <div>👶 <strong>Age Range:</strong> ${c.ageMin != null ? c.ageMin + '–' + (c.ageMax ?? '—') + ' years old' : 'Contact camp for details'}</div>
+                        ${c.price != null ? '<div>💰 <strong>Starting Price:</strong> $' + c.price + ' / session</div>' : ''}
+                        ${c.acaVerified ? '<div>✓ <strong>ACA Status:</strong> Accredited Camp</div>' : ''}
+                        <div>🚌 <strong>Logistics:</strong> ${(c.beforeCare || c.afterCare) ? [c.beforeCare ? 'Before Care' : '', c.afterCare ? 'After Care' : ''].filter(Boolean).join(' | ') + (c.shuttle ? ' | Shuttle Bus' : '') : (c.shuttle ? 'Shuttle Bus Service' : 'Contact camp for logistics details')}</div>
                     </div>
 
                     <h4 style="font-size:1rem; margin-bottom:8px;">Available Sessions & Dates</h4>
                     <div style="margin-bottom:20px;">${sessionsHtml}</div>
 
                     <div style="display:flex; gap:12px;">
-                        <a href="${c.website}" target="_blank" rel="noopener" style="flex:1; text-align:center; background:var(--secondary); color:#fff; padding:12px; border-radius:10px; text-decoration:none; font-weight:700;">Visit Official Website</a>
+                        <a href="${safeUrl}" target="_blank" rel="noopener" style="flex:1; text-align:center; background:var(--secondary); color:#fff; padding:12px; border-radius:10px; text-decoration:none; font-weight:700;">Visit Official Website</a>
                         <a href="tel:${c.phone}" style="background:var(--accent); color:#fff; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700;">📞 Call</a>
                     </div>
                 `;
