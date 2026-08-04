@@ -3,3 +3,11 @@
 node_modules/
 .env
 tmp/
+
+# Test/scratch caches
+.playwright-mcp/
+scrapers/__pycache__/
+scrapers/v2_cache/
+.netlify/
+scrapers/geocode_cache.json
+scrapers/reverse_cache.json

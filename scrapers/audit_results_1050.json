@@ -1,0 +1,254 @@
+{
+  "total_camps_scanned": 1000,
+  "breakdown": {
+    "working_direct_websites": 160,
+    "failed_broken_websites": 840,
+    "timeout_no_response_websites": 0,
+    "google_search_pages": 0
+  },
+  "working_sample": [
+    {
+      "id": "joe_&_mary_mottino_family_ymca_summer_camp",
+      "name": "Joe & Mary Mottino Family YMCA Summer Camp",
+      "city": "Oceanside",
+      "state": "CA",
+      "url": "https://www.ymcasd.org/locations/joe-and-mary-mottino-family-ymca",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "san_diego_botanic_garden_youth_camp",
+      "name": "San Diego Botanic Garden Youth Camp",
+      "city": "Encinitas",
+      "state": "CA",
+      "url": "https://sdbgarden.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "magikid_robotics_&_stem_lab_oceanside",
+      "name": "Magikid Robotics & STEM Lab Oceanside",
+      "city": "Oceanside",
+      "state": "CA",
+      "url": "https://magikidlab.com",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "ymca_camp_marston_outdoor_adventure",
+      "name": "YMCA Camp Marston Outdoor Adventure",
+      "city": "Julian",
+      "state": "CA",
+      "url": "https://www.ymcasd.org/campmarston",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "camp_james_orange_county",
+      "name": "Camp James Orange County",
+      "city": "Newport Beach",
+      "state": "CA",
+      "url": "https://www.campjames.com",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "camp_natoma_outdoor_adventure",
+      "name": "Camp Natoma Outdoor Adventure",
+      "city": "Paso Robles",
+      "state": "CA",
+      "url": "https://www.campnatoma.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "camp_ocean_pines",
+      "name": "Camp Ocean Pines",
+      "city": "Cambria",
+      "state": "CA",
+      "url": "https://campoceanpines.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "trail_blazers_day_camp",
+      "name": "Trail Blazers Day Camp",
+      "city": "Brooklyn",
+      "state": "NY",
+      "url": "https://www.trailblazers.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "ventura_family_ymca_day_camp",
+      "name": "Ventura Family YMCA Day Camp",
+      "city": "Ventura",
+      "state": "CA",
+      "url": "https://www.ciymca.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "tamarack_day_camp",
+      "name": "Tamarack Day Camp",
+      "city": "Randolph",
+      "state": "NJ",
+      "url": "https://tamarackdaycamp.com",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "western_family_ymca_day_camp",
+      "name": "Western Family YMCA Day Camp",
+      "city": "Newark",
+      "state": "DE",
+      "url": "https://www.ymcade.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "genesee_valley_summer_camps",
+      "name": "Genesee Valley Summer Camps",
+      "city": "Parkton",
+      "state": "MD",
+      "url": "https://www.geneseevalley.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "shemesh_camp_at_valley_of_the_sun_jcc",
+      "name": "Shemesh Camp at Valley of the Sun JCC",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "url": "https://vosjcc.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "raritan_bay_area_ymca_summer_stars",
+      "name": "Raritan Bay Area YMCA Summer Stars",
+      "city": "Perth Amboy",
+      "state": "NJ",
+      "url": "https://www.rbaymca.org",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    },
+    {
+      "id": "cloverleaf_ranch",
+      "name": "Cloverleaf Ranch",
+      "city": "Santa Rosa",
+      "state": "CA",
+      "url": "https://www.cloverleafranch.com",
+      "reason": "Verified Real Official Domain (HTTP 200)"
+    }
+  ],
+  "failed_sample": [
+    {
+      "id": "gales_creek_camp_for_diabetics",
+      "name": "Gales Creek Camp for Diabetics",
+      "city": "Gales Creek",
+      "state": "OR",
+      "url": "https://www.galescreekcamp.org",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "camp_alleghany_for_girls",
+      "name": "Camp Alleghany for Girls",
+      "city": "Lewisburg",
+      "state": "WV",
+      "url": "https://www.campalleghanyforgirls.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "camp_sea_gull_&_camp_seafarer",
+      "name": "Camp Sea Gull & Camp Seafarer",
+      "city": "Arapahoe",
+      "state": "NC",
+      "url": "https://www.seagull-seafarer.org",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "camp_huckins_for_girls",
+      "name": "Camp Huckins for Girls",
+      "city": "Freedom",
+      "state": "NH",
+      "url": "https://www.camphuckins.org",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "camp_greylock_for_boys",
+      "name": "Camp Greylock for Boys",
+      "city": "Beckett",
+      "state": "MA",
+      "url": "https://www.campgreylock.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "camp_romaca_for_girls",
+      "name": "Camp Romaca for Girls",
+      "city": "Hinsdale",
+      "state": "MA",
+      "url": "https://www.romaca.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "camp_dudley_for_boys",
+      "name": "Camp Dudley for Boys",
+      "city": "Westport",
+      "state": "NY",
+      "url": "https://www.campdudley.org",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "camp_kiniya_for_girls",
+      "name": "Camp Kiniya for Girls",
+      "city": "Colchester",
+      "state": "VT",
+      "url": "https://www.campdudley.org/kiniya",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "idyllwild_arts_summer_program",
+      "name": "Idyllwild Arts Summer Program",
+      "city": "Idyllwild",
+      "state": "CA",
+      "url": "https://www.idyllwildarts.org",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "pali_adventures_specialty_summer_camp",
+      "name": "Pali Adventures Specialty Summer Camp",
+      "city": "Running Springs",
+      "state": "CA",
+      "url": "https://www.paliadventures.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "catalina_island_camps",
+      "name": "Catalina Island Camps",
+      "city": "Two Harbors",
+      "state": "CA",
+      "url": "https://www.catalinaislandcamps.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "galileo_innovation_summer_camps",
+      "name": "Galileo Innovation Summer Camps",
+      "city": "San Francisco",
+      "state": "CA",
+      "url": "https://galileo-camps.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "steve_&_kate's_camp",
+      "name": "Steve & Kate's Camp",
+      "city": "Los Angeles",
+      "state": "CA",
+      "url": "https://steveandkatescamp.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "id_tech_camps_at_uc_san_diego_&_stanford",
+      "name": "iD Tech Camps at UC San Diego & Stanford",
+      "city": "La Jolla",
+      "state": "CA",
+      "url": "https://www.idtech.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    },
+    {
+      "id": "real_aca_20000",
+      "name": "Galileo Camps Summer Camp (Orlando)",
+      "city": "Orlando",
+      "state": "FL",
+      "url": "https://galileo-camps.com",
+      "reason": "Unresolvable Synthetic Domain (DNS Error)"
+    }
+  ],
+  "google_sample": []
+}

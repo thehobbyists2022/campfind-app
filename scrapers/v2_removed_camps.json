@@ -1,0 +1,2678 @@
+{
+  "removed_count": 297,
+  "camps": [
+    {
+      "id": "real_91913_02",
+      "name": "Salt Creek Performing Arts & Drama Camp",
+      "city": "Chula Vista",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_91913_01",
+      "name": "Eastlake & Otay Ranch STEM & Sports Academy",
+      "city": "Chula Vista",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "magikid_robotics_&_stem_lab_oceanside",
+      "name": "Magikid Robotics & STEM Lab Oceanside",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "steve_&_kate's_camp",
+      "name": "Steve & Kate's Camp",
+      "city": "Los Angeles",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "id_tech_camps_at_uc_san_diego_&_stanford",
+      "name": "iD Tech Camps at UC San Diego & Stanford",
+      "city": "La Jolla",
+      "state": "CA",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20000",
+      "name": "Galileo Camps Summer Camp (Orlando)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20001",
+      "name": "Avid4 Adventure Summer Camp (San Diego)",
+      "city": "San Diego",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20003",
+      "name": "Galileo Camps Summer Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20012",
+      "name": "Steve & Kate's Camp Summer Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20015",
+      "name": "Mad Science Summer Lab Summer Camp (Philadelphia)",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20018",
+      "name": "Drama Kids International Summer Camp (Portland)",
+      "city": "Portland",
+      "state": "OR",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20020",
+      "name": "Galileo Camps Summer Camp (Tampa)",
+      "city": "Tampa",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20024",
+      "name": "Drama Kids International Summer Camp (Orlando)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20025",
+      "name": "Avid4 Adventure Summer Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20028",
+      "name": "Drama Kids International Summer Camp (Austin)",
+      "city": "Austin",
+      "state": "TX",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20032",
+      "name": "Avid4 Adventure Summer Camp (Philadelphia)",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20036",
+      "name": "Mad Science Summer Lab Summer Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20040",
+      "name": "Mad Science Summer STEM Academy (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20045",
+      "name": "Code Ninjas STEM Camp Summer Camp (Minneapolis)",
+      "city": "Minneapolis",
+      "state": "MN",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20047",
+      "name": "Irvine Outdoor Science & Adventure Camp",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20049",
+      "name": "School of Rock Summer Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20050",
+      "name": "Drama Kids International Summer Camp (Philadelphia)",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20056",
+      "name": "Irvine Outdoor Science & Adventure Camp - Overnight Resident Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20058",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20075",
+      "name": "Avid4 Adventure Summer Camp (Atlanta)",
+      "city": "Atlanta",
+      "state": "GA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20079",
+      "name": "Drama Kids International Summer Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20082",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20083",
+      "name": "Galileo Camps Adventure & STEM Camp (Orlando)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20085",
+      "name": "Galileo Camps Summer Camp (Portland)",
+      "city": "Portland",
+      "state": "OR",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20086",
+      "name": "Avid4 Adventure Summer Camp (Nashville)",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20090",
+      "name": "Code Ninjas STEM Camp Summer Camp (Nashville)",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20097",
+      "name": "Steve & Kate's Camp Summer Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20100",
+      "name": "Code Ninjas STEM Camp Summer Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20101",
+      "name": "Galileo Camps Summer Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20103",
+      "name": "Irvine Outdoor Science & Adventure Camp - Track 5",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20104",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20106",
+      "name": "Avid4 Adventure Summer Camp (Dallas)",
+      "city": "Dallas",
+      "state": "TX",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20112",
+      "name": "Irvine Outdoor Science & Adventure Camp - Overnight Resident Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20115",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20120",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20122",
+      "name": "Avid4 Adventure Summer Camp (Denver)",
+      "city": "Denver",
+      "state": "CO",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20124",
+      "name": "iD Tech Academy Summer Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20128",
+      "name": "Drama Kids International Summer Camp (San Francisco)",
+      "city": "San Francisco",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20130",
+      "name": "Drama Kids International Summer Camp (Phoenix)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20140",
+      "name": "Galileo Camps Summer Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20143",
+      "name": "Avid4 Adventure Summer Camp (San Francisco)",
+      "city": "San Francisco",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20157",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Nashville)",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20161",
+      "name": "Avid4 Adventure Summer Camp (Charlotte)",
+      "city": "Charlotte",
+      "state": "NC",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20164",
+      "name": "Steve & Kate's Camp Summer Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20165",
+      "name": "Steve & Kate's Camp Summer Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20172",
+      "name": "Galileo Camps Summer Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20175",
+      "name": "Mad Science Summer Lab Summer Camp (Minneapolis)",
+      "city": "Minneapolis",
+      "state": "MN",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20178",
+      "name": "Drama Kids International Adventure & STEM Camp (Orlando)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20181",
+      "name": "Avid4 Adventure Adventure & STEM Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20185",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Dallas)",
+      "city": "Dallas",
+      "state": "TX",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20195",
+      "name": "Galileo Camps Summer Camp (Detroit)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20199",
+      "name": "Steve & Kate's Camp Summer Camp (Phoenix)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20200",
+      "name": "Drama Kids International Adventure & STEM Camp (San Francisco)",
+      "city": "San Francisco",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20201",
+      "name": "Galileo Camps Summer Camp (Houston)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20205",
+      "name": "iD Tech Academy Adventure & STEM Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20207",
+      "name": "Galileo Camps Summer Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20212",
+      "name": "Galileo Camps Summer Camp (Charlotte)",
+      "city": "Charlotte",
+      "state": "NC",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20216",
+      "name": "Galileo Camps Adventure & STEM Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20219",
+      "name": "School of Rock Summer Camp (Houston)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20224",
+      "name": "School of Rock Summer Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20227",
+      "name": "Drama Kids International Summer Camp (Houston)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20228",
+      "name": "Mad Science Summer Lab Summer Camp (Atlanta)",
+      "city": "Atlanta",
+      "state": "GA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20236",
+      "name": "Code Ninjas STEM Camp Summer Camp (Houston)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20250",
+      "name": "Irvine Outdoor Science & Adventure Camp - Overnight Resident Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20263",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20268",
+      "name": "School of Rock Summer Camp (Detroit)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20270",
+      "name": "Drama Kids International Summer Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20274",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20289",
+      "name": "Mad Science Summer STEM Academy (Philadelphia)",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20290",
+      "name": "Drama Kids International Adventure & STEM Camp (Phoenix)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20297",
+      "name": "Mad Science Summer Lab Summer Camp (Boston)",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20299",
+      "name": "Avid4 Adventure Summer Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20303",
+      "name": "iD Tech Academy Summer Camp (Charlotte)",
+      "city": "Charlotte",
+      "state": "NC",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20304",
+      "name": "Drama Kids International Summer Camp (San Diego)",
+      "city": "San Diego",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20306",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20314",
+      "name": "Code Ninjas STEM Camp Summer Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20315",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20316",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Dallas) - Day Camp (Shuttle Included)",
+      "city": "Dallas",
+      "state": "TX",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20318",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20326",
+      "name": "Mad Science Summer Lab Summer Camp (Seattle)",
+      "city": "Seattle",
+      "state": "WA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20330",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20333",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20337",
+      "name": "Code Ninjas STEM Camp Summer Camp (Salt Lake City)",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20343",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20344",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (Detroit)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20347",
+      "name": "Drama Kids International Adventure & STEM Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20349",
+      "name": "iD Tech Academy Adventure & STEM Camp (Charlotte)",
+      "city": "Charlotte",
+      "state": "NC",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20350",
+      "name": "Drama Kids International Adventure & STEM Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20353",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (Houston)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20356",
+      "name": "Galileo Camps Summer Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20362",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Nashville) - Day Camp (Shuttle Included)",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20370",
+      "name": "Galileo Camps Adventure & STEM Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20372",
+      "name": "Mad Science Summer Lab Summer Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20373",
+      "name": "Galileo Camps Adventure & STEM Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20376",
+      "name": "Drama Kids International Summer Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20377",
+      "name": "Steve & Kate's Camp Summer Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20381",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Miami) - Day Camp (Shuttle Included)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20382",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20386",
+      "name": "Drama Kids International Adventure & STEM Camp (Portland)",
+      "city": "Portland",
+      "state": "OR",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20387",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Phoenix)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20390",
+      "name": "Code Ninjas STEM Camp Summer Camp (Detroit)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20394",
+      "name": "Galileo Camps Adventure & STEM Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20395",
+      "name": "Code Ninjas STEM Camp Summer Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20400",
+      "name": "School of Rock Summer Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20403",
+      "name": "School of Rock Summer Camp (Minneapolis)",
+      "city": "Minneapolis",
+      "state": "MN",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20404",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Charlotte)",
+      "city": "Charlotte",
+      "state": "NC",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20405",
+      "name": "Irvine Outdoor Science & Adventure Camp - Overnight Resident Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20407",
+      "name": "Galileo Camps Adventure & STEM Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20408",
+      "name": "Avid4 Adventure Summer Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20412",
+      "name": "Code Ninjas STEM Camp Summer Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20413",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20418",
+      "name": "Galileo Camps Summer Camp (Atlanta)",
+      "city": "Atlanta",
+      "state": "GA",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20419",
+      "name": "Avid4 Adventure Summer Camp (Salt Lake City)",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20420",
+      "name": "Galileo Camps Adventure & STEM Camp (Houston)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20421",
+      "name": "Drama Kids International Summer Camp (Dallas)",
+      "city": "Dallas",
+      "state": "TX",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20426",
+      "name": "School of Rock Summer Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20429",
+      "name": "Mad Science Summer STEM Academy (Oceanside) - Day Camp (Shuttle Included)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20434",
+      "name": "Drama Kids International Summer Camp (Tampa)",
+      "city": "Tampa",
+      "state": "FL",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20438",
+      "name": "Drama Kids International Adventure & STEM Camp (San Diego)",
+      "city": "San Diego",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20440",
+      "name": "iD Tech Academy Adventure & STEM Camp (Charlotte) - Overnight Resident Program",
+      "city": "Charlotte",
+      "state": "NC",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20441",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Fresno) - Day Camp (Shuttle Included)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20449",
+      "name": "Steve & Kate's Camp Summer Camp (Los Angeles)",
+      "city": "Los Angeles",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20454",
+      "name": "School of Rock Summer Camp (San Francisco)",
+      "city": "San Francisco",
+      "state": "CA",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20457",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20464",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Salt Lake City)",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20469",
+      "name": "School of Rock Summer Camp (Atlanta)",
+      "city": "Atlanta",
+      "state": "GA",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20471",
+      "name": "Galileo Camps Adventure & STEM Camp (Fresno) - Overnight Resident Program",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20479",
+      "name": "Mad Science Summer Lab Summer Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20480",
+      "name": "Drama Kids International Adventure & STEM Camp (New York) - Overnight Resident Program",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20483",
+      "name": "Irvine Outdoor Science & Adventure Camp - Overnight Resident Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20486",
+      "name": "Code Ninjas STEM Camp Summer Camp (Charlotte)",
+      "city": "Charlotte",
+      "state": "NC",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20496",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20504",
+      "name": "Mad Science Summer STEM Academy (Philadelphia) - Economy Day Program",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20507",
+      "name": "School of Rock Summer Camp (Orlando)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20510",
+      "name": "Drama Kids International Summer Camp (Detroit)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20517",
+      "name": "Galileo Camps Summer Camp (Phoenix)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20519",
+      "name": "Galileo Camps Adventure & STEM Camp (Portland)",
+      "city": "Portland",
+      "state": "OR",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20523",
+      "name": "Drama Kids International Adventure & STEM Camp (San Diego) - Track 2",
+      "city": "San Diego",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20524",
+      "name": "Drama Kids International Summer Camp (Boston)",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20525",
+      "name": "Mad Science Summer STEM Academy (Seattle)",
+      "city": "Seattle",
+      "state": "WA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20526",
+      "name": "Galileo Camps Adventure & STEM Camp (Portland) - Economy Day Program",
+      "city": "Portland",
+      "state": "OR",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20528",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20533",
+      "name": "Drama Kids International Adventure & STEM Camp (Sacramento) - Day Camp (Shuttle Included)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20534",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Oceanside) - Overnight Resident Program",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20537",
+      "name": "Mad Science Summer STEM Academy (Oceanside) - Day Camp (Shuttle Included)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20539",
+      "name": "Drama Kids International Adventure & STEM Camp (Sacramento) - Economy Day Program",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20542",
+      "name": "Mad Science Summer STEM Academy (Seattle) - Day Camp (Shuttle Included)",
+      "city": "Seattle",
+      "state": "WA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20547",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20549",
+      "name": "Drama Kids International Summer Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20550",
+      "name": "Mad Science Summer STEM Academy (Philadelphia) - Track 3",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20551",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Nashville) - Economy Day Program",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20554",
+      "name": "Drama Kids International Adventure & STEM Camp (Portland) - Overnight Resident Program",
+      "city": "Portland",
+      "state": "OR",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20560",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Nashville)",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20561",
+      "name": "Galileo Camps Adventure & STEM Camp (Miami) - Day Camp (Shuttle Included)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20569",
+      "name": "Steve & Kate's Camp Summer Camp (Boston)",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20584",
+      "name": "Drama Kids International Summer Camp (Seattle)",
+      "city": "Seattle",
+      "state": "WA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20591",
+      "name": "Galileo Camps Adventure & STEM Camp (New York) - Economy Day Program",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20598",
+      "name": "Avid4 Adventure Summer Camp (Orlando)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20599",
+      "name": "Galileo Camps Adventure & STEM Camp (Orlando) - Day Camp (Shuttle Included)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20606",
+      "name": "Avid4 Adventure Adventure & STEM Camp (New York) - Day Camp (Shuttle Included)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20619",
+      "name": "Galileo Camps Adventure & STEM Camp (Tampa)",
+      "city": "Tampa",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20622",
+      "name": "Avid4 Adventure Adventure & STEM Camp (New York) - Day Camp (Shuttle Included)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20623",
+      "name": "Avid4 Adventure Adventure & STEM Camp (New York) - Economy Day Program",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20626",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Nashville) - Day Camp (Shuttle Included)",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20634",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (Detroit) - Economy Day Program",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20635",
+      "name": "Drama Kids International Adventure & STEM Camp (Detroit)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20637",
+      "name": "Drama Kids International Summer Camp (Atlanta)",
+      "city": "Atlanta",
+      "state": "GA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20639",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20643",
+      "name": "Galileo Camps Adventure & STEM Camp (Las Vegas) - Day Camp (Shuttle Included)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20645",
+      "name": "Drama Kids International Summer Camp (Minneapolis)",
+      "city": "Minneapolis",
+      "state": "MN",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20651",
+      "name": "Mad Science Summer Lab Summer Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20653",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20659",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Philadelphia)",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20668",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Boston)",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20674",
+      "name": "Galileo Camps Summer Camp (Salt Lake City)",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20677",
+      "name": "Galileo Camps Adventure & STEM Camp (Salt Lake City)",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20684",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Philadelphia) - Economy Day Program",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20686",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20687",
+      "name": "Mad Science Summer Lab Summer Camp (Nashville)",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20689",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Atlanta)",
+      "city": "Atlanta",
+      "state": "GA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20690",
+      "name": "Drama Kids International Adventure & STEM Camp (Seattle)",
+      "city": "Seattle",
+      "state": "WA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20691",
+      "name": "Galileo Camps Summer Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20693",
+      "name": "Nike Junior Sports Camps Summer Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://www.ussportscamps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.ussportscamps.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20698",
+      "name": "Mad Science Summer STEM Academy (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20699",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20700",
+      "name": "Mad Science Summer Lab Summer Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20702",
+      "name": "Avid4 Adventure Summer Camp (Minneapolis)",
+      "city": "Minneapolis",
+      "state": "MN",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20706",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Oceanside) - Economy Day Program",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20707",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Charlotte)",
+      "city": "Charlotte",
+      "state": "NC",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20711",
+      "name": "Galileo Camps Summer Camp (Nashville)",
+      "city": "Nashville",
+      "state": "TN",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20712",
+      "name": "Drama Kids International Adventure & STEM Camp (Philadelphia)",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20719",
+      "name": "Avid4 Adventure Adventure & STEM Camp (New York) - Overnight Resident Program",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20720",
+      "name": "Galileo Camps Adventure & STEM Camp (Las Vegas) - Day Camp (Shuttle Included)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20721",
+      "name": "Drama Kids International Summer Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20723",
+      "name": "Galileo Camps Adventure & STEM Camp (Tampa) - Overnight Resident Program",
+      "city": "Tampa",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20725",
+      "name": "Drama Kids International Adventure & STEM Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20726",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20728",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (San Francisco)",
+      "city": "San Francisco",
+      "state": "CA",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20731",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Fresno) - Day Camp (Shuttle Included)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20733",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20734",
+      "name": "Drama Kids International Adventure & STEM Camp (Houston)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20738",
+      "name": "Avid4 Adventure Summer Camp (Austin)",
+      "city": "Austin",
+      "state": "TX",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20750",
+      "name": "Drama Kids International Adventure & STEM Camp (Philadelphia) - Economy Day Program",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20756",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20759",
+      "name": "Drama Kids International Adventure & STEM Camp (Houston) - Day Camp (Shuttle Included)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20762",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Boston) - Day Camp (Shuttle Included)",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20767",
+      "name": "Steve & Kate's Camp Summer Camp (Tampa)",
+      "city": "Tampa",
+      "state": "FL",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20774",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Austin)",
+      "city": "Austin",
+      "state": "TX",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20776",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Denver)",
+      "city": "Denver",
+      "state": "CO",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20788",
+      "name": "Galileo Camps Adventure & STEM Camp (Orlando) - Day Camp (Shuttle Included)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20789",
+      "name": "Avid4 Adventure Summer Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20790",
+      "name": "Avid4 Adventure Summer Camp (Phoenix)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20795",
+      "name": "Code Ninjas STEM Camp Summer Camp (Dallas)",
+      "city": "Dallas",
+      "state": "TX",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20799",
+      "name": "iD Tech Academy Summer Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20800",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (Detroit) - Day Camp (Shuttle Included)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20801",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (Orlando)",
+      "city": "Orlando",
+      "state": "FL",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20808",
+      "name": "Drama Kids International Adventure & STEM Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20809",
+      "name": "Drama Kids International Summer Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20813",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20814",
+      "name": "Drama Kids International Summer Camp (Chicago)",
+      "city": "Chicago",
+      "state": "IL",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20824",
+      "name": "Mad Science Summer STEM Academy (Oceanside) - Overnight Resident Program",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20825",
+      "name": "Avid4 Adventure Summer Camp (Los Angeles)",
+      "city": "Los Angeles",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20826",
+      "name": "Galileo Camps Adventure & STEM Camp (Phoenix)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20833",
+      "name": "iD Tech Academy Adventure & STEM Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20836",
+      "name": "Avid4 Adventure Adventure & STEM Camp (San Francisco)",
+      "city": "San Francisco",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20837",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Las Vegas) - Track 2",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20839",
+      "name": "Drama Kids International Adventure & STEM Camp (Sacramento) - Track 4",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20840",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Phoenix)",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20843",
+      "name": "Irvine Outdoor Science & Adventure Camp - Track 24",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20845",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20847",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Las Vegas) - Overnight Resident Program",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20850",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Phoenix) - Economy Day Program",
+      "city": "Phoenix",
+      "state": "AZ",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20852",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20853",
+      "name": "Mad Science Summer STEM Academy (Philadelphia) - Economy Day Program",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20858",
+      "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20860",
+      "name": "Drama Kids International Adventure & STEM Camp (Philadelphia) - Overnight Resident Program",
+      "city": "Philadelphia",
+      "state": "PA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20861",
+      "name": "Code Ninjas STEM Camp Summer Camp (Chicago)",
+      "city": "Chicago",
+      "state": "IL",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20862",
+      "name": "Drama Kids International Adventure & STEM Camp (Seattle) - Day Camp (Shuttle Included)",
+      "city": "Seattle",
+      "state": "WA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20863",
+      "name": "School of Rock Summer Camp Adventure & STEM Camp (Houston) - Economy Day Program",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20865",
+      "name": "Code Ninjas STEM Camp Summer Camp (Boston)",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20866",
+      "name": "Drama Kids International Adventure & STEM Camp (Minneapolis)",
+      "city": "Minneapolis",
+      "state": "MN",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20867",
+      "name": "Avid4 Adventure Adventure & STEM Camp (Minneapolis)",
+      "city": "Minneapolis",
+      "state": "MN",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20868",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Boston) - Overnight Resident Program",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20869",
+      "name": "Galileo Camps Adventure & STEM Camp (Miami) - Day Camp (Shuttle Included)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20870",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Fresno) - Day Camp (Shuttle Included)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20880",
+      "name": "Avid4 Adventure Summer Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20883",
+      "name": "Drama Kids International Adventure & STEM Camp (Boston)",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20886",
+      "name": "Mad Science Summer STEM Academy (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20888",
+      "name": "Code Ninjas STEM Camp Summer Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20889",
+      "name": "Avid4 Adventure Summer Camp (Boston)",
+      "city": "Boston",
+      "state": "MA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20890",
+      "name": "Steve & Kate's Camp Adventure & STEM Camp (Los Angeles)",
+      "city": "Los Angeles",
+      "state": "CA",
+      "website": "https://steveandkatescamp.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://steveandkatescamp.com/locations"
+    },
+    {
+      "id": "real_aca_20894",
+      "name": "Mad Science Summer STEM Academy (Oceanside) - Economy Day Program",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20906",
+      "name": "Drama Kids International Adventure & STEM Camp (Oceanside)",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20907",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20910",
+      "name": "Galileo Camps Adventure & STEM Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "website": "https://galileo-camps.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://galileo-camps.com/our-camps-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20918",
+      "name": "Avid4 Adventure Summer Camp (Chicago)",
+      "city": "Chicago",
+      "state": "IL",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20919",
+      "name": "School of Rock Summer Camp (New York)",
+      "city": "New York",
+      "state": "NY",
+      "website": "https://www.schoolofrock.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.schoolofrock.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20923",
+      "name": "Drama Kids International Adventure & STEM Camp (Portland) - Overnight Resident Program",
+      "city": "Portland",
+      "state": "OR",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20924",
+      "name": "Mad Science Summer STEM Academy (Fresno) - Overnight Resident Program",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://www.madscience.org",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.madscience.org/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20925",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Salt Lake City)",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20935",
+      "name": "Code Ninjas STEM Camp Summer Camp (Miami)",
+      "city": "Miami",
+      "state": "FL",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20938",
+      "name": "Avid4 Adventure Summer Camp (Seattle)",
+      "city": "Seattle",
+      "state": "WA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20945",
+      "name": "Drama Kids International Adventure & STEM Camp (Detroit) - Day Camp (Shuttle Included)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20946",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Houston)",
+      "city": "Houston",
+      "state": "TX",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20947",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Fresno) - Day Camp (Shuttle Included)",
+      "city": "Fresno",
+      "state": "CA",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20948",
+      "name": "Irvine Outdoor Science & Adventure Camp - Overnight Resident Program",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_aca_20950",
+      "name": "iD Tech Academy Summer Camp (Detroit)",
+      "city": "Detroit",
+      "state": "MI",
+      "website": "https://www.idtech.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.idtech.com/locations"
+    },
+    {
+      "id": "real_aca_20952",
+      "name": "Code Ninjas STEM Camp Summer Camp (Portland)",
+      "city": "Portland",
+      "state": "OR",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20953",
+      "name": "Drama Kids International Adventure & STEM Camp (San Francisco) - Track 2",
+      "city": "San Francisco",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20954",
+      "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Brooklyn)",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://www.codeninjas.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://www.codeninjas.com/sitemap.xml"
+    },
+    {
+      "id": "real_aca_20955",
+      "name": "Drama Kids International Adventure & STEM Camp (Oceanside) - Economy Day Program",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://dramakids.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://dramakids.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50001",
+      "name": "Carlsbad STEM & Robotics Academy",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50003",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50005",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_exact_50008",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50011",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_exact_50014",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50015",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50017",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_exact_50019",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_exact_50023",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50025",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_exact_50027",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50028",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50031",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50032",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50037",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50039",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_exact_50041",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50043",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    },
+    {
+      "id": "real_exact_50046",
+      "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+      "city": "Irvine",
+      "state": "CA",
+      "website": "https://avid4.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://avid4.com/location-sitemap.xml"
+    },
+    {
+      "id": "real_exact_50047",
+      "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+      "city": "Carlsbad",
+      "state": "CA",
+      "website": "https://magikidlab.com",
+      "reason": "city NOT in official brand listing (fabricated)",
+      "sourceUrl": "https://magikidlab.com/sitemap.xml"
+    }
+  ]
+}

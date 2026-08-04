@@ -1,0 +1,171 @@
+{
+  "total_scanned": 56,
+  "strictly_verified_count": 50,
+  "rejected_count": 6,
+  "verified_camps_sample": [
+    {
+      "name": "Camp Natoma Outdoor Adventure",
+      "city": "Paso Robles",
+      "state": "CA",
+      "website": "https://www.campnatoma.org"
+    },
+    {
+      "name": "Camp James Orange County",
+      "city": "Newport Beach",
+      "state": "CA",
+      "website": "https://www.campjames.com"
+    },
+    {
+      "name": "San Diego Botanic Garden Youth Camp",
+      "city": "Encinitas",
+      "state": "CA",
+      "website": "https://sdbgarden.org"
+    },
+    {
+      "name": "YMCA Camp Marston Outdoor Adventure",
+      "city": "Julian",
+      "state": "CA",
+      "website": "https://www.ymcasd.org/campmarston"
+    },
+    {
+      "name": "Joe & Mary Mottino Family YMCA Summer Camp",
+      "city": "Oceanside",
+      "state": "CA",
+      "website": "https://www.ymcasd.org/locations/joe-and-mary-mottino-family-ymca"
+    },
+    {
+      "name": "Trail Blazers Day Camp",
+      "city": "Brooklyn",
+      "state": "NY",
+      "website": "https://www.trailblazers.org"
+    },
+    {
+      "name": "Ventura Family YMCA Day Camp",
+      "city": "Ventura",
+      "state": "CA",
+      "website": "https://www.ciymca.org"
+    },
+    {
+      "name": "JCC Day Camp of Greater Kansas City",
+      "city": "Overland Park",
+      "state": "KS",
+      "website": "https://www.JCampKC.org"
+    },
+    {
+      "name": "Sherman Lake YMCA Outdoor Center",
+      "city": "Augusta",
+      "state": "MI",
+      "website": "https://www.shermanlakeymca.org"
+    },
+    {
+      "name": "Western Family YMCA Day Camp",
+      "city": "Newark",
+      "state": "DE",
+      "website": "https://www.ymcade.org"
+    },
+    {
+      "name": "Genesee Valley Summer Camps",
+      "city": "Parkton",
+      "state": "MD",
+      "website": "https://www.geneseevalley.org"
+    },
+    {
+      "name": "Shemesh Camp",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "website": "https://vosjcc.org"
+    },
+    {
+      "name": "Summer Stars Day Camp-Raritan Bay Area YMCA",
+      "city": "Perth Amboy",
+      "state": "NJ",
+      "website": "https://www.rbaymca.org"
+    },
+    {
+      "name": "Y Camp at the Ward Y in Abingdon",
+      "city": "Abingdon",
+      "state": "MD",
+      "website": "https://www.ymaryland.org"
+    },
+    {
+      "name": "Y Camp at the Dancel Y in Ellicott City",
+      "city": "Ellicott City",
+      "state": "MD",
+      "website": "https://www.ymaryland.org"
+    },
+    {
+      "name": "Cloverleaf Ranch",
+      "city": "Santa Rosa",
+      "state": "CA",
+      "website": "https://www.cloverleafranch.com"
+    },
+    {
+      "name": "Neil Klatskin Day Camp",
+      "city": "Tenafly",
+      "state": "NJ",
+      "website": "https://www.jccotp.org/neil-klatskin-summer-camps/"
+    },
+    {
+      "name": "Bar T Mountainside",
+      "city": "Urbana",
+      "state": "MD",
+      "website": "https://www.bar-t.com"
+    },
+    {
+      "name": "Camp Laurelwood",
+      "city": "Madison",
+      "state": "CT",
+      "website": "https://www.camplaurelwood.org"
+    },
+    {
+      "name": "Sierra Nevada Journeys",
+      "city": "Portola",
+      "state": "CA",
+      "website": "https://www.sierranevadajourneys.org/"
+    }
+  ],
+  "rejected_sample": [
+    {
+      "name": "U.S. Space Camp & Rocket Park",
+      "city": "Huntsville",
+      "state": "AL",
+      "url": "https://www.spacecamp.com",
+      "reason": "Failed Connection: HTTPError"
+    },
+    {
+      "name": "Tamarack Day Camp",
+      "city": "Randolph",
+      "state": "NJ",
+      "url": "https://tamarackdaycamp.com",
+      "reason": "Failed Connection: URLError"
+    },
+    {
+      "name": "Chestnut Ridge",
+      "city": "Efland",
+      "state": "NC",
+      "url": "https://www.campchestnutridge.org",
+      "reason": "Failed Connection: URLError"
+    },
+    {
+      "name": "JCC Abrams Camps",
+      "city": "East Windsor",
+      "state": "NJ",
+      "url": "https://www.jccabramscamps.org",
+      "reason": "Failed Connection: URLError"
+    },
+    {
+      "name": "Brookhaven Roe YMCA",
+      "city": "Holtsville",
+      "state": "NY",
+      "url": "https://www.ymcali.org",
+      "reason": "Failed Connection: URLError"
+    },
+    {
+      "name": "Pinecrest Nature & Wilderness Survival",
+      "city": "Orlando",
+      "state": "FL",
+      "url": "https://www.pinecrestorlando.org",
+      "reason": "Failed Connection: URLError"
+    }
+  ]
+}

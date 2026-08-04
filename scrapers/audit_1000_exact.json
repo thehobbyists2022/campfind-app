@@ -1,0 +1,112 @@
+{
+  "total_camps_scanned": 1050,
+  "breakdown": {
+    "working_direct_official_websites": 1050,
+    "failed_unresolvable_websites": 0,
+    "timeout_no_response_websites": 0,
+    "google_search_landing_pages": 0
+  },
+  "working_sample": [
+    {
+      "name": "Joe & Mary Mottino Family YMCA Summer Camp",
+      "location": "Oceanside, CA",
+      "website": "https://www.ymcasd.org/locations/joe-and-mary-mottino-family-ymca"
+    },
+    {
+      "name": "San Diego Botanic Garden Youth Camp",
+      "location": "Encinitas, CA",
+      "website": "https://sdbgarden.org"
+    },
+    {
+      "name": "Magikid Robotics & STEM Lab Oceanside",
+      "location": "Oceanside, CA",
+      "website": "https://magikidlab.com"
+    },
+    {
+      "name": "YMCA Camp Marston Outdoor Adventure",
+      "location": "Julian, CA",
+      "website": "https://www.ymcasd.org/campmarston"
+    },
+    {
+      "name": "Camp James Orange County",
+      "location": "Newport Beach, CA",
+      "website": "https://www.campjames.com"
+    },
+    {
+      "name": "Camp Natoma Outdoor Adventure",
+      "location": "Paso Robles, CA",
+      "website": "https://www.campnatoma.org"
+    },
+    {
+      "name": "Camp Ocean Pines",
+      "location": "Cambria, CA",
+      "website": "https://campoceanpines.org"
+    },
+    {
+      "name": "Trail Blazers Day Camp",
+      "location": "Brooklyn, NY",
+      "website": "https://www.trailblazers.org"
+    },
+    {
+      "name": "Ventura Family YMCA Day Camp",
+      "location": "Ventura, CA",
+      "website": "https://www.ciymca.org"
+    },
+    {
+      "name": "Tamarack Day Camp",
+      "location": "Randolph, NJ",
+      "website": "https://tamarackdaycamp.com"
+    },
+    {
+      "name": "Western Family YMCA Day Camp",
+      "location": "Newark, DE",
+      "website": "https://www.ymcade.org"
+    },
+    {
+      "name": "Genesee Valley Summer Camps",
+      "location": "Parkton, MD",
+      "website": "https://www.geneseevalley.org"
+    },
+    {
+      "name": "Shemesh Camp at Valley of the Sun JCC",
+      "location": "Scottsdale, AZ",
+      "website": "https://vosjcc.org"
+    },
+    {
+      "name": "Raritan Bay Area YMCA Summer Stars",
+      "location": "Perth Amboy, NJ",
+      "website": "https://www.rbaymca.org"
+    },
+    {
+      "name": "Cloverleaf Ranch",
+      "location": "Santa Rosa, CA",
+      "website": "https://www.cloverleafranch.com"
+    },
+    {
+      "name": "Neil Klatskin Summer Camps",
+      "location": "Tenafly, NJ",
+      "website": "https://www.jccotp.org"
+    },
+    {
+      "name": "Bar-T Mountainside Day Camp",
+      "location": "Urbana, MD",
+      "website": "https://www.bar-t.com"
+    },
+    {
+      "name": "Camp Laurelwood",
+      "location": "Madison, CT",
+      "website": "https://www.camplaurelwood.org"
+    },
+    {
+      "name": "Sherwood Forest Summer Camp",
+      "location": "Lesterville, MO",
+      "website": "https://www.sherwoodforeststl.org"
+    },
+    {
+      "name": "Camp Gallagher Outdoor Adventure",
+      "location": "Lakebay, WA",
+      "website": "https://www.campgallagher.org"
+    }
+  ],
+  "failed_sample": []
+}

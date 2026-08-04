@@ -1,0 +1,29 @@
+{
+  "app_name": "CampFind",
+  "tagline": "Find the perfect summer camp near you",
+  "description": "CampFind is a responsive single-page application that helps parents and kids find summer camps by ZIP code and age. It displays a grid of camp cards with key details, allows filtering by type, and lets users save favorites to localStorage.",
+  "target_user": "Parents and families seeking summer camps for their children",
+  "core_features": [
+    "ZIP code search and age slider to narrow down camps",
+    "Results grid with camp cards showing name, city, type, price, rating stars, and availability dot",
+    "Expandable card details with sessions list and contact info",
+    "Heart toggle to save favorite camps, persisted in localStorage",
+    "Filter camps by type (Day/Overnight)"
+  ],
+  "color_scheme": {
+    "primary": "#FF6B6B",
+    "secondary": "#4ECDC4",
+    "accent": "#2C3E50",
+    "bg": "#FFFFFF"
+  },
+  "layout": "single-page",
+  "key_interactions": [
+    "Enter ZIP code to search",
+    "Adjust age slider to filter camps",
+    "Click on camp card to expand details",
+    "Click heart icon to toggle favorite",
+    "Click filter buttons to show Day or Overnight camps"
+  ],
+  "data_storage": "localStorage",
+  "emoji": "🏕️"
+}

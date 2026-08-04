@@ -1,0 +1,113 @@
+{
+  "total": 1060,
+  "camps_with_violations": 1060,
+  "summary": {
+    "acaVerified=true but missing/unknown verificationMethod": 1060,
+    "missing source": 1060,
+    "missing sourceUrl": 1060,
+    "missing verifiedAt": 1060,
+    "rating 4.9 without reviewCount (unverifiable)": 280,
+    "rating 4.6 without reviewCount (unverifiable)": 203,
+    "rating 4.8 without reviewCount (unverifiable)": 201,
+    "rating 4.7 without reviewCount (unverifiable)": 190,
+    "rating 5.0 without reviewCount (unverifiable)": 104,
+    "contains 555": 100,
+    "template/boilerplate description": 93,
+    "placeholder email": 92,
+    "rating 4.5 without reviewCount (unverifiable)": 82,
+    "default/sentinel coords (33.6846,-117.8265) — likely ungeocoded": 51,
+    "default/sentinel coords (34.0522,-118.2437) — likely ungeocoded": 41,
+    "default/sentinel coords (37.3382,-121.8863) — likely ungeocoded": 38,
+    "default/sentinel coords (32.7157,-117.1611) — likely ungeocoded": 10
+  },
+  "sample_violations": [
+    {
+      "index": 0,
+      "name": "Salt Creek Performing Arts & Drama Camp",
+      "violations": [
+        "contains 555: (619) 555-7258",
+        "acaVerified=true but missing/unknown verificationMethod",
+        "missing source",
+        "missing sourceUrl",
+        "missing verifiedAt"
+      ]
+    },
+    {
+      "index": 1,
+      "name": "Chula Vista Aquatics & Swim Camp",
+      "violations": [
+        "acaVerified=true but missing/unknown verificationMethod",
+        "missing source",
+        "missing sourceUrl",
+        "missing verifiedAt",
+        "rating 4.7 without reviewCount (unverifiable)"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Eastlake & Otay Ranch STEM & Sports Academy",
+      "violations": [
+        "contains 555: (619) 555-9193",
+        "acaVerified=true but missing/unknown verificationMethod",
+        "missing source",
+        "missing sourceUrl",
+        "missing verifiedAt"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "South Bay Family YMCA Summer Camp",
+      "violations": [
+        "acaVerified=true but missing/unknown verificationMethod",
+        "missing source",
+        "missing sourceUrl",
+        "missing verifiedAt",
+        "rating 4.9 without reviewCount (unverifiable)"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "City of Chula Vista Recreation Summer Camps",
+      "violations": [
+        "acaVerified=true but missing/unknown verificationMethod",
+        "missing source",
+        "missing sourceUrl",
+        "missing verifiedAt",
+        "rating 4.8 without reviewCount (unverifiable)"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "Sorrento Valley Music & Arts Summer Academy",
+      "violations": [
+        "contains 555: (858) 555-8821",
+        "acaVerified=true but missing/unknown verificationMethod",
+        "missing source",
+        "missing sourceUrl",
+        "missing verifiedAt"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "San Diego Ice Arena Skating & Hockey Camp",
+      "violations": [
+        "acaVerified=true but missing/unknown verificationMethod",
+        "missing source",
+        "missing sourceUrl",
+        "missing verifiedAt",
+        "rating 4.8 without reviewCount (unverifiable)"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "Outpost Summer Camps (Sorrento Valley)",
+      "violations": [
+        "acaVerified=true but missing/unknown verificationMethod",
+        "missing source",
+        "missing sourceUrl",
+        "missing verifiedAt",
+        "template/boilerplate description"
+      ]
+    }
+  ]
+}

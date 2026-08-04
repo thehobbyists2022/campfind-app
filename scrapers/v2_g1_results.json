@@ -1,0 +1,272 @@
+[
+  {
+    "i": 0,
+    "name": "Pali Adventures Specialty Summer Camp",
+    "city": "Running Springs",
+    "state": "CA",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Running Springs' present=True in https://www.paliadventures.com"
+  },
+  {
+    "i": 1,
+    "name": "Nike Junior Sports Camps Adventure & STEM Camp (Dallas)",
+    "city": "Dallas",
+    "state": "TX",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Dallas' present=True in https://www.ussportscamps.com/sitemap.xml"
+  },
+  {
+    "i": 2,
+    "name": "iD Tech Academy Summer Camp (Sacramento)",
+    "city": "Sacramento",
+    "state": "CA",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Sacramento' present=True in https://www.idtech.com/locations"
+  },
+  {
+    "i": 3,
+    "name": "Nike Junior Sports Camps Adventure & STEM Camp (Salt Lake City)",
+    "city": "Salt Lake City",
+    "state": "UT",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Salt Lake City' present=True in https://www.ussportscamps.com/sitemap.xml"
+  },
+  {
+    "i": 4,
+    "name": "Steve & Kate's Camp Adventure & STEM Camp (Dallas)",
+    "city": "Dallas",
+    "state": "TX",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Dallas' present=True in https://steveandkatescamp.com/locations"
+  },
+  {
+    "i": 5,
+    "name": "School of Rock Summer Camp Adventure & STEM Camp (Charlotte)",
+    "city": "Charlotte",
+    "state": "NC",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Charlotte' present=True in https://www.schoolofrock.com/sitemap.xml"
+  },
+  {
+    "i": 6,
+    "name": "Camp Huckins for Girls",
+    "city": "Freedom",
+    "state": "NH",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Freedom' present=True in https://www.camphuckins.org"
+  },
+  {
+    "i": 7,
+    "name": "San Jose Code Ninjas & STEM Summer Academy - Day Camp (Shuttle Included)",
+    "city": "San Jose",
+    "state": "CA",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'San Jose' present=True in https://www.codeninjas.com/sitemap.xml"
+  },
+  {
+    "i": 8,
+    "name": "Girl Scouts Adventure & STEM Camp (San Diego)",
+    "city": "San Diego",
+    "state": "CA",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'San Diego' present=True in https://www.girlscouts.org"
+  },
+  {
+    "i": 9,
+    "name": "Nike Junior Sports Camps Adventure & STEM Camp (Nashville)",
+    "city": "Nashville",
+    "state": "TN",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Nashville' present=True in https://www.ussportscamps.com/sitemap.xml"
+  },
+  {
+    "i": 10,
+    "name": "Mad Science Summer Lab Summer Camp (Sacramento)",
+    "city": "Sacramento",
+    "state": "CA",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Sacramento' present=True in https://www.madscience.org/sitemap.xml"
+  },
+  {
+    "i": 11,
+    "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Orlando) - Overnight Resident Program",
+    "city": "Orlando",
+    "state": "FL",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'Orlando' present=True in https://www.codeninjas.com/sitemap.xml"
+  },
+  {
+    "i": 12,
+    "name": "Steve & Kate's Camp Adventure & STEM Camp (New York)",
+    "city": "New York",
+    "state": "NY",
+    "tier": "tierA",
+    "verdict": "PASS",
+    "note": "city 'New York' present=True in https://steveandkatescamp.com/locations"
+  },
+  {
+    "i": 13,
+    "name": "Mad Science Summer Lab Summer Camp (Denver)",
+    "city": "Denver",
+    "state": "CO",
+    "tier": "tierA",
+    "verdict": "FAIL",
+    "note": "city 'Denver' present=False in https://www.madscience.org/sitemap.xml"
+  },
+  {
+    "i": 14,
+    "name": "Mad Science Summer STEM Academy (Denver)",
+    "city": "Denver",
+    "state": "CO",
+    "tier": "tierA",
+    "verdict": "FAIL",
+    "note": "city 'Denver' present=False in https://www.madscience.org/sitemap.xml"
+  },
+  {
+    "i": 15,
+    "name": "Avid4 Adventure Summer Camp (Seattle)",
+    "city": "Seattle",
+    "state": "WA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Seattle' present=False in https://avid4.com/location-sitemap.xml (expect absent)"
+  },
+  {
+    "i": 16,
+    "name": "Steve & Kate's Camp Adventure & STEM Camp (Los Angeles)",
+    "city": "Los Angeles",
+    "state": "CA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Los Angeles' present=False in https://steveandkatescamp.com/locations (expect absent)"
+  },
+  {
+    "i": 17,
+    "name": "Galileo Camps Adventure & STEM Camp (Phoenix)",
+    "city": "Phoenix",
+    "state": "AZ",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Phoenix' present=False in https://galileo-camps.com/our-camps-sitemap.xml (expect absent)"
+  },
+  {
+    "i": 18,
+    "name": "Drama Kids International Adventure & STEM Camp (San Francisco) - Track 2",
+    "city": "San Francisco",
+    "state": "CA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'San Francisco' present=False in https://dramakids.com/sitemap.xml (expect absent)"
+  },
+  {
+    "i": 19,
+    "name": "School of Rock Summer Camp Adventure & STEM Camp (San Francisco)",
+    "city": "San Francisco",
+    "state": "CA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'San Francisco' present=False in https://www.schoolofrock.com/sitemap.xml (expect absent)"
+  },
+  {
+    "i": 20,
+    "name": "Galileo Camps Adventure & STEM Camp (Fresno)",
+    "city": "Fresno",
+    "state": "CA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Fresno' present=False in https://galileo-camps.com/our-camps-sitemap.xml (expect absent)"
+  },
+  {
+    "i": 21,
+    "name": "Eastlake & Otay Ranch STEM & Sports Academy",
+    "city": "Chula Vista",
+    "state": "CA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Chula Vista' present=False in https://magikidlab.com/sitemap.xml (expect absent)"
+  },
+  {
+    "i": 22,
+    "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+    "city": "Carlsbad",
+    "state": "CA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Carlsbad' present=False in https://magikidlab.com/sitemap.xml (expect absent)"
+  },
+  {
+    "i": 23,
+    "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+    "city": "Irvine",
+    "state": "CA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Irvine' present=False in https://avid4.com/location-sitemap.xml (expect absent)"
+  },
+  {
+    "i": 24,
+    "name": "Mad Science Summer STEM Academy (Tampa)",
+    "city": "Tampa",
+    "state": "FL",
+    "tier": "tierC",
+    "verdict": "FAIL",
+    "note": "city 'Tampa' present=True in https://www.madscience.org/sitemap.xml (expect absent)"
+  },
+  {
+    "i": 25,
+    "name": "Mad Science Summer STEM Academy (Chicago)",
+    "city": "Chicago",
+    "state": "IL",
+    "tier": "tierC",
+    "verdict": "FAIL",
+    "note": "city 'Chicago' present=True in https://www.madscience.org/sitemap.xml (expect absent)"
+  },
+  {
+    "i": 26,
+    "name": "Avid4 Adventure Summer Camp (Charlotte)",
+    "city": "Charlotte",
+    "state": "NC",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Charlotte' present=False in https://avid4.com/location-sitemap.xml (expect absent)"
+  },
+  {
+    "i": 27,
+    "name": "Drama Kids International Adventure & STEM Camp (Philadelphia) - Economy Day Program",
+    "city": "Philadelphia",
+    "state": "PA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Philadelphia' present=False in https://dramakids.com/sitemap.xml (expect absent)"
+  },
+  {
+    "i": 28,
+    "name": "Galileo Camps Summer Camp (Orlando)",
+    "city": "Orlando",
+    "state": "FL",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Orlando' present=False in https://galileo-camps.com/our-camps-sitemap.xml (expect absent)"
+  },
+  {
+    "i": 29,
+    "name": "Drama Kids International Adventure & STEM Camp (Sacramento) - Day Camp (Shuttle Included)",
+    "city": "Sacramento",
+    "state": "CA",
+    "tier": "tierC",
+    "verdict": "PASS",
+    "note": "city 'Sacramento' present=False in https://dramakids.com/sitemap.xml (expect absent)"
+  }
+]

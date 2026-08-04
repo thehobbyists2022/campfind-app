@@ -1,0 +1,255 @@
+{
+  "total_camps_scanned": 1050,
+  "summary": {
+    "working_direct_websites": 62,
+    "failed_unresolvable_websites": 988,
+    "timeout_no_response_websites": 0,
+    "google_search_pages": 0
+  },
+  "working_sample": [
+    {
+      "id": "vreal_05",
+      "name": "Camp Natoma Outdoor Adventure",
+      "city": "Paso Robles",
+      "state": "CA",
+      "url": "https://www.campnatoma.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "vreal_04",
+      "name": "Camp James Orange County",
+      "city": "Newport Beach",
+      "state": "CA",
+      "url": "https://www.campjames.com",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "vreal_03",
+      "name": "San Diego Botanic Garden Youth Camp",
+      "city": "Encinitas",
+      "state": "CA",
+      "url": "https://sdbgarden.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "real_92056_05",
+      "name": "YMCA Camp Marston Outdoor Adventure",
+      "city": "Julian",
+      "state": "CA",
+      "url": "https://www.ymcasd.org/campmarston",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "real_92056_02",
+      "name": "Joe & Mary Mottino Family YMCA Summer Camp",
+      "city": "Oceanside",
+      "state": "CA",
+      "url": "https://www.ymcasd.org/locations/joe-and-mary-mottino-family-ymca",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_5423",
+      "name": "Trail Blazers Day Camp",
+      "city": "Brooklyn",
+      "state": "NY",
+      "url": "https://www.trailblazers.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_1883",
+      "name": "Ventura Family YMCA Day Camp",
+      "city": "Ventura",
+      "state": "CA",
+      "url": "https://www.ciymca.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_3985",
+      "name": "JCC Day Camp of Greater Kansas City",
+      "city": "Overland Park",
+      "state": "KS",
+      "url": "https://www.JCampKC.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_646",
+      "name": "Sherman Lake YMCA Outdoor Center",
+      "city": "Augusta",
+      "state": "MI",
+      "url": "https://www.shermanlakeymca.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_1413",
+      "name": "Western Family YMCA Day Camp",
+      "city": "Newark",
+      "state": "DE",
+      "url": "https://www.ymcade.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_4089",
+      "name": "Genesee Valley Summer Camps",
+      "city": "Parkton",
+      "state": "MD",
+      "url": "https://www.geneseevalley.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_4758",
+      "name": "Shemesh Camp",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "url": "https://vosjcc.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_1619",
+      "name": "Summer Stars Day Camp-Raritan Bay Area YMCA",
+      "city": "Perth Amboy",
+      "state": "NJ",
+      "url": "https://www.rbaymca.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_591",
+      "name": "Y Camp at the Ward Y in Abingdon",
+      "city": "Abingdon",
+      "state": "MD",
+      "url": "https://www.ymaryland.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    },
+    {
+      "id": "aca_589",
+      "name": "Y Camp at the Dancel Y in Ellicott City",
+      "city": "Ellicott City",
+      "state": "MD",
+      "url": "https://www.ymaryland.org",
+      "detail": "Domain & Site Active (HTTP 200)"
+    }
+  ],
+  "failed_sample": [
+    {
+      "id": "aca_10000",
+      "name": "Winter Wonders Day Camp",
+      "city": "Denver",
+      "state": "CO",
+      "url": "https://www.winterwondersdenver.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10001",
+      "name": "Horizon Winter Ski & Snow Sports Camp",
+      "city": "Seattle",
+      "state": "WA",
+      "url": "https://www.horizonseattle.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10002",
+      "name": "Adventure Perform Art Studio",
+      "city": "Lake Tahoe",
+      "state": "CA",
+      "url": "https://www.adventurelaketahoe.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10003",
+      "name": "Pioneer Nature & Wilderness Survival",
+      "city": "San Diego",
+      "state": "CA",
+      "url": "https://www.pioneersandiego.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10004",
+      "name": "Winter Wonders Sports & Aquatics Camp",
+      "city": "Vail",
+      "state": "CO",
+      "url": "https://www.winterwondersvail.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10005",
+      "name": "Snowy Pines Sports & Aquatics Camp",
+      "city": "Los Angeles",
+      "state": "CA",
+      "url": "https://www.snowypineslosangeles.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10006",
+      "name": "Pinecrest Sports & Aquatics Camp",
+      "city": "San Jose",
+      "state": "CA",
+      "url": "https://www.pinecrestsanjose.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10007",
+      "name": "Aquatic & Sports Nature & Wilderness Survival",
+      "city": "Atlanta",
+      "state": "GA",
+      "url": "https://www.aquatic&sportsatlanta.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10008",
+      "name": "Oakwood Nature & Wilderness Survival",
+      "city": "Beverly Hills",
+      "state": "CA",
+      "url": "https://www.oakwoodbeverlyhills.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10009",
+      "name": "CodeAcademy Nature & Wilderness Survival",
+      "city": "Portland",
+      "state": "OR",
+      "url": "https://www.codeacademyportland.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10010",
+      "name": "Creative Arts Perform Art Studio",
+      "city": "Boston",
+      "state": "MA",
+      "url": "https://www.creativeartsboston.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10011",
+      "name": "Pioneer STEM & Robotics Academy",
+      "city": "Philadelphia",
+      "state": "PA",
+      "url": "https://www.pioneerphiladelphia.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10012",
+      "name": "Frosty Mountain Perform Art Studio",
+      "city": "Orlando",
+      "state": "FL",
+      "url": "https://www.frostymountainorlando.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10013",
+      "name": "Winter Peak Perform Art Studio",
+      "city": "San Jose",
+      "state": "CA",
+      "url": "https://www.winterpeaksanjose.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    },
+    {
+      "id": "aca_10014",
+      "name": "TechKids STEM & Robotics Academy",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "url": "https://www.techkidssaltlakecity.org",
+      "detail": "Unresolvable Domain (gaierror)"
+    }
+  ],
+  "timeout_sample": [],
+  "google_sample": []
+}

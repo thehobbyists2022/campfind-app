@@ -1,0 +1,330 @@
+{
+  "source": "madscience.org/sitemap.xml + franchise homepage footer/title",
+  "verifiedAt": "2026-08-02",
+  "method": "subdomain in official sitemap; city from subdomain name or official homepage address",
+  "franchises": [
+    {
+      "subdomain": "austin",
+      "city": "Austin",
+      "state": "TX",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://austin.madscience.org/"
+    },
+    {
+      "subdomain": "centrallosangeles",
+      "city": "Los Angeles",
+      "state": "CA",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://centrallosangeles.madscience.org/"
+    },
+    {
+      "subdomain": "centralva",
+      "city": "Glen Allen",
+      "state": "VA",
+      "service_cities": [
+        "Richmond"
+      ],
+      "evidence": "footer addr Glen Allen VA 23059 + serving Richmond",
+      "sourceUrl": "https://centralva.madscience.org/"
+    },
+    {
+      "subdomain": "cfl",
+      "city": "Orlando",
+      "state": "FL",
+      "service_cities": [],
+      "evidence": "footer addr Orlando FL 32854",
+      "sourceUrl": "https://cfl.madscience.org/"
+    },
+    {
+      "subdomain": "charlotte",
+      "city": "Charlotte",
+      "state": "NC",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://charlotte.madscience.org/"
+    },
+    {
+      "subdomain": "chicago",
+      "city": "Chicago",
+      "state": "IL",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://chicago.madscience.org/"
+    },
+    {
+      "subdomain": "colorado",
+      "city": "Denver",
+      "state": "CO",
+      "service_cities": [],
+      "evidence": "homepage title 'Mad Science of Colorado | Denver, CO'",
+      "sourceUrl": "https://colorado.madscience.org/"
+    },
+    {
+      "subdomain": "connecticut",
+      "city": "Stratford",
+      "state": "CT",
+      "service_cities": [],
+      "evidence": "footer addr Stratford CT 06614",
+      "sourceUrl": "https://connecticut.madscience.org/"
+    },
+    {
+      "subdomain": "dc",
+      "city": "Silver Spring",
+      "state": "MD",
+      "service_cities": [
+        "Washington"
+      ],
+      "evidence": "footer addr Silver Spring MD 20904",
+      "sourceUrl": "https://dc.madscience.org/"
+    },
+    {
+      "subdomain": "detroit",
+      "city": "Detroit",
+      "state": "MI",
+      "service_cities": [],
+      "evidence": "subdomain name + title",
+      "sourceUrl": "https://detroit.madscience.org/"
+    },
+    {
+      "subdomain": "dfw",
+      "city": "Dallas",
+      "state": "TX",
+      "service_cities": [
+        "Fort Worth",
+        "Farmers Branch"
+      ],
+      "evidence": "DFW metro + footer addr Farmers Branch TX 75006",
+      "sourceUrl": "https://dfw.madscience.org/"
+    },
+    {
+      "subdomain": "greatersaltlake",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://greatersaltlake.madscience.org/"
+    },
+    {
+      "subdomain": "greatertampabay",
+      "city": "Tampa",
+      "state": "FL",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://greatertampabay.madscience.org/"
+    },
+    {
+      "subdomain": "hamptonroads",
+      "city": "Chesapeake",
+      "state": "VA",
+      "service_cities": [
+        "Norfolk"
+      ],
+      "evidence": "footer addr Chesapeake VA 23320",
+      "sourceUrl": "https://hamptonroads.madscience.org/"
+    },
+    {
+      "subdomain": "houston",
+      "city": "Houston",
+      "state": "TX",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://houston.madscience.org/"
+    },
+    {
+      "subdomain": "kansascity",
+      "city": "Kansas City",
+      "state": "KS",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://kansascity.madscience.org/"
+    },
+    {
+      "subdomain": "longisland",
+      "city": "East Meadow",
+      "state": "NY",
+      "service_cities": [
+        "Long Island"
+      ],
+      "evidence": "footer addr East Meadow NY 11554",
+      "sourceUrl": "https://longisland.madscience.org/"
+    },
+    {
+      "subdomain": "milwaukee",
+      "city": "Milwaukee",
+      "state": "WI",
+      "service_cities": [],
+      "evidence": "subdomain name + title",
+      "sourceUrl": "https://milwaukee.madscience.org/"
+    },
+    {
+      "subdomain": "nephoenix",
+      "city": "Phoenix",
+      "state": "AZ",
+      "service_cities": [],
+      "evidence": "subdomain name (NE Phoenix)",
+      "sourceUrl": "https://nephoenix.madscience.org/"
+    },
+    {
+      "subdomain": "newyorkcity",
+      "city": "New York",
+      "state": "NY",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://newyorkcity.madscience.org/"
+    },
+    {
+      "subdomain": "norfolk",
+      "city": "Norfolk",
+      "state": "VA",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://norfolk.madscience.org/"
+    },
+    {
+      "subdomain": "northeastnj",
+      "city": "Fair Lawn",
+      "state": "NJ",
+      "service_cities": [],
+      "evidence": "footer addr Fair Lawn NJ 07410",
+      "sourceUrl": "https://northeastnj.madscience.org/"
+    },
+    {
+      "subdomain": "northeastohio",
+      "city": "North Canton",
+      "state": "OH",
+      "service_cities": [
+        "Canton"
+      ],
+      "evidence": "footer addr North Canton OH 44720",
+      "sourceUrl": "https://northeastohio.madscience.org/"
+    },
+    {
+      "subdomain": "northillinois",
+      "city": "Wheeling",
+      "state": "IL",
+      "service_cities": [],
+      "evidence": "footer addr Wheeling IL 60090",
+      "sourceUrl": "https://northillinois.madscience.org/"
+    },
+    {
+      "subdomain": "okc",
+      "city": "Oklahoma City",
+      "state": "OK",
+      "service_cities": [
+        "Edmond"
+      ],
+      "evidence": "subdomain name + footer addr Edmond OK 73013",
+      "sourceUrl": "https://okc.madscience.org/"
+    },
+    {
+      "subdomain": "palmbeachbroward",
+      "city": "Jupiter",
+      "state": "FL",
+      "service_cities": [
+        "West Palm Beach"
+      ],
+      "evidence": "footer addr Jupiter FL 33458",
+      "sourceUrl": "https://palmbeachbroward.madscience.org/"
+    },
+    {
+      "subdomain": "pittsburgh",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://pittsburgh.madscience.org/"
+    },
+    {
+      "subdomain": "sacramento",
+      "city": "Sacramento",
+      "state": "CA",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://sacramento.madscience.org/"
+    },
+    {
+      "subdomain": "sandiego",
+      "city": "San Diego",
+      "state": "CA",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://sandiego.madscience.org/"
+    },
+    {
+      "subdomain": "snoking",
+      "city": "Snohomish",
+      "state": "WA",
+      "service_cities": [],
+      "evidence": "subdomain name (Sno-King, WA)",
+      "sourceUrl": "https://snoking.madscience.org/"
+    },
+    {
+      "subdomain": "southernmass",
+      "city": "Fall River",
+      "state": "MA",
+      "service_cities": [],
+      "evidence": "footer addr Fall River MA 02720",
+      "sourceUrl": "https://southernmass.madscience.org/"
+    },
+    {
+      "subdomain": "stlouis",
+      "city": "St. Louis",
+      "state": "MO",
+      "service_cities": [],
+      "evidence": "subdomain name",
+      "sourceUrl": "https://stlouis.madscience.org/"
+    },
+    {
+      "subdomain": "thebayarea",
+      "city": "San Francisco",
+      "state": "CA",
+      "service_cities": [],
+      "evidence": "subdomain name (SF Bay Area)",
+      "sourceUrl": "https://thebayarea.madscience.org/"
+    },
+    {
+      "subdomain": "triad",
+      "city": "Raleigh",
+      "state": "NC",
+      "service_cities": [],
+      "evidence": "footer addr Raleigh NC 27636",
+      "sourceUrl": "https://triad.madscience.org/"
+    },
+    {
+      "subdomain": "triangle",
+      "city": "Raleigh",
+      "state": "NC",
+      "service_cities": [],
+      "evidence": "footer addr Raleigh NC 27636",
+      "sourceUrl": "https://triangle.madscience.org/"
+    },
+    {
+      "subdomain": "westnewengland",
+      "city": "Indian Orchard",
+      "state": "MA",
+      "service_cities": [
+        "Springfield"
+      ],
+      "evidence": "footer addr Indian Orchard MA 01151",
+      "sourceUrl": "https://westnewengland.madscience.org/"
+    },
+    {
+      "subdomain": "westorangecounty",
+      "city": "Santa Ana",
+      "state": "CA",
+      "service_cities": [],
+      "evidence": "footer addr Santa Ana CA 92704",
+      "sourceUrl": "https://westorangecounty.madscience.org/"
+    },
+    {
+      "subdomain": "wnj",
+      "city": "Pennington",
+      "state": "NJ",
+      "service_cities": [],
+      "evidence": "footer addr Pennington NJ 08534",
+      "sourceUrl": "https://wnj.madscience.org/"
+    }
+  ]
+}

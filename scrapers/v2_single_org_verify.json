@@ -1,0 +1,191 @@
+[
+  {
+    "id": "ymca_camp_marston_outdoor_adventure",
+    "name": "YMCA Camp Marston Outdoor Adventure",
+    "city": "Julian",
+    "state": "CA",
+    "website": "https://www.ymcasd.org/campmarston",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "ventura_family_ymca_day_camp",
+    "name": "Ventura Family YMCA Day Camp",
+    "city": "Ventura",
+    "state": "CA",
+    "website": "https://www.ciymca.org",
+    "verdict": "VERIFY_PASS",
+    "evidence": "https://www.ciymca.org/contact"
+  },
+  {
+    "id": "western_family_ymca_day_camp",
+    "name": "Western Family YMCA Day Camp",
+    "city": "Newark",
+    "state": "DE",
+    "website": "https://www.ymcade.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "bar-t_mountainside_day_camp",
+    "name": "Bar-T Mountainside Day Camp",
+    "city": "Urbana",
+    "state": "MD",
+    "website": "https://www.bar-t.com",
+    "verdict": "VERIFY_PASS",
+    "evidence": "https://www.bar-t.com/about"
+  },
+  {
+    "id": "ymca_of_the_ozarks_camp_sunnen",
+    "name": "YMCA of the Ozarks Camp Sunnen",
+    "city": "Steelville",
+    "state": "MO",
+    "website": "https://www.ymcaoftheozarks.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "camp_alleghany_for_girls",
+    "name": "Camp Alleghany for Girls",
+    "city": "Lewisburg",
+    "state": "WV",
+    "website": "https://www.campalleghanyforgirls.com",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "international_music_camp",
+    "name": "International Music Camp",
+    "city": "Dunseith",
+    "state": "ND",
+    "website": "https://www.internationalmusiccamp.com",
+    "verdict": "VERIFY_PASS",
+    "evidence": "https://www.internationalmusiccamp.com/contact"
+  },
+  {
+    "id": "camp_sea_gull_&_camp_seafarer",
+    "name": "Camp Sea Gull & Camp Seafarer",
+    "city": "Arapahoe",
+    "state": "NC",
+    "website": "https://www.seagull-seafarer.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "camp_greylock_for_boys",
+    "name": "Camp Greylock for Boys",
+    "city": "Beckett",
+    "state": "MA",
+    "website": "https://www.campgreylock.com",
+    "verdict": "VERIFY_PASS",
+    "evidence": "https://www.campgreylock.com/contact"
+  },
+  {
+    "id": "camp_romaca_for_girls",
+    "name": "Camp Romaca for Girls",
+    "city": "Hinsdale",
+    "state": "MA",
+    "website": "https://www.romaca.com",
+    "verdict": "VERIFY_PASS",
+    "evidence": "https://www.romaca.com/contact-us"
+  },
+  {
+    "id": "catalina_island_camps",
+    "name": "Catalina Island Camps",
+    "city": "Two Harbors",
+    "state": "CA",
+    "website": "https://www.catalinaislandcamps.com",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50000",
+    "name": "San Diego Zoo & Safari Park Summer Camp",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50002",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50006",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50009",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50016",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50020",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50026",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50035",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50040",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  },
+  {
+    "id": "real_exact_50044",
+    "name": "San Diego Zoo & Safari Park Summer Camp - Day Camp (Shuttle Included)",
+    "city": "San Diego",
+    "state": "CA",
+    "website": "https://sdzsafari.org",
+    "verdict": "VERIFY_FAIL",
+    "evidence": ""
+  }
+]

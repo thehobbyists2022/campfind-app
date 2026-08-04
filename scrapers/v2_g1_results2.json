@@ -1,0 +1,302 @@
+[
+  {
+    "i": 0,
+    "name": "Avid4 Adventure Adventure & STEM Camp (Portland)",
+    "city": "Portland",
+    "state": "OR",
+    "tier": "tierA",
+    "domain": "avid4.com",
+    "verdict": "PASS",
+    "note": "avid4 cities=51 city=portland present=True"
+  },
+  {
+    "i": 1,
+    "name": "iD Tech Academy Adventure & STEM Camp (San Diego) - Overnight Resident Program",
+    "city": "San Diego",
+    "state": "CA",
+    "tier": "tierA",
+    "domain": "idtech.com",
+    "verdict": "PASS",
+    "note": "idtech campuses ['uc-san-diego', 'san-diego-state-university', 'university-of-san-diego'] present=True"
+  },
+  {
+    "i": 2,
+    "name": "Steve & Kate's Camp Adventure & STEM Camp (Dallas) - Overnight Resident Program",
+    "city": "Dallas",
+    "state": "TX",
+    "tier": "tierA",
+    "domain": "steveandkatescamp.com",
+    "verdict": "PASS",
+    "note": "stevekates city=dallas present=True"
+  },
+  {
+    "i": 3,
+    "name": "iD Tech Academy Summer Camp (Sacramento)",
+    "city": "Sacramento",
+    "state": "CA",
+    "tier": "tierA",
+    "domain": "idtech.com",
+    "verdict": "PASS",
+    "note": "idtech campuses ['csu-sacramento'] present=True"
+  },
+  {
+    "i": 4,
+    "name": "Code Ninjas STEM Camp Adventure & STEM Camp (Orlando) - Overnight Resident Program",
+    "city": "Orlando",
+    "state": "FL",
+    "tier": "tierA",
+    "domain": "codeninjas.com",
+    "verdict": "PASS",
+    "note": "codeninjas slug-match city=orlando -> present=True"
+  },
+  {
+    "i": 5,
+    "name": "Gales Creek Camp for Diabetics",
+    "city": "Gales Creek",
+    "state": "OR",
+    "tier": "tierA",
+    "domain": "galescreekcamp.org",
+    "verdict": "PASS",
+    "note": "homepage city=Gales Creek present=True"
+  },
+  {
+    "i": 6,
+    "name": "Mad Science Summer Lab Summer Camp (Salt Lake City)",
+    "city": "Salt Lake City",
+    "state": "UT",
+    "tier": "tierA",
+    "domain": "madscience.org",
+    "verdict": "PASS",
+    "note": "madscience subs ['greatersaltlake'] present=True (subs total 64)"
+  },
+  {
+    "i": 7,
+    "name": "Young Rembrandts Art Camp Summer Camp (Portland)",
+    "city": "Portland",
+    "state": "OR",
+    "tier": "tierA",
+    "domain": "youngrembrandts.com",
+    "verdict": "PASS",
+    "note": "homepage city=Portland present=True"
+  },
+  {
+    "i": 8,
+    "name": "Nike Junior Sports Camps Adventure & STEM Camp (Oceanside)",
+    "city": "Oceanside",
+    "state": "CA",
+    "tier": "tierA",
+    "domain": "ussportscamps.com",
+    "verdict": "PASS",
+    "note": "ussportscamps cities=1077 city=oceanside present=True"
+  },
+  {
+    "i": 9,
+    "name": "Steve & Kate's Camp Summer Camp (Philadelphia)",
+    "city": "Philadelphia",
+    "state": "PA",
+    "tier": "tierA",
+    "domain": "steveandkatescamp.com",
+    "verdict": "PASS",
+    "note": "stevekates city=philadelphia present=True"
+  },
+  {
+    "i": 10,
+    "name": "San Jose Code Ninjas & STEM Summer Academy",
+    "city": "San Jose",
+    "state": "CA",
+    "tier": "tierA",
+    "domain": "codeninjas.com",
+    "verdict": "PASS",
+    "note": "codeninjas slug-match city=sanjose -> present=True"
+  },
+  {
+    "i": 11,
+    "name": "iD Tech Academy Adventure & STEM Camp (Salt Lake City) - Economy Day Program",
+    "city": "Salt Lake City",
+    "state": "UT",
+    "tier": "tierA",
+    "domain": "idtech.com",
+    "verdict": "PASS",
+    "note": "idtech campuses ['university-of-utah'] present=True"
+  },
+  {
+    "i": 12,
+    "name": "Code Ninjas STEM Camp Summer Camp (Los Angeles)",
+    "city": "Los Angeles",
+    "state": "CA",
+    "tier": "tierA",
+    "domain": "codeninjas.com",
+    "verdict": "PASS",
+    "note": "codeninjas slug-match city=losangeles -> present=True"
+  },
+  {
+    "i": 13,
+    "name": "South Bay Family YMCA Summer Camp",
+    "city": "Chula Vista",
+    "state": "CA",
+    "tier": "tierA",
+    "domain": "ymcasd.org",
+    "verdict": "PASS",
+    "note": "homepage city=Chula Vista present=True"
+  },
+  {
+    "i": 14,
+    "name": "Mad Science Summer Lab Summer Camp (Charlotte)",
+    "city": "Charlotte",
+    "state": "NC",
+    "tier": "tierA",
+    "domain": "madscience.org",
+    "verdict": "PASS",
+    "note": "madscience subs ['charlotte'] present=True (subs total 64)"
+  },
+  {
+    "i": 15,
+    "name": "Irvine Outdoor Science & Adventure Camp - Day Camp (Shuttle Included)",
+    "city": "Irvine",
+    "state": "CA",
+    "tier": "tierC",
+    "domain": "avid4.com",
+    "verdict": "PASS",
+    "note": "avid4 cities=51 city=irvine present=False"
+  },
+  {
+    "i": 16,
+    "name": "Code Ninjas STEM Camp Summer Camp (Charlotte)",
+    "city": "Charlotte",
+    "state": "NC",
+    "tier": "tierC",
+    "domain": "codeninjas.com",
+    "verdict": "PASS",
+    "note": "codeninjas slug-match city=charlotte -> present=False"
+  },
+  {
+    "i": 17,
+    "name": "Avid4 Adventure Adventure & STEM Camp (Dallas)",
+    "city": "Dallas",
+    "state": "TX",
+    "tier": "tierC",
+    "domain": "avid4.com",
+    "verdict": "PASS",
+    "note": "avid4 cities=51 city=dallas present=False"
+  },
+  {
+    "i": 18,
+    "name": "Galileo Camps Adventure & STEM Camp (Las Vegas)",
+    "city": "Las Vegas",
+    "state": "NV",
+    "tier": "tierC",
+    "domain": "galileo-camps.com",
+    "verdict": "PASS",
+    "note": "galileo slugs=72 city=lasvegas present=False"
+  },
+  {
+    "i": 19,
+    "name": "Galileo Camps Adventure & STEM Camp (Miami) - Day Camp (Shuttle Included)",
+    "city": "Miami",
+    "state": "FL",
+    "tier": "tierC",
+    "domain": "galileo-camps.com",
+    "verdict": "PASS",
+    "note": "galileo slugs=72 city=miami present=False"
+  },
+  {
+    "i": 20,
+    "name": "Avid4 Adventure Summer Camp (Boston)",
+    "city": "Boston",
+    "state": "MA",
+    "tier": "tierC",
+    "domain": "avid4.com",
+    "verdict": "PASS",
+    "note": "avid4 cities=51 city=boston present=False"
+  },
+  {
+    "i": 21,
+    "name": "School of Rock Summer Camp (Sacramento)",
+    "city": "Sacramento",
+    "state": "CA",
+    "tier": "tierC",
+    "domain": "schoolofrock.com",
+    "verdict": "PASS",
+    "note": "schoolofrock slugs=409 city=sacramento present=False"
+  },
+  {
+    "i": 22,
+    "name": "Mad Science Summer STEM Academy (Denver)",
+    "city": "Denver",
+    "state": "CO",
+    "tier": "tierC",
+    "domain": "madscience.org",
+    "verdict": "FAIL",
+    "note": "madscience subs ['colorado'] present=True (subs total 64)"
+  },
+  {
+    "i": 23,
+    "name": "Mad Science Summer STEM Academy (Oceanside)",
+    "city": "Oceanside",
+    "state": "CA",
+    "tier": "tierC",
+    "domain": "madscience.org",
+    "verdict": "PASS",
+    "note": "madscience subs ['oceanside'] present=False (subs total 64)"
+  },
+  {
+    "i": 24,
+    "name": "Avid4 Adventure Adventure & STEM Camp (Philadelphia)",
+    "city": "Philadelphia",
+    "state": "PA",
+    "tier": "tierC",
+    "domain": "avid4.com",
+    "verdict": "PASS",
+    "note": "avid4 cities=51 city=philadelphia present=False"
+  },
+  {
+    "i": 25,
+    "name": "Mad Science Summer Lab Summer Camp (Boston)",
+    "city": "Boston",
+    "state": "MA",
+    "tier": "tierC",
+    "domain": "madscience.org",
+    "verdict": "PASS",
+    "note": "madscience subs ['boston'] present=False (subs total 64)"
+  },
+  {
+    "i": 26,
+    "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+    "city": "Carlsbad",
+    "state": "CA",
+    "tier": "tierC",
+    "domain": "magikidlab.com",
+    "verdict": "PASS",
+    "note": "magikid cities=32 city=carlsbad present=False"
+  },
+  {
+    "i": 27,
+    "name": "Drama Kids International Adventure & STEM Camp (Detroit) - Day Camp (Shuttle Included)",
+    "city": "Detroit",
+    "state": "MI",
+    "tier": "tierC",
+    "domain": "dramakids.com",
+    "verdict": "PASS",
+    "note": "dramakids areas=39 city=detroit present=False"
+  },
+  {
+    "i": 28,
+    "name": "Irvine Outdoor Science & Adventure Camp - Economy Day Program",
+    "city": "Irvine",
+    "state": "CA",
+    "tier": "tierC",
+    "domain": "avid4.com",
+    "verdict": "PASS",
+    "note": "avid4 cities=51 city=irvine present=False"
+  },
+  {
+    "i": 29,
+    "name": "Carlsbad STEM & Robotics Academy - Day Camp (Shuttle Included)",
+    "city": "Carlsbad",
+    "state": "CA",
+    "tier": "tierC",
+    "domain": "magikidlab.com",
+    "verdict": "PASS",
+    "note": "magikid cities=32 city=carlsbad present=False"
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "i": 0,
+    "name": "Steve & Kate's Boulder (Fall)",
+    "city": "Boulder",
+    "state": "CO",
+    "season": "fall",
+    "verdict": "PASS"
+  },
+  {
+    "i": 1,
+    "name": "Steve & Kate's Princeton",
+    "city": "Princeton",
+    "state": "NJ",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 2,
+    "name": "US Sports Camps Mount Berry",
+    "city": "Mount Berry",
+    "state": "GA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 3,
+    "name": "Code Ninjas Deerpark (Fall)",
+    "city": "Deerpark",
+    "state": "TX",
+    "season": "fall",
+    "verdict": "PASS"
+  },
+  {
+    "i": 4,
+    "name": "Galileo Lafayette Elementary",
+    "city": "Lafayette Elementary",
+    "state": "CA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 5,
+    "name": "Steve & Kate's Boulder",
+    "city": "Boulder",
+    "state": "CO",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 6,
+    "name": "Galileo Parker",
+    "city": "Parker",
+    "state": "CA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 7,
+    "name": "iD Tech Irvine (Fall)",
+    "city": "Irvine",
+    "state": "CA",
+    "season": "fall",
+    "verdict": "PASS"
+  },
+  {
+    "i": 8,
+    "name": "Code Ninjas Covington (Fall)",
+    "city": "Covington",
+    "state": "WA",
+    "season": "fall",
+    "verdict": "PASS"
+  },
+  {
+    "i": 9,
+    "name": "Code Ninjas Sunnyvale",
+    "city": "Sunnyvale",
+    "state": "CA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 10,
+    "name": "Steve & Kate's Richmond (Fall)",
+    "city": "Richmond",
+    "state": "TX",
+    "season": "fall",
+    "verdict": "PASS"
+  },
+  {
+    "i": 11,
+    "name": "US Sports Camps Fremont",
+    "city": "Fremont",
+    "state": "CA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 12,
+    "name": "US Sports Camps Ripon",
+    "city": "Ripon",
+    "state": "CA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 13,
+    "name": "Code Ninjas Broomfield (Fall)",
+    "city": "Broomfield",
+    "state": "CO",
+    "season": "fall",
+    "verdict": "PASS"
+  },
+  {
+    "i": 14,
+    "name": "US Sports Camps Americus",
+    "city": "Americus",
+    "state": "GA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 15,
+    "name": "Galileo Arcadia Sierra Madre",
+    "city": "Arcadia Sierra Madre",
+    "state": "CA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 16,
+    "name": "iD Tech Blacksburg",
+    "city": "Blacksburg",
+    "state": "VA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 17,
+    "name": "US Sports Camps Queen Creek",
+    "city": "Queen Creek",
+    "state": "AZ",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 18,
+    "name": "Code Ninjas Arundel Mills Hanover (Fall)",
+    "city": "Arundel Mills Hanover",
+    "state": "MD",
+    "season": "fall",
+    "verdict": "PASS"
+  },
+  {
+    "i": 19,
+    "name": "Code Ninjas Manchester",
+    "city": "Manchester",
+    "state": "CT",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 20,
+    "name": "Avid4 Adventure Portland K",
+    "city": "Portland K",
+    "state": "OR",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 21,
+    "name": "iD Tech Baltimore",
+    "city": "Baltimore",
+    "state": "MD",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 22,
+    "name": "Code Ninjas Downingtown",
+    "city": "Downingtown",
+    "state": "PA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 23,
+    "name": "Avid4 Adventure Windy Peak",
+    "city": "Windy Peak",
+    "state": "CO",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 24,
+    "name": "US Sports Camps Ellenwood",
+    "city": "Ellenwood",
+    "state": "GA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 25,
+    "name": "Code Ninjas Wellington (Fall)",
+    "city": "Wellington",
+    "state": "FL",
+    "season": "fall",
+    "verdict": "PASS"
+  },
+  {
+    "i": 26,
+    "name": "Steve & Kate's Alexandria",
+    "city": "Alexandria",
+    "state": "VA",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 27,
+    "name": "Avid4 Adventure Wash Park K",
+    "city": "Wash Park K",
+    "state": "CO",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 28,
+    "name": "Code Ninjas Mount Pleasant",
+    "city": "Mount Pleasant",
+    "state": "SC",
+    "season": "summer",
+    "verdict": "PASS"
+  },
+  {
+    "i": 29,
+    "name": "Code Ninjas Viera (Fall)",
+    "city": "Viera",
+    "state": "FL",
+    "season": "fall",
+    "verdict": "PASS"
+  }
+]

@@ -1,0 +1,259 @@
+{
+  "total_tested": 50,
+  "verified_passed_count": 42,
+  "failed_count": 8,
+  "verified_camps": [
+    {
+      "name": "Joe & Mary Mottino Family YMCA Summer Camp",
+      "location": "Oceanside, CA",
+      "website": "https://www.ymcasd.org/locations/joe-and-mary-mottino-family-ymca"
+    },
+    {
+      "name": "San Diego Botanic Garden Youth Camp",
+      "location": "Encinitas, CA",
+      "website": "https://sdbgarden.org"
+    },
+    {
+      "name": "Magikid Robotics & STEM Lab Oceanside",
+      "location": "Oceanside, CA",
+      "website": "https://magikidlab.com"
+    },
+    {
+      "name": "YMCA Camp Marston Outdoor Adventure",
+      "location": "Julian, CA",
+      "website": "https://www.ymcasd.org/campmarston"
+    },
+    {
+      "name": "Camp James Orange County",
+      "location": "Newport Beach, CA",
+      "website": "https://www.campjames.com"
+    },
+    {
+      "name": "Camp Natoma Outdoor Adventure",
+      "location": "Paso Robles, CA",
+      "website": "https://www.campnatoma.org"
+    },
+    {
+      "name": "Camp Ocean Pines",
+      "location": "Cambria, CA",
+      "website": "https://campoceanpines.org"
+    },
+    {
+      "name": "Trail Blazers Day Camp",
+      "location": "Brooklyn, NY",
+      "website": "https://www.trailblazers.org"
+    },
+    {
+      "name": "Ventura Family YMCA Day Camp",
+      "location": "Ventura, CA",
+      "website": "https://www.ciymca.org"
+    },
+    {
+      "name": "Tamarack Day Camp",
+      "location": "Randolph, NJ",
+      "website": "https://tamarackdaycamp.com"
+    },
+    {
+      "name": "Western Family YMCA Day Camp",
+      "location": "Newark, DE",
+      "website": "https://www.ymcade.org"
+    },
+    {
+      "name": "Genesee Valley Summer Camps",
+      "location": "Parkton, MD",
+      "website": "https://www.geneseevalley.org"
+    },
+    {
+      "name": "Shemesh Camp at Valley of the Sun JCC",
+      "location": "Scottsdale, AZ",
+      "website": "https://vosjcc.org"
+    },
+    {
+      "name": "Raritan Bay Area YMCA Summer Stars",
+      "location": "Perth Amboy, NJ",
+      "website": "https://www.rbaymca.org"
+    },
+    {
+      "name": "Cloverleaf Ranch",
+      "location": "Santa Rosa, CA",
+      "website": "https://www.cloverleafranch.com"
+    },
+    {
+      "name": "Neil Klatskin Summer Camps",
+      "location": "Tenafly, NJ",
+      "website": "https://www.jccotp.org"
+    },
+    {
+      "name": "Bar-T Mountainside Day Camp",
+      "location": "Urbana, MD",
+      "website": "https://www.bar-t.com"
+    },
+    {
+      "name": "Camp Laurelwood",
+      "location": "Madison, CT",
+      "website": "https://www.camplaurelwood.org"
+    },
+    {
+      "name": "Sherwood Forest Summer Camp",
+      "location": "Lesterville, MO",
+      "website": "https://www.sherwoodforeststl.org"
+    },
+    {
+      "name": "Camp Gallagher Outdoor Adventure",
+      "location": "Lakebay, WA",
+      "website": "https://www.campgallagher.org"
+    },
+    {
+      "name": "Culver Summer Camps",
+      "location": "Culver, IN",
+      "website": "https://www.culver.org"
+    },
+    {
+      "name": "YMCA of the Ozarks Camp Sunnen",
+      "location": "Steelville, MO",
+      "website": "https://www.ymcaoftheozarks.org"
+    },
+    {
+      "name": "Gales Creek Camp for Diabetics",
+      "location": "Gales Creek, OR",
+      "website": "https://www.galescreekcamp.org"
+    },
+    {
+      "name": "Camp Ondessonk Wilderness Adventure",
+      "location": "Ozark, IL",
+      "website": "https://www.ondessonk.com"
+    },
+    {
+      "name": "Camp Alleghany for Girls",
+      "location": "Lewisburg, WV",
+      "website": "https://www.campalleghanyforgirls.com"
+    },
+    {
+      "name": "Florida Diabetes Camp",
+      "location": "Gainesville, FL",
+      "website": "https://www.floridadiabetescamp.org"
+    },
+    {
+      "name": "Ligonier Camp & Conference Center",
+      "location": "Ligonier, PA",
+      "website": "https://www.ligoniercamp.org"
+    },
+    {
+      "name": "International Music Camp",
+      "location": "Dunseith, ND",
+      "website": "https://www.internationalmusiccamp.com"
+    },
+    {
+      "name": "Camp Jorn YMCA",
+      "location": "Manitowish Waters, WI",
+      "website": "https://www.campjornymca.org"
+    },
+    {
+      "name": "Camp Kanuga Outdoor Center",
+      "location": "Hendersonville, NC",
+      "website": "https://www.campkanuga.org"
+    },
+    {
+      "name": "Camp Sea Gull & Camp Seafarer",
+      "location": "Arapahoe, NC",
+      "website": "https://www.seagull-seafarer.org"
+    },
+    {
+      "name": "Camp Huckins for Girls",
+      "location": "Freedom, NH",
+      "website": "https://www.camphuckins.org"
+    },
+    {
+      "name": "Camp Greylock for Boys",
+      "location": "Beckett, MA",
+      "website": "https://www.campgreylock.com"
+    },
+    {
+      "name": "Camp Romaca for Girls",
+      "location": "Hinsdale, MA",
+      "website": "https://www.romaca.com"
+    },
+    {
+      "name": "Camp Dudley for Boys",
+      "location": "Westport, NY",
+      "website": "https://www.campdudley.org"
+    },
+    {
+      "name": "Camp Kiniya for Girls",
+      "location": "Colchester, VT",
+      "website": "https://www.campdudley.org/kiniya"
+    },
+    {
+      "name": "Idyllwild Arts Summer Program",
+      "location": "Idyllwild, CA",
+      "website": "https://www.idyllwildarts.org"
+    },
+    {
+      "name": "Pali Adventures Specialty Summer Camp",
+      "location": "Running Springs, CA",
+      "website": "https://www.paliadventures.com"
+    },
+    {
+      "name": "Catalina Island Camps",
+      "location": "Two Harbors, CA",
+      "website": "https://www.catalinaislandcamps.com"
+    },
+    {
+      "name": "Galileo Innovation Summer Camps",
+      "location": "San Francisco, CA",
+      "website": "https://galileo-camps.com"
+    },
+    {
+      "name": "Steve & Kate's Camp",
+      "location": "Los Angeles, CA",
+      "website": "https://steveandkatescamp.com"
+    },
+    {
+      "name": "iD Tech Camps at UC San Diego & Stanford",
+      "location": "La Jolla, CA",
+      "website": "https://www.idtech.com"
+    }
+  ],
+  "failed_camps": [
+    {
+      "name": "City of Oceanside Parks & Rec Camps",
+      "website": "https://www.ci.oceanside.ca.us/gov/ns/parks/default.asp",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "U.S. Space Camp & Rocket Park",
+      "website": "https://www.spacecamp.com",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "Chestnut Ridge Camp & Retreat",
+      "website": "https://www.campchestnutridge.org",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "name": "JCC Abrams Camps",
+      "website": "https://www.jccabramscamps.org",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "name": "Camp Edwards YMCA Center",
+      "website": "https://www.campedwards.org",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "name": "Camp Aldersgate Special Needs & Youth Camp",
+      "website": "https://www.campaldersgate.org",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "YMCA Camp Belknap for Boys",
+      "website": "https://www.campbelknap.org",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "Camp Concord at Lake Tahoe",
+      "website": "https://www.campconcord.org",
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "total_camps_tested": 1000,
+  "summary": {
+    "working_direct_official_websites": 774,
+    "failed_broken_websites": 226,
+    "timeout_no_response_websites": 0,
+    "google_search_pages": 0
+  },
+  "working_sample": [
+    {
+      "id": "joe_&_mary_mottino_family_ymca_summer_camp",
+      "name": "Joe & Mary Mottino Family YMCA Summer Camp",
+      "city": "Oceanside",
+      "state": "CA",
+      "url": "https://www.ymcasd.org/locations/joe-and-mary-mottino-family-ymca",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "magikid_robotics_&_stem_lab_oceanside",
+      "name": "Magikid Robotics & STEM Lab Oceanside",
+      "city": "Oceanside",
+      "state": "CA",
+      "url": "https://magikidlab.com",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "camp_ocean_pines",
+      "name": "Camp Ocean Pines",
+      "city": "Cambria",
+      "state": "CA",
+      "url": "https://campoceanpines.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "trail_blazers_day_camp",
+      "name": "Trail Blazers Day Camp",
+      "city": "Brooklyn",
+      "state": "NY",
+      "url": "https://www.trailblazers.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "western_family_ymca_day_camp",
+      "name": "Western Family YMCA Day Camp",
+      "city": "Newark",
+      "state": "DE",
+      "url": "https://www.ymcade.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "genesee_valley_summer_camps",
+      "name": "Genesee Valley Summer Camps",
+      "city": "Parkton",
+      "state": "MD",
+      "url": "https://www.geneseevalley.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "shemesh_camp_at_valley_of_the_sun_jcc",
+      "name": "Shemesh Camp at Valley of the Sun JCC",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "url": "https://vosjcc.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "raritan_bay_area_ymca_summer_stars",
+      "name": "Raritan Bay Area YMCA Summer Stars",
+      "city": "Perth Amboy",
+      "state": "NJ",
+      "url": "https://www.rbaymca.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "cloverleaf_ranch",
+      "name": "Cloverleaf Ranch",
+      "city": "Santa Rosa",
+      "state": "CA",
+      "url": "https://www.cloverleafranch.com",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "neil_klatskin_summer_camps",
+      "name": "Neil Klatskin Summer Camps",
+      "city": "Tenafly",
+      "state": "NJ",
+      "url": "https://www.jccotp.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "bar-t_mountainside_day_camp",
+      "name": "Bar-T Mountainside Day Camp",
+      "city": "Urbana",
+      "state": "MD",
+      "url": "https://www.bar-t.com",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "sherwood_forest_summer_camp",
+      "name": "Sherwood Forest Summer Camp",
+      "city": "Lesterville",
+      "state": "MO",
+      "url": "https://www.sherwoodforeststl.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "camp_gallagher_outdoor_adventure",
+      "name": "Camp Gallagher Outdoor Adventure",
+      "city": "Lakebay",
+      "state": "WA",
+      "url": "https://www.campgallagher.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "culver_summer_camps",
+      "name": "Culver Summer Camps",
+      "city": "Culver",
+      "state": "IN",
+      "url": "https://www.culver.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "gales_creek_camp_for_diabetics",
+      "name": "Gales Creek Camp for Diabetics",
+      "city": "Gales Creek",
+      "state": "OR",
+      "url": "https://www.galescreekcamp.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "ligonier_camp_&_conference_center",
+      "name": "Ligonier Camp & Conference Center",
+      "city": "Ligonier",
+      "state": "PA",
+      "url": "https://www.ligoniercamp.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "international_music_camp",
+      "name": "International Music Camp",
+      "city": "Dunseith",
+      "state": "ND",
+      "url": "https://www.internationalmusiccamp.com",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "camp_jorn_ymca",
+      "name": "Camp Jorn YMCA",
+      "city": "Manitowish Waters",
+      "state": "WI",
+      "url": "https://www.campjornymca.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "camp_sea_gull_&_camp_seafarer",
+      "name": "Camp Sea Gull & Camp Seafarer",
+      "city": "Arapahoe",
+      "state": "NC",
+      "url": "https://www.seagull-seafarer.org",
+      "status": "HTTP 200 OK"
+    },
+    {
+      "id": "camp_huckins_for_girls",
+      "name": "Camp Huckins for Girls",
+      "city": "Freedom",
+      "state": "NH",
+      "url": "https://www.camphuckins.org",
+      "status": "HTTP 200 OK"
+    }
+  ],
+  "failed_sample": [
+    {
+      "id": "san_diego_botanic_garden_youth_camp",
+      "name": "San Diego Botanic Garden Youth Camp",
+      "city": "Encinitas",
+      "state": "CA",
+      "url": "https://sdbgarden.org",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "ymca_camp_marston_outdoor_adventure",
+      "name": "YMCA Camp Marston Outdoor Adventure",
+      "city": "Julian",
+      "state": "CA",
+      "url": "https://www.ymcasd.org/campmarston",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "camp_james_orange_county",
+      "name": "Camp James Orange County",
+      "city": "Newport Beach",
+      "state": "CA",
+      "url": "https://www.campjames.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "camp_natoma_outdoor_adventure",
+      "name": "Camp Natoma Outdoor Adventure",
+      "city": "Paso Robles",
+      "state": "CA",
+      "url": "https://www.campnatoma.org",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "ventura_family_ymca_day_camp",
+      "name": "Ventura Family YMCA Day Camp",
+      "city": "Ventura",
+      "state": "CA",
+      "url": "https://www.ciymca.org",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "tamarack_day_camp",
+      "name": "Tamarack Day Camp",
+      "city": "Randolph",
+      "state": "NJ",
+      "url": "https://tamarackdaycamp.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "camp_laurelwood",
+      "name": "Camp Laurelwood",
+      "city": "Madison",
+      "state": "CT",
+      "url": "https://www.camplaurelwood.org",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "ymca_of_the_ozarks_camp_sunnen",
+      "name": "YMCA of the Ozarks Camp Sunnen",
+      "city": "Steelville",
+      "state": "MO",
+      "url": "https://www.ymcaoftheozarks.org",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "camp_ondessonk_wilderness_adventure",
+      "name": "Camp Ondessonk Wilderness Adventure",
+      "city": "Ozark",
+      "state": "IL",
+      "url": "https://www.ondessonk.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "camp_alleghany_for_girls",
+      "name": "Camp Alleghany for Girls",
+      "city": "Lewisburg",
+      "state": "WV",
+      "url": "https://www.campalleghanyforgirls.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "florida_diabetes_camp",
+      "name": "Florida Diabetes Camp",
+      "city": "Gainesville",
+      "state": "FL",
+      "url": "https://www.floridadiabetescamp.org",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "camp_kanuga_outdoor_center",
+      "name": "Camp Kanuga Outdoor Center",
+      "city": "Hendersonville",
+      "state": "NC",
+      "url": "https://www.campkanuga.org",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "camp_greylock_for_boys",
+      "name": "Camp Greylock for Boys",
+      "city": "Beckett",
+      "state": "MA",
+      "url": "https://www.campgreylock.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "camp_romaca_for_girls",
+      "name": "Camp Romaca for Girls",
+      "city": "Hinsdale",
+      "state": "MA",
+      "url": "https://www.romaca.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "idyllwild_arts_summer_program",
+      "name": "Idyllwild Arts Summer Program",
+      "city": "Idyllwild",
+      "state": "CA",
+      "url": "https://www.idyllwildarts.org",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "catalina_island_camps",
+      "name": "Catalina Island Camps",
+      "city": "Two Harbors",
+      "state": "CA",
+      "url": "https://www.catalinaislandcamps.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "real_aca_20003",
+      "name": "Galileo Camps Summer Camp (Las Vegas)",
+      "city": "Las Vegas",
+      "state": "NV",
+      "url": "https://galileo-camps.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "real_aca_20004",
+      "name": "Bach to Rock Music Camp Summer Camp (Fresno)",
+      "city": "Fresno",
+      "state": "CA",
+      "url": "https://www.bachtorock.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "real_aca_20006",
+      "name": "Galileo Camps Summer Camp (San Diego)",
+      "city": "San Diego",
+      "state": "CA",
+      "url": "https://galileo-camps.com",
+      "status": "<urlopen error timed out>"
+    },
+    {
+      "id": "real_aca_20007",
+      "name": "Bach to Rock Music Camp Summer Camp (Sacramento)",
+      "city": "Sacramento",
+      "state": "CA",
+      "url": "https://www.bachtorock.com",
+      "status": "<urlopen error timed out>"
+    }
+  ]
+}

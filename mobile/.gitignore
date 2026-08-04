@@ -1,0 +1,19 @@
+# Flutter/Dart build artifacts
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE
+.idea/
+*.iml
+
+# Signing keystore - NEVER commit signing keys
+*.jks
+*.keystore
+key.properties
+
+# Generated
+.gradle/
+*.apk
+*.aab
