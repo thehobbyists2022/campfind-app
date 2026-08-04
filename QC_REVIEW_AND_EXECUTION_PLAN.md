@@ -154,6 +154,21 @@
 
 ## 第五部分：给测试者的回复建议（所有者可即发）
 
+### 5.1 完整版回复（推荐，2026-08-04 数据重建后）
+> Thanks so much for catching that — you were absolutely right, and we really appreciate it. The Magikid Robotics & STEM Lab Oceanside listing you flagged was incorrect, and we've **removed it**.
+>
+> Your feedback prompted a full audit of our directory. Here's what we've done since:
+> - **Re-verified every camp location** against the camp's own official website or the brand's official store locator. Any listing we couldn't confirm was removed or clearly marked "Unverified."
+> - **Removed fabricated contact info** — phone numbers, ratings, and review counts that weren't sourced from the camps themselves are no longer shown. You'll now always see the camp's official website link instead.
+> - **Expanded to 2,126 real camps** across 46 states, including a brand-new **Fall** season (465 fall programs), on top of Summer, Winter, and Spring.
+> - Removed the old "1,050 Certified" claim — we now only show badges for facts we can prove.
+>
+> The updated version is live in the app. Please take another look, especially around your ZIP code — and keep the feedback coming. It's exactly what makes this directory better. Thank you again!
+
+### 5.2 简短版（可选，仅回复原反馈）
+> You were right — the Magikid Oceanside listing was incorrect and we've removed it. We've since re-verified every camp against official sources, cleaned up fabricated contact details, and expanded to 2,126 real camps including a new Fall season. Updated version is live — thanks for helping us make it better!
+
+### 5.3 原模板（早期，备用）
 > Thanks so much for catching this — you were absolutely right. We audited that listing and confirmed the Oceanside location was incorrect, and we've removed it. We're doing a full location-level verification pass of every camp in the directory against official camp websites this week. Really appreciate you taking the time to check — this is exactly the kind of feedback that makes the directory better. Please keep it coming!
 
 ---
