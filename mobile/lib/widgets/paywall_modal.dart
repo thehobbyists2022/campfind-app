@@ -6,7 +6,7 @@ class PaywallModal extends StatefulWidget {
   const PaywallModal({Key? key, this.featureTrigger = 'Pro Features'}) : super(key: key);
 
   @override
-  State<PaywallModal> meState() => _PaywallModalState();
+  State<PaywallModal> createState() => _PaywallModalState();
 }
 
 class _PaywallModalState extends State<PaywallModal> {
@@ -99,7 +99,7 @@ class _PaywallModalState extends State<PaywallModal> {
                       activeColor: const Color(0xFFFF6B6B),
                       onChanged: (val) => setState(() => _selectedPlanIndex = val!),
                     ),
-                    const Expanded(
+                    Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

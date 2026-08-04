@@ -45,14 +45,6 @@ class CampDetailScreen extends StatelessWidget {
     }
   }
 
-  Future<void> _sendEmail(String email) async {
-    if (email.isEmpty) return;
-    final Uri url = Uri.parse('mailto:$email');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,7 +197,7 @@ class CampDetailScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFFF6B6B),
                           foregroundColor: Colors.white,
-                          padding: const EdgeInsets.vertical(12),
+                          padding: const EdgeInsets.symmetric(vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -221,7 +213,7 @@ class CampDetailScreen extends StatelessWidget {
                         label: const Text('Call'),
                         style: OutlinedButton.styleFrom(
                           foregroundColor: const Color(0xFF2C3E50),
-                          padding: const EdgeInsets.vertical(12),
+                          padding: const EdgeInsets.symmetric(vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -366,27 +358,28 @@ class CampDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildLogisticsRow(IconData icon, String label, bool isAvailable) {
+  Widget _buildLogisticsRow(IconData icon, String label, bool? isAvailable) {
+    final bool? status = isAvailable;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
         children: [
-          Icon(icon, size: 18, color: isAvailable ? const Color(0xFF2E7D32) : Colors.grey),
+          Icon(icon, size: 18, color: status == true ? const Color(0xFF2E7D32) : Colors.grey),
           const SizedBox(width: 10),
           Expanded(
             child: Text(
               label,
               style: TextStyle(
                 fontSize: 14,
-                color: isAvailable ? const Color(0xFF1A1A2E) : Colors.grey,
-                fontWeight: isAvailable ? FontWeight.w500 : FontWeight.normal,
+                color: status == true ? const Color(0xFF1A1A2E) : Colors.grey,
+                fontWeight: status == true ? FontWeight.w500 : FontWeight.normal,
               ),
             ),
           ),
           Icon(
-            isAvailable ? Icons.check_circle : Icons.cancel_outlined,
+            status == true ? Icons.check_circle : Icons.cancel_outlined,
             size: 18,
-            color: isAvailable ? const Color(0xFF2E7D32) : Colors.grey.shade400,
+            color: status == true ? const Color(0xFF2E7D32) : Colors.grey.shade400,
           ),
         ],
       ),

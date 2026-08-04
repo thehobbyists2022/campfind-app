@@ -45,7 +45,6 @@ class ComparisonScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: DataTable(
-                    backgroundColor: Colors.white,
                     headingRowHeight: 70,
                     dataRowMaxHeight: 60,
                     columns: [
