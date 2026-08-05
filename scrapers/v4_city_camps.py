@@ -37,6 +37,12 @@ FACILITY_COORDS = {
     "parkway": (32.6235576, -117.0820136, "3737 5th Ave, Chula Vista, CA 91910"),
     "salt creek": (32.644312, -116.944661, "2710 Otay Lakes Rd, Chula Vista, CA 91915"),
     "montevalle": (32.656424, -116.949287, "840 Duncan Ranch Rd, Chula Vista, CA 91914"),
+    # San Diego (sandiego.gov) — specific program locations
+    "junior lifeguards": (32.8577, -117.2576, "La Jolla Shores, San Diego, CA 92037"),
+    "civic dance arts": (32.7341, -117.1465, "Balboa Park, San Diego, CA 92101"),
+    "recreation center day camp": (32.75, -117.12, "San Diego, CA 92103"),
+    # Carlsbad (carlsbadca.gov) — city center
+    "carlsbad": (33.1581, -117.3506, "Carlsbad, CA 92008"),
 }
 
 def geocode(city, state):
@@ -249,6 +255,70 @@ CITY_CAMPS = [
         "sourceUrl": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
         "phone": "(619) 409-5811",
         "note": "City of Chula Vista Day Camp during CVESD winter break.",
+    },
+
+    # --- San Diego, CA (source: sandiego.gov youth programs + parks & recreation) ---
+    {
+        "name": "San Diego Junior Lifeguards",
+        "city": "San Diego", "state": "CA", "zip": "92101",
+        "season": "summer", "theme": "Sports", "type": "day",
+        "ageMin": 9, "ageMax": 17,
+        "website": "https://www.sandiego.gov/lifeguards/junior",
+        "sourceUrl": "https://www.sandiego.gov/lifeguards/junior",
+        "phone": None,
+        "note": "City of San Diego Junior Lifeguards program (beach/ocean safety).",
+    },
+    {
+        "name": "San Diego Civic Dance Arts Program",
+        "city": "San Diego", "state": "CA", "zip": "92101",
+        "season": "summer", "theme": "Arts", "type": "day",
+        "ageMin": 4, "ageMax": 18,
+        "website": "https://www.sandiego.gov/park-and-recreation/activities/dance",
+        "sourceUrl": "https://www.sandiego.gov/park-and-recreation/activities/dance",
+        "phone": None,
+        "note": "City of San Diego Civic Dance Arts Program.",
+    },
+    {
+        "name": "San Diego Recreation Center Day Camp",
+        "city": "San Diego", "state": "CA", "zip": "92101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.sandiego.gov/park-and-recreation/centers",
+        "sourceUrl": "https://www.sandiego.gov/park-and-recreation/centers",
+        "phone": None,
+        "note": "City of San Diego Parks & Rec recreation center summer day camp.",
+    },
+
+    # --- Carlsbad, CA (source: carlsbadca.gov classes and camps) ---
+    {
+        "name": "Carlsbad Day Camp",
+        "city": "Carlsbad", "state": "CA", "zip": "92008",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.carlsbadca.gov/departments/parks-recreation/programs-and-events/classes-and-camps",
+        "sourceUrl": "https://www.carlsbadca.gov/departments/parks-recreation/programs-and-events/classes-and-camps",
+        "phone": "(442) 339-2826",
+        "note": "City of Carlsbad Parks & Rec summer day camp.",
+    },
+    {
+        "name": "Carlsbad Aquatics Camp",
+        "city": "Carlsbad", "state": "CA", "zip": "92009",
+        "season": "summer", "theme": "Sports", "type": "day",
+        "ageMin": 5, "ageMax": 15,
+        "website": "https://www.carlsbadca.gov/departments/parks-recreation/programs-and-events/classes-and-camps",
+        "sourceUrl": "https://www.carlsbadca.gov/departments/parks-recreation/programs-and-events/classes-and-camps",
+        "phone": "(442) 339-2826",
+        "note": "City of Carlsbad aquatics / swim camp.",
+    },
+    {
+        "name": "Carlsbad Sports Camp",
+        "city": "Carlsbad", "state": "CA", "zip": "92008",
+        "season": "summer", "theme": "Sports", "type": "day",
+        "ageMin": 6, "ageMax": 14,
+        "website": "https://www.carlsbadca.gov/departments/parks-recreation/programs-and-events/classes-and-camps",
+        "sourceUrl": "https://www.carlsbadca.gov/departments/parks-recreation/programs-and-events/classes-and-camps",
+        "phone": "(442) 339-2826",
+        "note": "City of Carlsbad sports day camp.",
     },
 ]
 
