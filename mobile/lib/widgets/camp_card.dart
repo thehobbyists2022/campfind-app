@@ -93,6 +93,29 @@ class CampCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 8),
+                    if (camp.provider.toLowerCase() == 'city')
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFCCFBF1),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.location_city, size: 12, color: Color(0xFF0D9488)),
+                            SizedBox(width: 3),
+                            Text(
+                              'City-Run',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF0D9488),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     if (camp.acaVerified)
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),

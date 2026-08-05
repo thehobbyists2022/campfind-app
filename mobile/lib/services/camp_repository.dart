@@ -15,6 +15,7 @@ class FilterOptions {
   bool requireBeforeCare;
   bool requireAfterCare;
   bool requireShuttle;
+  bool cityOnly;
 
   FilterOptions({
     this.searchQuery = '',
@@ -28,6 +29,7 @@ class FilterOptions {
     this.requireBeforeCare = false,
     this.requireAfterCare = false,
     this.requireShuttle = false,
+    this.cityOnly = false,
   });
 }
 
@@ -123,7 +125,13 @@ class CampRepository {
       }
 
       // 6. Theme & Focus Filter
-      if (options.theme != 'all' && camp.theme.toLowerCase() != options.theme.toLowerCase()) {
+      if (options.theme != 'all' && options.theme != 'city' &&
+          camp.theme.toLowerCase() != options.theme.toLowerCase()) {
+        return false;
+      }
+
+      // 6b. City-Run provider filter
+      if (options.cityOnly && camp.provider.toLowerCase() != 'city') {
         return false;
       }
 

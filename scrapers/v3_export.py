@@ -36,6 +36,11 @@ def dom(u):
 def main():
     v2 = json.load(open(os.path.join(ROOT, "app", "aca_camps_v2.json"), encoding="utf-8"))["camps"]
     v3 = json.load(open(os.path.join(ROOT, "app", "aca_camps_expansion_v3.json"), encoding="utf-8"))["camps"]
+    # v4 city-run camps (optional)
+    v4 = []
+    v4_path = os.path.join(ROOT, "app", "aca_camps_city_v4.json")
+    if os.path.exists(v4_path):
+        v4 = json.load(open(v4_path, encoding="utf-8"))["camps"]
 
     # v2 franchise keys (keep these versions on overlap)
     v2keys = set()
@@ -53,6 +58,9 @@ def main():
             dup_skipped += 1
             continue
         merged.append(c)
+
+    # v4 city camps: add (no dup risk, provider=city unique ids)
+    merged.extend(v4)
 
     # ensure every record has needed fields
     for c in merged:
@@ -100,7 +108,7 @@ def main():
     fn3 = os.path.join(ROOT, "mobile", "assets", "aca_camps.json")
     json.dump(out, open(fn3, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)}, dup skipped {dup_skipped})")
+    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)}, dup skipped {dup_skipped})")
     print(f"verified: {verified}, unverified: {len(merged) - verified}")
     print(f"seasons: {seasons}")
     print(f"wrote: {fn1}")

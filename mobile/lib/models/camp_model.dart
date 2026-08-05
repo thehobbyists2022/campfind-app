@@ -27,6 +27,7 @@ class Camp {
   final bool unverified;
   final String? sourceUrl;
   final String? verificationMethod;
+  final String provider;
 
   Camp({
     required this.id,
@@ -55,6 +56,7 @@ class Camp {
     this.unverified = true,
     this.sourceUrl,
     this.verificationMethod,
+    this.provider = '',
   });
 
   factory Camp.fromJson(Map<String, dynamic> json) {
@@ -90,6 +92,7 @@ class Camp {
       unverified: json['unverified'] != false,
       sourceUrl: json['sourceUrl']?.toString(),
       verificationMethod: json['verificationMethod']?.toString(),
+      provider: json['provider']?.toString() ?? '',
     );
   }
 
@@ -121,6 +124,7 @@ class Camp {
       'unverified': unverified,
       'sourceUrl': sourceUrl,
       'verificationMethod': verificationMethod,
+      'provider': provider,
     };
   }
 

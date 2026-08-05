@@ -231,6 +231,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           setModalState(() => _filters.theme = val);
                           _applyFilters();
                         }),
+                        _buildChoiceChip('🏛️ City-Run', 'city', _filters.theme, (val) {
+                          setModalState(() {
+                            _filters.theme = val;
+                            _filters.cityOnly = (val == 'city');
+                          });
+                          _applyFilters();
+                        }),
                       ],
                     ),
 
