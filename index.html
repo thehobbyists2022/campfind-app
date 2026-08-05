@@ -478,6 +478,7 @@
         .badge-theme { background: rgba(255, 107, 107, 0.12); color: var(--primary-dark); }
         .badge-season { background: rgba(59, 130, 246, 0.12); color: #2563eb; }
         .badge-care { background: rgba(44, 62, 80, 0.08); color: var(--accent); }
+        .badge-city { background: rgba(78, 205, 196, 0.15); color: #0d9488; }
 
         .meta-text {
             font-size: 0.88rem;
@@ -712,6 +713,7 @@
                         <button type="button" class="pill-btn" data-theme="Arts" id="btnThemeArts">🎨 Arts & Drama</button>
                         <button type="button" class="pill-btn" data-theme="Outdoor" id="btnThemeOutdoor">🌲 Outdoor</button>
                         <button type="button" class="pill-btn" data-theme="Academic" id="btnThemeAcademic">📚 Academic</button>
+<button type="button" class="pill-btn" data-theme="city" id="btnThemeCity">🏛️ City-Run</button>
                     </div>
                 </div>
             </div>
@@ -840,6 +842,7 @@
                     themeArts: "🎨 Arts & Drama",
                     themeOutdoor: "🌲 Outdoor",
                     themeAcademic: "📚 Academic",
+                    themeCity: "🏛️ City-Run",
                     lblWeek: "Session Week Picker",
                     lblLogistics: "Extended Care & Logistics",
                     earlyCare: "🌅 Early Care (Before 8 AM)",
@@ -881,6 +884,7 @@
                     themeArts: "🎨 藝術戲劇",
                     themeOutdoor: "🌲 戶外探險",
                     themeAcademic: "📚 學術語言",
+                    themeCity: "🏛️ 市營",
                     lblWeek: "暑/寒假週別選擇",
                     lblLogistics: "延托與接送服務",
                     earlyCare: "🌅 早托服務 (8 AM 前)",
@@ -922,6 +926,7 @@
                     themeArts: "🎨 Arte y Teatro",
                     themeOutdoor: "🌲 Aire Libre",
                     themeAcademic: "📚 Académico",
+                    themeCity: "🏛️ Municipal",
                     lblWeek: "Selector de Semana",
                     lblLogistics: "Cuidado Extendido y Logística",
                     earlyCare: "🌅 Cuidado Temprano (Antes de 8 AM)",
@@ -1060,6 +1065,7 @@
                 $('btnThemeArts').textContent = dict.themeArts;
                 $('btnThemeOutdoor').textContent = dict.themeOutdoor;
                 $('btnThemeAcademic').textContent = dict.themeAcademic;
+                $('btnThemeCity').textContent = dict.themeCity;
 
                 $('lblWeek').textContent = dict.lblWeek;
                 $('lblLogistics').textContent = dict.lblLogistics;
@@ -1111,8 +1117,12 @@
                         if (!cType.includes(typeFilter)) return false;
                     }
                     if (themeFilter !== 'all') {
-                        const cTheme = (c.theme || '').toLowerCase();
-                        if (!cTheme.includes(themeFilter)) return false;
+                        if (themeFilter === 'city') {
+                            if ((c.provider || '').toLowerCase() !== 'city') return false;
+                        } else {
+                            const cTheme = (c.theme || '').toLowerCase();
+                            if (!cTheme.includes(themeFilter)) return false;
+                        }
                     }
                     if (selectedWeek > 0 && c.weeks && !c.weeks.includes(selectedWeek)) return false;
 
@@ -1200,6 +1210,7 @@
                                     <span class="badge badge-season">${seasonIcon}</span>
                                     <span class="badge badge-type">${c.type.toUpperCase()}</span>
                                     <span class="badge badge-theme">${c.theme || 'GENERAL'}</span>
+                                    ${(c.provider || '').toLowerCase() === 'city' ? '<span class="badge badge-city">🏛️ City-Run</span>' : ''}
                                     ${c.beforeCare ? '<span class="badge badge-care">🌅 Early</span>' : ''}
                                     ${c.afterCare ? '<span class="badge badge-care">🌆 Late</span>' : ''}
                                     ${c.shuttle ? '<span class="badge badge-care">🚌 Shuttle</span>' : ''}
