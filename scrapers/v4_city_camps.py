@@ -21,6 +21,24 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = {"User-Agent": "CampFind-V4-CityCamps/1.0"}
 GEO_CACHE = os.path.join(ROOT, "scrapers", "geocode_cache.json")
 
+# Exact coordinates of city-run facilities, verified from official city pages.
+# Used instead of city-center geocoding so each camp shows its real location.
+FACILITY_COORDS = {
+    # Oceanside (ci.oceanside.ca.us community centers)
+    "john landes": (33.1946745, -117.2882755, "2855 Thunder Dr, Oceanside, CA 92057"),
+    "melba bishop": (33.2552399, -117.287567, "5306 N River Rd, Oceanside, CA 92057"),
+    "joe balderrama": (33.2044855, -117.3711444, "709 San Diego St, Oceanside, CA 92054"),
+    "beach & ball": (33.194845, -117.383693, "300 N Pacific St, Oceanside, CA 92054"),
+    # Escondido (escondido.org)
+    "escondido": (33.1216751, -117.0814849, "Escondido, CA 92025"),
+    # Chula Vista (chulavistaca.gov community centers)
+    "heritage": (32.624565, -116.99746, "1381 E Palomar St, Chula Vista, CA 91913"),
+    "loma verde": (32.602399, -117.0485829, "1420 Loma Lane, Chula Vista, CA 91911"),
+    "parkway": (32.6235576, -117.0820136, "3737 5th Ave, Chula Vista, CA 91910"),
+    "salt creek": (32.644312, -116.944661, "2710 Otay Lakes Rd, Chula Vista, CA 91915"),
+    "montevalle": (32.656424, -116.949287, "840 Duncan Ranch Rd, Chula Vista, CA 91914"),
+}
+
 def geocode(city, state):
     cache = json.load(open(GEO_CACHE, encoding="utf-8")) if os.path.exists(GEO_CACHE) else {}
     key = f"{city}|{state}"
@@ -160,19 +178,101 @@ CITY_CAMPS = [
         "phone": None,
         "note": "City of Escondido Specialty Camp summer program.",
     },
+
+    # --- Chula Vista, CA (source: chulavistaca.gov/departments/parks-and-recreation/camps) ---
+    {
+        "name": "Chula Vista Day Camp - Heritage",
+        "city": "Chula Vista", "state": "CA", "zip": "91911",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "sourceUrl": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "phone": "(619) 409-5811",
+        "note": "City of Chula Vista Parks & Rec Day Camp (school-break / summer).",
+    },
+    {
+        "name": "Chula Vista Day Camp - Loma Verde",
+        "city": "Chula Vista", "state": "CA", "zip": "91911",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "sourceUrl": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "phone": "(619) 409-5811",
+        "note": "City of Chula Vista Parks & Rec Day Camp at Loma Verde.",
+    },
+    {
+        "name": "Chula Vista Day Camp - Parkway",
+        "city": "Chula Vista", "state": "CA", "zip": "91910",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "sourceUrl": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "phone": "(619) 409-5811",
+        "note": "City of Chula Vista Parks & Rec Day Camp at Parkway.",
+    },
+    {
+        "name": "Chula Vista Day Camp - Salt Creek",
+        "city": "Chula Vista", "state": "CA", "zip": "91913",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "sourceUrl": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "phone": "(619) 409-5811",
+        "note": "City of Chula Vista Parks & Rec Day Camp at Salt Creek.",
+    },
+    {
+        "name": "Chula Vista Day Camp - Montevalle",
+        "city": "Chula Vista", "state": "CA", "zip": "91914",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "sourceUrl": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "phone": "(619) 409-5811",
+        "note": "City of Chula Vista Parks & Rec Day Camp at Montevalle.",
+    },
+    {
+        "name": "Chula Vista Spring Break Day Camp",
+        "city": "Chula Vista", "state": "CA", "zip": "91910",
+        "season": "spring", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "sourceUrl": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "phone": "(619) 409-5811",
+        "note": "City of Chula Vista Day Camp during CVESD spring break.",
+    },
+    {
+        "name": "Chula Vista Winter Break Day Camp",
+        "city": "Chula Vista", "state": "CA", "zip": "91910",
+        "season": "winter", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "sourceUrl": "https://www.chulavistaca.gov/departments/parks-and-recreation/camps",
+        "phone": "(619) 409-5811",
+        "note": "City of Chula Vista Day Camp during CVESD winter break.",
+    },
 ]
 
 def main():
     camps = []
     for c in CITY_CAMPS:
-        coords = geocode(c["city"], c["state"])
+        # resolve exact facility coords by matching name substring
+        coords = None
+        address = None
+        name_low = c["name"].lower()
+        for key, (lat, lng, addr) in FACILITY_COORDS.items():
+            if key in name_low:
+                coords = (lat, lng)
+                address = addr
+                break
+        if not coords:
+            coords = geocode(c["city"], c["state"])
         if not coords:
             print("  NOGEO", c["name"])
             continue
         camp = {
             "id": f"city_{c['city'].lower().replace(' ', '')}_{c['name'].lower().replace(' ', '')[:30]}",
             "name": c["name"], "city": c["city"], "state": c["state"],
-            "zip": c.get("zip"), "address": None,
+            "zip": c.get("zip"), "address": address,
             "lat": coords[0], "lng": coords[1],
             "type": c["type"], "price": None, "rating": None, "reviewCount": None,
             "ageMin": c.get("ageMin"), "ageMax": c.get("ageMax"),
