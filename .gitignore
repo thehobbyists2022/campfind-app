@@ -11,3 +11,4 @@ scrapers/v2_cache/
 .netlify/
 scrapers/geocode_cache.json
 scrapers/reverse_cache.json
+scrapers/ridb_api_key.txt
