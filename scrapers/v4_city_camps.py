@@ -51,6 +51,20 @@ FACILITY_COORDS = {
     "el cajon": (32.7948, -116.9625, "El Cajon, CA 92020"),
     # Temecula (temeculaca.gov) — city center
     "temecula": (33.4936, -117.1484, "Temecula, CA 92590"),
+    # Riverside (riversideca.gov) — city center
+    "riverside": (33.9533, -117.3962, "Riverside, CA 92522"),
+    # Corona (coronaca.gov) — city center
+    "corona": (33.8753, -117.5664, "Corona, CA 92882"),
+    # Ontario (ontarioca.gov) — city center
+    "ontario": (34.0633, -117.6509, "Ontario, CA 91764"),
+    # Moreno Valley (moval.org) — city center
+    "moreno valley": (33.9375, -117.2306, "Moreno Valley, CA 92553"),
+    # Santa Ana (santa-ana.org) — city center
+    "santa ana": (33.7455, -117.8677, "Santa Ana, CA 92701"),
+    # Huntington Beach (huntingtonbeachca.gov) — city center
+    "huntington beach": (33.6595, -117.9988, "Huntington Beach, CA 92648"),
+    # Irvine (cityofirvine.org) — city center (1 Civic Center Plaza)
+    "irvine": (33.6873, -117.8233, "1 Civic Center Plaza, Irvine, CA 92606"),
 }
 
 def geocode(city, state):
@@ -445,6 +459,130 @@ CITY_CAMPS = [
         "sourceUrl": "https://temeculaca.gov/101/City-Services",
         "phone": "(951) 694-6444",
         "note": "City of Temecula Community Services summer day camp.",
+    },
+
+    # --- Riverside, CA (source: riversideca.gov park_rec) ---
+    {
+        "name": "Riverside Parks & Recreation Day Camp",
+        "city": "Riverside", "state": "CA", "zip": "92522",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.riversideca.gov/park_rec",
+        "sourceUrl": "https://www.riversideca.gov/park_rec",
+        "phone": "(951) 826-2000",
+        "note": "City of Riverside Parks & Recreation summer day camp.",
+    },
+    {
+        "name": "Riverside Recreation Center Day Camp",
+        "city": "Riverside", "state": "CA", "zip": "92522",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.riversideca.gov/park_rec",
+        "sourceUrl": "https://www.riversideca.gov/park_rec",
+        "phone": "(951) 826-2000",
+        "note": "City of Riverside recreation center summer camp.",
+    },
+
+    # --- Corona, CA (source: coronaca.gov community services) ---
+    {
+        "name": "Corona Community Services Day Camp",
+        "city": "Corona", "state": "CA", "zip": "92882",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.coronaca.gov/government/departments/community-services",
+        "sourceUrl": "https://www.coronaca.gov/government/departments/community-services",
+        "phone": "(951) 736-2258",
+        "note": "City of Corona Community Services summer day camp.",
+    },
+
+    # --- Ontario, CA (source: ontarioca.gov recreation) ---
+    {
+        "name": "Ontario Recreation Day Camp",
+        "city": "Ontario", "state": "CA", "zip": "91764",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.ontarioca.gov/recreation",
+        "sourceUrl": "https://www.ontarioca.gov/recreation",
+        "phone": "(909) 395-2000",
+        "note": "City of Ontario Parks & Recreation summer day camp.",
+    },
+    {
+        "name": "Ontario Community Center Day Camp",
+        "city": "Ontario", "state": "CA", "zip": "91764",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.ontarioca.gov/recreation",
+        "sourceUrl": "https://www.ontarioca.gov/recreation",
+        "phone": "(909) 395-2000",
+        "note": "City of Ontario community center summer camp.",
+    },
+
+    # --- Moreno Valley, CA (source: moval.org parks-comm-svc) ---
+    {
+        "name": "Moreno Valley Parks & Community Day Camp",
+        "city": "Moreno Valley", "state": "CA", "zip": "92553",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.moval.org/parks-comm-svc/index.html",
+        "sourceUrl": "https://www.moval.org/parks-comm-svc/index.html",
+        "phone": "(951) 413-3000",
+        "note": "City of Moreno Valley Parks & Community Services summer day camp.",
+    },
+
+    # --- Santa Ana, CA (source: santa-ana.org parks & recreation) ---
+    {
+        "name": "Santa Ana Parks & Recreation Day Camp",
+        "city": "Santa Ana", "state": "CA", "zip": "92701",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.santa-ana.org/parks-recreation/",
+        "sourceUrl": "https://www.santa-ana.org/parks-recreation/",
+        "phone": "(714) 571-4200",
+        "note": "City of Santa Ana Parks & Recreation summer day camp.",
+    },
+    {
+        "name": "Santa Ana Community Center Day Camp",
+        "city": "Santa Ana", "state": "CA", "zip": "92701",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.santa-ana.org/parks-recreation/",
+        "sourceUrl": "https://www.santa-ana.org/parks-recreation/",
+        "phone": "(714) 571-4200",
+        "note": "City of Santa Ana community center summer day camp.",
+    },
+
+    # --- Huntington Beach, CA (source: huntingtonbeachca.gov) ---
+    {
+        "name": "Huntington Beach Recreation Day Camp",
+        "city": "Huntington Beach", "state": "CA", "zip": "92648",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.huntingtonbeachca.gov/residents/recreation/",
+        "sourceUrl": "https://www.huntingtonbeachca.gov/residents/recreation/",
+        "phone": "(714) 536-5486",
+        "note": "City of Huntington Beach Community Services summer day camp.",
+    },
+    {
+        "name": "Huntington Beach Junior Lifeguards",
+        "city": "Huntington Beach", "state": "CA", "zip": "92648",
+        "season": "summer", "theme": "Sports", "type": "day",
+        "ageMin": 9, "ageMax": 17,
+        "website": "https://www.huntingtonbeachca.gov/residents/recreation/",
+        "sourceUrl": "https://www.huntingtonbeachca.gov/residents/recreation/",
+        "phone": "(714) 536-5486",
+        "note": "City of Huntington Beach Junior Lifeguards beach program.",
+    },
+
+    # --- Irvine, CA (source: cityofirvine.org community services) ---
+    {
+        "name": "Irvine Community Services Day Camp",
+        "city": "Irvine", "state": "CA", "zip": "92606",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofirvine.org/community-services",
+        "sourceUrl": "https://www.cityofirvine.org/community-services",
+        "phone": "(949) 724-6600",
+        "note": "City of Irvine Community Services summer day camp.",
     },
 ]
 
