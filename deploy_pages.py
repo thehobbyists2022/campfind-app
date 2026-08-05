@@ -17,6 +17,10 @@ import shutil
 import subprocess
 import sys
 
+# ensure UTF-8 stdout on Windows (avoid cp1252 encoding errors)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 TMP = os.path.join(os.environ.get("TEMP", "/tmp"), "campfind_ghpages")
 # 网站运行需要同步到 gh-pages 根目录的文件（来自 main 分支 app/）
