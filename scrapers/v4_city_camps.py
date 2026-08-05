@@ -43,6 +43,14 @@ FACILITY_COORDS = {
     "recreation center day camp": (32.75, -117.12, "San Diego, CA 92103"),
     # Carlsbad (carlsbadca.gov) — city center
     "carlsbad": (33.1581, -117.3506, "Carlsbad, CA 92008"),
+    # Vista (cityofvista.com) — Jim Porter Rec Center, Brengle Terrace Park
+    "vista": (33.2088, -117.2274, "Jim Porter Recreation Center, Vista, CA 92084"),
+    # Encinitas (encinitasca.gov) — city center
+    "encinitas": (33.0369, -117.2914, "Encinitas, CA 92024"),
+    # El Cajon (cityofelcajon.us) — city center
+    "el cajon": (32.7948, -116.9625, "El Cajon, CA 92020"),
+    # Temecula (temeculaca.gov) — city center
+    "temecula": (33.4936, -117.1484, "Temecula, CA 92590"),
 }
 
 def geocode(city, state):
@@ -319,6 +327,124 @@ CITY_CAMPS = [
         "sourceUrl": "https://www.carlsbadca.gov/departments/parks-recreation/programs-and-events/classes-and-camps",
         "phone": "(442) 339-2826",
         "note": "City of Carlsbad sports day camp.",
+    },
+
+    # --- Vista, CA (source: cityofvista.com summer day camps) ---
+    {
+        "name": "Vista Mini Explorers Camp",
+        "city": "Vista", "state": "CA", "zip": "92084",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 3, "ageMax": 5,
+        "website": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "sourceUrl": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "phone": "(760) 639-6141",
+        "note": "City of Vista Mini Explorers preschool summer camp at Jim Porter Recreation Center.",
+    },
+    {
+        "name": "Vista Explorers Camp I",
+        "city": "Vista", "state": "CA", "zip": "92084",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 9,
+        "website": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "sourceUrl": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "phone": "(760) 639-6141",
+        "note": "City of Vista Explorers I summer camp (Kindergarten-Grade 3).",
+    },
+    {
+        "name": "Vista Explorers Camp II",
+        "city": "Vista", "state": "CA", "zip": "92084",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 9, "ageMax": 14,
+        "website": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "sourceUrl": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "phone": "(760) 639-6141",
+        "note": "City of Vista Explorers II summer camp (Grades 4-8).",
+    },
+    {
+        "name": "Vista Multi-Sports Camp I",
+        "city": "Vista", "state": "CA", "zip": "92084",
+        "season": "summer", "theme": "Sports", "type": "day",
+        "ageMin": 5, "ageMax": 10,
+        "website": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "sourceUrl": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "phone": "(760) 639-6141",
+        "note": "City of Vista Multi-Sports Camp I (Kindergarten-Grade 4).",
+    },
+    {
+        "name": "Vista Multi-Sports Camp II",
+        "city": "Vista", "state": "CA", "zip": "92084",
+        "season": "summer", "theme": "Sports", "type": "day",
+        "ageMin": 10, "ageMax": 14,
+        "website": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "sourceUrl": "https://www.cityofvista.com/departments/recreation-comm-services/summer-day-camps",
+        "phone": "(760) 639-6141",
+        "note": "City of Vista Multi-Sports Camp II (Grades 5-8).",
+    },
+    {
+        "name": "Vista Spring Break Camp",
+        "city": "Vista", "state": "CA", "zip": "92084",
+        "season": "spring", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.cityofvista.com/city-services/recreation-community-services/spring-break-camp",
+        "sourceUrl": "https://www.cityofvista.com/city-services/recreation-community-services/spring-break-camp",
+        "phone": "(760) 639-6141",
+        "note": "City of Vista Spring Break Camp.",
+    },
+    {
+        "name": "Vista Free After-School Program",
+        "city": "Vista", "state": "CA", "zip": "92084",
+        "season": "fall", "theme": "General", "type": "day",
+        "ageMin": 6, "ageMax": 12,
+        "website": "https://www.cityofvista.com/city-services/recreation-community-services/free-after-school-programs",
+        "sourceUrl": "https://www.cityofvista.com/city-services/recreation-community-services/free-after-school-programs",
+        "phone": "(760) 639-6141",
+        "note": "City of Vista free after-school program (school-year/fall).",
+    },
+
+    # --- Encinitas, CA (source: encinitasca.gov recreation programs) ---
+    {
+        "name": "Encinitas Recreation Day Camp",
+        "city": "Encinitas", "state": "CA", "zip": "92024",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.encinitasca.gov/community/recreation-programs",
+        "sourceUrl": "https://www.encinitasca.gov/community/recreation-programs",
+        "phone": "(760) 633-2600",
+        "note": "City of Encinitas Parks, Recreation & Cultural Arts summer day camp.",
+    },
+
+    # --- El Cajon, CA (source: cityofelcajon.us resident-services/recreation) ---
+    {
+        "name": "El Cajon Recreation Day Camp",
+        "city": "El Cajon", "state": "CA", "zip": "92020",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofelcajon.us/resident-services/recreation",
+        "sourceUrl": "https://www.cityofelcajon.us/resident-services/recreation",
+        "phone": "(619) 441-1716",
+        "note": "City of El Cajon Parks & Recreation summer day camp.",
+    },
+    {
+        "name": "El Cajon Recreation Center Camp",
+        "city": "El Cajon", "state": "CA", "zip": "92020",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofelcajon.us/resident-services/recreation/recreation-centers",
+        "sourceUrl": "https://www.cityofelcajon.us/resident-services/recreation/recreation-centers",
+        "phone": "(619) 441-1716",
+        "note": "City of El Cajon recreation center summer camp.",
+    },
+
+    # --- Temecula, CA (source: temeculaca.gov city services recreation) ---
+    {
+        "name": "Temecula Community Services Day Camp",
+        "city": "Temecula", "state": "CA", "zip": "92590",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://temeculaca.gov/101/City-Services",
+        "sourceUrl": "https://temeculaca.gov/101/City-Services",
+        "phone": "(951) 694-6444",
+        "note": "City of Temecula Community Services summer day camp.",
     },
 ]
 
