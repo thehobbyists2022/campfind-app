@@ -65,6 +65,18 @@ FACILITY_COORDS = {
     "huntington beach": (33.6595, -117.9988, "Huntington Beach, CA 92648"),
     # Irvine (cityofirvine.org) — city center (1 Civic Center Plaza)
     "irvine": (33.6873, -117.8233, "1 Civic Center Plaza, Irvine, CA 92606"),
+    # San Francisco (sfrecpark.org) — city center (City Hall)
+    "san francisco": (37.7793, -122.4193, "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102"),
+    # San Jose (sanjose.gov) — city center (City Hall)
+    "san jose": (37.3372, -121.8836, "200 E Santa Clara St, San Jose, CA 95113"),
+    # Long Beach (longbeach.gov) — city center
+    "long beach": (33.7701, -118.1937, "Long Beach, CA 90802"),
+    # Burbank (burbankca.gov) — city center
+    "burbank": (34.1808, -118.309, "Burbank, CA 91502"),
+    # Fontana (fontana.org) — city center
+    "fontana": (34.0922, -117.4350, "Fontana, CA 92335"),
+    # Pasadena (cityofpasadena.net) — city center
+    "pasadena": (34.1478, -118.1445, "Pasadena, CA 91105"),
 }
 
 def geocode(city, state):
@@ -691,6 +703,40 @@ CITY_CAMPS = [
         "sourceUrl": "https://www.burbankca.gov/parks-recreation",
         "phone": "(818) 238-5300",
         "note": "City of Burbank Parks & Recreation summer day camp.",
+    },
+
+    # --- Fontana, CA (source: fontana.org community services) ---
+    {
+        "name": "Fontana Community Services Day Camp",
+        "city": "Fontana", "state": "CA", "zip": "92335",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.fontana.org/3579/Community-Services",
+        "sourceUrl": "https://www.fontana.org/3579/Community-Services",
+        "phone": "(909) 350-7600",
+        "note": "City of Fontana Community Services summer day camp.",
+    },
+    {
+        "name": "Fontana Community Center Day Camp",
+        "city": "Fontana", "state": "CA", "zip": "92335",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.fontana.org/3579/Community-Services",
+        "sourceUrl": "https://www.fontana.org/3579/Community-Services",
+        "phone": "(909) 350-7600",
+        "note": "City of Fontana community center summer day camp.",
+    },
+
+    # --- Pasadena, CA (source: cityofpasadena.net parks & recreation) ---
+    {
+        "name": "Pasadena Parks & Rec Day Camp",
+        "city": "Pasadena", "state": "CA", "zip": "91105",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofpasadena.net/parks-and-recreation/",
+        "sourceUrl": "https://www.cityofpasadena.net/parks-and-recreation/",
+        "phone": "(626) 744-4000",
+        "note": "City of Pasadena Parks & Recreation summer day camp.",
     },
 ]
 
