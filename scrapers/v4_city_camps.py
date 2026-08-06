@@ -154,6 +154,7 @@ CITY_CAMPS = [
     # --- Oceanside, CA (source: ci.oceanside.ca.us/government/parks-recreation/youth-programs) ---
     {
         "name": "Sunsational Summer Camp - John Landes",
+  "facility": "john landes",
         "city": "Oceanside", "state": "CA", "zip": "92057",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
@@ -164,6 +165,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Sunsational Summer Camp - Melba Bishop",
+  "facility": "melba bishop",
         "city": "Oceanside", "state": "CA", "zip": "92056",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
@@ -174,6 +176,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Sunsational Summer Camp - Joe Balderrama",
+  "facility": "joe balderrama",
         "city": "Oceanside", "state": "CA", "zip": "92054",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
@@ -184,6 +187,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Beach & Ball Summer Camp",
+  "facility": "beach & ball",
         "city": "Oceanside", "state": "CA", "zip": "92054",
         "season": "summer", "theme": "Sports", "type": "day",
         "ageMin": 5, "ageMax": 14,
@@ -194,6 +198,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Spring Break Camp - John Landes",
+  "facility": "john landes",
         "city": "Oceanside", "state": "CA", "zip": "92057",
         "season": "spring", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
@@ -204,6 +209,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Spring Break Camp - Melba Bishop",
+  "facility": "melba bishop",
         "city": "Oceanside", "state": "CA", "zip": "92056",
         "season": "spring", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
@@ -214,6 +220,7 @@ CITY_CAMPS = [
     },
     {
         "name": "After-School Program - John Landes",
+  "facility": "john landes",
         "city": "Oceanside", "state": "CA", "zip": "92057",
         "season": "fall", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 11,
@@ -224,6 +231,7 @@ CITY_CAMPS = [
     },
     {
         "name": "After-School Program - Melba Bishop",
+  "facility": "melba bishop",
         "city": "Oceanside", "state": "CA", "zip": "92056",
         "season": "fall", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 11,
@@ -234,6 +242,7 @@ CITY_CAMPS = [
     },
     {
         "name": "After-School Program - Joe Balderrama",
+  "facility": "joe balderrama",
         "city": "Oceanside", "state": "CA", "zip": "92054",
         "season": "fall", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 11,
@@ -268,6 +277,7 @@ CITY_CAMPS = [
     # --- Chula Vista, CA (source: chulavistaca.gov/departments/parks-and-recreation/camps) ---
     {
         "name": "Chula Vista Day Camp - Heritage",
+  "facility": "heritage",
         "city": "Chula Vista", "state": "CA", "zip": "91911",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 5, "ageMax": 12,
@@ -278,6 +288,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Chula Vista Day Camp - Loma Verde",
+  "facility": "loma verde",
         "city": "Chula Vista", "state": "CA", "zip": "91911",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 5, "ageMax": 12,
@@ -288,6 +299,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Chula Vista Day Camp - Parkway",
+  "facility": "parkway",
         "city": "Chula Vista", "state": "CA", "zip": "91910",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 5, "ageMax": 12,
@@ -298,6 +310,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Chula Vista Day Camp - Salt Creek",
+  "facility": "salt creek",
         "city": "Chula Vista", "state": "CA", "zip": "91913",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 5, "ageMax": 12,
@@ -308,6 +321,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Chula Vista Day Camp - Montevalle",
+  "facility": "montevalle",
         "city": "Chula Vista", "state": "CA", "zip": "91914",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 5, "ageMax": 12,
@@ -340,6 +354,7 @@ CITY_CAMPS = [
     # --- San Diego, CA (source: sandiego.gov youth programs + parks & recreation) ---
     {
         "name": "San Diego Junior Lifeguards",
+  "facility": "junior lifeguards",
         "city": "San Diego", "state": "CA", "zip": "92101",
         "season": "summer", "theme": "Sports", "type": "day",
         "ageMin": 9, "ageMax": 17,
@@ -350,6 +365,7 @@ CITY_CAMPS = [
     },
     {
         "name": "San Diego Civic Dance Arts Program",
+  "facility": "civic dance arts",
         "city": "San Diego", "state": "CA", "zip": "92101",
         "season": "summer", "theme": "Arts", "type": "day",
         "ageMin": 4, "ageMax": 18,
@@ -360,6 +376,7 @@ CITY_CAMPS = [
     },
     {
         "name": "San Diego Recreation Center Day Camp",
+  "facility": "recreation center day camp",
         "city": "San Diego", "state": "CA", "zip": "92101",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 5, "ageMax": 13,
@@ -532,6 +549,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Riverside Recreation Center Day Camp",
+  "facility": "riverside",
         "city": "Riverside", "state": "CA", "zip": "92522",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 5, "ageMax": 13,
@@ -622,6 +640,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Huntington Beach Junior Lifeguards",
+  "facility": "huntington beach",
         "city": "Huntington Beach", "state": "CA", "zip": "92648",
         "season": "summer", "theme": "Sports", "type": "day",
         "ageMin": 9, "ageMax": 17,
@@ -730,6 +749,7 @@ CITY_CAMPS = [
     },
     {
         "name": "Long Beach Junior Lifeguards",
+  "facility": "long beach",
         "city": "Long Beach", "state": "CA", "zip": "90802",
         "season": "summer", "theme": "Sports", "type": "day",
         "ageMin": 9, "ageMax": 17,
@@ -1110,20 +1130,909 @@ CITY_CAMPS = [
         "phone": "(760) 323-8200",
         "note": "City of Palm Springs Parks & Recreation summer day camp.",
     },
+
+    # --- Torrance, CA (source: torranceca.gov recreation) ---
+    {
+        "name": "Torrance Community Services Day Camp",
+        "city": "Torrance", "state": "CA", "zip": "90501",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.torranceca.gov/City-Services/Parks-Recreation-Community/Parks-Recreation-Community-Services",
+        "sourceUrl": "https://www.torranceca.gov/City-Services/Parks-Recreation-Community/Parks-Recreation-Community-Services",
+        "phone": "(310) 328-5310",
+        "note": "City of Torrance Community Services summer day camp.",
+    },
+
+    # --- Glendale, CA (source: glendaleca.gov community services & parks) ---
+    {
+        "name": "Glendale Community Services Day Camp",
+        "city": "Glendale", "state": "CA", "zip": "91206",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.glendaleca.gov/government/departments/community-services-parks",
+        "sourceUrl": "https://www.glendaleca.gov/government/departments/community-services-parks",
+        "phone": "(818) 548-2000",
+        "note": "City of Glendale Community Services & Parks summer day camp.",
+    },
+
+    # --- Fullerton, CA (source: cityoffullerton.com parks & recreation) ---
+    {
+        "name": "Fullerton Parks & Rec Day Camp",
+        "city": "Fullerton", "state": "CA", "zip": "92832",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityoffullerton.com/government/departments/parks-recreation",
+        "sourceUrl": "https://www.cityoffullerton.com/government/departments/parks-recreation",
+        "phone": "(714) 738-6575",
+        "note": "City of Fullerton Parks & Recreation summer day camp.",
+    },
+
+    # --- Anaheim, CA (source: anaheim.net community services) ---
+    {
+        "name": "Anaheim Community Services Day Camp",
+        "city": "Anaheim", "state": "CA", "zip": "92805",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.anaheim.net/6769/OAKS-Day-Camp",
+        "sourceUrl": "https://www.anaheim.net/6769/OAKS-Day-Camp",
+        "phone": "(714) 765-4311",
+        "note": "City of Anaheim OAKS Day Camp (Outdoor Adventures and Kids' Sports).",
+    },
+
+    # --- Bakersfield, CA (source: bakersfieldcity.us parks & recreation) ---
+    {
+        "name": "Bakersfield Parks & Rec Day Camp",
+        "city": "Bakersfield", "state": "CA", "zip": "93301",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.bakersfieldcity.us/parks",
+        "sourceUrl": "https://www.bakersfieldcity.us/parks",
+        "phone": "(661) 326-3761",
+        "note": "City of Bakersfield Parks & Recreation summer day camp.",
+    },
+
+    # --- Napa, CA (source: cityofnapa.org parks & recreation) ---
+    {
+        "name": "Napa Parks & Rec Day Camp",
+        "city": "Napa", "state": "CA", "zip": "94559",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofnapa.org/1123/Parks-Recreation-Services",
+        "sourceUrl": "https://www.cityofnapa.org/1123/Parks-Recreation-Services",
+        "phone": "(707) 257-9529",
+        "note": "City of Napa Parks & Recreation summer day camp.",
+    },
+
+    # --- Vallejo, CA (source: cityofvallejo.net recreation) ---
+    {
+        "name": "Vallejo Parks & Rec Day Camp",
+        "city": "Vallejo", "state": "CA", "zip": "94590",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofvallejo.net/residents/parks___recreation",
+        "sourceUrl": "https://www.cityofvallejo.net/residents/parks___recreation",
+        "phone": "(707) 648-4600",
+        "note": "Vallejo Parks & Recreation (Greater Vallejo Recreation District) summer day camp.",
+    },
+
+    # --- Santa Rosa, CA (source: srcity.org recreation & parks) ---
+    {
+        "name": "Santa Rosa Recreation Day Camp",
+        "city": "Santa Rosa", "state": "CA", "zip": "95404",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.srcity.org/150/Recreation-Parks",
+        "sourceUrl": "https://www.srcity.org/150/Recreation-Parks",
+        "phone": "(707) 543-3800",
+        "note": "City of Santa Rosa Recreation & Parks summer day camp.",
+    },
+
+    # --- Chico, CA (source: chico.ca.us parks & recreation) ---
+    {
+        "name": "Chico Parks & Rec Day Camp",
+        "city": "Chico", "state": "CA", "zip": "95926",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://chico.ca.us/Our-Community/Parks-Recreation-and-Experience-the-Outdoors/index.html",
+        "sourceUrl": "https://chico.ca.us/Our-Community/Parks-Recreation-and-Experience-the-Outdoors/index.html",
+        "phone": "(530) 895-4711",
+        "note": "City of Chico Parks & Recreation summer day camp.",
+    },
+
+    # --- Eureka, CA (source: eurekaca.gov programs & experiences) ---
+    {
+        "name": "Eureka Parks & Rec Day Camp",
+        "city": "Eureka", "state": "CA", "zip": "95501",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.eurekaca.gov/161/Programs-Experiences",
+        "sourceUrl": "https://www.eurekaca.gov/161/Programs-Experiences",
+        "phone": "(707) 441-4200",
+        "note": "City of Eureka Parks & Recreation summer day camp.",
+    },
+
+    # --- Los Angeles, CA (source: laparks.org, official LA Rec & Parks) ---
+    {
+        "name": "LA Rec & Parks Summer Day Camp",
+        "city": "Los Angeles", "state": "CA", "zip": "90012",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.laparks.org/",
+        "sourceUrl": "https://www.laparks.org/",
+        "phone": "(213) 473-3231",
+        "note": "City of Los Angeles Recreation & Parks summer day camps citywide.",
+    },
+    {
+        "name": "LA Rec & Parks Youth Arts Camp",
+        "city": "Los Angeles", "state": "CA", "zip": "90012",
+        "season": "summer", "theme": "Arts", "type": "day",
+        "ageMin": 6, "ageMax": 14,
+        "website": "https://www.laparks.org/",
+        "sourceUrl": "https://www.laparks.org/",
+        "phone": "(213) 473-3231",
+        "note": "City of Los Angeles Recreation & Parks arts & enrichment camps.",
+    },
+
+    # --- San Bernardino, CA (source: ci.san-bernardino.ca.us parks & recreation) ---
+    {
+        "name": "San Bernardino Parks & Rec Day Camp",
+        "city": "San Bernardino", "state": "CA", "zip": "92401",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.ci.san-bernardino.ca.us/services/parks-and-recreation",
+        "sourceUrl": "https://www.ci.san-bernardino.ca.us/services/parks-and-recreation",
+        "phone": "(909) 998-2000",
+        "note": "City of San Bernardino Parks & Recreation summer day camp.",
+    },
+
+    # --- Garden Grove, CA (source: ggcity.org community services) ---
+    {
+        "name": "Garden Grove Community Services Day Camp",
+        "city": "Garden Grove", "state": "CA", "zip": "92840",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://ggcity.org/community-services",
+        "sourceUrl": "https://ggcity.org/community-services",
+        "phone": "(714) 741-5200",
+        "note": "City of Garden Grove Community Services summer day camp.",
+    },
+
+    # --- Palmdale, CA (source: cityofpalmdaleca.gov parks & recreation) ---
+    {
+        "name": "Palmdale Parks & Rec Day Camp",
+        "city": "Palmdale", "state": "CA", "zip": "93550",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofpalmdaleca.gov/174/Parks-and-Recreation",
+        "sourceUrl": "https://www.cityofpalmdaleca.gov/174/Parks-and-Recreation",
+        "phone": "(661) 267-5611",
+        "note": "City of Palmdale Parks and Recreation summer day camp.",
+    },
+    {
+        "name": "Camp Lancaster",
+        "city": "Lancaster", "state": "CA", "zip": "93534",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 12,
+        "website": "https://www.cityoflancasterca.gov/",
+        "sourceUrl": "https://www.cityoflancasterca.gov/",
+        "phone": "(661) 723-6000",
+        "note": "City of Lancaster Camp Lancaster summer program (PARCS).",
+    },
+
+    # --- Pomona, CA (source: pomonaca.gov community services) ---
+    {
+        "name": "Pomona Community Services Day Camp",
+        "city": "Pomona", "state": "CA", "zip": "91766",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.pomonaca.gov/government/departments/community-services",
+        "sourceUrl": "https://www.pomonaca.gov/government/departments/community-services",
+        "phone": "(909) 802-7730",
+        "note": "City of Pomona Community Services youth summer programs.",
+    },
+
+    # --- Victorville, CA (source: victorvilleca.gov recreation) ---
+    {
+        "name": "Victorville Recreation Day Camp",
+        "city": "Victorville", "state": "CA", "zip": "92392",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.victorvilleca.gov/Government/City-Departments/Recreation",
+        "sourceUrl": "https://www.victorvilleca.gov/Government/City-Departments/Recreation",
+        "phone": "(760) 245-5551",
+        "note": "City of Victorville Recreation summer day camp.",
+    },
+
+    # --- Downey, CA (source: downeyca.org parks & recreation) ---
+    {
+        "name": "Downey Parks & Rec Day Camp",
+        "city": "Downey", "state": "CA", "zip": "90242",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.downeyca.org/our-city/departments/parks-recreation/",
+        "sourceUrl": "https://www.downeyca.org/our-city/departments/parks-recreation/",
+        "phone": "(562) 904-7238",
+        "note": "City of Downey Parks & Recreation summer day camp.",
+    },
+
+    # --- Costa Mesa, CA (source: costamesaca.gov parks & community services) ---
+    {
+        "name": "Costa Mesa Parks & Rec Day Camp",
+        "city": "Costa Mesa", "state": "CA", "zip": "92626",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.costamesaca.gov/government/departments-and-divisions/parks-and-community-services",
+        "sourceUrl": "https://www.costamesaca.gov/government/departments-and-divisions/parks-and-community-services",
+        "phone": "(714) 754-5000",
+        "note": "City of Costa Mesa Parks and Community Services summer day camp.",
+    },
+
+    # --- Murrieta, CA (source: murrietaca.gov parks & recreation) ---
+    {
+        "name": "Murrieta Parks & Rec Day Camp",
+        "city": "Murrieta", "state": "CA", "zip": "92562",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.murrietaca.gov/795/Parks-Recreation",
+        "sourceUrl": "https://www.murrietaca.gov/795/Parks-Recreation",
+        "phone": "(951) 304-7275",
+        "note": "City of Murrieta Parks & Recreation summer day camp.",
+    },
+
+    # --- Santa Maria, CA (source: cityofsantamaria.org recreation & parks) ---
+    {
+        "name": "Santa Maria Recreation Day Camp",
+        "city": "Santa Maria", "state": "CA", "zip": "93454",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofsantamaria.org/services/departments/recreation-and-parks-5013",
+        "sourceUrl": "https://www.cityofsantamaria.org/services/departments/recreation-and-parks-5013",
+        "phone": "(805) 925-0951",
+        "note": "City of Santa Maria Recreation and Parks summer day camp.",
+    },
+
+    # --- Westminster, CA (source: westminster-ca.gov community services) ---
+    {
+        "name": "Westminster Community Services Day Camp",
+        "city": "Westminster", "state": "CA", "zip": "92683",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.westminster-ca.gov/departments/community-services",
+        "sourceUrl": "https://www.westminster-ca.gov/departments/community-services",
+        "phone": "(714) 895-2860",
+        "note": "City of Westminster Community Services & Recreation summer day camp.",
+    },
+
+    # --- Orange, CA (source: cityoforange.org recreation) ---
+    {
+        "name": "Orange Recreation Day Camp",
+        "city": "Orange", "state": "CA", "zip": "92866",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityoforange.org/our-city/departments/community-services/recreation",
+        "sourceUrl": "https://www.cityoforange.org/our-city/departments/community-services/recreation",
+        "phone": "(714) 744-7274",
+        "note": "City of Orange Community Services Recreation summer day camp.",
+    },
+
+    # --- Redlands, CA (source: cityofredlands.org parks and recreation) ---
+    {
+        "name": "Redlands Recreation Day Camp",
+        "city": "Redlands", "state": "CA", "zip": "92373",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofredlands.org/departments/parks-and-recreation",
+        "sourceUrl": "https://www.cityofredlands.org/departments/parks-and-recreation",
+        "phone": None,
+        "note": "City of Redlands Parks and Recreation summer day camp.",
+    },
+
+    # --- Cerritos, CA (source: cerritos.us recreation) ---
+    {
+        "name": "Cerritos Recreation Day Camp",
+        "city": "Cerritos", "state": "CA", "zip": "90703",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cerritos.us/recreation/",
+        "sourceUrl": "https://www.cerritos.us/recreation/",
+        "phone": "(562) 860-0311",
+        "note": "City of Cerritos Recreation & Community Services summer day camp.",
+    },
+
+    # --- Pico Rivera, CA (source: pico-rivera.org parks & recreation) ---
+    {
+        "name": "Pico Rivera Parks & Rec Day Camp",
+        "city": "Pico Rivera", "state": "CA", "zip": "90660",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.pico-rivera.org/departments/parks-recreation",
+        "sourceUrl": "https://www.pico-rivera.org/departments/parks-recreation",
+        "phone": "(562) 801-4332",
+        "note": "City of Pico Rivera Parks & Recreation summer day camp.",
+    },
+
+    # --- Roseville, CA (source: roseville.ca.gov parks & recreation) ---
+    {
+        "name": "Roseville Parks & Rec Day Camp",
+        "city": "Roseville", "state": "CA", "zip": "95678",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.roseville.ca.gov/prl/parks_recreation/index.php",
+        "sourceUrl": "https://www.roseville.ca.gov/prl/parks_recreation/index.php",
+        "phone": None,
+        "note": "City of Roseville Parks, Recreation & Libraries summer day camp.",
+    },
+
+    # --- Elk Grove, CA (source: cosumnescsd.gov parks & recreation) ---
+    {
+        "name": "Elk Grove Parks & Rec Day Camp",
+        "city": "Elk Grove", "state": "CA", "zip": "95758",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cosumnescsd.gov/1358/Parks-Recreation",
+        "sourceUrl": "https://www.cosumnescsd.gov/1358/Parks-Recreation",
+        "phone": "(916) 405-5600",
+        "note": "Cosumnes Community Services District (Elk Grove) Parks & Recreation summer day camp.",
+    },
+
+    # --- Davis, CA (source: cityofdavis.org parks and community services) ---
+    {
+        "name": "Davis Parks & Rec Day Camp",
+        "city": "Davis", "state": "CA", "zip": "95616",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofdavis.org/city-hall/parks-and-community-services",
+        "sourceUrl": "https://www.cityofdavis.org/city-hall/parks-and-community-services",
+        "phone": "(530) 757-5626",
+        "note": "City of Davis Parks and Community Services summer day camp.",
+    },
+
+    # --- Vacaville, CA (source: cityofvacaville.gov parks and recreation) ---
+    {
+        "name": "Vacaville Parks & Rec Day Camp",
+        "city": "Vacaville", "state": "CA", "zip": "95688",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofvacaville.gov/government/parks-and-recreation",
+        "sourceUrl": "https://www.cityofvacaville.gov/government/parks-and-recreation",
+        "phone": "(707) 449-5100",
+        "note": "City of Vacaville Parks and Recreation summer day camp.",
+    },
+
+    # --- Fairfield, CA (source: fairfield.ca.gov parks and recreation) ---
+    {
+        "name": "Fairfield Parks & Rec Day Camp",
+        "city": "Fairfield", "state": "CA", "zip": "94533",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.fairfield.ca.gov/government/city-departments/parks-and-recreation",
+        "sourceUrl": "https://www.fairfield.ca.gov/government/city-departments/parks-and-recreation",
+        "phone": "(707) 428-7435",
+        "note": "City of Fairfield Parks and Recreation summer day camp.",
+    },
+
+    # --- Concord, CA (source: cityofconcord.org recreation services) ---
+    {
+        "name": "Concord Recreation Services Day Camp",
+        "city": "Concord", "state": "CA", "zip": "94520",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofconcord.org/328/Recreation-Services",
+        "sourceUrl": "https://www.cityofconcord.org/328/Recreation-Services",
+        "phone": "(925) 671-3430",
+        "note": "City of Concord Recreation Services summer day camp.",
+    },
+
+    # --- Hayward, CA (source: haywardrec.org summer camps) ---
+    {
+        "name": "H.A.R.D. Summer Camps",
+        "city": "Hayward", "state": "CA", "zip": "94544",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.haywardrec.org/296/Summer-Camps",
+        "sourceUrl": "https://www.haywardrec.org/296/Summer-Camps",
+        "phone": "(510) 881-6700",
+        "note": "Hayward Area Recreation and Park District summer camps.",
+    },
+    {
+        "name": "Hayward Parks & Rec Day Camp",
+        "city": "Hayward", "state": "CA", "zip": "94541",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.hayward-ca.gov/residents/arts-leisure/parks-recreation",
+        "sourceUrl": "https://www.hayward-ca.gov/residents/arts-leisure/parks-recreation",
+        "phone": None,
+        "note": "City of Hayward Parks & Recreation summer day camp.",
+    },
+
+    # --- Santa Clara, CA (source: santaclaraca.gov parks & recreation) ---
+    {
+        "name": "Santa Clara Parks & Rec Day Camp",
+        "city": "Santa Clara", "state": "CA", "zip": "95050",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.santaclaraca.gov/our-city/departments-g-z/parks-recreation",
+        "sourceUrl": "https://www.santaclaraca.gov/our-city/departments-g-z/parks-recreation",
+        "phone": "(408) 615-3140",
+        "note": "City of Santa Clara Parks & Recreation summer day camp.",
+    },
+
+    # --- Mountain View, CA (source: mountainview.gov community services) ---
+    {
+        "name": "Mountain View Community Services Day Camp",
+        "city": "Mountain View", "state": "CA", "zip": "94041",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.mountainview.gov/our-city/departments/community-services",
+        "sourceUrl": "https://www.mountainview.gov/our-city/departments/community-services",
+        "phone": "(650) 903-6300",
+        "note": "City of Mountain View Community Services summer day camp.",
+    },
+
+    # --- Petaluma, CA (source: cityofpetaluma.org parks & recreation) ---
+    {
+        "name": "Petaluma Parks & Rec Day Camp",
+        "city": "Petaluma", "state": "CA", "zip": "94952",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://cityofpetaluma.org/departments/parks-recreation",
+        "sourceUrl": "https://cityofpetaluma.org/departments/parks-recreation",
+        "phone": "(707) 778-4380",
+        "note": "City of Petaluma Parks & Recreation summer day camp.",
+    },
+
+    # --- Redding, CA (source: cityofredding.gov parks and recreation) ---
+    {
+        "name": "Redding Parks & Rec Day Camp",
+        "city": "Redding", "state": "CA", "zip": "96001",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofredding.gov/government/departments/parks_and_recreation/index.php",
+        "sourceUrl": "https://www.cityofredding.gov/government/departments/parks_and_recreation/index.php",
+        "phone": "(530) 225-4095",
+        "note": "City of Redding Parks and Recreation summer day camp.",
+    },
+
+    # --- Merced, CA (source: cityofmerced.gov parks & community services) ---
+    {
+        "name": "Merced Parks & Community Day Camp",
+        "city": "Merced", "state": "CA", "zip": "95340",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofmerced.gov/parks-and-community",
+        "sourceUrl": "https://www.cityofmerced.gov/parks-and-community",
+        "phone": "(209) 385-6855",
+        "note": "City of Merced Parks and Community Services summer day camp.",
+    },
+
+    # --- Tracy, CA (source: cityoftracy.org parks, recreation & community services) ---
+    {
+        "name": "Tracy Parks & Rec Day Camp",
+        "city": "Tracy", "state": "CA", "zip": "95376",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityoftracy.org/Departments/Parks-Recreation-Community-Services",
+        "sourceUrl": "https://www.cityoftracy.org/Departments/Parks-Recreation-Community-Services",
+        "phone": "(209) 831-6200",
+        "note": "City of Tracy Parks, Recreation & Community Services summer day camp.",
+    },
+
+    # --- San Rafael, CA (source: cityofsanrafael.org recreation) ---
+    {
+        "name": "San Rafael Recreation Day Camp",
+        "city": "San Rafael", "state": "CA", "zip": "94901",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofsanrafael.org/recreation/",
+        "sourceUrl": "https://www.cityofsanrafael.org/recreation/",
+        "phone": "(415) 485-3077",
+        "note": "City of San Rafael Recreation and Childcare summer day camp.",
+    },
+
+    # --- Union City, CA (source: unioncityca.gov community & recreation services) ---
+    {
+        "name": "Union City Community Recreation Day Camp",
+        "city": "Union City", "state": "CA", "zip": "94587",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.unioncityca.gov/192/Community-Recreation-Services",
+        "sourceUrl": "https://www.unioncityca.gov/192/Community-Recreation-Services",
+        "phone": "(510) 471-3232",
+        "note": "City of Union City Community & Recreation Services summer day camp.",
+    },
+
+    # --- Daly City, CA (source: dalycity.org department of recreation services) ---
+    {
+        "name": "Daly City Recreation Day Camp",
+        "city": "Daly City", "state": "CA", "zip": "94015",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.dalycity.org/807/Programs-Information",
+        "sourceUrl": "https://www.dalycity.org/807/Programs-Information",
+        "phone": "(650) 991-8001",
+        "note": "City of Daly City Department of Recreation Services summer day camp.",
+    },
+
+    # --- Novato, CA (source: novato.gov parks, recreation & community services) ---
+    {
+        "name": "Novato Parks & Rec Day Camp",
+        "city": "Novato", "state": "CA", "zip": "94945",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.novato.gov/government/parks-recreation-community-services",
+        "sourceUrl": "https://www.novato.gov/government/parks-recreation-community-services",
+        "phone": "(415) 899-8279",
+        "note": "City of Novato Parks, Recreation & Community Services summer day camp.",
+    },
+
+    # --- Livermore, CA (source: larpd.org livermore area recreation & park district) ---
+    {
+        "name": "LARPD Summer Day Camp",
+        "city": "Livermore", "state": "CA", "zip": "94550",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.larpd.org/",
+        "sourceUrl": "https://www.larpd.org/",
+        "phone": "(925) 373-5700",
+        "note": "Livermore Area Recreation and Park District summer day camp.",
+    },
+
+    # --- Walnut Creek, CA (source: walnutcreekartsrec.org arts + rec) ---
+    {
+        "name": "Walnut Creek Arts & Rec Day Camp",
+        "city": "Walnut Creek", "state": "CA", "zip": "94596",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.walnutcreekartsrec.org/programs-activities",
+        "sourceUrl": "https://www.walnutcreekartsrec.org/programs-activities",
+        "phone": "(925) 295-1490",
+        "note": "City of Walnut Creek Arts + Recreation summer day camp.",
+    },
+
+    # --- Milpitas, CA (source: milpitas.gov recreation & community services) ---
+    {
+        "name": "Milpitas Recreation Day Camp",
+        "city": "Milpitas", "state": "CA", "zip": "95035",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.milpitas.gov/1104/Recreation-Community-Services",
+        "sourceUrl": "https://www.milpitas.gov/1104/Recreation-Community-Services",
+        "phone": "(408) 586-3210",
+        "note": "City of Milpitas Recreation and Community Services summer day camp.",
+    },
+
+    # --- Cupertino, CA (source: cupertino.gov parks & recreation) ---
+    {
+        "name": "Cupertino Parks & Rec Day Camp",
+        "city": "Cupertino", "state": "CA", "zip": "95014",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cupertino.gov/Parks-Recreation",
+        "sourceUrl": "https://www.cupertino.gov/Parks-Recreation",
+        "phone": "(408) 777-3120",
+        "note": "City of Cupertino Parks and Recreation summer day camp.",
+    },
+
+    # --- South San Francisco, CA (source: ssf.net parks & recreation) ---
+    {
+        "name": "South SF Parks & Rec Day Camp",
+        "city": "South San Francisco", "state": "CA", "zip": "94080",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.ssfca.gov/Departments/Parks-Recreation",
+        "sourceUrl": "https://www.ssfca.gov/Departments/Parks-Recreation",
+        "phone": "(650) 829-3800",
+        "note": "City of South San Francisco Parks & Recreation summer day camp.",
+    },
+
+    # ============ OUT-OF-STATE CITY CAMPS (WA / OR / NV / AZ) ============
+    # --- Seattle, WA (source: seattle.gov parks & recreation) ---
+    {
+        "name": "Seattle Parks & Rec Day Camp",
+        "city": "Seattle", "state": "WA", "zip": "98101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.seattle.gov/parks",
+        "sourceUrl": "https://www.seattle.gov/parks",
+        "phone": "(206) 684-4075",
+        "note": "Seattle Parks and Recreation summer day camp.",
+    },
+
+    # --- Spokane, WA (source: my.spokanecity.org parksrec) ---
+    {
+        "name": "Spokane Parks & Rec Day Camp",
+        "city": "Spokane", "state": "WA", "zip": "99201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://my.spokanecity.org/parksrec/",
+        "sourceUrl": "https://my.spokanecity.org/parksrec/",
+        "phone": "(509) 625-6200",
+        "note": "City of Spokane Parks & Recreation summer day camp.",
+    },
+
+    # --- Tacoma, WA (source: cityoftacoma.org parks) ---
+    {
+        "name": "Tacoma Metro Parks Day Camp",
+        "city": "Tacoma", "state": "WA", "zip": "98402",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityoftacoma.org/government/city_departments/parks",
+        "sourceUrl": "https://www.cityoftacoma.org/government/city_departments/parks",
+        "phone": "(253) 591-5000",
+        "note": "City of Tacoma Parks (Metro Parks Tacoma) summer day camp.",
+    },
+
+    # --- Bellevue, WA (source: bellevuewa.gov parks) ---
+    {
+        "name": "Bellevue Parks & Rec Day Camp",
+        "city": "Bellevue", "state": "WA", "zip": "98004",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://bellevuewa.gov/city-government/departments/parks",
+        "sourceUrl": "https://bellevuewa.gov/city-government/departments/parks",
+        "phone": "(425) 452-6800",
+        "note": "City of Bellevue Parks & Community Services summer day camp.",
+    },
+
+    # --- Vancouver, WA (source: cityofvancouver.us parks, recreation & cultural services) ---
+    {
+        "name": "Vancouver WA Parks & Rec Day Camp",
+        "city": "Vancouver", "state": "WA", "zip": "98660",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofvancouver.us/departments/parks-recreation-and-cultural-services/",
+        "sourceUrl": "https://www.cityofvancouver.us/departments/parks-recreation-and-cultural-services/",
+        "phone": "(360) 487-8311",
+        "note": "City of Vancouver Parks, Recreation and Cultural Services summer day camp.",
+    },
+
+    # --- Everett, WA (source: everettwa.gov parks) ---
+    {
+        "name": "Everett Parks & Rec Day Camp",
+        "city": "Everett", "state": "WA", "zip": "98201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.everettwa.gov/parks",
+        "sourceUrl": "https://www.everettwa.gov/parks",
+        "phone": "(425) 257-8300",
+        "note": "City of Everett Parks & Community Services summer day camp.",
+    },
+
+    # --- Olympia, WA (source: olympiawa.gov parks & recreation) ---
+    {
+        "name": "Olympia Parks & Rec Day Camp",
+        "city": "Olympia", "state": "WA", "zip": "98501",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.olympiawa.gov/services/parks___recreation/index.php",
+        "sourceUrl": "https://www.olympiawa.gov/services/parks___recreation/index.php",
+        "phone": "(360) 753-8380",
+        "note": "City of Olympia Parks, Arts & Recreation summer day camp.",
+    },
+
+    # --- Bellingham, WA (source: cob.org parks & recreation) ---
+    {
+        "name": "Bellingham Parks & Rec Day Camp",
+        "city": "Bellingham", "state": "WA", "zip": "98225",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://cob.org/services/recreation",
+        "sourceUrl": "https://cob.org/services/recreation",
+        "phone": "(360) 778-8000",
+        "note": "City of Bellingham Parks & Recreation summer day camp.",
+    },
+
+    # --- Portland, OR (source: portland.gov parks) ---
+    {
+        "name": "Portland Parks & Rec Day Camp",
+        "city": "Portland", "state": "OR", "zip": "97201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.portland.gov/parks",
+        "sourceUrl": "https://www.portland.gov/parks",
+        "phone": "(503) 823-2525",
+        "note": "Portland Parks & Recreation summer day camp.",
+    },
+
+    # --- Eugene, OR (source: eugene-or.gov recreation) ---
+    {
+        "name": "Eugene Recreation Day Camp",
+        "city": "Eugene", "state": "OR", "zip": "97401",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.eugene-or.gov/4424/Recreation",
+        "sourceUrl": "https://www.eugene-or.gov/4424/Recreation",
+        "phone": "(541) 682-5333",
+        "note": "City of Eugene Recreation (Eugene Rec) summer day camp.",
+    },
+
+    # --- Salem, OR (source: cityofsalem.net parks & recreation) ---
+    {
+        "name": "Salem OR Parks & Rec Day Camp",
+        "city": "Salem", "state": "OR", "zip": "97301",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofsalem.net/community/things-to-do/recreation-sports-and-activities",
+        "sourceUrl": "https://www.cityofsalem.net/community/things-to-do/recreation-sports-and-activities",
+        "phone": "(503) 588-6336",
+        "note": "City of Salem Parks and Recreation summer day camp.",
+    },
+
+    # --- Beaverton, OR (source: beavertonoregon.gov parks) ---
+    {
+        "name": "Beaverton Parks & Rec Day Camp",
+        "city": "Beaverton", "state": "OR", "zip": "97005",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.beavertonoregon.gov/parks",
+        "sourceUrl": "https://www.beavertonoregon.gov/parks",
+        "phone": "(503) 217-1618",
+        "note": "City of Beaverton Parks & Recreation summer day camp.",
+    },
+
+    # --- Las Vegas, NV (source: lasvegasnevada.gov parks) ---
+    {
+        "name": "Las Vegas Parks & Rec Day Camp",
+        "city": "Las Vegas", "state": "NV", "zip": "89101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.lasvegasnevada.gov/Residents/Parks-Facilities",
+        "sourceUrl": "https://www.lasvegasnevada.gov/Residents/Parks-Facilities",
+        "phone": "(702) 229-6011",
+        "note": "City of Las Vegas Parks & Recreation summer day camp.",
+    },
+
+    # --- Henderson, NV (source: cityofhenderson.com parks & recreation) ---
+    {
+        "name": "Henderson Parks & Rec Day Camp",
+        "city": "Henderson", "state": "NV", "zip": "89002",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofhenderson.com/government/departments/parks-and-recreation",
+        "sourceUrl": "https://www.cityofhenderson.com/government/departments/parks-and-recreation",
+        "phone": "(702) 267-4000",
+        "note": "City of Henderson Parks and Recreation summer day camp.",
+    },
+
+    # --- Reno, NV (source: reno.gov parks and recreation) ---
+    {
+        "name": "Reno Parks & Rec Day Camp",
+        "city": "Reno", "state": "NV", "zip": "89501",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.reno.gov/parks-and-recreation/index.php",
+        "sourceUrl": "https://www.reno.gov/parks-and-recreation/index.php",
+        "phone": "(775) 334-2262",
+        "note": "City of Reno Parks and Recreation summer day camp.",
+    },
+
+    # --- North Las Vegas, NV (source: cityofnorthlasvegas.com parks and recreation) ---
+    {
+        "name": "North Las Vegas Parks & Rec Day Camp",
+        "city": "North Las Vegas", "state": "NV", "zip": "89030",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofnorthlasvegas.com/things-to-do/parks-and-recreation",
+        "sourceUrl": "https://www.cityofnorthlasvegas.com/things-to-do/parks-and-recreation",
+        "phone": "(702) 633-1171",
+        "note": "City of North Las Vegas Parks and Recreation summer day camp.",
+    },
+
+    # --- Phoenix, AZ (source: phoenix.gov parks) ---
+    {
+        "name": "Phoenix Parks & Rec Day Camp",
+        "city": "Phoenix", "state": "AZ", "zip": "85001",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.phoenix.gov/parks",
+        "sourceUrl": "https://www.phoenix.gov/parks",
+        "phone": "(602) 262-6251",
+        "note": "City of Phoenix Parks and Recreation summer day camp.",
+    },
+
+    # --- Tucson, AZ (source: tucsonaz.gov parks and recreation) ---
+    {
+        "name": "Tucson Parks & Rec Day Camp",
+        "city": "Tucson", "state": "AZ", "zip": "85701",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.tucsonaz.gov/Departments/Parks-and-Recreation",
+        "sourceUrl": "https://www.tucsonaz.gov/Departments/Parks-and-Recreation",
+        "phone": "(520) 791-4873",
+        "note": "City of Tucson Parks and Recreation summer day camp.",
+    },
+
+    # --- Mesa, AZ (source: mesaaz.gov parks, recreation & community facilities) ---
+    {
+        "name": "Mesa Parks & Rec Day Camp",
+        "city": "Mesa", "state": "AZ", "zip": "85201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities",
+        "sourceUrl": "https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities",
+        "phone": "(480) 644-7529",
+        "note": "City of Mesa Parks, Recreation and Community Facilities summer day camp.",
+    },
+
+    # --- Scottsdale, AZ (source: scottsdaleaz.gov parks & recreation) ---
+    {
+        "name": "Scottsdale Parks & Rec Day Camp",
+        "city": "Scottsdale", "state": "AZ", "zip": "85251",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.scottsdaleaz.gov/Parks/",
+        "sourceUrl": "https://www.scottsdaleaz.gov/Parks/",
+        "phone": "(480) 312-7957",
+        "note": "City of Scottsdale Parks & Recreation summer day camp.",
+    },
+
+    # --- Glendale, AZ (source: glendaleaz.gov parks and recreation) ---
+    {
+        "name": "Glendale AZ Parks & Rec Day Camp",
+        "city": "Glendale", "state": "AZ", "zip": "85301",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.glendaleaz.gov/Explore/Parks-and-Recreation",
+        "sourceUrl": "https://www.glendaleaz.gov/Explore/Parks-and-Recreation",
+        "phone": None,
+        "note": "City of Glendale AZ Parks and Recreation summer day camp.",
+    },
+
+    # --- Chandler, AZ (source: chandleraz.gov community services) ---
+    {
+        "name": "Chandler Community Services Day Camp",
+        "city": "Chandler", "state": "AZ", "zip": "85225",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.chandleraz.gov/government/departments/community-services",
+        "sourceUrl": "https://www.chandleraz.gov/government/departments/community-services",
+        "phone": "(480) 782-2727",
+        "note": "City of Chandler Community Services (parks & recreation) summer day camp.",
+    },
+
+    # --- Tempe, AZ (source: tempe.gov community services) ---
+    {
+        "name": "Tempe Community Services Day Camp",
+        "city": "Tempe", "state": "AZ", "zip": "85281",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.tempe.gov/government/community-services",
+        "sourceUrl": "https://www.tempe.gov/government/community-services",
+        "phone": "(480) 350-5200",
+        "note": "City of Tempe Community Services summer day camp.",
+    },
+
+    # --- Peoria, AZ (source: peoriaaz.gov parks, recreation & community facilities) ---
+    {
+        "name": "Peoria AZ Parks & Rec Day Camp",
+        "city": "Peoria", "state": "AZ", "zip": "85345",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.peoriaaz.gov/government/departments/parks-recreation-and-community-facilities/recreation-programs",
+        "sourceUrl": "https://www.peoriaaz.gov/government/departments/parks-recreation-and-community-facilities/recreation-programs",
+        "phone": "(623) 773-7137",
+        "note": "City of Peoria Parks, Recreation and Community Facilities summer day camp.",
+    },
 ]
+
 
 def main():
     camps = []
     for c in CITY_CAMPS:
-        # resolve exact facility coords by matching name substring
+        # resolve coords: explicit facility -> city center -> geocode
         coords = None
         address = None
-        name_low = c["name"].lower()
-        for key, (lat, lng, addr) in FACILITY_COORDS.items():
-            if key in name_low:
-                coords = (lat, lng)
-                address = addr
-                break
+        fac = c.get("facility")
+        if fac:
+            hit = FACILITY_COORDS.get(fac)
+            if hit:
+                coords = (hit[0], hit[1])
+                address = hit[2]
+        if not coords:
+            city_hit = FACILITY_COORDS.get(c["city"].lower())
+            if city_hit:
+                coords = (city_hit[0], city_hit[1])
+                address = city_hit[2]
         if not coords:
             coords = geocode(c["city"], c["state"])
         if not coords:
@@ -1142,7 +2051,7 @@ def main():
             "website": c["website"], "description": c.get("note"),
             "acaVerified": False, "provider": "city",
             "source": "city_recreation:official",
-            "sourceUrl": c["sourceUrl"], "verifiedAt": "2026-08-04",
+            "sourceUrl": c["sourceUrl"], "verifiedAt": "2026-08-06",
             "verificationMethod": "official_city_page", "unverified": False,
         }
         camps.append(camp)
