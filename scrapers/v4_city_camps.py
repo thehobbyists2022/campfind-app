@@ -2013,6 +2013,307 @@ CITY_CAMPS = [
         "phone": "(623) 773-7137",
         "note": "City of Peoria Parks, Recreation and Community Facilities summer day camp.",
     },
+
+    # ============ OUT-OF-STATE CITY CAMPS (CO / UT / TX / NM) ============
+    # --- Denver, CO (source: denvergov.org parks & recreation) ---
+    {
+        "name": "Denver Parks & Rec Day Camp",
+        "city": "Denver", "state": "CO", "zip": "80202",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Parks-Recreation",
+        "sourceUrl": "https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Parks-Recreation",
+        "phone": "(720) 913-1311",
+        "note": "City and County of Denver Parks & Recreation summer day camp.",
+    },
+
+    # --- Boulder, CO (source: bouldercolorado.gov parks & recreation) ---
+    {
+        "name": "Boulder Parks & Rec Day Camp",
+        "city": "Boulder", "state": "CO", "zip": "80301",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://bouldercolorado.gov/government/departments/parks-recreation",
+        "sourceUrl": "https://bouldercolorado.gov/government/departments/parks-recreation",
+        "phone": "(303) 413-7200",
+        "note": "City of Boulder Parks & Recreation summer day camp.",
+    },
+
+    # --- Colorado Springs, CO (source: coloradosprings.gov PRCS) ---
+    {
+        "name": "Colorado Springs Parks & Rec Day Camp",
+        "city": "Colorado Springs", "state": "CO", "zip": "80903",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://coloradosprings.gov/PRCS",
+        "sourceUrl": "https://coloradosprings.gov/PRCS",
+        "phone": "(719) 385-5940",
+        "note": "City of Colorado Springs Parks, Recreation and Cultural Services summer day camp.",
+    },
+
+    # --- Fort Collins, CO (source: fortcollins.gov recreation) ---
+    {
+        "name": "Fort Collins Recreation Day Camp",
+        "city": "Fort Collins", "state": "CO", "zip": "80521",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.fortcollins.gov/Activities/Recreation",
+        "sourceUrl": "https://www.fortcollins.gov/Activities/Recreation",
+        "phone": None,
+        "note": "City of Fort Collins Recreation Department summer day camp.",
+    },
+
+    # --- Aurora, CO (source: auroragov.org recreation) ---
+    {
+        "name": "Aurora CO Recreation Day Camp",
+        "city": "Aurora", "state": "CO", "zip": "80011",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.auroragov.org/recreation",
+        "sourceUrl": "https://www.auroragov.org/recreation",
+        "phone": "(303) 326-8315",
+        "note": "City of Aurora Recreation & Culture summer day camp.",
+    },
+
+    # --- Lakewood, CO (source: lakewoodco.gov community resources recreation) ---
+    {
+        "name": "Lakewood CO Recreation Day Camp",
+        "city": "Lakewood", "state": "CO", "zip": "80214",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.lakewoodco.gov/Local-Government/Departments/Community-Resources/Recreation",
+        "sourceUrl": "https://www.lakewoodco.gov/Local-Government/Departments/Community-Resources/Recreation",
+        "phone": "(303) 987-7800",
+        "note": "City of Lakewood Community Resources Recreation summer day camp.",
+    },
+
+    # --- Pueblo, CO (source: pueblo.us parks & recreation) ---
+    {
+        "name": "Pueblo Parks & Rec Day Camp",
+        "city": "Pueblo", "state": "CO", "zip": "81003",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.pueblo.us/306/Parks-Recreation",
+        "sourceUrl": "https://www.pueblo.us/306/Parks-Recreation",
+        "phone": "(719) 553-2489",
+        "note": "City of Pueblo Parks & Recreation summer day camp.",
+    },
+
+    # --- Greeley, CO (source: greeleyco.gov recreation) ---
+    {
+        "name": "Greeley Recreation Day Camp",
+        "city": "Greeley", "state": "CO", "zip": "80631",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://greeleyco.gov/recreation/",
+        "sourceUrl": "https://greeleyco.gov/recreation/",
+        "phone": "(970) 350-9400",
+        "note": "City of Greeley Culture, Parks and Recreation summer day camp.",
+    },
+
+    # --- Salt Lake City, UT (source: slc.gov public lands/parks) ---
+    {
+        "name": "SLC Parks & Rec Day Camp",
+        "city": "Salt Lake City", "state": "UT", "zip": "84101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.slc.gov/parks/",
+        "sourceUrl": "https://www.slc.gov/parks/",
+        "phone": "(801) 972-7800",
+        "note": "Salt Lake City Public Lands (Parks) summer day camp.",
+    },
+
+    # --- Provo, UT (source: provo.gov parks & recreation) ---
+    {
+        "name": "Provo Parks & Rec Day Camp",
+        "city": "Provo", "state": "UT", "zip": "84601",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.provo.gov/184/Parks-Recreation",
+        "sourceUrl": "https://www.provo.gov/184/Parks-Recreation",
+        "phone": "(801) 852-6600",
+        "note": "City of Provo Parks & Recreation summer day camp.",
+    },
+
+    # --- West Valley City, UT (source: wvc-ut.gov parks & recreation) ---
+    {
+        "name": "West Valley City Parks & Rec Day Camp",
+        "city": "West Valley City", "state": "UT", "zip": "84119",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.wvc-ut.gov/95/Parks-Recreation",
+        "sourceUrl": "https://www.wvc-ut.gov/95/Parks-Recreation",
+        "phone": "(801) 966-3600",
+        "note": "City of West Valley City Parks and Recreation summer day camp.",
+    },
+
+    # --- Ogden, UT (source: ogdencity.gov recreation) ---
+    {
+        "name": "Ogden Recreation Day Camp",
+        "city": "Ogden", "state": "UT", "zip": "84401",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.ogdencity.gov/3406/Recreation",
+        "sourceUrl": "https://www.ogdencity.gov/3406/Recreation",
+        "phone": "(801) 629-8253",
+        "note": "Ogden City Recreation summer day camp.",
+    },
+
+    # --- Sandy, UT (source: sandy.utah.gov parks and recreation) ---
+    {
+        "name": "Sandy UT Parks & Rec Day Camp",
+        "city": "Sandy", "state": "UT", "zip": "84070",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.sandy.utah.gov/government/departments/parks-and-recreation",
+        "sourceUrl": "https://www.sandy.utah.gov/government/departments/parks-and-recreation",
+        "phone": "(801) 568-7100",
+        "note": "City of Sandy Parks and Recreation summer day camp.",
+    },
+
+    # --- Austin, TX (source: austintexas.gov parks) ---
+    {
+        "name": "Austin Parks & Rec Day Camp",
+        "city": "Austin", "state": "TX", "zip": "78701",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.austintexas.gov/parks",
+        "sourceUrl": "https://www.austintexas.gov/parks",
+        "phone": "(512) 974-6700",
+        "note": "Austin Parks and Recreation summer day camp.",
+    },
+
+    # --- Dallas, TX (source: dallasparks.org) ---
+    {
+        "name": "Dallas Parks & Rec Day Camp",
+        "city": "Dallas", "state": "TX", "zip": "75201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.dallasparks.org/",
+        "sourceUrl": "https://www.dallasparks.org/101/About-Us",
+        "phone": "(214) 670-4100",
+        "note": "Dallas Park and Recreation Department summer day camp.",
+    },
+
+    # --- Houston, TX (source: houstontx.gov parks) ---
+    {
+        "name": "Houston Parks & Rec Day Camp",
+        "city": "Houston", "state": "TX", "zip": "77002",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.houstontx.gov/parks/",
+        "sourceUrl": "https://www.houstontx.gov/parks/",
+        "phone": "(832) 394-8805",
+        "note": "Houston Parks and Recreation Department summer day camp.",
+    },
+
+    # --- San Antonio, TX (source: sa.gov parks) ---
+    {
+        "name": "San Antonio Parks & Rec Day Camp",
+        "city": "San Antonio", "state": "TX", "zip": "78205",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.sa.gov/Directory/Departments/Parks",
+        "sourceUrl": "https://www.sa.gov/Directory/Departments/Parks",
+        "phone": "(210) 207-6000",
+        "note": "City of San Antonio Parks and Recreation Department summer day camp.",
+    },
+
+    # --- Fort Worth, TX (source: fortworthtexas.gov parks) ---
+    {
+        "name": "Fort Worth Parks & Rec Day Camp",
+        "city": "Fort Worth", "state": "TX", "zip": "76102",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.fortworthtexas.gov/departments/parks",
+        "sourceUrl": "https://www.fortworthtexas.gov/departments/parks",
+        "phone": "(817) 392-5700",
+        "note": "Fort Worth Park and Recreation Department summer day camp.",
+    },
+
+    # --- El Paso, TX (source: elpasotexas.gov parks) ---
+    {
+        "name": "El Paso Parks & Rec Day Camp",
+        "city": "El Paso", "state": "TX", "zip": "79901",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.elpasotexas.gov/parks/",
+        "sourceUrl": "https://www.elpasotexas.gov/parks/",
+        "phone": "(915) 212-0092",
+        "note": "City of El Paso Parks and Recreation summer day camp.",
+    },
+
+    # --- Arlington, TX (source: arlingtontx.gov parks, recreation & culture) ---
+    {
+        "name": "Arlington TX Parks & Rec Day Camp",
+        "city": "Arlington", "state": "TX", "zip": "76010",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.arlingtontx.gov/Government/Departments/Department-Directory/Parks-Recreation-Culture",
+        "sourceUrl": "https://www.arlingtontx.gov/Government/Departments/Department-Directory/Parks-Recreation-Culture",
+        "phone": "(817) 459-5474",
+        "note": "City of Arlington Parks, Recreation and Culture summer day camp.",
+    },
+
+    # --- Plano, TX (source: plano.gov parks and recreation) ---
+    {
+        "name": "Plano Parks & Rec Day Camp",
+        "city": "Plano", "state": "TX", "zip": "75074",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.plano.gov/parks-and-recreation",
+        "sourceUrl": "https://www.plano.gov/parks-and-recreation",
+        "phone": "(972) 941-7000",
+        "note": "City of Plano Parks and Recreation summer day camp.",
+    },
+
+    # --- Irving, TX (source: irvingtx.gov parks) ---
+    {
+        "name": "Irving Parks & Rec Day Camp",
+        "city": "Irving", "state": "TX", "zip": "75060",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://irvingtx.gov/parks",
+        "sourceUrl": "https://irvingtx.gov/parks",
+        "phone": "(972) 721-2501",
+        "note": "City of Irving Parks and Recreation Department summer day camp.",
+    },
+
+    # --- Albuquerque, NM (source: cabq.gov parks and recreation) ---
+    {
+        "name": "Albuquerque Parks & Rec Day Camp",
+        "city": "Albuquerque", "state": "NM", "zip": "87101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cabq.gov/parksandrecreation",
+        "sourceUrl": "https://www.cabq.gov/parksandrecreation",
+        "phone": "(505) 768-2000",
+        "note": "City of Albuquerque Parks and Recreation summer day camp.",
+    },
+
+    # --- Santa Fe, NM (source: santafenm.gov recreation) ---
+    {
+        "name": "Santa Fe NM Recreation Day Camp",
+        "city": "Santa Fe", "state": "NM", "zip": "87501",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://santafenm.gov/community-services/recreation",
+        "sourceUrl": "https://santafenm.gov/community-services/recreation",
+        "phone": "(505) 955-4000",
+        "note": "City of Santa Fe Recreation Department summer day camp.",
+    },
+
+    # --- Las Cruces, NM (source: lascruces.gov parks and recreation) ---
+    {
+        "name": "Las Cruces Parks & Rec Day Camp",
+        "city": "Las Cruces", "state": "NM", "zip": "88001",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.lascruces.gov/parks-and-recreation",
+        "sourceUrl": "https://www.lascruces.gov/parks-and-recreation",
+        "phone": "(575) 541-2563",
+        "note": "City of Las Cruces Parks and Recreation summer day camp.",
+    },
 ]
 
 
