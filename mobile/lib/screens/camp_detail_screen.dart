@@ -14,7 +14,7 @@ class CampDetailScreen extends StatelessWidget {
     required this.onFavoriteTap,
   }) : super(key: key);
 
-  Future<void> _launchUrl(String urlString) async {
+  Future<void> _launchUrl(BuildContext context, String urlString) async {
     String cleanUrl = urlString.trim();
     if (cleanUrl.isEmpty) {
       final query = Uri.encodeComponent('${camp.name} ${camp.city} ${camp.state} camp website');
@@ -25,15 +25,18 @@ class CampDetailScreen extends StatelessWidget {
       cleanUrl = 'https://$cleanUrl';
     }
 
-    final Uri url = Uri.parse(cleanUrl);
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
-    } else {
-      final query = Uri.encodeComponent('${camp.name} ${camp.city} ${camp.state} camp website');
-      final Uri searchUrl = Uri.parse('https://www.google.com/search?q=$query');
-      if (await canLaunchUrl(searchUrl)) {
-        await launchUrl(searchUrl, mode: LaunchMode.externalApplication);
-      }
+    final Uri? url = Uri.tryParse(cleanUrl);
+    if (url == null || !url.hasScheme || url.host.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('This website link is unavailable.')),
+      );
+      return;
+    }
+    final opened = await launchUrl(url, mode: LaunchMode.externalApplication);
+    if (!opened && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Unable to open the website on this device.')),
+      );
     }
   }
 
@@ -207,7 +210,7 @@ class CampDetailScreen extends StatelessWidget {
                   if (camp.website.isNotEmpty)
                     Expanded(
                       child: ElevatedButton.icon(
-                        onPressed: () => _launchUrl(camp.website),
+                        onPressed: () => _launchUrl(context, camp.website),
                         icon: const Icon(Icons.language, size: 16),
                         label: const Text('Website'),
                         style: ElevatedButton.styleFrom(
@@ -313,10 +316,20 @@ class CampDetailScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: List.generate(8, (index) {
+                  if (camp.weeks.isEmpty)
+                    const Text(
+                      'Session schedule not published. Please contact the camp or check its official website.',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Color(0xFF5A6A7C),
+                        height: 1.5,
+                      ),
+                    )
+                  else
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: List.generate(8, (index) {
                       final weekNum = index + 1;
                       final isAvailable = camp.weeks.contains(weekNum);
                       return Container(
@@ -337,8 +350,8 @@ class CampDetailScreen extends StatelessWidget {
                           ),
                         ),
                       );
-                    }),
-                  ),
+                      }),
+                    ),
                 ],
               ),
             ),
