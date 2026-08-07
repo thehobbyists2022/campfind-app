@@ -5788,6 +5788,7 @@
       "description": null,
       "acaVerified": false,
       "unverified": true,
+      "verificationMethod": null,
       "reviewCount": null
     },
     {
@@ -9971,6 +9972,7 @@
       "description": null,
       "acaVerified": false,
       "unverified": true,
+      "verificationMethod": null,
       "reviewCount": null
     },
     {
@@ -12066,6 +12068,7 @@
       "description": null,
       "acaVerified": false,
       "unverified": true,
+      "verificationMethod": null,
       "reviewCount": null
     },
     {
@@ -17267,6 +17270,7 @@
       "description": null,
       "acaVerified": false,
       "unverified": true,
+      "verificationMethod": null,
       "reviewCount": null
     },
     {
@@ -20179,6 +20183,7 @@
       "description": null,
       "acaVerified": false,
       "unverified": true,
+      "verificationMethod": null,
       "reviewCount": null
     },
     {
@@ -21970,6 +21975,7 @@
       "description": null,
       "acaVerified": false,
       "unverified": true,
+      "verificationMethod": null,
       "reviewCount": null
     },
     {
@@ -66488,6 +66494,7 @@
       "source": "city_recreation:official",
       "sourceUrl": "https://www.ci.oceanside.ca.us/government/parks-recreation/youth-programs",
       "verifiedAt": "2026-08-06",
+      "verificationMethod": "official_city_page",
       "unverified": false
     },
     {

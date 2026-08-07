@@ -19,7 +19,7 @@ from urllib.parse import urlparse
 VALID_TYPE = {"day", "overnight", "both"}
 VALID_SEASON = {"summer", "winter", "spring", "fall"}
 VALID_THEME = {"STEM", "Sports", "Arts", "Outdoor", "Academic", "General"}
-VALID_VERIFICATION = {"location_listing", "profile_page", "manual"}
+VALID_VERIFICATION = {"location_listing", "profile_page", "manual", "aca_finder"}
 
 # ---------------------------------------------------------------------------
 # USPS ZIP -> valid first-digit set per state (2-letter code)
