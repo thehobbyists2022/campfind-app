@@ -501,9 +501,34 @@
 
 ---
 
+## 第七点十五部分：v8/v9 品牌扩充（DeepSeek V4 Flash，2026-08-06）
+
+延续 v5/v6/v7 的品牌扩充批次，全部遵循 R1–R6。
+
+### v8 — Snapology（commit d20417a）
+- **Snapology 124**：官方 `franchise_sites-sitemap.xml` -> 每加盟店页面 JSON-LD（地址/邮编/电话），R2 = 加盟店 URL。STEM 主题，39 州。
+- 数据集 4,007 → 4,131。
+
+### v9 — Goldfish Swim School（commit d133931）
+- **Goldfish 193**：官方 sitemap -> 每校页面 JSON-LD（地址/邮编/电话）。Sports 主题，30+ 州。
+- **抽验中发现并修复**：最初只保留第一个 JSON-LD 块，导致 192/193 无电话（第一个块是 11 位 `+1...`，被规范化置 null）。改为优先选择含 10 位美国电话的 LocalBusiness 条目 -> 189/193 有真实电话。
+- 数据集 4,131 → **4,324**。
+
+### 品牌调查结论（未扩）
+- **i9 Sports**（300 加盟区）：加盟页 JSON-LD 只有客户评论，实际位置 JS 载入，无干净地址。
+- **Sylvan Learning**：franchise 清单一多为加拿大。
+- **Engineering for Kids / Bricks 4 Kidz**：sitemap 未含干净美国门市清单。
+
+### 复核资产
+- `scrapers/v8_snapology.py`、`app/aca_camps_brands_v8.json`（v8）
+- `scrapers/v9_goldfish.py`、`app/aca_camps_brands_v9.json`（v9）
+- `scrapers/v3_export.py`（合并 v5–v9 出三副本）
+
+---
+
 ## 第八部分：风险与备注
 1. **法律/口碑风险（现状）**：继续展示编造的电话/评分和冒名连锁品牌门店，有被品牌方投诉和测试者持续翻车的风险 → 本轮清理是刚需，不是优化项。
 2. **14 天窗口**：数据修正可随时进行；App 更新（重打包 AAB）不重置 20×14 计时。Flutter 端改完资源文件后，重新构建发布由所有者执行（keystore 已在 `mobile/upload-keystore.jks`）。
 3. **ACA 真实爬取**（可选后续）：`03_aca_crawler_v2.py` 需浏览器 PHPSESSID，且 ACA 可能改版；本轮不依赖它，`acaVerified` 可全 false，后续再补真实 ACA 交叉验证。
-4. **数量预期**：清理+真实扩充后总数可能在 600–1,200 区间浮动，以真实为准，不凑数。（注：其后品牌扩充批次已把总数推至 4,007，仍以真实官方来源为准。）
-5. **已评估但未扩的品牌**：YMCA councils（分散在数十个独立 council 站，无统一 location 清单）、Little Medical School（官网无公开门市清单）、Girl Scouts / Boy Scouts council（无易爬的 finder）、JCC 多数分会（仅 Valley of the Sun 等少数有干净 JSON-LD）。待有干净官方来源时再补。
+4. **数量预期**：清理+真实扩充后总数可能在 600–1,200 区间浮动，以真实为准，不凑数。（注：其后品牌扩充批次已把总数推至 4,324，仍以真实官方来源为准。）
+5. **已评估但未扩的品牌**：YMCA councils（分散在数十个独立 council 站，无统一 location 清单）、Little Medical School（官网无公开门市清单）、Girl Scouts / Boy Scouts council（无易爬的 finder）、JCC 多数分会（仅 Valley of the Sun 等少数有干净 JSON-LD）、i9 Sports（加盟页无干净地址，JS 载入）。待有干净官方来源时再补。
