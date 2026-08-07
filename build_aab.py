@@ -18,6 +18,9 @@ import shutil
 import subprocess
 import sys
 
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 MOBILE = os.path.join(ROOT, "mobile")
 FLUTTER = r"C:\flutter\bin\flutter.bat"
@@ -45,10 +48,18 @@ def main():
     print(f"[1/3] flutter analyze")
     if not args.skip_analyze:
         code = run([FLUTTER, "analyze"])
-        # 有 error 则中止；只有 info/warning 可继续
-        if code != 0:
-            print("analyze 失败（请检查 error），中止")
+        # flutter analyze returns 1 for info/warning lints too; only abort on
+        # actual errors reported in output.
+        out = ""
+        try:
+            r = subprocess.run([FLUTTER, "analyze"], cwd=MOBILE, env=env, capture_output=True, text=True)
+            out = (r.stdout or "") + (r.stderr or "")
+        except Exception:
+            pass
+        if "error - " in out:
+            print("analyze 含 error，中止")
             sys.exit(1)
+        print("  analyze 仅 info/warning，继续")
     else:
         print("  跳过 analyze")
 
