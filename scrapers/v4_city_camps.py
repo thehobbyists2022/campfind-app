@@ -2675,6 +2675,367 @@ CITY_CAMPS = [
         "phone": "(937) 333-8400",
         "note": "City of Dayton Department of Recreation summer day camp.",
     },
+
+    # ============ EAST COAST / SOUTH / PLAINS CITY CAMPS (PA / MA / MD / VA / NC / SC / AL / KY / MO / OK / KS / AR / LA / IA / WI / IN) ============
+    # --- Philadelphia, PA (source: phila.gov philadelphia parks & recreation) ---
+    {
+        "name": "Philadelphia Parks & Rec Day Camp",
+        "city": "Philadelphia", "state": "PA", "zip": "19103",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.phila.gov/departments/philadelphia-parks-recreation/",
+        "sourceUrl": "https://www.phila.gov/departments/philadelphia-parks-recreation/",
+        "phone": "(215) 683-3600",
+        "note": "Philadelphia Parks & Recreation summer day camp.",
+    },
+
+    # --- Pittsburgh, PA (source: pittsburghpa.gov citiparks) ---
+    {
+        "name": "Pittsburgh CitiParks Day Camp",
+        "city": "Pittsburgh", "state": "PA", "zip": "15219",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.pittsburghpa.gov/Recreation-Events",
+        "sourceUrl": "https://www.pittsburghpa.gov/Recreation-Events",
+        "phone": "(412) 255-2621",
+        "note": "City of Pittsburgh CitiParks (Parks & Recreation) summer day camp.",
+    },
+
+    # --- Allentown, PA (source: allentownpa.gov parks & recreation) ---
+    {
+        "name": "Allentown Parks & Rec Day Camp",
+        "city": "Allentown", "state": "PA", "zip": "18101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.allentownpa.gov/en-us/Government/Departments/Parks-Recreation",
+        "sourceUrl": "https://www.allentownpa.gov/en-us/Government/Departments/Parks-Recreation",
+        "phone": "(610) 437-7757",
+        "note": "City of Allentown Parks and Recreation summer day camp.",
+    },
+
+    # --- Boston, MA (source: boston.gov parks and recreation) ---
+    {
+        "name": "Boston Parks & Rec Day Camp",
+        "city": "Boston", "state": "MA", "zip": "02108",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.boston.gov/departments/parks-and-recreation",
+        "sourceUrl": "https://www.boston.gov/departments/parks-and-recreation",
+        "phone": "(617) 635-4505",
+        "note": "Boston Parks and Recreation Department summer day camp.",
+    },
+
+    # --- Worcester, MA (source: worcesterma.gov parks & recreation) ---
+    {
+        "name": "Worcester Parks & Rec Day Camp",
+        "city": "Worcester", "state": "MA", "zip": "01608",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.worcesterma.gov/parks",
+        "sourceUrl": "https://www.worcesterma.gov/parks",
+        "phone": "(508) 799-1190",
+        "note": "City of Worcester Parks, Recreation & Cemetery summer day camp.",
+    },
+
+    # --- Baltimore, MD (source: baltimorecity.gov BCRP) ---
+    {
+        "name": "Baltimore Rec & Parks Day Camp",
+        "city": "Baltimore", "state": "MD", "zip": "21201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.baltimorecity.gov/bcrp",
+        "sourceUrl": "https://www.baltimorecity.gov/bcrp",
+        "phone": "(410) 396-7900",
+        "note": "Baltimore City Department of Recreation and Parks summer day camp.",
+    },
+
+    # --- Virginia Beach, VA (source: parks.virginiabeach.gov) ---
+    {
+        "name": "Virginia Beach Parks & Rec Day Camp",
+        "city": "Virginia Beach", "state": "VA", "zip": "23456",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://parks.virginiabeach.gov",
+        "sourceUrl": "https://parks.virginiabeach.gov",
+        "phone": "(757) 385-1100",
+        "note": "Virginia Beach Parks & Recreation summer day camp.",
+    },
+
+    # --- Richmond, VA (source: rva.gov parks & recreation) ---
+    {
+        "name": "Richmond VA Parks & Rec Day Camp",
+        "city": "Richmond", "state": "VA", "zip": "23219",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.rva.gov/parks-recreation",
+        "sourceUrl": "https://www.rva.gov/parks-recreation",
+        "phone": "(804) 646-7000",
+        "note": "City of Richmond Parks & Recreation summer day camp.",
+    },
+
+    # --- Norfolk, VA (source: norfolk.gov parks and recreation) ---
+    {
+        "name": "Norfolk Parks & Rec Day Camp",
+        "city": "Norfolk", "state": "VA", "zip": "23510",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.norfolk.gov/5380/Parks-and-Recreation",
+        "sourceUrl": "https://www.norfolk.gov/5380/Parks-and-Recreation",
+        "phone": "(757) 823-4291",
+        "note": "City of Norfolk Parks & Recreation summer day camp.",
+    },
+
+    # --- Charlotte, NC (source: parkandrec.mecknc.gov) ---
+    {
+        "name": "Charlotte Parks & Rec Day Camp",
+        "city": "Charlotte", "state": "NC", "zip": "28202",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://parkandrec.mecknc.gov/",
+        "sourceUrl": "https://parkandrec.mecknc.gov/",
+        "phone": "(980) 314-1000",
+        "note": "Mecklenburg County Park and Recreation (Charlotte) summer day camp.",
+    },
+
+    # --- Raleigh, NC (source: raleighnc.gov parks and recreation) ---
+    {
+        "name": "Raleigh Parks & Rec Day Camp",
+        "city": "Raleigh", "state": "NC", "zip": "27601",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://raleighnc.gov/parks-and-recreation",
+        "sourceUrl": "https://raleighnc.gov/parks-and-recreation",
+        "phone": "(919) 996-3285",
+        "note": "City of Raleigh Parks and Recreation summer day camp.",
+    },
+
+    # --- Greensboro, NC (source: greensboro-nc.gov parks & recreation) ---
+    {
+        "name": "Greensboro Parks & Rec Day Camp",
+        "city": "Greensboro", "state": "NC", "zip": "27401",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.greensboro-nc.gov/departments/parks-recreation",
+        "sourceUrl": "https://www.greensboro-nc.gov/departments/parks-recreation",
+        "phone": "(336) 373-2558",
+        "note": "Greensboro Parks and Recreation Department summer day camp.",
+    },
+
+    # --- Columbia, SC (source: parksandrec.columbiasc.gov) ---
+    {
+        "name": "Columbia SC Parks & Rec Day Camp",
+        "city": "Columbia", "state": "SC", "zip": "29201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://parksandrec.columbiasc.gov",
+        "sourceUrl": "https://parksandrec.columbiasc.gov",
+        "phone": "(803) 545-3100",
+        "note": "City of Columbia Parks & Recreation Department summer day camp.",
+    },
+
+    # --- Charleston, SC (source: charleston-sc.gov recreation) ---
+    {
+        "name": "Charleston SC Recreation Day Camp",
+        "city": "Charleston", "state": "SC", "zip": "29401",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.charleston-sc.gov/357/Recreation",
+        "sourceUrl": "https://www.charleston-sc.gov/357/Recreation",
+        "phone": "(843) 724-7327",
+        "note": "City of Charleston Recreation Department summer day camp.",
+    },
+
+    # --- Birmingham, AL (source: birminghamal.gov parks and recreation) ---
+    {
+        "name": "Birmingham Parks & Rec Day Camp",
+        "city": "Birmingham", "state": "AL", "zip": "35203",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.birminghamal.gov/government/city-departments/parks-recreation",
+        "sourceUrl": "https://www.birminghamal.gov/government/city-departments/parks-recreation",
+        "phone": "(205) 254-2391",
+        "note": "City of Birmingham Parks and Recreation summer day camp.",
+    },
+
+    # --- Montgomery, AL (source: montgomeryal.gov parks) ---
+    {
+        "name": "Montgomery Parks & Rec Day Camp",
+        "city": "Montgomery", "state": "AL", "zip": "36104",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.montgomeryal.gov/play/explore-montgomery/parks-trails-and-natural-areas/parks/",
+        "sourceUrl": "https://www.montgomeryal.gov/play/explore-montgomery/parks-trails-and-natural-areas/parks/",
+        "phone": "(334) 625-2300",
+        "note": "City of Montgomery Parks and Recreation Department summer day camp.",
+    },
+
+    # --- Louisville, KY (source: louisvilleky.gov parks and recreation) ---
+    {
+        "name": "Louisville Parks & Rec Day Camp",
+        "city": "Louisville", "state": "KY", "zip": "40202",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://louisvilleky.gov/government/parks-and-recreation",
+        "sourceUrl": "https://louisvilleky.gov/government/parks-and-recreation",
+        "phone": "(502) 574-6454",
+        "note": "Louisville Parks and Recreation summer day camp.",
+    },
+
+    # --- Lexington, KY (source: lexingtonky.gov parks & recreation) ---
+    {
+        "name": "Lexington Parks & Rec Day Camp",
+        "city": "Lexington", "state": "KY", "zip": "40507",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.lexingtonky.gov/government/departments-programs/general-services/parks-recreation",
+        "sourceUrl": "https://www.lexingtonky.gov/government/departments-programs/general-services/parks-recreation",
+        "phone": "(859) 288-2900",
+        "note": "Lexington-Fayette Urban County Parks & Recreation summer day camp.",
+    },
+
+    # --- Kansas City, MO (source: kcparks.org) ---
+    {
+        "name": "Kansas City Parks & Rec Day Camp",
+        "city": "Kansas City", "state": "MO", "zip": "64106",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://kcparks.org/",
+        "sourceUrl": "https://kcparks.org/",
+        "phone": "(816) 513-7500",
+        "note": "Kansas City Parks & Recreation summer day camp.",
+    },
+
+    # --- St Louis, MO (source: stlouis-mo.gov parks) ---
+    {
+        "name": "St Louis Parks & Rec Day Camp",
+        "city": "St. Louis", "state": "MO", "zip": "63101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.stlouis-mo.gov/government/departments/parks/",
+        "sourceUrl": "https://www.stlouis-mo.gov/government/departments/parks/",
+        "phone": "(314) 622-4800",
+        "note": "City of St. Louis Parks, Recreation and Forestry summer day camp.",
+    },
+
+    # --- Oklahoma City, OK (source: okc.gov OKC parks) ---
+    {
+        "name": "Oklahoma City Parks & Rec Day Camp",
+        "city": "Oklahoma City", "state": "OK", "zip": "73102",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.okc.gov/Community-Recreation/OKC-Parks",
+        "sourceUrl": "https://www.okc.gov/Community-Recreation/OKC-Parks",
+        "phone": "(405) 297-3882",
+        "note": "Oklahoma City Parks & Recreation Department summer day camp.",
+    },
+
+    # --- Tulsa, OK (source: cityoftulsa.org parks) ---
+    {
+        "name": "Tulsa Parks & Rec Day Camp",
+        "city": "Tulsa", "state": "OK", "zip": "74103",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityoftulsa.org/parks",
+        "sourceUrl": "https://www.cityoftulsa.org/parks",
+        "phone": "(918) 596-7275",
+        "note": "City of Tulsa Parks and Recreation summer day camp.",
+    },
+
+    # --- Wichita, KS (source: wichita.gov city parks) ---
+    {
+        "name": "Wichita Parks & Rec Day Camp",
+        "city": "Wichita", "state": "KS", "zip": "67202",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.wichita.gov/515/City-Parks",
+        "sourceUrl": "https://www.wichita.gov/515/City-Parks",
+        "phone": None,
+        "note": "City of Wichita Parks and Recreation summer day camp.",
+    },
+
+    # --- Little Rock, AR (source: littlerock.gov parks and recreation) ---
+    {
+        "name": "Little Rock Parks & Rec Day Camp",
+        "city": "Little Rock", "state": "AR", "zip": "72201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://littlerock.gov/residents/parks-and-recreation/",
+        "sourceUrl": "https://littlerock.gov/residents/parks-and-recreation/",
+        "phone": "(501) 371-4510",
+        "note": "City of Little Rock Parks and Recreation summer day camp.",
+    },
+
+    # --- New Orleans, LA (source: nordc.org) ---
+    {
+        "name": "New Orleans Recreation Day Camp",
+        "city": "New Orleans", "state": "LA", "zip": "70112",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://nordc.org/home/",
+        "sourceUrl": "https://nordc.org/home/",
+        "phone": "(504) 658-3052",
+        "note": "New Orleans Recreation Development Commission (NORDC) summer day camp.",
+    },
+
+    # --- Des Moines, IA (source: dsm.city parks and recreation) ---
+    {
+        "name": "Des Moines Parks & Rec Day Camp",
+        "city": "Des Moines", "state": "IA", "zip": "50309",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.dsm.city/departments/parks_recreation/index.php",
+        "sourceUrl": "https://www.dsm.city/departments/parks_recreation/index.php",
+        "phone": None,
+        "note": "Des Moines Parks and Recreation summer day camp.",
+    },
+
+    # --- Milwaukee, WI (source: milwaukeerecreation.net) ---
+    {
+        "name": "Milwaukee Recreation Day Camp",
+        "city": "Milwaukee", "state": "WI", "zip": "53202",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.milwaukeerecreation.net",
+        "sourceUrl": "https://www.milwaukeerecreation.net",
+        "phone": "(414) 475-8180",
+        "note": "Milwaukee Recreation summer day camp.",
+    },
+
+    # --- Madison, WI (source: cityofmadison.com parks) ---
+    {
+        "name": "Madison Parks & Rec Day Camp",
+        "city": "Madison", "state": "WI", "zip": "53703",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofmadison.com/parks",
+        "sourceUrl": "https://www.cityofmadison.com/parks",
+        "phone": "(608) 266-4711",
+        "note": "City of Madison Parks Division summer day camp.",
+    },
+
+    # --- Indianapolis, IN (source: parks.indy.gov) ---
+    {
+        "name": "Indy Parks Day Camp",
+        "city": "Indianapolis", "state": "IN", "zip": "46204",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://parks.indy.gov",
+        "sourceUrl": "https://parks.indy.gov",
+        "phone": "(317) 327-7275",
+        "note": "Indy Parks and Recreation summer day camp.",
+    },
+
+    # --- Fort Wayne, IN (source: cityoffortwayne.in.gov parks & recreation) ---
+    {
+        "name": "Fort Wayne Parks & Rec Day Camp",
+        "city": "Fort Wayne", "state": "IN", "zip": "46802",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityoffortwayne.in.gov/461/Parks-Recreation",
+        "sourceUrl": "https://www.cityoffortwayne.in.gov/461/Parks-Recreation",
+        "phone": "(260) 427-6000",
+        "note": "Fort Wayne Parks & Recreation Department summer day camp.",
+    },
 ]
 
 
