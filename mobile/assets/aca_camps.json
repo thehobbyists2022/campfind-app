@@ -83,7 +83,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1708"
     },
     {
       "id": "real_91910_01",
@@ -192,9 +193,9 @@
       "email": null,
       "website": "https://outpostsummercamps.com",
       "description": null,
-      "acaVerified": true,
+      "acaVerified": false,
       "unverified": false,
-      "verificationMethod": "aca_finder",
+      "verificationMethod": "claimed city appears on official website",
       "verifiedAt": "2026-08-02",
       "reviewCount": null
     },
@@ -310,7 +311,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=2335"
     },
     {
       "id": "san_diego_botanic_garden_youth_camp",
@@ -461,7 +463,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=984"
     },
     {
       "id": "camp_ocean_pines",
@@ -499,7 +502,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=88"
     },
     {
       "id": "trail_blazers_day_camp",
@@ -537,7 +541,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=5423"
     },
     {
       "id": "ventura_family_ymca_day_camp",
@@ -575,7 +580,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1883"
     },
     {
       "id": "tamarack_day_camp",
@@ -613,7 +619,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=3711"
     },
     {
       "id": "western_family_ymca_day_camp",
@@ -651,7 +658,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1413"
     },
     {
       "id": "genesee_valley_summer_camps",
@@ -689,7 +697,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=4089"
     },
     {
       "id": "shemesh_camp_at_valley_of_the_sun_jcc",
@@ -727,7 +736,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=4758"
     },
     {
       "id": "raritan_bay_area_ymca_summer_stars",
@@ -765,7 +775,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1619"
     },
     {
       "id": "cloverleaf_ranch",
@@ -803,7 +814,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=2110"
     },
     {
       "id": "neil_klatskin_summer_camps",
@@ -917,7 +929,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=246"
     },
     {
       "id": "sherwood_forest_summer_camp",
@@ -955,7 +968,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1464"
     },
     {
       "id": "camp_gallagher_outdoor_adventure",
@@ -993,7 +1007,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=4248"
     },
     {
       "id": "culver_summer_camps",
@@ -1107,7 +1122,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=4460"
     },
     {
       "id": "camp_ondessonk_wilderness_adventure",
@@ -1145,7 +1161,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=2028"
     },
     {
       "id": "camp_alleghany_for_girls",
@@ -1183,7 +1200,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=2315"
     },
     {
       "id": "florida_diabetes_camp",
@@ -1221,7 +1239,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1253"
     },
     {
       "id": "ligonier_camp_&_conference_center",
@@ -1259,7 +1278,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=856"
     },
     {
       "id": "international_music_camp",
@@ -1297,7 +1317,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=520"
     },
     {
       "id": "camp_jorn_ymca",
@@ -1335,7 +1356,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=854"
     },
     {
       "id": "camp_kanuga_outdoor_center",
@@ -1373,7 +1395,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1222"
     },
     {
       "id": "camp_sea_gull_&_camp_seafarer",
@@ -1487,7 +1510,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=933"
     },
     {
       "id": "camp_romaca_for_girls",
@@ -1525,7 +1549,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=2323"
     },
     {
       "id": "camp_dudley_for_boys",
@@ -1563,7 +1588,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1025"
     },
     {
       "id": "camp_kiniya_for_girls",
@@ -1601,7 +1627,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1865"
     },
     {
       "id": "idyllwild_arts_summer_program",
@@ -1639,7 +1666,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1225"
     },
     {
       "id": "pali_adventures_specialty_summer_camp",
@@ -1715,7 +1743,8 @@
       "unverified": false,
       "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=859"
     },
     {
       "id": "galileo_innovation_summer_camps",
