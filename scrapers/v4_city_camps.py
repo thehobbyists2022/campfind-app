@@ -2314,6 +2314,367 @@ CITY_CAMPS = [
         "phone": "(575) 541-2563",
         "note": "City of Las Cruces Parks and Recreation summer day camp.",
     },
+
+    # ============ EAST COAST / MIDWEST CITY CAMPS (IL / NY / GA / FL / TN / MN / MI / OH) ============
+    # --- Chicago, IL (source: chicagoparkdistrict.com) ---
+    {
+        "name": "Chicago Park District Day Camp",
+        "city": "Chicago", "state": "IL", "zip": "60601",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.chicagoparkdistrict.com/",
+        "sourceUrl": "https://www.chicagoparkdistrict.com/contact-us",
+        "phone": "(312) 742-7529",
+        "note": "Chicago Park District summer day camp.",
+    },
+
+    # --- Aurora, IL (source: aurora.il.us recreation & amenities) ---
+    {
+        "name": "Aurora IL Parks & Rec Day Camp",
+        "city": "Aurora", "state": "IL", "zip": "60505",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.aurora.il.us/Recreation-and-Amenities/Parks",
+        "sourceUrl": "https://www.aurora.il.us/Recreation-and-Amenities/Parks",
+        "phone": "(630) 256-4636",
+        "note": "City of Aurora Parks & Recreation summer day camp.",
+    },
+
+    # --- Rockford, IL (source: rockfordparkdistrict.org) ---
+    {
+        "name": "Rockford Park District Day Camp",
+        "city": "Rockford", "state": "IL", "zip": "61101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://rockfordparkdistrict.org/",
+        "sourceUrl": "https://rockfordparkdistrict.org/",
+        "phone": "(815) 987-8800",
+        "note": "Rockford Park District summer day camp.",
+    },
+
+    # --- Peoria, IL (source: peoriaparks.org peoria park district) ---
+    {
+        "name": "Peoria Park District Day Camp",
+        "city": "Peoria", "state": "IL", "zip": "61602",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://peoriaparks.org/",
+        "sourceUrl": "https://peoriaparks.org/",
+        "phone": None,
+        "note": "Peoria Park District summer day camp.",
+    },
+
+    # --- New York City, NY (source: nycgovparks.org) ---
+    {
+        "name": "NYC Parks Summer Day Camp",
+        "city": "New York", "state": "NY", "zip": "10001",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.nycgovparks.org/",
+        "sourceUrl": "https://www.nycgovparks.org/",
+        "phone": None,
+        "note": "NYC Department of Parks & Recreation summer day camp (contact via 311).",
+    },
+
+    # --- Buffalo, NY (source: buffalony.gov parks & recreation) ---
+    {
+        "name": "Buffalo Parks & Rec Day Camp",
+        "city": "Buffalo", "state": "NY", "zip": "14202",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.buffalony.gov/332/Department-of-Parks-Recreation",
+        "sourceUrl": "https://www.buffalony.gov/332/Department-of-Parks-Recreation",
+        "phone": "(716) 851-5553",
+        "note": "City of Buffalo Department of Parks & Recreation summer day camp.",
+    },
+
+    # --- Rochester, NY (source: cityofrochester.gov DRHS) ---
+    {
+        "name": "Rochester Recreation Day Camp",
+        "city": "Rochester", "state": "NY", "zip": "14604",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofrochester.gov/departments/department-recreation-and-human-services-drhs",
+        "sourceUrl": "https://www.cityofrochester.gov/departments/department-recreation-and-human-services-drhs",
+        "phone": "(585) 428-6755",
+        "note": "City of Rochester Recreation and Human Services summer day camp.",
+    },
+
+    # --- Yonkers, NY (source: yonkersny.gov parks, recreation & conservation) ---
+    {
+        "name": "Yonkers Parks & Rec Day Camp",
+        "city": "Yonkers", "state": "NY", "zip": "10701",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.yonkersny.gov/291/Parks-Recreation-Conservation",
+        "sourceUrl": "https://www.yonkersny.gov/291/Parks-Recreation-Conservation",
+        "phone": "(914) 377-6450",
+        "note": "City of Yonkers Parks, Recreation & Conservation summer day camp.",
+    },
+
+    # --- Atlanta, GA (source: atlantaga.gov department of parks and recreation) ---
+    {
+        "name": "Atlanta Parks & Rec Day Camp",
+        "city": "Atlanta", "state": "GA", "zip": "30303",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.atlantaga.gov/government/departments/department-parks-recreation",
+        "sourceUrl": "https://www.atlantaga.gov/government/departments/department-parks-recreation",
+        "phone": "(404) 546-6788",
+        "note": "City of Atlanta Department of Parks and Recreation summer day camp.",
+    },
+
+    # --- Savannah, GA (source: savannahga.gov recreation and leisure services) ---
+    {
+        "name": "Savannah Recreation Day Camp",
+        "city": "Savannah", "state": "GA", "zip": "31401",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.savannahga.gov/4044/Recreation-and-Leisure-Services",
+        "sourceUrl": "https://www.savannahga.gov/4044/Recreation-and-Leisure-Services",
+        "phone": "(912) 351-3841",
+        "note": "City of Savannah Recreation and Leisure Services summer day camp.",
+    },
+
+    # --- Macon, GA (source: maconbibb.us recreation) ---
+    {
+        "name": "Macon-Bibb Parks & Rec Day Camp",
+        "city": "Macon", "state": "GA", "zip": "31201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.maconbibb.us/recreation/",
+        "sourceUrl": "https://www.maconbibb.us/recreation/",
+        "phone": "(478) 219-0291",
+        "note": "Macon-Bibb County Parks and Recreation summer day camp.",
+    },
+
+    # --- Miami, FL (source: miami.gov parks and recreation) ---
+    {
+        "name": "Miami Parks & Rec Day Camp",
+        "city": "Miami", "state": "FL", "zip": "33130",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.miami.gov/My-Government/Departments/Parks-and-Recreation",
+        "sourceUrl": "https://www.miami.gov/My-Government/Departments/Parks-and-Recreation",
+        "phone": "(305) 416-1300",
+        "note": "City of Miami Parks and Recreation summer day camp.",
+    },
+
+    # --- Jacksonville, FL (source: jacksonville.gov parks, recreation and community services) ---
+    {
+        "name": "Jacksonville Parks & Rec Day Camp",
+        "city": "Jacksonville", "state": "FL", "zip": "32202",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.jacksonville.gov/departments/parks-and-recreation",
+        "sourceUrl": "https://www.jacksonville.gov/departments/parks-and-recreation",
+        "phone": "(904) 630-2489",
+        "note": "City of Jacksonville Parks, Recreation and Community Services summer day camp.",
+    },
+
+    # --- Tampa, FL (source: tampa.gov parks and recreation) ---
+    {
+        "name": "Tampa Parks & Rec Day Camp",
+        "city": "Tampa", "state": "FL", "zip": "33602",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.tampa.gov/parks-and-recreation",
+        "sourceUrl": "https://www.tampa.gov/parks-and-recreation",
+        "phone": "(813) 274-8615",
+        "note": "City of Tampa Parks and Recreation summer day camp.",
+    },
+
+    # --- Orlando, FL (source: orlando.gov parks & the environment) ---
+    {
+        "name": "Orlando Parks & Rec Day Camp",
+        "city": "Orlando", "state": "FL", "zip": "32801",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.orlando.gov/Parks-The-Environment",
+        "sourceUrl": "https://www.orlando.gov/Parks-The-Environment",
+        "phone": "(407) 246-2121",
+        "note": "City of Orlando Parks & the Environment summer day camp.",
+    },
+
+    # --- St Petersburg, FL (source: stpeteparksrec.org) ---
+    {
+        "name": "St Pete Parks & Rec Day Camp",
+        "city": "St. Petersburg", "state": "FL", "zip": "33701",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.stpeteparksrec.org/",
+        "sourceUrl": "https://www.stpeteparksrec.org/",
+        "phone": "(727) 893-7441",
+        "note": "St. Petersburg Parks & Recreation summer day camp.",
+    },
+
+    # --- Nashville, TN (source: nashville.gov parks) ---
+    {
+        "name": "Nashville Parks & Rec Day Camp",
+        "city": "Nashville", "state": "TN", "zip": "37201",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.nashville.gov/departments/parks",
+        "sourceUrl": "https://www.nashville.gov/departments/parks",
+        "phone": "(615) 862-8400",
+        "note": "Metro Nashville Parks and Recreation summer day camp.",
+    },
+
+    # --- Memphis, TN (source: memphisparks.com) ---
+    {
+        "name": "Memphis Parks & Rec Day Camp",
+        "city": "Memphis", "state": "TN", "zip": "38103",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://memphisparks.com/",
+        "sourceUrl": "https://memphisparks.com/",
+        "phone": "(901) 636-4200",
+        "note": "City of Memphis Parks summer day camp.",
+    },
+
+    # --- Knoxville, TN (source: knoxvilletn.gov parks & recreation) ---
+    {
+        "name": "Knoxville Parks & Rec Day Camp",
+        "city": "Knoxville", "state": "TN", "zip": "37902",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.knoxvilletn.gov/recreation",
+        "sourceUrl": "https://www.knoxvilletn.gov/recreation",
+        "phone": "(865) 215-4311",
+        "note": "City of Knoxville Parks & Recreation summer day camp.",
+    },
+
+    # --- Chattanooga, TN (source: chattanooga.gov parks and outdoor department) ---
+    {
+        "name": "Chattanooga Parks & Rec Day Camp",
+        "city": "Chattanooga", "state": "TN", "zip": "37402",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://chattanooga.gov/government/parks-and-outdoors",
+        "sourceUrl": "https://chattanooga.gov/government/parks-and-outdoors",
+        "phone": "(423) 643-7866",
+        "note": "City of Chattanooga Parks and Outdoor Department summer day camp.",
+    },
+
+    # --- Minneapolis, MN (source: minneapolisparks.org) ---
+    {
+        "name": "Minneapolis Parks & Rec Day Camp",
+        "city": "Minneapolis", "state": "MN", "zip": "55401",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.minneapolisparks.org/",
+        "sourceUrl": "https://www.minneapolisparks.org/",
+        "phone": "(612) 230-6400",
+        "note": "Minneapolis Park and Recreation Board summer day camp.",
+    },
+
+    # --- St Paul, MN (source: stpaul.gov parks and recreation) ---
+    {
+        "name": "St Paul Parks & Rec Day Camp",
+        "city": "Saint Paul", "state": "MN", "zip": "55102",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.stpaul.gov/departments/parks-and-recreation",
+        "sourceUrl": "https://www.stpaul.gov/departments/parks-and-recreation",
+        "phone": "(651) 266-6400",
+        "note": "Saint Paul Parks and Recreation summer day camp.",
+    },
+
+    # --- Duluth, MN (source: duluthmn.gov parks) ---
+    {
+        "name": "Duluth Parks & Rec Day Camp",
+        "city": "Duluth", "state": "MN", "zip": "55802",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://duluthmn.gov/parks/",
+        "sourceUrl": "https://duluthmn.gov/parks/",
+        "phone": "(218) 730-4300",
+        "note": "City of Duluth Parks & Recreation summer day camp.",
+    },
+
+    # --- Detroit, MI (source: detroitmi.gov detroit parks & recreation) ---
+    {
+        "name": "Detroit Parks & Rec Day Camp",
+        "city": "Detroit", "state": "MI", "zip": "48226",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://detroitmi.gov/departments/detroit-parks-recreation",
+        "sourceUrl": "https://detroitmi.gov/departments/detroit-parks-recreation",
+        "phone": "(313) 224-1100",
+        "note": "Detroit Parks and Recreation Department summer day camp.",
+    },
+
+    # --- Grand Rapids, MI (source: grandrapidsmi.gov parks & recreation) ---
+    {
+        "name": "Grand Rapids Parks & Rec Day Camp",
+        "city": "Grand Rapids", "state": "MI", "zip": "49503",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.grandrapidsmi.gov/Departments/Parks-Recreation",
+        "sourceUrl": "https://www.grandrapidsmi.gov/Departments/Parks-Recreation",
+        "phone": "(616) 456-3000",
+        "note": "City of Grand Rapids Parks and Recreation summer day camp.",
+    },
+
+    # --- Ann Arbor, MI (source: a2gov.org parks and recreation) ---
+    {
+        "name": "Ann Arbor Parks & Rec Day Camp",
+        "city": "Ann Arbor", "state": "MI", "zip": "48104",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.a2gov.org/parks-and-recreation/",
+        "sourceUrl": "https://www.a2gov.org/parks-and-recreation/",
+        "phone": "(734) 794-6230",
+        "note": "City of Ann Arbor Parks and Recreation summer day camp.",
+    },
+
+    # --- Columbus, OH (source: columbusrecparks.com) ---
+    {
+        "name": "Columbus Rec & Parks Day Camp",
+        "city": "Columbus", "state": "OH", "zip": "43215",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://columbusrecparks.com/",
+        "sourceUrl": "https://columbusrecparks.com/",
+        "phone": "(614) 645-3300",
+        "note": "Columbus Recreation and Parks Department summer day camp.",
+    },
+
+    # --- Cleveland, OH (source: clevelandohio.gov parks & recreation) ---
+    {
+        "name": "Cleveland Parks & Rec Day Camp",
+        "city": "Cleveland", "state": "OH", "zip": "44114",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.clevelandohio.gov/city-hall/departments/parks-recreation",
+        "sourceUrl": "https://www.clevelandohio.gov/city-hall/departments/parks-recreation",
+        "phone": "(216) 664-2561",
+        "note": "City of Cleveland Department of Parks & Recreation summer day camp.",
+    },
+
+    # --- Cincinnati, OH (source: cincinnati-oh.gov cincyparks) ---
+    {
+        "name": "Cincinnati Parks Day Camp",
+        "city": "Cincinnati", "state": "OH", "zip": "45202",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cincinnati-oh.gov/cincyparks/",
+        "sourceUrl": "https://www.cincinnati-oh.gov/cincyparks/",
+        "phone": "(513) 352-4000",
+        "note": "Cincinnati Parks summer day camp.",
+    },
+
+    # --- Dayton, OH (source: daytonohio.gov recreation) ---
+    {
+        "name": "Dayton Recreation Day Camp",
+        "city": "Dayton", "state": "OH", "zip": "45402",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.daytonohio.gov/422/Recreation",
+        "sourceUrl": "https://www.daytonohio.gov/422/Recreation",
+        "phone": "(937) 333-8400",
+        "note": "City of Dayton Department of Recreation summer day camp.",
+    },
 ]
 
 
