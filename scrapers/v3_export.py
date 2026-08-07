@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FRANCHISE_DOMAINS = {
     "codeninjas.com", "ussportscamps.com", "steveandkatescamp.com",
     "galileo-camps.com", "avid4.com", "madscience.org", "idtech.com", "magikidlab.com",
-    "schoolofrock.com", "dramakids.com",
+    "schoolofrock.com", "dramakids.com", "usbaseballacademy.com", "bachtorock.com",
 }
 
 
@@ -48,11 +48,17 @@ def main():
     v5_path = os.path.join(ROOT, "app", "aca_camps_brands_v5.json")
     if os.path.exists(v5_path):
         v5 = json.load(open(v5_path, encoding="utf-8"))["camps"]
+    # v6 brand expansion (US Baseball Academy + Bach to Rock + VOSJ JCC, optional)
+    v6 = []
+    v6_path = os.path.join(ROOT, "app", "aca_camps_brands_v6.json")
+    if os.path.exists(v6_path):
+        v6 = json.load(open(v6_path, encoding="utf-8"))["camps"]
 
-    # Drop legacy synthetic School of Rock entries from v2 — replaced by the
-    # real per-location School of Rock camps in v5 (R1: their fabricated
-    # price/age/shuttle fields have no official source).
-    v2 = [c for c in v2 if not (c.get("website", "").find("schoolofrock.com") >= 0)]
+    # Drop legacy synthetic brand entries from v2 — replaced by the real
+    # per-location brand camps in v5/v6 (R1: their fabricated price/age/shuttle
+    # fields have no official source).
+    for legacy_dom in ("schoolofrock.com", "usbaseballacademy.com", "bachtorock.com"):
+        v2 = [c for c in v2 if not (c.get("website", "").find(legacy_dom) >= 0)]
 
     # v2 franchise keys (keep these versions on overlap)
     v2keys = set()
@@ -78,6 +84,14 @@ def main():
     # summer/fall suffixes). Guard against any residual same-id collision.
     seen_ids = {c["id"] for c in merged}
     for c in v5:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v6 brand camps: add (same pattern — unique ids).
+    for c in v6:
         if c["id"] in seen_ids:
             dup_skipped += 1
             continue
@@ -130,7 +144,7 @@ def main():
     fn3 = os.path.join(ROOT, "mobile", "assets", "aca_camps.json")
     json.dump(out, open(fn3, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)}, dup skipped {dup_skipped})")
+    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)}, dup skipped {dup_skipped})")
     print(f"verified: {verified}, unverified: {len(merged) - verified}")
     print(f"seasons: {seasons}")
     print(f"wrote: {fn1}")
