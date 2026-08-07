@@ -74,15 +74,19 @@ def build_usbaseball():
         return []
     camps = []
     seen = set()
+    seen_ids = set()
     for st, blk in data.items():
         for c in blk.get("camps", []):
             loc = c.get("location") or {}
             city = (loc.get("city") or c.get("city") or "").strip()
             zipcode = (loc.get("zipcode") or "").strip()
             address = (loc.get("address") or "").strip()
+            api_id = c.get("id")
             if not city or st not in STATE_SET:
                 continue
-            key = (slugify(city), st)
+            # keep every distinct camp: unique by API id (same city may host
+            # several camps at different venues, e.g. Fresno Edison HS + Hoover HS)
+            key = api_id or (slugify(city), st)
             if key in seen:
                 continue
             seen.add(key)
@@ -91,9 +95,16 @@ def build_usbaseball():
             name = re.sub(r"[\U0001F300-\U0001FAFF]", "", name).strip()
             if len(zipcode) == 4:
                 zipcode = "0" + zipcode
-            # derive slug suffix for id uniqueness
+            # unique id: city slug + optional api-id suffix when city repeats
+            base = f"usbaseball_{slugify(city)}_{st.lower()}"
+            cid = base
+            n = 2
+            while cid in seen_ids:
+                cid = f"{base}_{n}"
+                n += 1
+            seen_ids.add(cid)
             camps.append({
-                "id": f"usbaseball_{slugify(city)}_{st.lower()}",
+                "id": cid,
                 "name": name,
                 "city": city,
                 "state": st,
