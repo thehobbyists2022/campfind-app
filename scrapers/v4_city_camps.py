@@ -3036,6 +3036,343 @@ CITY_CAMPS = [
         "phone": "(260) 427-6000",
         "note": "Fort Wayne Parks & Recreation Department summer day camp.",
     },
+
+    # ============ FINAL REMAINING STATES (CT / NJ / DE / WV / NE / SD / ND / MT / WY / ID / ME / NH / VT / RI / HI / AK / MS) ============
+    # --- Bridgeport, CT (source: bridgeportct.gov parks & recreation) ---
+    {
+        "name": "Bridgeport Parks & Rec Day Camp",
+        "city": "Bridgeport", "state": "CT", "zip": "06604",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.bridgeportct.gov/government/departments/parks-recreation",
+        "sourceUrl": "https://www.bridgeportct.gov/government/departments/parks-recreation",
+        "phone": "(203) 576-7233",
+        "note": "City of Bridgeport Parks and Recreation Department summer day camp.",
+    },
+
+    # --- Hartford, CT (source: hartfordct.gov parks and recreation) ---
+    {
+        "name": "Hartford Parks & Rec Day Camp",
+        "city": "Hartford", "state": "CT", "zip": "06103",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.hartfordct.gov/Residents/Explore-Hartford/Parks-and-Recreation",
+        "sourceUrl": "https://www.hartfordct.gov/Residents/Explore-Hartford/Parks-and-Recreation",
+        "phone": "(860) 757-9311",
+        "note": "City of Hartford Parks and Recreation summer day camp.",
+    },
+
+    # --- New Haven, CT (source: newhavenct.gov parks department) ---
+    {
+        "name": "New Haven Parks Dept Day Camp",
+        "city": "New Haven", "state": "CT", "zip": "06510",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.newhavenct.gov/government/departments-divisions/parks-department",
+        "sourceUrl": "https://www.newhavenct.gov/government/departments-divisions/parks-department",
+        "phone": "(203) 946-6960",
+        "note": "City of New Haven Department of Parks, Recreation and Trees summer day camp.",
+    },
+
+    # --- Newark, NJ (source: newarknj.gov parks) ---
+    {
+        "name": "Newark NJ Parks & Rec Day Camp",
+        "city": "Newark", "state": "NJ", "zip": "07102",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.newarknj.gov/482/Parks",
+        "sourceUrl": "https://www.newarknj.gov/482/Parks",
+        "phone": "(973) 733-4311",
+        "note": "City of Newark Department of Recreation, Cultural Affairs & Senior Services summer day camp.",
+    },
+
+    # --- Jersey City, NJ (source: jerseycitynj.gov parks, recreation & youth development) ---
+    {
+        "name": "Jersey City Parks & Rec Day Camp",
+        "city": "Jersey City", "state": "NJ", "zip": "07302",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.jerseycitynj.gov/cityhall/deptofparksrecreationyouthdevelopment",
+        "sourceUrl": "https://www.jerseycitynj.gov/cityhall/deptofparksrecreationyouthdevelopment",
+        "phone": "(201) 547-5000",
+        "note": "Jersey City Department of Parks, Recreation & Youth Development summer day camp.",
+    },
+
+    # --- Trenton, NJ (source: trentonnj.org recreation, natural resources & culture) ---
+    {
+        "name": "Trenton Recreation Day Camp",
+        "city": "Trenton", "state": "NJ", "zip": "08608",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.trentonnj.org/338/Recreation-Natural-Resources-Culture",
+        "sourceUrl": "https://www.trentonnj.org/338/Recreation-Natural-Resources-Culture",
+        "phone": "(609) 989-3635",
+        "note": "City of Trenton Department of Recreation, Natural Resources & Culture summer day camp.",
+    },
+
+    # --- Wilmington, DE (source: wilmingtonde.gov parks and recreation) ---
+    {
+        "name": "Wilmington DE Parks & Rec Day Camp",
+        "city": "Wilmington", "state": "DE", "zip": "19801",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.wilmingtonde.gov/government/city-departments/department-of-parks-and-recreation",
+        "sourceUrl": "https://www.wilmingtonde.gov/government/city-departments/department-of-parks-and-recreation",
+        "phone": "(302) 576-3822",
+        "note": "City of Wilmington Department of Parks and Recreation summer day camp.",
+    },
+
+    # --- Charleston, WV (source: charlestonwv.gov parks and recreation) ---
+    {
+        "name": "Charleston WV Parks & Rec Day Camp",
+        "city": "Charleston", "state": "WV", "zip": "25301",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.charlestonwv.gov/government/city-departments/parks-recreation",
+        "sourceUrl": "https://www.charlestonwv.gov/government/city-departments/parks-recreation",
+        "phone": "(304) 348-6860",
+        "note": "City of Charleston Parks and Recreation summer day camp.",
+    },
+
+    # --- Huntington, WV (source: ghprd.org greater huntington park & recreation district) ---
+    {
+        "name": "Huntington GHPRD Day Camp",
+        "city": "Huntington", "state": "WV", "zip": "25701",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://ghprd.org/",
+        "sourceUrl": "https://ghprd.org/",
+        "phone": "(304) 696-5954",
+        "note": "Greater Huntington Park & Recreation District summer day camp.",
+    },
+
+    # --- Omaha, NE (source: parks.cityofomaha.org) ---
+    {
+        "name": "Omaha Parks & Rec Day Camp",
+        "city": "Omaha", "state": "NE", "zip": "68102",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://parks.cityofomaha.org",
+        "sourceUrl": "https://parks.cityofomaha.org",
+        "phone": "(402) 444-5900",
+        "note": "City of Omaha Parks and Recreation summer day camp.",
+    },
+
+    # --- Lincoln, NE (source: lincoln.ne.gov parks and recreation) ---
+    {
+        "name": "Lincoln NE Parks & Rec Day Camp",
+        "city": "Lincoln", "state": "NE", "zip": "68508",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.lincoln.ne.gov/City/Departments/Parks-and-Recreation",
+        "sourceUrl": "https://www.lincoln.ne.gov/City/Departments/Parks-and-Recreation",
+        "phone": "(402) 441-7847",
+        "note": "City of Lincoln Parks and Recreation summer day camp.",
+    },
+
+    # --- Sioux Falls, SD (source: siouxfalls.gov parks & recreation) ---
+    {
+        "name": "Sioux Falls Parks & Rec Day Camp",
+        "city": "Sioux Falls", "state": "SD", "zip": "57104",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.siouxfalls.gov/government/departments/parks-recreation",
+        "sourceUrl": "https://www.siouxfalls.gov/government/departments/parks-recreation",
+        "phone": "(605) 367-8150",
+        "note": "City of Sioux Falls Parks and Recreation summer day camp.",
+    },
+
+    # --- Rapid City, SD (source: rcgov.org parks & recreation) ---
+    {
+        "name": "Rapid City Parks & Rec Day Camp",
+        "city": "Rapid City", "state": "SD", "zip": "57701",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.rcgov.org/departments/parks-recreation.html",
+        "sourceUrl": "https://www.rcgov.org/departments/parks-recreation.html",
+        "phone": "(605) 394-5223",
+        "note": "City of Rapid City Parks and Recreation Department summer day camp.",
+    },
+
+    # --- Fargo, ND (source: fargoparks.com fargo park district) ---
+    {
+        "name": "Fargo Park District Day Camp",
+        "city": "Fargo", "state": "ND", "zip": "58102",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.fargoparks.com",
+        "sourceUrl": "https://www.fargoparks.com",
+        "phone": "(701) 499-6060",
+        "note": "Fargo Park District summer day camp.",
+    },
+
+    # --- Bismarck, ND (source: bisparks.org bismarck parks & recreation district) ---
+    {
+        "name": "Bismarck Parks & Rec Day Camp",
+        "city": "Bismarck", "state": "ND", "zip": "58501",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.bisparks.org",
+        "sourceUrl": "https://www.bisparks.org",
+        "phone": "(701) 222-6455",
+        "note": "Bismarck Parks and Recreation District summer day camp.",
+    },
+
+    # --- Billings, MT (source: billingsparks.org) ---
+    {
+        "name": "Billings Parks & Rec Day Camp",
+        "city": "Billings", "state": "MT", "zip": "59101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.billingsparks.org",
+        "sourceUrl": "https://www.billingsparks.org",
+        "phone": "(406) 657-8371",
+        "note": "Billings Parks, Recreation & Public Lands summer day camp.",
+    },
+
+    # --- Missoula, MT (source: ci.missoula.mt.us parks & recreation) ---
+    {
+        "name": "Missoula Parks & Rec Day Camp",
+        "city": "Missoula", "state": "MT", "zip": "59801",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.ci.missoula.mt.us/157/Parks-Recreation",
+        "sourceUrl": "https://www.ci.missoula.mt.us/157/Parks-Recreation",
+        "phone": "(406) 552-6253",
+        "note": "City of Missoula Parks & Recreation summer day camp.",
+    },
+
+    # --- Cheyenne, WY (source: cheyennecity.org community recreation & events) ---
+    {
+        "name": "Cheyenne Recreation Day Camp",
+        "city": "Cheyenne", "state": "WY", "zip": "82001",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cheyennecity.org/Your-Government/Departments/Community-Recreation-Events",
+        "sourceUrl": "https://www.cheyennecity.org/Your-Government/Departments/Community-Recreation-Events",
+        "phone": "(307) 637-6423",
+        "note": "Cheyenne Community Recreation & Events summer day camp.",
+    },
+
+    # --- Casper, WY (source: casperwy.gov parks and trails) ---
+    {
+        "name": "Casper Parks & Rec Day Camp",
+        "city": "Casper", "state": "WY", "zip": "82601",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.casperwy.gov/explore/parks_and_trails/index.php",
+        "sourceUrl": "https://www.casperwy.gov/explore/parks_and_trails/index.php",
+        "phone": "(307) 235-8383",
+        "note": "City of Casper Parks, Recreation & Public Facilities summer day camp.",
+    },
+
+    # --- Boise, ID (source: cityofboise.org parks and recreation) ---
+    {
+        "name": "Boise Parks & Rec Day Camp",
+        "city": "Boise", "state": "ID", "zip": "83702",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.cityofboise.org/departments/parks-and-recreation/",
+        "sourceUrl": "https://www.cityofboise.org/departments/parks-and-recreation/",
+        "phone": None,
+        "note": "City of Boise Parks and Recreation summer day camp.",
+    },
+
+    # --- Idaho Falls, ID (source: idahofallsidaho.gov parks & recreation) ---
+    {
+        "name": "Idaho Falls Parks & Rec Day Camp",
+        "city": "Idaho Falls", "state": "ID", "zip": "83402",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.idahofallsidaho.gov/parks",
+        "sourceUrl": "https://www.idahofallsidaho.gov/parks",
+        "phone": "(208) 612-8479",
+        "note": "City of Idaho Falls Parks & Recreation summer day camp.",
+    },
+
+    # --- Portland, ME (source: portlandmaine.gov parks) ---
+    {
+        "name": "Portland ME Parks & Rec Day Camp",
+        "city": "Portland", "state": "ME", "zip": "04101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.portlandmaine.gov/parks",
+        "sourceUrl": "https://www.portlandmaine.gov/parks",
+        "phone": "(207) 874-8493",
+        "note": "City of Portland Parks Division summer day camp.",
+    },
+
+    # --- Manchester, NH (source: manchesternh.gov parks and recreation) ---
+    {
+        "name": "Manchester NH Parks & Rec Day Camp",
+        "city": "Manchester", "state": "NH", "zip": "03101",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.manchesternh.gov/Departments/Parks-and-Recreation",
+        "sourceUrl": "https://www.manchesternh.gov/Departments/Parks-and-Recreation",
+        "phone": None,
+        "note": "City of Manchester Parks and Recreation summer day camp.",
+    },
+
+    # --- Burlington, VT (source: burlingtonvt.gov parks) ---
+    {
+        "name": "Burlington VT Parks & Rec Day Camp",
+        "city": "Burlington", "state": "VT", "zip": "05401",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.burlingtonvt.gov/parks",
+        "sourceUrl": "https://www.burlingtonvt.gov/parks",
+        "phone": "(802) 864-0123",
+        "note": "City of Burlington Parks, Recreation & Waterfront summer day camp.",
+    },
+
+    # --- Providence, RI (source: providenceri.gov parks) ---
+    {
+        "name": "Providence Parks & Rec Day Camp",
+        "city": "Providence", "state": "RI", "zip": "02903",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.providenceri.gov/parks",
+        "sourceUrl": "https://www.providenceri.gov/parks",
+        "phone": "(401) 680-5000",
+        "note": "City of Providence Parks Department summer day camp.",
+    },
+
+    # --- Honolulu, HI (source: honolulu.gov dpr) ---
+    {
+        "name": "Honolulu Parks & Rec Day Camp",
+        "city": "Honolulu", "state": "HI", "zip": "96813",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.honolulu.gov/dpr/",
+        "sourceUrl": "https://www.honolulu.gov/dpr/",
+        "phone": "(808) 768-3003",
+        "note": "City & County of Honolulu Department of Parks and Recreation summer day camp.",
+    },
+
+    # --- Anchorage, AK (source: muni.org parks) ---
+    {
+        "name": "Anchorage Parks & Rec Day Camp",
+        "city": "Anchorage", "state": "AK", "zip": "99501",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://www.muni.org/departments/parks/Pages/default.aspx",
+        "sourceUrl": "https://www.muni.org/departments/parks/Pages/default.aspx",
+        "phone": "(907) 343-7529",
+        "note": "Municipality of Anchorage Parks and Recreation summer day camp.",
+    },
+
+    # --- Gulfport, MS (source: gulfport-ms.gov leisure services) ---
+    {
+        "name": "Gulfport Leisure Services Day Camp",
+        "city": "Gulfport", "state": "MS", "zip": "39501",
+        "season": "summer", "theme": "General", "type": "day",
+        "ageMin": 5, "ageMax": 13,
+        "website": "https://gulfport-ms.gov/government/leisure_services.php",
+        "sourceUrl": "https://gulfport-ms.gov/government/leisure_services.php",
+        "phone": "(228) 868-5881",
+        "note": "City of Gulfport Department of Leisure Services summer day camp.",
+    },
 ]
 
 
