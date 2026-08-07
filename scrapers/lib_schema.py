@@ -56,6 +56,7 @@ DEFAULT_COORD_SENTINELS = [
 # (e.g. a real camp at the exact city center used as a default).
 LEGITIMATE_SENTINEL_COORDS = {
     "joe_&_mary_mottino_family_ymca_summer_camp": (33.1958696, -117.379483),
+    "ussportscamps_oceanside_ca": (33.1958696, -117.379483),
 }
 
 
