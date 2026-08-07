@@ -465,8 +465,45 @@
 
 ---
 
+## 第七点十四部分：v5/v6/v7 品牌扩充（DeepSeek V4 Flash，2026-08-06）
+
+在 Task 3 基础（8 个品牌连锁店）与 v4（315 城市营）之上，追加三个品牌扩充批次，全部遵循 R1–R6。
+
+### v5 — School of Rock + Drama Kids（commit 2f99f3c）
+- **School of Rock 706**（353 夏季 + 353 秋季）：逐店抓官方 location 页 JSON-LD（地址/邮编/电话/email/经纬度），R2 = 门店 URL。排除 1 个已停业门店（redbank 重定向回 /locations）。
+- **Drama Kids 32**：官方 sitemap 加盟区域，每区 = 一个加盟主；排除 7 个已停业区域（重定向 find-locations 或 410）。
+- 移除 24 笔合成 School of Rock（假价格/年龄/shuttle）。
+- 数据集 2,441 → 3,155。
+
+### v6 — US Baseball Academy + Bach to Rock + VOSJ JCC（commit 306556d, 5a35c52）
+- **US Baseball Academy 135**：官方 app API（`app.usbaseballacademy.com/backend/api/v1/camps`），每笔含真实城市/地址/邮编。初版按 (城市,州) 去重丢了 20 笔多场馆城市（Fresno/San Diego/Dallas 等）→ 改为按 API id 去重，全部保留（commit 5a35c52）。
+- **Bach to Rock 42**：官方 sitemap 逐校 JSON-LD（地址/电话/邮编）。
+- **VOSJ JCC 1**：Camp Kochavim（Shemesh 已在 base）。
+- 移除 118 笔合成品牌条目（SoR 24 + US Baseball 43 + Bach to Rock 51）。
+- 数据集 3,155 → 3,239。
+
+### v7 — US Sports Camps 全量（commit 36bafaf）
+- 官方 sitemap 全量 1,106 个美国目的地（v3 曾 cap ~350），新增 768 个真实目的地。
+- 数据集 3,239 → **4,007**。
+
+### 独立抽验（Kimi 风格，seed=20260807，样本 `C:\...\Temp\opencode\verify_v6.py`）
+- 15 条（8 US Baseball + 6 Bach to Rock + 1 VOSJ）100% 通过：
+  - US Baseball 全部在官方 API 重查命中（Arcata/Mt Prospect/Greensburg/Woodstock/Pendleton/Fresno/Kankakee/Indianapolis）
+  - Bach to Rock 6 校页面均含城市+州+JSON-LD addressRegion
+  - VOSJ Kochavim 页面含 Scottsdale AZ
+- **抽验中发现并修复**：Fresno API 现有 2 个营地（Edison HS + Hoover HS）→ 触发 v6 去重逻辑修复。
+
+### 复核资产
+- `scrapers/v5_brand_camps.py`、`app/aca_camps_brands_v5.json`（v5）
+- `scrapers/v6_brand_camps.py`、`app/aca_camps_brands_v6.json`（v6）
+- `scrapers/v7_ussports_camps.py`、`app/aca_camps_brands_v7.json`（v7）
+- `scrapers/v3_export.py`（合并 v5/v6/v7 出三副本）
+
+---
+
 ## 第八部分：风险与备注
 1. **法律/口碑风险（现状）**：继续展示编造的电话/评分和冒名连锁品牌门店，有被品牌方投诉和测试者持续翻车的风险 → 本轮清理是刚需，不是优化项。
 2. **14 天窗口**：数据修正可随时进行；App 更新（重打包 AAB）不重置 20×14 计时。Flutter 端改完资源文件后，重新构建发布由所有者执行（keystore 已在 `mobile/upload-keystore.jks`）。
 3. **ACA 真实爬取**（可选后续）：`03_aca_crawler_v2.py` 需浏览器 PHPSESSID，且 ACA 可能改版；本轮不依赖它，`acaVerified` 可全 false，后续再补真实 ACA 交叉验证。
-4. **数量预期**：清理+真实扩充后总数可能在 600–1,200 区间浮动，以真实为准，不凑数。
+4. **数量预期**：清理+真实扩充后总数可能在 600–1,200 区间浮动，以真实为准，不凑数。（注：其后品牌扩充批次已把总数推至 4,007，仍以真实官方来源为准。）
+5. **已评估但未扩的品牌**：YMCA councils（分散在数十个独立 council 站，无统一 location 清单）、Little Medical School（官网无公开门市清单）、Girl Scouts / Boy Scouts council（无易爬的 finder）、JCC 多数分会（仅 Valley of the Sun 等少数有干净 JSON-LD）。待有干净官方来源时再补。
