@@ -8,6 +8,7 @@ tmp/
 .playwright-mcp/
 scrapers/__pycache__/
 scrapers/v2_cache/
+scrapers/v5_cache/
 .netlify/
 scrapers/geocode_cache.json
 scrapers/reverse_cache.json
