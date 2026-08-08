@@ -555,11 +555,37 @@
 - scrapers/v12_bricks4kidz.py、pp/aca_camps_brands_v12.json（v12）
 - Android v1.0.7 AAB（4,165 笔，含 34 ACA + 57 Bricks 4 Kidz）
 
+## 第七点十七部分：v13 — 偏少州补强（DeepSeek V4 Flash，2026-08-06）
+
+延续 v5-v12，针对 <10 笔的州补入真实 ACA 营队（commit 968baa9）。
+
+### 补强内容
+- **AK**：Camp Kushtaka（ACA 列出但当前未认证 -> acaVerified=false，诚实标注）
+- **ME**：Camp Caribou for Boys、Camp Androscoggin
+- **VT**：YMCA Camp Abnaki、Camp Downer
+- **HI**：Camp Mokuleia（YMCA，Oahu 北岸）
+- 全部在 ACA find-a-camp 资料库核到真实地址（sourceUrl = ACA profile，R2），官网为营队官方站。
+
+### 效果
+- 资料库 4,165 -> **4,171**（+6）
+- ACA 认证 34 -> **39**（+5 认证 + 1 未认证）
+- 州分布：AK 3->4、HI 6->7、ME 5->7、VT 9->11
+- 零 schema 违规，三副本同步
+
+### 偏少州调查结论（不强行补足）
+- 这些州人口少、品牌加盟网点稀疏（Code Ninjas 仅测试条目、Snapology/Goldfish 无、US Sports Camps 已全覆盖）。
+- 城市政府网站多为 404 或无日间夏令营资讯（Juneau/Fargo/Honolulu 的 camp 是露营地/camping 许可，非夏令营）。
+- 属资料自然分布，不强求数字。
+
+### 复核资产
+- scrapers/v13_focus_camps.py、pp/aca_camps_brands_v13.json（v13）
+- Android v1.0.8 AAB（4,171 笔，含 39 ACA）
+
 ---
 
 ## 第八部分：风险与备注
 1. **法律/口碑风险（现状）**：继续展示编造的电话/评分和冒名连锁品牌门店，有被品牌方投诉和测试者持续翻车的风险 → 本轮清理是刚需，不是优化项。
 2. **14 天窗口**：数据修正可随时进行；App 更新（重打包 AAB）不重置 20×14 计时。Flutter 端改完资源文件后，重新构建发布由所有者执行（keystore 已在 `mobile/upload-keystore.jks`）。
 3. **ACA 真实爬取**（可选后续）：`03_aca_crawler_v2.py` 需浏览器 PHPSESSID，且 ACA 可能改版；本轮不依赖它，`acaVerified` 可全 false，后续再补真实 ACA 交叉验证。
-4. **数量预期**：清理+真实扩充后总数可能在 600–1,200 区间浮动，以真实为准，不凑数。（注：其后品牌扩充批次已把总数推至 4,165——v11 清理移除 61 笔合成后、再加 Bricks 4 Kidz 57——全库零 schema 违规。）
+4. **数量预期**：清理+真实扩充后总数可能在 600–1,200 区间浮动，以真实为准，不凑数。（注：其后品牌扩充批次已把总数推至 4,171——v11 清理、v12 Bricks 4 Kidz 57、v13 偏少州 6 笔——全库零 schema 违规、39 笔 ACA 认证。）
 5. **已评估但未扩的品牌**：YMCA councils（分散在数十个独立 council 站，无统一 location 清单）、Little Medical School（官网无公开门市清单）、Girl Scouts / Boy Scouts council（无易爬的 finder）、JCC 多数分会（仅 Valley of the Sun 等少数有干净 JSON-LD）、i9 Sports（Cloudflare 封禁，无干净公共 API）。待有干净官方来源时再补。
