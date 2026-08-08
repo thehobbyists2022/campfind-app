@@ -176,8 +176,6 @@ def main():
             aca_core = core(hv_norm)
             if not our_core or not aca_core:
                 continue
-            if len(our_core) < 2 and len(aca_core) < 2:
-                continue
             if our_core <= aca_core or aca_core <= our_core:
                 matched_hit = hv_str
                 matched_id = hv_id
