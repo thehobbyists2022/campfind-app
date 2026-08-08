@@ -247,6 +247,30 @@ def main():
         except Exception as e:
             print(f"ACA re-apply skipped: {e}", flush=True)
 
+    # --- coordinate alignment for synthetic legacy camps (R1) ---
+    # Synthetic brand x city templates had noise-offset coords that landed in
+    # the ocean for coastal cities. Snap them to the geocoded city center.
+    geo_cache = os.path.join(ROOT, "scrapers", "geocode_cache.json")
+    geo = {}
+    if os.path.exists(geo_cache):
+        for k, v in json.load(open(geo_cache, encoding="utf-8")).items():
+            parts = k.split("|")
+            if len(parts) >= 2:
+                geo.setdefault((parts[0], parts[1]), v)
+    coord_fixed = 0
+    for c in merged:
+        if c.get("source") != "manual_verification":
+            continue
+        if c.get("acaVerified"):
+            continue
+        center = geo.get((c.get("city"), c.get("state")))
+        if not center:
+            continue
+        c["lat"], c["lng"] = center[0], center[1]
+        coord_fixed += 1
+    if coord_fixed:
+        print(f"aligned {coord_fixed} synthetic legacy camps to city center", flush=True)
+
     verified = sum(1 for c in merged if not c.get("unverified"))
     seasons = {}
     for c in merged:

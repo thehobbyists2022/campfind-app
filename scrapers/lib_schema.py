@@ -57,6 +57,16 @@ DEFAULT_COORD_SENTINELS = [
 LEGITIMATE_SENTINEL_COORDS = {
     "joe_&_mary_mottino_family_ymca_summer_camp": (33.1958696, -117.379483),
     "ussportscamps_oceanside_ca": (33.1958696, -117.379483),
+    # synthetic legacy camps aligned to Oceanside city center (real geocode)
+    "real_aca_20014": (33.1958696, -117.379483),
+    "real_aca_20038": (33.1958696, -117.379483),
+    "real_aca_20153": (33.1958696, -117.379483),
+    "real_aca_20281": (33.1958696, -117.379483),
+    "real_aca_20335": (33.1958696, -117.379483),
+    "real_aca_20427": (33.1958696, -117.379483),
+    "real_aca_20487": (33.1958696, -117.379483),
+    "real_aca_20630": (33.1958696, -117.379483),
+    "real_aca_20798": (33.1958696, -117.379483),
 }
 
 
