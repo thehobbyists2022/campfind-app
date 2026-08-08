@@ -524,11 +524,42 @@
 - `scrapers/v9_goldfish.py`、`app/aca_camps_brands_v9.json`（v9）
 - `scrapers/v3_export.py`（合并 v5–v9 出三副本）
 
+## 第七点十六部分：v10-v12 收尾（DeepSeek V4 Flash，2026-08-06）
+
+延续 v5-v9 品牌扩充与数据治理，全部遵循 R1–R6。
+
+### v10 — ACA 认证交叉验证（commit 6679a84, a5dc736）
+- 用 ACA 官方 finder 的公开 autocomplete API（ind.acacamps.org/camp_search_suggest_ajx.php）逐名核对。
+- 匹配策略：去掉描述性停用词后比 core-token 子集 + 州一致；保留括号内城市 token 防误配。
+- **34 笔真实营队认证**（acaVerified=true + ACA profile sourceUrl），如 Camp Greylock / Romaca / Dudley / Kiniya / Kanuga / Ondessonk / Natoma / Ocean Pines / Culver / Huckins / Pali / Marston / Neil Klatskin 等。
+- 连锁品牌（Code Ninjas 等）与通用名（YMCA Summer Camp (City)）不误标。
+- scrapers/v10_aca_verify.py（cache + --apply-cache 可重复执行）。
+
+### v11 — legacy 合成资料清理（commit 727bbeb）
+- 删除 61 笔合成模板：33 笔 real_aca_ Code Ninjas 组合（品牌已有 472 真实门店）+ 28 笔 real_exact_ 同营多程序变体。
+- 为其余 legacy 补齐 source/sourceUrl/verifiedAt。
+- **全库 lib_schema 零违规**。
+- scrapers/v11_legacy_cleanup.py。
+
+### v12 — Bricks 4 Kidz 美国加盟（commit 59833fb）
+- 57 所美国加盟店，取自官方入口 us.bricks4kidznow.com/franchise_maplocations.php（城市/邮编/坐标），R2 = 官方 marker。
+- 过滤非美国（加拿大邮编 Lxx/Hxx 排除），按 objectid 去重，21 州。
+- **i9 Sports 判定不可行**（franchise 页 Cloudflare 封禁、无干净公共 API）。
+
+### 管线自包含（commit 59833fb）
+- scrapers/v3_export.py 现已内建：legacy 合成清理、来源补齐、ACA 重验证（34 笔）、v5-v12 合并 → 从原始档可完整重现干净数据集。
+
+### 复核资产
+- scrapers/v10_aca_verify.py、scrapers/aca_verify_cache.json（v10）
+- scrapers/v11_legacy_cleanup.py（v11）
+- scrapers/v12_bricks4kidz.py、pp/aca_camps_brands_v12.json（v12）
+- Android v1.0.7 AAB（4,165 笔，含 34 ACA + 57 Bricks 4 Kidz）
+
 ---
 
 ## 第八部分：风险与备注
 1. **法律/口碑风险（现状）**：继续展示编造的电话/评分和冒名连锁品牌门店，有被品牌方投诉和测试者持续翻车的风险 → 本轮清理是刚需，不是优化项。
 2. **14 天窗口**：数据修正可随时进行；App 更新（重打包 AAB）不重置 20×14 计时。Flutter 端改完资源文件后，重新构建发布由所有者执行（keystore 已在 `mobile/upload-keystore.jks`）。
 3. **ACA 真实爬取**（可选后续）：`03_aca_crawler_v2.py` 需浏览器 PHPSESSID，且 ACA 可能改版；本轮不依赖它，`acaVerified` 可全 false，后续再补真实 ACA 交叉验证。
-4. **数量预期**：清理+真实扩充后总数可能在 600–1,200 区间浮动，以真实为准，不凑数。（注：其后品牌扩充批次已把总数推至 4,324，仍以真实官方来源为准。）
-5. **已评估但未扩的品牌**：YMCA councils（分散在数十个独立 council 站，无统一 location 清单）、Little Medical School（官网无公开门市清单）、Girl Scouts / Boy Scouts council（无易爬的 finder）、JCC 多数分会（仅 Valley of the Sun 等少数有干净 JSON-LD）、i9 Sports（加盟页无干净地址，JS 载入）。待有干净官方来源时再补。
+4. **数量预期**：清理+真实扩充后总数可能在 600–1,200 区间浮动，以真实为准，不凑数。（注：其后品牌扩充批次已把总数推至 4,165——v11 清理移除 61 笔合成后、再加 Bricks 4 Kidz 57——全库零 schema 违规。）
+5. **已评估但未扩的品牌**：YMCA councils（分散在数十个独立 council 站，无统一 location 清单）、Little Medical School（官网无公开门市清单）、Girl Scouts / Boy Scouts council（无易爬的 finder）、JCC 多数分会（仅 Valley of the Sun 等少数有干净 JSON-LD）、i9 Sports（Cloudflare 封禁，无干净公共 API）。待有干净官方来源时再补。
