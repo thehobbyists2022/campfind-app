@@ -10,14 +10,14 @@ class CampCard extends StatelessWidget {
   final bool isSelectedForCompare;
 
   const CampCard({
-    Key? key,
+    super.key,
     required this.camp,
     required this.isFavorite,
     required this.onFavoriteTap,
     required this.onTap,
     required this.onCompareTap,
     this.isSelectedForCompare = false,
-  }) : super(key: key);
+  });
 
   Color _getThemeColor(String theme) {
     switch (theme.toLowerCase()) {
@@ -47,7 +47,7 @@ class CampCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF2C3E50).withOpacity(0.08),
+            color: const Color(0xFF2C3E50).withValues(alpha: 0.08),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -73,7 +73,7 @@ class CampCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
-                        color: themeColor.withOpacity(0.15),
+                        color: themeColor.withValues(alpha: 0.15),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Row(

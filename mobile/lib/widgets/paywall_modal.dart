@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PaywallModal extends StatefulWidget {
   final String featureTrigger;
 
-  const PaywallModal({Key? key, this.featureTrigger = 'Pro Features'}) : super(key: key);
+  const PaywallModal({super.key, this.featureTrigger = 'Pro Features'});
 
   @override
   State<PaywallModal> createState() => _PaywallModalState();
@@ -93,10 +93,14 @@ class _PaywallModalState extends State<PaywallModal> {
                 ),
                 child: Row(
                   children: [
+                    // ignore: deprecated_member_use
                     Radio<int>(
                       value: 0,
+                      // ignore: deprecated_member_use
                       groupValue: _selectedPlanIndex,
+                      // ignore: deprecated_member_use
                       activeColor: const Color(0xFFFF6B6B),
+                      // ignore: deprecated_member_use
                       onChanged: (val) => setState(() => _selectedPlanIndex = val!),
                     ),
                     Expanded(
@@ -105,7 +109,7 @@ class _PaywallModalState extends State<PaywallModal> {
                         children: [
                           Row(
                             children: [
-                              Text(
+                              const Text(
                                 'ANNUAL PASS',
                                 style: TextStyle(
                                   fontSize: 14,
@@ -113,22 +117,22 @@ class _PaywallModalState extends State<PaywallModal> {
                                   color: Color(0xFF1A1A2E),
                                 ),
                               ),
-                              SizedBox(width: 8),
+                              const SizedBox(width: 8),
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                decoration: BoxDecoration(
+                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                decoration: const BoxDecoration(
                                   color: Color(0xFFFF6B6B),
                                   borderRadius: BorderRadius.all(Radius.circular(6)),
                                 ),
-                                child: Text(
+                                child: const Text(
                                   'SAVE 65%',
                                   style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
                                 ),
                               ),
                             ],
                           ),
-                          SizedBox(height: 2),
-                          Text('Instant Access: \$19.99 / year (\$1.66/mo)', style: TextStyle(fontSize: 12, color: Color(0xFF5A6A7C))),
+                          const SizedBox(height: 2),
+                          const Text('Instant Access: \$19.99 / year (\$1.66/mo)', style: TextStyle(fontSize: 12, color: Color(0xFF5A6A7C))),
                         ],
                       ),
                     ),
@@ -153,10 +157,14 @@ class _PaywallModalState extends State<PaywallModal> {
                 ),
                 child: Row(
                   children: [
+                    // ignore: deprecated_member_use
                     Radio<int>(
                       value: 1,
+                      // ignore: deprecated_member_use
                       groupValue: _selectedPlanIndex,
+                      // ignore: deprecated_member_use
                       activeColor: const Color(0xFFFF6B6B),
+                      // ignore: deprecated_member_use
                       onChanged: (val) => setState(() => _selectedPlanIndex = val!),
                     ),
                     const Column(

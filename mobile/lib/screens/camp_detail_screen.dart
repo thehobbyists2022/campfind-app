@@ -8,11 +8,11 @@ class CampDetailScreen extends StatelessWidget {
   final VoidCallback onFavoriteTap;
 
   const CampDetailScreen({
-    Key? key,
+    super.key,
     required this.camp,
     required this.isFavorite,
     required this.onFavoriteTap,
-  }) : super(key: key);
+  });
 
   Future<void> _launchUrl(BuildContext context, String urlString) async {
     String cleanUrl = urlString.trim();
@@ -94,7 +94,7 @@ class CampDetailScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF4ECDC4).withOpacity(0.15),
+                          color: const Color(0xFF4ECDC4).withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
@@ -172,7 +172,7 @@ class CampDetailScreen extends StatelessWidget {
                       const Icon(Icons.location_on, size: 18, color: Color(0xFFFF6B6B)),
                       const SizedBox(width: 4),
                       Text(
-                        '${camp.city}, ${camp.state}${camp.zip.isNotEmpty ? ' ' + camp.zip : ''}',
+                        '${camp.city}, ${camp.state}${camp.zip.isNotEmpty ? ' ${camp.zip}' : ''}',
                         style: const TextStyle(
                           fontSize: 14,
                           color: Color(0xFF5A6A7C),
@@ -335,7 +335,7 @@ class CampDetailScreen extends StatelessWidget {
                       return Container(
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                         decoration: BoxDecoration(
-                          color: isAvailable ? const Color(0xFF4ECDC4).withOpacity(0.15) : const Color(0xFFF4F6F9),
+                          color: isAvailable ? const Color(0xFF4ECDC4).withValues(alpha: 0.15) : const Color(0xFFF4F6F9),
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
                             color: isAvailable ? const Color(0xFF4ECDC4) : Colors.grey.shade300,

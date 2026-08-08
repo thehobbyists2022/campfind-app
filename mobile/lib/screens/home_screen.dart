@@ -9,7 +9,7 @@ import 'comparison_screen.dart';
 class HomeScreen extends StatefulWidget {
   final CampRepository repository;
 
-  const HomeScreen({Key? key, required this.repository}) : super(key: key);
+  const HomeScreen({super.key, required this.repository});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       subtitle: const Text('Find camps suitable for 2 children'),
                       value: _filters.isSiblingMode,
-                      activeColor: const Color(0xFF4ECDC4),
+                      activeThumbColor: const Color(0xFF4ECDC4),
                       onChanged: (val) {
                         if (val && !_isProUser) {
                           _openPaywall('Sibling Mode');
@@ -316,7 +316,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
-                color: const Color(0xFFFF6B6B).withOpacity(0.1),
+                color: const Color(0xFFFF6B6B).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Icon(Icons.location_on, color: Color(0xFFFF6B6B), size: 20),
@@ -377,7 +377,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(width: 10),
                 IconButton(
                   style: IconButton.styleFrom(
-                    backgroundColor: const Color(0xFF4ECDC4).withOpacity(0.15),
+                    backgroundColor: const Color(0xFF4ECDC4).withValues(alpha: 0.15),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   icon: const Icon(Icons.tune, color: Color(0xFF3AB5AD)),
@@ -401,7 +401,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF4ECDC4).withOpacity(0.2),
+                      color: const Color(0xFF4ECDC4).withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Text('👨‍👩‍👧‍👦 Sibling Mode Active', style: TextStyle(fontSize: 11, color: Color(0xFF3AB5AD), fontWeight: FontWeight.bold)),

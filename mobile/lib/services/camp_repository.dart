@@ -54,6 +54,7 @@ class CampRepository {
       await _loadFavorites();
       _isInitialized = true;
     } catch (e) {
+      // ignore: avoid_print
       print('Error loading camp dataset: $e');
       _allCamps = [];
     }

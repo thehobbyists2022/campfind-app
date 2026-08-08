@@ -15,7 +15,7 @@ void main() async {
 class CampFindApp extends StatelessWidget {
   final CampRepository repository;
 
-  const CampFindApp({Key? key, required this.repository}) : super(key: key);
+  const CampFindApp({super.key, required this.repository});
 
   @override
   Widget build(BuildContext context) {

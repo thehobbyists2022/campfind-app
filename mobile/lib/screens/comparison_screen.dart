@@ -6,10 +6,10 @@ class ComparisonScreen extends StatelessWidget {
   final Function(String) onRemoveCamp;
 
   const ComparisonScreen({
-    Key? key,
+    super.key,
     required this.camps,
     required this.onRemoveCamp,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
