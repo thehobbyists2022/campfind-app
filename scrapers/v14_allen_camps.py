@@ -142,7 +142,7 @@ def main():
             "weeks": None,
             "phone": PHONE,
             "email": "LifeInAllen@CityofAllen.org",
-            "website": "https://www.lifeinallen.org",
+            "website": "https://anc.apm.activecommunities.com/allentxparks",
             "description": f"Allen Parks & Recreation summer camp: {name}.",
             "acaVerified": False,
             "provider": "city",

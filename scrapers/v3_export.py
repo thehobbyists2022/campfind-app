@@ -365,6 +365,17 @@ def main():
     if len(merged) < before:
         print(f"dropped {before - len(merged)} Magikid HQ placeholder entries", flush=True)
 
+    # --- website reachability fix: lifeinallen.org returns 403 to some browsers
+    # (WAF). Point Allen camps at the official ActiveCommunities registration
+    # portal instead, which is browser-friendly and is the actual enrollment site.
+    web_fixed = 0
+    for c in merged:
+        if (c.get("website") or "").startswith("https://www.lifeinallen.org"):
+            c["website"] = "https://anc.apm.activecommunities.com/allentxparks"
+            web_fixed += 1
+    if web_fixed:
+        print(f"redirected {web_fixed} Allen camp websites to ActiveCommunities portal", flush=True)
+
     verified = sum(1 for c in merged if not c.get("unverified"))
     seasons = {}
     for c in merged:
