@@ -384,11 +384,12 @@
       "email": null,
       "website": "https://www.ymcasd.org/campmarston",
       "description": null,
-      "acaVerified": false,
+      "acaVerified": true,
       "unverified": false,
-      "verificationMethod": "manual",
+      "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=1918"
     },
     {
       "id": "camp_james_orange_county",
@@ -849,11 +850,12 @@
       "email": null,
       "website": "https://www.jccotp.org",
       "description": null,
-      "acaVerified": false,
+      "acaVerified": true,
       "unverified": false,
-      "verificationMethod": "claimed city appears on official website",
+      "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=651"
     },
     {
       "id": "bar-t_mountainside_day_camp",
@@ -1042,11 +1044,12 @@
       "email": null,
       "website": "https://www.culver.org",
       "description": null,
-      "acaVerified": false,
+      "acaVerified": true,
       "unverified": false,
-      "verificationMethod": "claimed city appears on official website",
+      "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=502"
     },
     {
       "id": "ymca_of_the_ozarks_camp_sunnen",
@@ -1468,11 +1471,12 @@
       "email": null,
       "website": "https://www.camphuckins.org",
       "description": null,
-      "acaVerified": false,
+      "acaVerified": true,
       "unverified": false,
-      "verificationMethod": "claimed city appears on official website",
+      "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=203"
     },
     {
       "id": "camp_greylock_for_boys",
@@ -1701,11 +1705,12 @@
       "email": null,
       "website": "https://www.paliadventures.com",
       "description": null,
-      "acaVerified": false,
+      "acaVerified": true,
       "unverified": false,
-      "verificationMethod": "claimed city appears on official website",
+      "verificationMethod": "aca_finder",
       "verifiedAt": "2026-08-02",
-      "reviewCount": null
+      "reviewCount": null,
+      "sourceUrl": "https://find.acacamps.org/camp_profile.php?camp_id=371"
     },
     {
       "id": "catalina_island_camps",

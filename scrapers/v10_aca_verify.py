@@ -142,10 +142,19 @@ def main():
             checked += 1
         # match: require a strong name relationship AND state match.
         #   - exact match (normalized) is always accepted.
-        #   - else one name must be a token-subset of the other (ACA name fully
-        #     contained in ours, or ours in ACA). Parenthetical city is kept in
-        #     our key (norm_keep_city), so generic names like "YMCA Summer Camp
-        #     (Brooklyn)" do NOT false-match a long specific ACA name.
+        #   - else compare "core tokens" (after dropping generic descriptor
+        #     words like camp/for/boys/girls/adventure/outdoor/summer/day) and
+        #     require one core set to be a subset of the other. This catches
+        #     "Camp Huckins for Girls" ~ "YMCA Camp Huckins" while rejecting
+        #     unrelated camps that merely share a generic word.
+        STOP = {'camp','camps','for','boys','girls','and','the','of','summer','day',
+                'adventure','outdoor','wilderness','youth','stem','academy','program',
+                'overnight','resident','center','specialty','inc','at','in','on','with',
+                'a','an','trip','weekly','session','school','scouting','season'}
+
+        def core(s):
+            return {t for t in s.split() if t not in STOP}
+
         matched_hit = None
         matched_id = None
         for hv in cache[key]:
@@ -159,13 +168,17 @@ def main():
             state_ok = state and f"({state})" in hv_str
             if not state_ok:
                 continue
-            aca_tokens = hv_norm.split()
-            our_tokens = key.split()
-            if not aca_tokens or not our_tokens:
+            if hv_norm == key:
+                matched_hit = hv_str
+                matched_id = hv_id
+                break
+            our_core = core(key)
+            aca_core = core(hv_norm)
+            if not our_core or not aca_core:
                 continue
-            if len(aca_tokens) < 2 or len(our_tokens) < 2:
+            if len(our_core) < 2 and len(aca_core) < 2:
                 continue
-            if set(aca_tokens) <= set(our_tokens) or set(our_tokens) <= set(aca_tokens):
+            if our_core <= aca_core or aca_core <= our_core:
                 matched_hit = hv_str
                 matched_id = hv_id
                 break
