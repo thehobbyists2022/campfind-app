@@ -79,6 +79,11 @@ def main():
     v13_path = os.path.join(ROOT, "app", "aca_camps_brands_v13.json")
     if os.path.exists(v13_path):
         v13 = json.load(open(v13_path, encoding="utf-8"))["camps"]
+    # v14 Allen TX Parks & Rec summer camps (optional)
+    v14 = []
+    v14_path = os.path.join(ROOT, "app", "aca_camps_brands_v14.json")
+    if os.path.exists(v14_path):
+        v14 = json.load(open(v14_path, encoding="utf-8"))["camps"]
 
     # Drop legacy synthetic brand entries from v2 — replaced by the real
     # per-location brand camps in v5/v6 (R1: their fabricated price/age/shuttle
@@ -158,6 +163,14 @@ def main():
 
     # v13 focus-state real camps: add (unique ids).
     for c in v13:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v14 Allen TX camps: add (unique ids).
+    for c in v14:
         if c["id"] in seen_ids:
             dup_skipped += 1
             continue
@@ -368,7 +381,7 @@ def main():
     fn3 = os.path.join(ROOT, "mobile", "assets", "aca_camps.json")
     json.dump(out, open(fn3, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)}, dup skipped {dup_skipped})")
+    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)}, dup skipped {dup_skipped})")
     print(f"verified: {verified}, unverified: {len(merged) - verified}")
     print(f"seasons: {seasons}")
     print(f"wrote: {fn1}")
