@@ -1085,6 +1085,20 @@
             }
 
             // ---- FILTER LOGIC ----
+            const STATE_FULL_TO_ABBR = {
+                'alabama':'al','alaska':'ak','arizona':'az','arkansas':'ar','california':'ca',
+                'colorado':'co','connecticut':'ct','delaware':'de','florida':'fl','georgia':'ga',
+                'hawaii':'hi','idaho':'id','illinois':'il','indiana':'in','iowa':'ia','kansas':'ks',
+                'kentucky':'ky','louisiana':'la','maine':'me','maryland':'md','massachusetts':'ma',
+                'michigan':'mi','minnesota':'mn','mississippi':'ms','missouri':'mo','montana':'mt',
+                'nebraska':'ne','nevada':'nv','new-hampshire':'nh','new-jersey':'nj','new-mexico':'nm',
+                'new-york':'ny','north-carolina':'nc','north-dakota':'nd','ohio':'oh','oklahoma':'ok',
+                'oregon':'or','pennsylvania':'pa','rhode-island':'ri','south-carolina':'sc',
+                'south-dakota':'sd','tennessee':'tn','texas':'tx','utah':'ut','vermont':'vt',
+                'virginia':'va','washington':'wa','west-virginia':'wv','wisconsin':'wi','wyoming':'wy',
+                'district-of-columbia':'dc'
+            };
+
             function getFilteredCamps(ignoreExtraFilters = false) {
                 const rawQuery = searchInput.value.trim().toLowerCase();
                 const cleanQuery = rawQuery.replace(/[^a-z0-9]/gi, '');
@@ -1157,9 +1171,18 @@
                 }
 
                 // General Text Search (City, State, Camp Name)
+                // Normalize query: drop commas, map full state names -> abbr.
+                // e.g. "Dallas, Texas" / "Dallas Texas" -> ["dallas","tx"]
+                const queryTokens = rawQuery
+                    .replace(/,/g, ' ')
+                    .split(/\s+/)
+                    .filter(Boolean)
+                    .map(t => STATE_FULL_TO_ABBR[t] || t);
                 const textMatches = baseCamps.filter(c => {
-                    const fullText = (c.city + ' ' + c.name + ' ' + c.state + ' ' + (c.zip || '')).toLowerCase();
-                    return fullText.includes(rawQuery);
+                    const stateAbbr = (c.state || '').toLowerCase();
+                    const fullText = (c.city + ' ' + c.name + ' ' + stateAbbr + ' ' + (c.zip || '')).toLowerCase();
+                    // every query token must appear in the camp's search text
+                    return queryTokens.every(t => fullText.includes(t));
                 });
 
                 return textMatches;
