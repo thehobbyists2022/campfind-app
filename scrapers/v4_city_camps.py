@@ -25,7 +25,7 @@ GEO_CACHE = os.path.join(ROOT, "scrapers", "geocode_cache.json")
 # Used instead of city-center geocoding so each camp shows its real location.
 FACILITY_COORDS = {
     # Oceanside (ci.oceanside.ca.us community centers)
-    "john landes": (33.1946745, -117.2882755, "2855 Thunder Dr, Oceanside, CA 92057"),
+    "john landes": (33.1946745, -117.2882755, "2855 Thunder Dr, Oceanside, CA 92056"),
     "melba bishop": (33.2552399, -117.287567, "5306 N River Rd, Oceanside, CA 92057"),
     "joe balderrama": (33.2044855, -117.3711444, "709 San Diego St, Oceanside, CA 92054"),
     "beach & ball": (33.194845, -117.383693, "300 N Pacific St, Oceanside, CA 92054"),
@@ -155,7 +155,7 @@ CITY_CAMPS = [
     {
         "name": "Sunsational Summer Camp - John Landes",
   "facility": "john landes",
-        "city": "Oceanside", "state": "CA", "zip": "92057",
+        "city": "Oceanside", "state": "CA", "zip": "92056",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
         "website": "https://www.ci.oceanside.ca.us/government/parks-recreation/youth-programs",
@@ -166,7 +166,7 @@ CITY_CAMPS = [
     {
         "name": "Sunsational Summer Camp - Melba Bishop",
   "facility": "melba bishop",
-        "city": "Oceanside", "state": "CA", "zip": "92056",
+        "city": "Oceanside", "state": "CA", "zip": "92057",
         "season": "summer", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
         "website": "https://www.ci.oceanside.ca.us/government/parks-recreation/youth-programs",
@@ -199,7 +199,7 @@ CITY_CAMPS = [
     {
         "name": "Spring Break Camp - John Landes",
   "facility": "john landes",
-        "city": "Oceanside", "state": "CA", "zip": "92057",
+        "city": "Oceanside", "state": "CA", "zip": "92056",
         "season": "spring", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
         "website": "https://www.ci.oceanside.ca.us/government/parks-recreation/youth-programs",
@@ -210,7 +210,7 @@ CITY_CAMPS = [
     {
         "name": "Spring Break Camp - Melba Bishop",
   "facility": "melba bishop",
-        "city": "Oceanside", "state": "CA", "zip": "92056",
+        "city": "Oceanside", "state": "CA", "zip": "92057",
         "season": "spring", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 12,
         "website": "https://www.ci.oceanside.ca.us/government/parks-recreation/youth-programs",
@@ -221,7 +221,7 @@ CITY_CAMPS = [
     {
         "name": "After-School Program - John Landes",
   "facility": "john landes",
-        "city": "Oceanside", "state": "CA", "zip": "92057",
+        "city": "Oceanside", "state": "CA", "zip": "92056",
         "season": "fall", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 11,
         "website": "https://www.ci.oceanside.ca.us/government/parks-recreation/youth-programs",
@@ -232,7 +232,7 @@ CITY_CAMPS = [
     {
         "name": "After-School Program - Melba Bishop",
   "facility": "melba bishop",
-        "city": "Oceanside", "state": "CA", "zip": "92056",
+        "city": "Oceanside", "state": "CA", "zip": "92057",
         "season": "fall", "theme": "General", "type": "day",
         "ageMin": 6, "ageMax": 11,
         "website": "https://www.ci.oceanside.ca.us/government/parks-recreation/youth-programs",
