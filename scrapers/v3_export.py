@@ -256,7 +256,13 @@ def main():
         for k, v in json.load(open(geo_cache, encoding="utf-8")).items():
             parts = k.split("|")
             if len(parts) >= 2:
-                geo.setdefault((parts[0], parts[1]), v)
+                # prefer the no-zip (precise city-center) entry over the
+                # zip-keyed one, which may be a wrong same-name-city geocode.
+                key = (parts[0], parts[1])
+                if len(parts) == 2:
+                    geo[key] = v
+                elif key not in geo:
+                    geo[key] = v
     coord_fixed = 0
     for c in merged:
         if c.get("source") != "manual_verification":
@@ -270,6 +276,68 @@ def main():
         coord_fixed += 1
     if coord_fixed:
         print(f"aligned {coord_fixed} synthetic legacy camps to city center", flush=True)
+
+    # --- fix coords that are wildly wrong (same-name city, wrong state geocode).
+    # Any camp WITHOUT a real street address that sits >300km from its geocoded
+    # city center is an unambiguous geocode mistake (e.g. iD Tech Arlington VA
+    # pointing at Arlington TX; Camp Greylock pointing at Ohio). Real
+    # street-address camps keep their precise coords.
+    import math as _math
+    coord_fixed2 = 0
+    for c in merged:
+        if c.get("address"):
+            continue  # real street address -> keep precise coords
+        lat, lng = c.get("lat"), c.get("lng")
+        if not lat or not lng:
+            continue
+        center = geo.get((c.get("city"), c.get("state")))
+        if not center:
+            continue
+        km = _math.hypot(lat - center[0], lng - center[1]) * 111
+        if km > 300:
+            c["lat"], c["lng"] = center[0], center[1]
+            coord_fixed2 += 1
+    if coord_fixed2:
+        print(f"fixed {coord_fixed2} camps with wrong-state geocodes", flush=True)
+
+    # --- correct Galileo state labels (v3 defaulted everything to CA; some
+    # Galileo locations are in WA / CO). Re-state based on geocoded city center.
+    coord_fixed3 = 0
+    for c in merged:
+        if c.get("source") != "franchise_locator:galileo-camps.com":
+            continue
+        if c.get("address"):
+            continue
+        city = c.get("city") or ""
+        # known WA/CO Galileo cities
+        if city.lower() in ("north seattle", "mercer island", "seattle"):
+            c["state"] = "WA"
+        elif city.lower() in ("littleton greenwood village", "littleton", "greenwood village", "denver"):
+            c["state"] = "CO"
+        center = geo.get((c.get("city"), c.get("state")))
+        if center:
+            c["lat"], c["lng"] = center[0], center[1]
+            coord_fixed3 += 1
+    if coord_fixed3:
+        print(f"corrected {coord_fixed3} Galileo location states", flush=True)
+
+    # --- drop Avid4 numeric-street placeholders ("4Th"/"5Th"/"9Th" from the
+    # location sitemap are not real city names). R2: no location proof.
+    before = len(merged)
+    merged = [c for c in merged
+              if not (c.get("source") == "franchise_locator:avid4.com"
+                      and re.match(r"^\d+th$", (c.get("city") or "").lower()))]
+    if len(merged) < before:
+        print(f"dropped {before - len(merged)} Avid4 numeric placeholder entries", flush=True)
+
+    # --- drop Magikid "Hq" entries: brand HQ node parsed as a store, not a
+    # real camp location (city label is literally "Hq"). R2: no location proof.
+    before = len(merged)
+    merged = [c for c in merged
+              if not (c.get("source") == "franchise_locator:magikidlab.com"
+                      and (c.get("city") or "").lower() == "hq")]
+    if len(merged) < before:
+        print(f"dropped {before - len(merged)} Magikid HQ placeholder entries", flush=True)
 
     verified = sum(1 for c in merged if not c.get("unverified"))
     seasons = {}

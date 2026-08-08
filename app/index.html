@@ -1178,10 +1178,47 @@
                     .split(/\s+/)
                     .filter(Boolean)
                     .map(t => STATE_FULL_TO_ABBR[t] || t);
+
+                // Identify which tokens are state abbreviations vs. other words
+                const stateTokenSet = new Set(Object.values(STATE_FULL_TO_ABBR));
+                const stateTokens = queryTokens.filter(t => stateTokenSet.has(t));
+                const otherTokens = queryTokens.filter(t => !stateTokenSet.has(t));
+
+                // Priority 1: exact city match (city equals the query's non-state
+                // tokens, ignoring punctuation). e.g. "vista" -> city === 'Vista',
+                // NOT "Chula Vista" / "Mar Vista". If a state is given it must match.
+                const exactCity = baseCamps.filter(c => {
+                    const cityTokens = (c.city || '').toLowerCase().split(/\s+/).filter(Boolean);
+                    if (otherTokens.length !== cityTokens.length) return false;
+                    const cityOk = otherTokens.every(t => cityTokens.includes(t));
+                    if (!cityOk) return false;
+                    if (stateTokens.length > 0) {
+                        const st = (c.state || '').toLowerCase();
+                        if (!stateTokens.includes(st)) return false;
+                    }
+                    return true;
+                });
+                if (exactCity.length > 0) return exactCity;
+
+                // Priority 2: city substring match (city name contains ALL other
+                // tokens as a contiguous phrase), filtered by state if given.
+                // e.g. "san francisco" matches city 'San Francisco'.
+                const cityPhrase = otherTokens.join(' ');
+                const citySub = baseCamps.filter(c => {
+                    const cityLower = (c.city || '').toLowerCase();
+                    if (!cityLower.includes(cityPhrase)) return false;
+                    if (stateTokens.length > 0) {
+                        const st = (c.state || '').toLowerCase();
+                        if (!stateTokens.includes(st)) return false;
+                    }
+                    return true;
+                });
+                if (citySub.length > 0) return citySub;
+
+                // Fallback: substring match across city + name + state + zip
                 const textMatches = baseCamps.filter(c => {
                     const stateAbbr = (c.state || '').toLowerCase();
                     const fullText = (c.city + ' ' + c.name + ' ' + stateAbbr + ' ' + (c.zip || '')).toLowerCase();
-                    // every query token must appear in the camp's search text
                     return queryTokens.every(t => fullText.includes(t));
                 });
 
