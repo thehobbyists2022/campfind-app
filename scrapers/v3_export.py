@@ -104,6 +104,11 @@ def main():
     v18_path = os.path.join(ROOT, "app", "aca_camps_brands_v18.json")
     if os.path.exists(v18_path):
         v18 = json.load(open(v18_path, encoding="utf-8"))["camps"]
+    # v19 El Cajon CA camps (optional)
+    v19 = []
+    v19_path = os.path.join(ROOT, "app", "aca_camps_brands_v19.json")
+    if os.path.exists(v19_path):
+        v19 = json.load(open(v19_path, encoding="utf-8"))["camps"]
 
     # Drop legacy synthetic brand entries from v2 — replaced by the real
     # per-location brand camps in v5/v6 (R1: their fabricated price/age/shuttle
@@ -223,6 +228,14 @@ def main():
 
     # v18 Santee/Lemon Grove camps: add (unique ids).
     for c in v18:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v19 El Cajon camps: add (unique ids).
+    for c in v19:
         if c["id"] in seen_ids:
             dup_skipped += 1
             continue
@@ -444,7 +457,7 @@ def main():
     fn3 = os.path.join(ROOT, "mobile", "assets", "aca_camps.json")
     json.dump(out, open(fn3, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)}, dup skipped {dup_skipped})")
+    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)}, dup skipped {dup_skipped})")
     print(f"verified: {verified}, unverified: {len(merged) - verified}")
     print(f"seasons: {seasons}")
     print(f"wrote: {fn1}")
