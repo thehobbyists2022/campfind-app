@@ -134,6 +134,36 @@ def main():
     v24_path = os.path.join(ROOT, "app", "aca_camps_brands_v24.json")
     if os.path.exists(v24_path):
         v24 = json.load(open(v24_path, encoding="utf-8"))["camps"]
+    # v25 Austin TX camps (optional)
+    v25 = []
+    v25_path = os.path.join(ROOT, "app", "aca_camps_brands_v25.json")
+    if os.path.exists(v25_path):
+        v25 = json.load(open(v25_path, encoding="utf-8"))["camps"]
+    # v26 Phoenix AZ camps (optional)
+    v26 = []
+    v26_path = os.path.join(ROOT, "app", "aca_camps_brands_v26.json")
+    if os.path.exists(v26_path):
+        v26 = json.load(open(v26_path, encoding="utf-8"))["camps"]
+    # v27 Portland OR camps (optional)
+    v27 = []
+    v27_path = os.path.join(ROOT, "app", "aca_camps_brands_v27.json")
+    if os.path.exists(v27_path):
+        v27 = json.load(open(v27_path, encoding="utf-8"))["camps"]
+    # v28 Columbus OH camps (optional)
+    v28 = []
+    v28_path = os.path.join(ROOT, "app", "aca_camps_brands_v28.json")
+    if os.path.exists(v28_path):
+        v28 = json.load(open(v28_path, encoding="utf-8"))["camps"]
+    # v29 Nashville TN camps (optional)
+    v29 = []
+    v29_path = os.path.join(ROOT, "app", "aca_camps_brands_v29.json")
+    if os.path.exists(v29_path):
+        v29 = json.load(open(v29_path, encoding="utf-8"))["camps"]
+    # v30 Fort Worth TX camps (optional)
+    v30 = []
+    v30_path = os.path.join(ROOT, "app", "aca_camps_brands_v30.json")
+    if os.path.exists(v30_path):
+        v30 = json.load(open(v30_path, encoding="utf-8"))["camps"]
 
     # Drop legacy synthetic brand entries from v2 — replaced by the real
     # per-location brand camps in v5/v6 (R1: their fabricated price/age/shuttle
@@ -301,6 +331,54 @@ def main():
 
     # v24 Houston camps: add (unique ids).
     for c in v24:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v25 Austin camps: add (unique ids).
+    for c in v25:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v26 Phoenix camps: add (unique ids).
+    for c in v26:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v27 Portland camps: add (unique ids).
+    for c in v27:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v28 Columbus camps: add (unique ids).
+    for c in v28:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v29 Nashville camps: add (unique ids).
+    for c in v29:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v30 Fort Worth camps: add (unique ids).
+    for c in v30:
         if c["id"] in seen_ids:
             dup_skipped += 1
             continue
@@ -522,7 +600,7 @@ def main():
     fn3 = os.path.join(ROOT, "mobile", "assets", "aca_camps.json")
     json.dump(out, open(fn3, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)} + v20 {len(v20)} + v21 {len(v21)} + v22 {len(v22)} + v23 {len(v23)} + v24 {len(v24)}, dup skipped {dup_skipped})")
+    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)} + v20 {len(v20)} + v21 {len(v21)} + v22 {len(v22)} + v23 {len(v23)} + v24 {len(v24)} + v25 {len(v25)} + v26 {len(v26)} + v27 {len(v27)} + v28 {len(v28)} + v29 {len(v29)} + v30 {len(v30)}, dup skipped {dup_skipped})")
     print(f"verified: {verified}, unverified: {len(merged) - verified}")
     print(f"seasons: {seasons}")
     print(f"wrote: {fn1}")
