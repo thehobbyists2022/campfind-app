@@ -174,6 +174,12 @@ def main():
     v32_path = os.path.join(ROOT, "app", "aca_camps_brands_v32.json")
     if os.path.exists(v32_path):
         v32 = json.load(open(v32_path, encoding="utf-8"))["camps"]
+    # v33 Steve & Kate's winter/spring/fall break camps — official sitemap
+    # + per-page titles (position-level, neighborhood-aware). (optional)
+    v33 = []
+    v33_path = os.path.join(ROOT, "app", "aca_camps_brands_v33.json")
+    if os.path.exists(v33_path):
+        v33 = json.load(open(v33_path, encoding="utf-8"))["camps"]
 
     # Drop legacy synthetic brand entries from v2 — replaced by the real
     # per-location brand camps in v5/v6 (R1: their fabricated price/age/shuttle
@@ -405,6 +411,14 @@ def main():
 
     # v32 county/city seasonal camps: add (unique ids).
     for c in v32:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
+    # v33 Steve & Kate's break camps: add (unique ids).
+    for c in v33:
         if c["id"] in seen_ids:
             dup_skipped += 1
             continue

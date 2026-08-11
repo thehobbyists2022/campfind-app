@@ -578,8 +578,78 @@
 - 属资料自然分布，不强求数字。
 
 ### 复核资产
-- scrapers/v13_focus_camps.py、pp/aca_camps_brands_v13.json（v13）
+- scrapers/v13_focus_camps.py、pp/aca_camps_brands_v13.json（v13）
 - Android v1.0.8 AAB（4,171 笔，含 39 ACA）
+
+---
+
+## 第七点十八部分：v14–v30 — 城市公园局与加盟店扩充（DeepSeek V4 Flash，2026-08-08~08-10）
+
+延续 v5-v13 品牌扩充与真实数据优先策略，全部遵循 R1–R6。本批以**城市官方公园局（Parks & Recreation）排期页**与**加盟商官方门店清单**为来源。
+
+### v14 — Allen TX Parks & Recreation（commit 810886c）
+- **69 笔**，来源 = 官方 ActiveCommunities 注册门户（anc.apm.activecommunities.com/allentxparks），ages 5–17（官方页范围，commit cf7f2d1）。
+- Allen 官网 lifeinallen.org 对部分浏览器 403（WAF）→ website 指向官方 ActiveCommunities 门户（commit 9569fc9）。
+- 数据集 4,171 → 4,231。
+
+### v15 — Seattle Parks & Recreation（commit 60dbcf0）
+- **9 笔**真实夏季营，官方 recnroller 排期页。
+- 4,231 → 4,240。
+
+### v16–v19 — San Diego County 城市营（commits aaff14a, ac59eee, 6481640）
+- **San Marcos 4 + Poway/Solana Beach 4 + Santee/Lemon Grove 5 + El Cajon 10**，各城市官方政府网站排期页。
+- 4,240 → 4,263。
+
+### v20–v21 — 加盟店新增（commit a046a17）
+- **Code Ninjas +42、Snapology +5**（官方 locator 新门店）。
+- 4,263 → 4,310。
+
+### v22 — Minneapolis MN Parks & Rec（commit f74aed6）
+- **4 笔**，官方 minneapolisparks.org 排期页。
+- 4,310 → 4,314。
+
+### v23 — Baltimore MD Recreation & Parks（commit 43e90cf）
+- **16 笔**夏季营，官方 baltimorecity.gov 排期页。
+- 4,314 → 4,330。
+
+### v24 — Houston Parks & Recreation（commit 948e8d2）
+- **12 笔**青少年营，官方 houstonparksandrec 排期页。
+- 4,330 → 4,342。
+
+### v25–v30 — 六城公园局批量（commit de11ef7）
+- **Austin 48 / Phoenix 20 / Portland 30 / Columbus 29 / Nashville 16 / Fort Worth 4**，各城市官方政府站。
+- 4,342 → 4,489。
+
+### 坐标治理（commits 790ee28, 60e5199, 23a2691）
+- 修复 40+ 笔错州坐标（同名城市误配）；合成 legacy 坐标对齐城市中心。
+- 搜索支持全州名；修正 Oceanside 两个公园 ZIP 交换。
+
+---
+
+## 第七点十九部分：v31–v33 — 季节营扩充与瘦身护栏（DeepSeek V4 Flash，2026-08-10~08-11）
+
+延续城市营扩充，本批聚焦**非夏季季节营**（fall/spring/winter break camps），并加入防文件膨胀的自动瘦身护栏。
+
+### v31 — 秋季/春季营 + 自动瘦身护栏（commit 69151b5）
+- **Tustin CA**：Fall Break、Thanksgiving、Camp Tustin、Little Folks、Teen Camp（官方 tustinca.org）
+- **Whittier CA**：Spring Day Camp 3/23–27（官方 whittierprcs.org）
+- **Culver City CA**：JUST4KIDS Jr/Day、TEEN EXPERIENCE、Youth Sports、YSE、SKATESIDE、Tennis（官方 culvercity.gov）
+- **Fremont CA**：Spring Break Camp 3/16–20 ages 5–16（官方 fremont.gov）
+- **瘦身护栏**：v3_export.py 内建 JSON-aware 截断（description >400 字自动截断），纯防未来膨胀。
+- 4,489 → 4,503。
+
+### v32 — 县/市营（commit e9f29ed）
+- **LA County ESTEAM Summer Camp**（8 周，ages 6–11，STEM）+ **Every Body Plays Summer Adventures**（免费，6/15–8/7，ages 7–17）
+- **Whittier Summer Day Camp**
+- 修复一个 sentinel 坐标违规后 0 违规 → 4,506。
+
+### v33 — Steve & Kate's 冬季/春季/秋季营（本次，待 commit）
+- **95 笔**，来源 = 官方 sitemap（camps-sitemap.xml，442 URL）逐页 `og:title` 位置声明 + 150 个官方位置下拉。
+- **关键方法论**：官方页面无地址字段，逐页抓 117 个 seasonal 页面标题建立 slug→位置精确映射（杜绝 `manhattan-east-village → Manhattan Beach` 类误配）；坐标 50 笔复用现有 S&K 记录 + 45 笔 Nominatim 地理编码，**修正 3 笔错误 geocode**（90 Washington St→Vermont、Midtown West→机场、Capitol Hill）。
+- 季节分布：winter **81→127**（+46）、spring **89→129**（+40）、fall **830→839**（+9）。
+- 跳过 6 笔已存在 fall id（Emeryville/Fremont/Palo Alto/Pasadena/San Mateo/Valley Village）。
+- 4,506 → **4,601**，三副本同步，**零违规**，新记录 price/rating/phone 全 null（R1）。
+- 资产：`app/aca_camps_brands_v33.json`、`scrapers/v3_export.py`（v33 合并）。
 
 ---
 
