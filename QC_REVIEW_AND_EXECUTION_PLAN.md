@@ -651,7 +651,7 @@
 - 4,506 → **4,601**，三副本同步，**零違規**，新記錄 price/rating/phone 全 null（R1）。
 - 資產：`app/aca_camps_brands_v33.json`、`scrapers/v3_export.py`（v33 合併）。
 
-### v34 — Steve & Kate's 夏季 neighborhood 營地（本次，待 commit）
+### v34 — Steve & Kate's 夏季 neighborhood 營地（commit 6e03a7e）
 - **56 筆**，來源 = 官方 sitemap 140 個 plain 頁面（夏季營地頁）逐頁標題 + 場地地址。
 - **真實場地地址**：27 筆從頁面 `<p class="sub-header-description">` 提取（如 Brooklyn Heights Montessori School 185 Court St、Audubon Elementary 3500 N Hoyne Ave、Seattle Waldorf School），地址級 geocode（剔除學校名前綴後 Nominatim 全部命中）。
 - **排除 7 個遷移/未開放位置**（R2）：boston→Jamaica Plain、glencoe→Lake Forest、greenwood-village→Highlands Ranch、manhattan-kips-bay→West Village、manhattan-lower-manhattan→West Village、miami（未開放）、sf-sunset→Cathedral Hill（頁面顯示「We'll be in X for Summer '25」）。
@@ -659,6 +659,15 @@
 - 夏季新增：CA 12 / NY 10 / IL 8 / WA 5 / CO 4 / VA 3 / TX 3 等 16 州。
 - 4,601 → **4,657**，summer 3,506→3,562，三副本同步，**零違規**。
 - 資產：`app/aca_camps_brands_v34.json`、`scrapers/v3_export.py`（v34 合併）。
+
+### v35 — Galileo Innovation Camps 全量位置（本次，待 commit）
+- **22 筆**新增位置，來源 = 官方 `our-camps-sitemap.xml`（74 個位置頁）逐頁 JSON-LD（LocalBusiness schema）。
+- **真實地址**：18 筆含 JSON-LD 完整街道地址（如 A.N. Pritzker School 2009 W Schiller St、LILA Burbank 1105 W Riverside Dr、Skyview Academy 6161 Business Center Dr）；4 筆 JSON-LD 地址為 N/A（Los Alamitos/Long Beach、Diamond Bar/Walnut、Washington Elementary Burlingame、Sacred Heart Winnetka）→ 城市級坐標、address=null。
+- **2 個位置頁無 JSON-LD**（sacred-heart-winnetka、mercer-island）→ 用 slug 城市補全。
+- 新增：IL 6（Chicago 4 區 + Glenview + Winnetka）、CA 8、CO 5、WA 2、新位置涵蓋芝加哥各區（Wicker Park/West Loop/Lincoln Park/Hyde Park/Lincoln Square）。
+- 現有 53 條 Galileo 記錄保留不動（同 sitemap 來源，city 級無地址）；新記錄補上地址級精度。
+- 4,657 → **4,679**，三副本同步，**零違規**，新記錄 price/rating/phone 全 null（R1）。
+- 資產：`app/aca_camps_brands_v35.json`、`scrapers/v3_export.py`（v35 合併）。
 
 ---
 
