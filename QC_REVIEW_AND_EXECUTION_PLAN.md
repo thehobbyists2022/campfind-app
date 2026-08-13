@@ -643,13 +643,22 @@
 - **Whittier Summer Day Camp**
 - 修复一个 sentinel 坐标违规后 0 违规 → 4,506。
 
-### v33 — Steve & Kate's 冬季/春季/秋季营（本次，待 commit）
-- **95 笔**，来源 = 官方 sitemap（camps-sitemap.xml，442 URL）逐页 `og:title` 位置声明 + 150 个官方位置下拉。
-- **关键方法论**：官方页面无地址字段，逐页抓 117 个 seasonal 页面标题建立 slug→位置精确映射（杜绝 `manhattan-east-village → Manhattan Beach` 类误配）；坐标 50 笔复用现有 S&K 记录 + 45 笔 Nominatim 地理编码，**修正 3 笔错误 geocode**（90 Washington St→Vermont、Midtown West→机场、Capitol Hill）。
-- 季节分布：winter **81→127**（+46）、spring **89→129**（+40）、fall **830→839**（+9）。
-- 跳过 6 笔已存在 fall id（Emeryville/Fremont/Palo Alto/Pasadena/San Mateo/Valley Village）。
-- 4,506 → **4,601**，三副本同步，**零违规**，新记录 price/rating/phone 全 null（R1）。
-- 资产：`app/aca_camps_brands_v33.json`、`scrapers/v3_export.py`（v33 合并）。
+### v33 — Steve & Kate's 冬季/春季/秋季營（commit 27abf34）
+- **95 筆**，來源 = 官方 sitemap（camps-sitemap.xml，442 URL）逐頁 `og:title` 位置聲明 + 150 個官方位置下拉。
+- **關鍵方法論**：官方頁面無地址欄位，逐頁抓 117 個 seasonal 頁面標題建立 slug→位置精確映射（杜絕 `manhattan-east-village → Manhattan Beach` 類誤配）；座標 50 筆複用現有 S&K 記錄 + 45 筆 Nominatim 地理編碼，**修正 3 筆錯誤 geocode**（90 Washington St→Vermont、Midtown West→機場、Capitol Hill）。
+- 季節分佈：winter **81→127**（+46）、spring **89→129**（+40）、fall **830→839**（+9）。
+- 跳過 6 筆已存在 fall id（Emeryville/Fremont/Palo Alto/Pasadena/San Mateo/Valley Village）。
+- 4,506 → **4,601**，三副本同步，**零違規**，新記錄 price/rating/phone 全 null（R1）。
+- 資產：`app/aca_camps_brands_v33.json`、`scrapers/v3_export.py`（v33 合併）。
+
+### v34 — Steve & Kate's 夏季 neighborhood 營地（本次，待 commit）
+- **56 筆**，來源 = 官方 sitemap 140 個 plain 頁面（夏季營地頁）逐頁標題 + 場地地址。
+- **真實場地地址**：27 筆從頁面 `<p class="sub-header-description">` 提取（如 Brooklyn Heights Montessori School 185 Court St、Audubon Elementary 3500 N Hoyne Ave、Seattle Waldorf School），地址級 geocode（剔除學校名前綴後 Nominatim 全部命中）。
+- **排除 7 個遷移/未開放位置**（R2）：boston→Jamaica Plain、glencoe→Lake Forest、greenwood-village→Highlands Ranch、manhattan-kips-bay→West Village、manhattan-lower-manhattan→West Village、miami（未開放）、sf-sunset→Cathedral Hill（頁面顯示「We'll be in X for Summer '25」）。
+- **修復 1 筆官方模板錯誤**：arlington 頁面地址欄誤植芝加哥 Audubon Elementary（1224 km 異常）→ address 置 null、座標用 Arlington VA 城市中心。
+- 夏季新增：CA 12 / NY 10 / IL 8 / WA 5 / CO 4 / VA 3 / TX 3 等 16 州。
+- 4,601 → **4,657**，summer 3,506→3,562，三副本同步，**零違規**。
+- 資產：`app/aca_camps_brands_v34.json`、`scrapers/v3_export.py`（v34 合併）。
 
 ---
 
