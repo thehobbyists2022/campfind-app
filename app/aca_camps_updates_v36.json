@@ -1,0 +1,295 @@
+{
+ "source": "Steve & Kate's summer page venue addresses (official sub-header-description)",
+ "updates": {
+  "steveandkatescamp_alexandria_va": {
+   "address": "Alexandria Country Day School 2400 Russell Rd Alexandria, VA 22301",
+   "sourceUrl": "https://steveandkatescamp.com/alexandria/",
+   "lat": 38.8279422,
+   "lng": -77.066559
+  },
+  "steveandkatescamp_bellevue_wa": {
+   "address": "Forest Ridge School of the Sacred Heart 4800 139th Ave SE Bellevue, WA 98006",
+   "sourceUrl": "https://steveandkatescamp.com/bellevue/",
+   "lat": 47.5588907,
+   "lng": -122.1553276
+  },
+  "steveandkatescamp_belmont_ca": {
+   "address": "Notre Dame Elementary School 1200 Notre Dame Ave Belmont, CA 94002",
+   "sourceUrl": "https://steveandkatescamp.com/belmont/",
+   "lat": 37.516628,
+   "lng": -122.288576
+  },
+  "steveandkatescamp_boulder_co": {
+   "address": "Boulder Country Day School 4820 Nautilus Ct N Boulder, CO 80301",
+   "sourceUrl": "https://steveandkatescamp.com/boulder/",
+   "lat": 40.062368,
+   "lng": -105.2032733
+  },
+  "steveandkatescamp_bronxville_ny": {
+   "address": "Sarah Lawrence College 45 Wrexham Rd. Bronxville, NY 10708",
+   "sourceUrl": "https://steveandkatescamp.com/bronxville/"
+  },
+  "steveandkatescamp_cambridge_ma": {
+   "address": "Cambridge Friends School 5 Cadbury Rd Cambridge, MA 02140",
+   "sourceUrl": "https://steveandkatescamp.com/cambridge/",
+   "lat": 42.3881615,
+   "lng": -71.1305266
+  },
+  "steveandkatescamp_charlotte_nc": {
+   "address": "Homewood Suites 508 N College St Charlotte, NC 28202",
+   "sourceUrl": "https://steveandkatescamp.com/charlotte/",
+   "lat": 35.2293848,
+   "lng": -80.8371692
+  },
+  "steveandkatescamp_chevychase_md": {
+   "address": "Concord Hill School 6050 Wisconsin Ave Chevy Chase, MD 20815",
+   "sourceUrl": "https://steveandkatescamp.com/chevy-chase/",
+   "lat": 38.9700313,
+   "lng": -77.0893704
+  },
+  "steveandkatescamp_columbus_oh": {
+   "address": "The Ohio State University 33 W Lane Ave Columbus, OH 43210",
+   "sourceUrl": "https://steveandkatescamp.com/columbus/",
+   "lat": 40.005472,
+   "lng": -83.0100311
+  },
+  "steveandkatescamp_cortemadera_ca": {
+   "address": "The Cove School 330 Golden Hind Passage Corte Madera, CA 94925",
+   "sourceUrl": "https://steveandkatescamp.com/corte-madera/",
+   "lat": 37.9220877,
+   "lng": -122.498306
+  },
+  "steveandkatescamp_cupertino_ca": {
+   "address": "Tessellations 1170 Yorkshire Dr Cupertino, CA 95014",
+   "sourceUrl": "https://steveandkatescamp.com/cupertino/",
+   "lat": 37.3039119,
+   "lng": -122.0469541
+  },
+  "steveandkatescamp_desmoines_ia": {
+   "address": "Bergman Academy 100 45th St Des Moines, IA 50312",
+   "sourceUrl": "https://steveandkatescamp.com/des-moines/",
+   "lat": 41.5766621,
+   "lng": -93.6812097
+  },
+  "steveandkatescamp_emeryville_ca": {
+   "address": "East Bay German International School 1070 41st St Emeryville, CA 94608",
+   "sourceUrl": "https://steveandkatescamp.com/emeryville/",
+   "lat": 37.832134,
+   "lng": -122.279251
+  },
+  "steveandkatescamp_encinitas_ca": {
+   "address": "The Grauer School 1500 S El Camino Real Encinitas, CA 92024",
+   "sourceUrl": "https://steveandkatescamp.com/encinitas/",
+   "lat": 33.028358,
+   "lng": -117.256476
+  },
+  "steveandkatescamp_evanston_il": {
+   "address": "Beacon Academy 1574 Sherman Ave. Evanston, IL 60201",
+   "sourceUrl": "https://steveandkatescamp.com/evanston/",
+   "lat": 42.0463385,
+   "lng": -87.681967
+  },
+  "steveandkatescamp_everett_wa": {
+   "address": "Archbishop Murphy High School 12911 39th Ave SE Everett, WA 98208",
+   "sourceUrl": "https://steveandkatescamp.com/everett/"
+  },
+  "steveandkatescamp_fremont_ca": {
+   "address": "BASIS Independent Fremont 3300 Kearney St. Fremont, CA 94538",
+   "sourceUrl": "https://steveandkatescamp.com/fremont/",
+   "lat": 37.5485033,
+   "lng": -121.9753635
+  },
+  "steveandkatescamp_hartford_ct": {
+   "address": "Watkinson School 180 Bloomfield Ave Hartford, CT 06105",
+   "sourceUrl": "https://steveandkatescamp.com/hartford/",
+   "lat": 41.7921396,
+   "lng": -72.7138461
+  },
+  "steveandkatescamp_highlandsranch_co": {
+   "address": "Platte River Academy 4085 Lark Sparrow St Highlands Ranch, CO 80126",
+   "sourceUrl": "https://steveandkatescamp.com/highlands-ranch/"
+  },
+  "steveandkatescamp_hoboken_nj": {
+   "address": "Hoboken Charter School 713 Washington St. Hoboken, NJ 07030",
+   "sourceUrl": "https://steveandkatescamp.com/hoboken/",
+   "lat": 40.7449537,
+   "lng": -74.0284919
+  },
+  "steveandkatescamp_houston_tx": {
+   "address": "The Branch School 11055 Timberline Rd. Houston, TX 77043",
+   "sourceUrl": "https://steveandkatescamp.com/houston/",
+   "lat": 29.792731,
+   "lng": -95.5782238
+  },
+  "steveandkatescamp_jerseycity_nj": {
+   "address": "Hamilton Park Montessori (Upper Campus) 175 8th St. Jersey City, NJ 07302",
+   "sourceUrl": "https://steveandkatescamp.com/jersey-city/",
+   "lat": 40.7262892,
+   "lng": -74.0410871
+  },
+  "steveandkatescamp_lakeforest_il": {
+   "address": "Lake Forest Country Day School 145 S Green Bay Rd Lake Forest, IL 60045",
+   "sourceUrl": "https://steveandkatescamp.com/lake-forest/",
+   "lat": 42.2367394,
+   "lng": -87.8364743
+  },
+  "steveandkatescamp_lynnwood_wa": {
+   "address": "Soundview School 6515 196th St SW Lynnwood, WA 98036",
+   "sourceUrl": "https://steveandkatescamp.com/lynnwood/",
+   "lat": 47.8213906,
+   "lng": -122.3224867
+  },
+  "steveandkatescamp_manhattanbeach_ca": {
+   "address": "Pacific Elementary 1200 Pacific Ave. Manhattan Beach, CA 90266",
+   "sourceUrl": "https://steveandkatescamp.com/manhattan-beach/",
+   "lat": 33.8877095,
+   "lng": -118.4031962
+  },
+  "steveandkatescamp_marvista_ca": {
+   "address": "Citizens of the World Charter School Mar Vista 11561 Gateway Blvd Mar Vista, CA 90064",
+   "sourceUrl": "https://steveandkatescamp.com/mar-vista/",
+   "lat": 34.0323751,
+   "lng": -118.4423094
+  },
+  "steveandkatescamp_midland_tx": {
+   "address": "Pre-K Academy at Midland College 3600 N Garfield St. Midland, TX 79705",
+   "sourceUrl": "https://steveandkatescamp.com/midland/",
+   "lat": 32.0306448,
+   "lng": -102.1061419
+  },
+  "steveandkatescamp_minneapolis_mn": {
+   "address": "Our Lady of Peace Catholic School 5435 11th Ave S. Minneapolis, MN 55417",
+   "sourceUrl": "https://steveandkatescamp.com/minneapolis/",
+   "lat": 44.9045901,
+   "lng": -93.2587299
+  },
+  "steveandkatescamp_montclair_nj": {
+   "address": "Lacordaire Academy 155 Lorraine Ave Montclair, NJ 07043",
+   "sourceUrl": "https://steveandkatescamp.com/montclair/",
+   "lat": 40.842084,
+   "lng": -74.2011883
+  },
+  "steveandkatescamp_newhaven_ct": {
+   "address": "St. Thomas's Day School 830 Whitney Ave New Haven, CT 06511",
+   "sourceUrl": "https://steveandkatescamp.com/new-haven/",
+   "lat": 41.3320282,
+   "lng": -72.9137445
+  },
+  "steveandkatescamp_newton_ma": {
+   "address": "Bright Horizons HQ 2 Wells Ave Newton, MA 02459",
+   "sourceUrl": "https://steveandkatescamp.com/newton/",
+   "lat": 42.297172,
+   "lng": -71.204571
+  },
+  "steveandkatescamp_paloalto_ca": {
+   "address": "Gideon Hausner Jewish Day School 450 San Antonio Rd Palo Alto, CA 94306",
+   "sourceUrl": "https://steveandkatescamp.com/palo-alto/",
+   "lat": 37.4124099,
+   "lng": -122.1053439
+  },
+  "steveandkatescamp_paoli_pa": {
+   "address": "Delaware Valley Friends School 19 E Central Ave Paoli, PA 19301",
+   "sourceUrl": "https://steveandkatescamp.com/paoli/",
+   "lat": 40.0438651,
+   "lng": -75.4813524
+  },
+  "steveandkatescamp_paramus_nj": {
+   "address": "Visitation Academy 222 N Farview Ave Paramus, NJ 07652",
+   "sourceUrl": "https://steveandkatescamp.com/paramus/",
+   "lat": 40.935154,
+   "lng": -74.062934
+  },
+  "steveandkatescamp_pasadena_ca": {
+   "address": "Walden School 74 South San Gabriel Blvd Pasadena, CA 91107",
+   "sourceUrl": "https://steveandkatescamp.com/pasadena/",
+   "lat": 34.1447913,
+   "lng": -118.094136
+  },
+  "steveandkatescamp_plano_tx": {
+   "address": "The Urbane Collective 1301 Custer Rd #822 Plano, TX 75075",
+   "sourceUrl": "https://steveandkatescamp.com/plano/",
+   "lat": 33.018433,
+   "lng": -96.7354266
+  },
+  "steveandkatescamp_pleasanton_ca": {
+   "address": "Vintage Hills Elementary 1125 Concord St Pleasanton, CA 94566",
+   "sourceUrl": "https://steveandkatescamp.com/pleasanton/",
+   "lat": 37.6552135,
+   "lng": -121.8558095
+  },
+  "steveandkatescamp_portland_or": {
+   "address": "All Saints School 601 NE Cesar E Chavez Blvd Portland, OR 97232",
+   "sourceUrl": "https://steveandkatescamp.com/portland/",
+   "lat": 45.5274312,
+   "lng": -122.6237602
+  },
+  "steveandkatescamp_potomac_md": {
+   "address": "St. Andrew's Episcopal School 8804 Postoak Rd Potomac, MD 20854",
+   "sourceUrl": "https://steveandkatescamp.com/potomac/",
+   "lat": 39.046215,
+   "lng": -77.1767497
+  },
+  "steveandkatescamp_princeton_nj": {
+   "address": "Princeton Day School 650 Great Rd. Princeton, NJ 08540",
+   "sourceUrl": "https://steveandkatescamp.com/princeton/",
+   "lat": 40.3616874,
+   "lng": -74.6865207
+  },
+  "steveandkatescamp_redmond_wa": {
+   "address": "Willows Preparatory School 12280 Redmond - Woodinville Rd NE Redmond, WA 98052",
+   "sourceUrl": "https://steveandkatescamp.com/redmond/",
+   "lat": 47.7096423,
+   "lng": -122.1298854
+  },
+  "steveandkatescamp_richmond_tx": {
+   "address": "PEAK Academy 10410 W Hidden Lake Ln. Richmond, TX 77406",
+   "sourceUrl": "https://steveandkatescamp.com/richmond-tx/"
+  },
+  "steveandkatescamp_sanmateo_ca": {
+   "address": "St. Gregory School 2701 Haciencda Street San Mateo, CA 94403",
+   "sourceUrl": "https://steveandkatescamp.com/san-mateo/",
+   "lat": 37.540555,
+   "lng": -122.3080582
+  },
+  "steveandkatescamp_santamonica_ca": {
+   "address": "REALM Learning 400 Pico Blvd Santa Monica, CA 90405",
+   "sourceUrl": "https://steveandkatescamp.com/santa-monica/",
+   "lat": 34.009617,
+   "lng": -118.487082
+  },
+  "steveandkatescamp_santarosa_ca": {
+   "address": "Sonoma Country Day School 4400 Day School Pl Santa Rosa, CA 95403",
+   "sourceUrl": "https://steveandkatescamp.com/santa-rosa/"
+  },
+  "steveandkatescamp_tarrytown_ny": {
+   "address": "Hackley School 293 Benedict Ave Tarrytown, NY 10591",
+   "sourceUrl": "https://steveandkatescamp.com/tarrytown/",
+   "lat": 41.068606,
+   "lng": -73.8462748
+  },
+  "steveandkatescamp_torrance_ca": {
+   "address": "St. James Catholic School 4625 Garnet St Torrance, CA 90503",
+   "sourceUrl": "https://steveandkatescamp.com/torrance/",
+   "lat": 33.8438764,
+   "lng": -118.3627268
+  },
+  "steveandkatescamp_valleyvillage_ca": {
+   "address": "The Country School 5243 Laurel Canyon Blvd. Valley Village, CA 91607",
+   "sourceUrl": "https://steveandkatescamp.com/valley-village/",
+   "lat": 34.165664,
+   "lng": -118.3965974
+  },
+  "steveandkatescamp_walnutcreek_ca": {
+   "address": "The Seven Hills School 975 N San Carlos Dr Walnut Creek, CA 94598",
+   "sourceUrl": "https://steveandkatescamp.com/walnut-creek/",
+   "lat": 37.918024,
+   "lng": -122.039917
+  },
+  "steveandkatescamp_weehawken_nj": {
+   "address": "Bright Horizons at Lincoln Harbor 1000 Harbor Blvd. Weehawken, NJ 07086",
+   "sourceUrl": "https://steveandkatescamp.com/weehawken/",
+   "lat": 40.7594017,
+   "lng": -74.022852
+  }
+ }
+}

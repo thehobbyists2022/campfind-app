@@ -660,7 +660,7 @@
 - 4,601 → **4,657**，summer 3,506→3,562，三副本同步，**零違規**。
 - 資產：`app/aca_camps_brands_v34.json`、`scrapers/v3_export.py`（v34 合併）。
 
-### v35 — Galileo Innovation Camps 全量位置（本次，待 commit）
+### v35 — Galileo Innovation Camps 全量位置（commit 62a3d15）
 - **22 筆**新增位置，來源 = 官方 `our-camps-sitemap.xml`（74 個位置頁）逐頁 JSON-LD（LocalBusiness schema）。
 - **真實地址**：18 筆含 JSON-LD 完整街道地址（如 A.N. Pritzker School 2009 W Schiller St、LILA Burbank 1105 W Riverside Dr、Skyview Academy 6161 Business Center Dr）；4 筆 JSON-LD 地址為 N/A（Los Alamitos/Long Beach、Diamond Bar/Walnut、Washington Elementary Burlingame、Sacred Heart Winnetka）→ 城市級坐標、address=null。
 - **2 個位置頁無 JSON-LD**（sacred-heart-winnetka、mercer-island）→ 用 slug 城市補全。
@@ -668,6 +668,14 @@
 - 現有 53 條 Galileo 記錄保留不動（同 sitemap 來源，city 級無地址）；新記錄補上地址級精度。
 - 4,657 → **4,679**，三副本同步，**零違規**，新記錄 price/rating/phone 全 null（R1）。
 - 資產：`app/aca_camps_brands_v35.json`、`scrapers/v3_export.py`（v35 合併）。
+
+### v36 — 既有 S&K 記錄地址升級 + Dallas/Philly 補夏（本次，待 commit）
+- **50 筆既有 city 級 S&K 記錄升級**：從官方 plain 頁面（/locations 頁未披露的場地）抓 `<p class="sub-header-description">` 地址，地址級 geocode 精確化（47 成功）；5 筆 Nominatim 查無（bronxville/everett/highlands-ranch/richmond-tx/santa-rosa 街道不在 OSM）→ 保留原城市坐標、僅補 address（R1 誠實）。
+- **排除 9 個遷移/未開放位置**（R2）：boston→JP、glencoe→Lake Forest、greenwood-village→HR、kirkland→Redmond、oakland→Emeryville、manhattan-lower-manhattan→WV、manhattan-kips-bay→WV、miami、sf-sunset → 現有記錄不動。
+- **+2 筆新 summer**：Dallas（The Winston School 5707 Royal Ln）、Philadelphia（The Philadelphia School 2501 Lombard St）—— 官方有 summer 頁但之前只有 winter/spring/fall。
+- **修復 1 筆地址州錯**（mar-vista 用 LA 地址 geocode 後驗證狀態一致）；0 狀態不匹配。
+- 4,679 → **4,681**，三副本同步，**零違規**。
+- 資產：`app/aca_camps_updates_v36.json`（50 筆 patch）、`app/aca_camps_brands_v36_extra.json`（2 筆）、`scrapers/v3_export.py`（v36 patch 合併邏輯，可重現）。
 
 ---
 
