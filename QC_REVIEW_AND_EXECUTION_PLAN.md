@@ -677,13 +677,23 @@
 - 4,679 → **4,681**，三副本同步，**零違規**。
 - 資產：`app/aca_camps_updates_v36.json`（50 筆 patch）、`app/aca_camps_brands_v36_extra.json`（2 筆）、`scrapers/v3_export.py`（v36 patch 合併邏輯，可重現）。
 
-### v37 — 全庫 id 州後綴修正（本次，待 commit）
+### v37 — 全庫 id 州後綴修正（commit 2bfc320）
 - **重大發現**：239 筆記錄的 **id 州後綴錯誤**（v3 時代批量 bug）—— `idtech_alpharetta_ca` 實際在 GA、`magikidlab_burlington_ca` 實際在 MA、`galileo-camps_bellevue_ca` 實際在 WA 等。
 - **驗證方法**：state 欄位 vs 坐標 bounding box 全數匹配（131 主記錄 0 例外）→ 證明 state 和坐標正確，**只有 id 後綴錯**。
 - **修正 239 筆**（含季節變體連動：`_ca` → `_tx`、`_ca_fall` → `_tx_fall`）：iD Tech 208（104 主 + 104 fall）、Magikid Lab 20、城市公園局 8、Galileo 3。
 - **0 衝突**（模擬驗證）；修正後全庫「id 後綴 = 實際州」100%。
 - 可重現（R6）：`app/aca_camps_idfix_v37.json`（239 筆 renames）+ v3_export 應用邏輯。
 - 總數不變 4,681，三副本同步，**零違規**。
+
+### v38 — 偏少州真實營地擴充（本次，待 commit）
+- **目標**：9 個 <10 筆的州直接補真實官方資料（城市公園局模式，同 v4/v22–v32）。
+- **Honolulu HI +76**（Summer Fun 2026）：DPR 官方 Google My Maps 站點圖 KML（mid=1lZQPIVFgHtBSub6t8HKSoGiuB3SW5xET，76 站含座標）→ 每個公園站點一筆 day camp；年齡 6–13、註冊費 $25 + 活動費 ≤$100、6/8–7/24 平日 8:30–14:00；座標 = 官方地圖公園級精度，城市 = OSM reverse geocode（Honolulu 37 / Waipahu 21 / Kapolei 6 / East Honolulu 5 / Honolulu County 7→Honolulu）。
+- **Washington DC +3**：DPR Summer Camp 2026（4 個 session 6/22–8/14，樂透註冊，電話/email 官方）、Winter Wondercamp（6–12 歲、冬假、$40/人/session）、Fun Day Camp（6–12 歲、DCPS 全校關閉日、居民 $10/日）。
+- **Casper WY +3**：Summer Adventure Camp（6–12 歲、游泳+Aquatic Swim Pass、兄弟姊妹 5% 折扣）、Super Fun Days & School Break Camps（小學齡、crafts/sports/dance/冰上/游泳）、Youth Leadership Camp。
+- **Fargo ND +1**：Adaptive Camp-A-Day（6–18 歲特殊需求，Youth 6–12 / Teen 13–18，6–7 月 Mon–Thu）。
+- **+83**：4,681 → **4,764**；三副本同步，**零違規**。
+- **順手清理**：v3_export 新增「555 電話 → null」通用規則，清掉 6 筆 v1/v2 合成殘留假電話（Oceanside/Victorville/Buffalo/Snapology）。
+- 資產：`scrapers/v38_thin_states.py`（內嵌 76 站點資料 + 官方來源）、`app/aca_camps_brands_v38.json`。
 
 ---
 
