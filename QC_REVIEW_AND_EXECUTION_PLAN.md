@@ -669,13 +669,21 @@
 - 4,657 → **4,679**，三副本同步，**零違規**，新記錄 price/rating/phone 全 null（R1）。
 - 資產：`app/aca_camps_brands_v35.json`、`scrapers/v3_export.py`（v35 合併）。
 
-### v36 — 既有 S&K 記錄地址升級 + Dallas/Philly 補夏（本次，待 commit）
+### v36 — 既有 S&K 記錄地址升級 + Dallas/Philly 補夏（commit 62a3d15）
 - **50 筆既有 city 級 S&K 記錄升級**：從官方 plain 頁面（/locations 頁未披露的場地）抓 `<p class="sub-header-description">` 地址，地址級 geocode 精確化（47 成功）；5 筆 Nominatim 查無（bronxville/everett/highlands-ranch/richmond-tx/santa-rosa 街道不在 OSM）→ 保留原城市坐標、僅補 address（R1 誠實）。
 - **排除 9 個遷移/未開放位置**（R2）：boston→JP、glencoe→Lake Forest、greenwood-village→HR、kirkland→Redmond、oakland→Emeryville、manhattan-lower-manhattan→WV、manhattan-kips-bay→WV、miami、sf-sunset → 現有記錄不動。
 - **+2 筆新 summer**：Dallas（The Winston School 5707 Royal Ln）、Philadelphia（The Philadelphia School 2501 Lombard St）—— 官方有 summer 頁但之前只有 winter/spring/fall。
 - **修復 1 筆地址州錯**（mar-vista 用 LA 地址 geocode 後驗證狀態一致）；0 狀態不匹配。
 - 4,679 → **4,681**，三副本同步，**零違規**。
 - 資產：`app/aca_camps_updates_v36.json`（50 筆 patch）、`app/aca_camps_brands_v36_extra.json`（2 筆）、`scrapers/v3_export.py`（v36 patch 合併邏輯，可重現）。
+
+### v37 — 全庫 id 州後綴修正（本次，待 commit）
+- **重大發現**：239 筆記錄的 **id 州後綴錯誤**（v3 時代批量 bug）—— `idtech_alpharetta_ca` 實際在 GA、`magikidlab_burlington_ca` 實際在 MA、`galileo-camps_bellevue_ca` 實際在 WA 等。
+- **驗證方法**：state 欄位 vs 坐標 bounding box 全數匹配（131 主記錄 0 例外）→ 證明 state 和坐標正確，**只有 id 後綴錯**。
+- **修正 239 筆**（含季節變體連動：`_ca` → `_tx`、`_ca_fall` → `_tx_fall`）：iD Tech 208（104 主 + 104 fall）、Magikid Lab 20、城市公園局 8、Galileo 3。
+- **0 衝突**（模擬驗證）；修正後全庫「id 後綴 = 實際州」100%。
+- 可重現（R6）：`app/aca_camps_idfix_v37.json`（239 筆 renames）+ v3_export 應用邏輯。
+- 總數不變 4,681，三副本同步，**零違規**。
 
 ---
 

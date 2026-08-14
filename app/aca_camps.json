@@ -35244,7 +35244,7 @@
       "unverified": false
     },
     {
-      "id": "galileo-camps_northseattle_ca",
+      "id": "galileo-camps_northseattle_wa",
       "name": "Galileo North Seattle",
       "city": "North Seattle",
       "state": "WA",
@@ -35275,7 +35275,7 @@
       "unverified": false
     },
     {
-      "id": "galileo-camps_mercerisland_ca",
+      "id": "galileo-camps_mercerisland_wa",
       "name": "Galileo Mercer Island",
       "city": "Mercer Island",
       "state": "WA",
@@ -35492,7 +35492,7 @@
       "unverified": false
     },
     {
-      "id": "galileo-camps_littletongreenwoodvillage_ca",
+      "id": "galileo-camps_littletongreenwoodvillage_co",
       "name": "Galileo Littleton Greenwood Village",
       "city": "Littleton Greenwood Village",
       "state": "CO",
@@ -40204,7 +40204,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_castlehill_ca",
+      "id": "magikidlab_castlehill_tx",
       "name": "Magikid Robotics Castlehill",
       "city": "Castlehill",
       "state": "TX",
@@ -40266,7 +40266,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_frisco_ca",
+      "id": "magikidlab_frisco_tx",
       "name": "Magikid Robotics Frisco",
       "city": "Frisco",
       "state": "TX",
@@ -40328,7 +40328,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_burlington_ca",
+      "id": "magikidlab_burlington_ma",
       "name": "Magikid Robotics Burlington",
       "city": "Burlington",
       "state": "MA",
@@ -40359,7 +40359,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_needhamboston_ca",
+      "id": "magikidlab_needhamboston_ma",
       "name": "Magikid Robotics Needham Boston",
       "city": "Needham Boston",
       "state": "MA",
@@ -40390,7 +40390,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_highlandpark_ca",
+      "id": "magikidlab_highlandpark_tx",
       "name": "Magikid Robotics Highlandpark",
       "city": "Highlandpark",
       "state": "TX",
@@ -40421,7 +40421,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_redmond_ca",
+      "id": "magikidlab_redmond_wa",
       "name": "Magikid Robotics Redmond",
       "city": "Redmond",
       "state": "WA",
@@ -40545,7 +40545,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_sugarland_ca",
+      "id": "magikidlab_sugarland_tx",
       "name": "Magikid Robotics Sugarland",
       "city": "Sugarland",
       "state": "TX",
@@ -40576,7 +40576,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_cedarpark_ca",
+      "id": "magikidlab_cedarpark_tx",
       "name": "Magikid Robotics Cedarpark",
       "city": "Cedarpark",
       "state": "TX",
@@ -40638,7 +40638,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_birmingham_ca",
+      "id": "magikidlab_birmingham_al",
       "name": "Magikid Robotics Birmingham",
       "city": "Birmingham",
       "state": "AL",
@@ -40700,7 +40700,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_bellevue_ca",
+      "id": "magikidlab_bellevue_wa",
       "name": "Magikid Robotics Bellevue",
       "city": "Bellevue",
       "state": "WA",
@@ -40762,7 +40762,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_alpharetta_ca",
+      "id": "idtech_alpharetta_ga",
       "name": "iD Tech Alpharetta",
       "city": "Alpharetta",
       "state": "GA",
@@ -40793,7 +40793,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_amherst_ca",
+      "id": "idtech_amherst_ma",
       "name": "iD Tech Amherst",
       "city": "Amherst",
       "state": "MA",
@@ -40824,7 +40824,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_annarbor_ca",
+      "id": "idtech_annarbor_mi",
       "name": "iD Tech Ann Arbor",
       "city": "Ann Arbor",
       "state": "MI",
@@ -40855,7 +40855,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_arlington_ca",
+      "id": "idtech_arlington_va",
       "name": "iD Tech Arlington",
       "city": "Arlington",
       "state": "VA",
@@ -40886,7 +40886,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_atlanta_ca",
+      "id": "idtech_atlanta_ga",
       "name": "iD Tech Atlanta",
       "city": "Atlanta",
       "state": "GA",
@@ -40917,7 +40917,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_baltimore_ca",
+      "id": "idtech_baltimore_md",
       "name": "iD Tech Baltimore",
       "city": "Baltimore",
       "state": "MD",
@@ -40948,7 +40948,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bellevue_ca",
+      "id": "idtech_bellevue_wa",
       "name": "iD Tech Bellevue",
       "city": "Bellevue",
       "state": "WA",
@@ -41010,7 +41010,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bethlehem_ca",
+      "id": "idtech_bethlehem_pa",
       "name": "iD Tech Bethlehem",
       "city": "Bethlehem",
       "state": "PA",
@@ -41041,7 +41041,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_beverly_ca",
+      "id": "idtech_beverly_ma",
       "name": "iD Tech Beverly",
       "city": "Beverly",
       "state": "MA",
@@ -41072,7 +41072,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_birmingham_ca",
+      "id": "idtech_birmingham_al",
       "name": "iD Tech Birmingham",
       "city": "Birmingham",
       "state": "AL",
@@ -41103,7 +41103,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_blacksburg_ca",
+      "id": "idtech_blacksburg_va",
       "name": "iD Tech Blacksburg",
       "city": "Blacksburg",
       "state": "VA",
@@ -41134,7 +41134,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bocaraton_ca",
+      "id": "idtech_bocaraton_fl",
       "name": "iD Tech Boca Raton",
       "city": "Boca Raton",
       "state": "FL",
@@ -41165,7 +41165,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_boise_ca",
+      "id": "idtech_boise_id",
       "name": "iD Tech Boise",
       "city": "Boise",
       "state": "ID",
@@ -41196,7 +41196,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_boston_ca",
+      "id": "idtech_boston_ma",
       "name": "iD Tech Boston",
       "city": "Boston",
       "state": "MA",
@@ -41227,7 +41227,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bothell_ca",
+      "id": "idtech_bothell_wa",
       "name": "iD Tech Bothell",
       "city": "Bothell",
       "state": "WA",
@@ -41258,7 +41258,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_boulder_ca",
+      "id": "idtech_boulder_co",
       "name": "iD Tech Boulder",
       "city": "Boulder",
       "state": "CO",
@@ -41289,7 +41289,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bronxville_ca",
+      "id": "idtech_bronxville_ny",
       "name": "iD Tech Bronxville",
       "city": "Bronxville",
       "state": "NY",
@@ -41320,7 +41320,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_brynmawr_ca",
+      "id": "idtech_brynmawr_pa",
       "name": "iD Tech Bryn Mawr",
       "city": "Bryn Mawr",
       "state": "PA",
@@ -41351,7 +41351,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_burlington_ca",
+      "id": "idtech_burlington_vt",
       "name": "iD Tech Burlington",
       "city": "Burlington",
       "state": "VT",
@@ -41382,7 +41382,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_cambridge_ca",
+      "id": "idtech_cambridge_ma",
       "name": "iD Tech Cambridge",
       "city": "Cambridge",
       "state": "MA",
@@ -41413,7 +41413,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_chapelhill_ca",
+      "id": "idtech_chapelhill_nc",
       "name": "iD Tech Chapel Hill",
       "city": "Chapel Hill",
       "state": "NC",
@@ -41444,7 +41444,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_charlottesville_ca",
+      "id": "idtech_charlottesville_va",
       "name": "iD Tech Charlottesville",
       "city": "Charlottesville",
       "state": "VA",
@@ -41475,7 +41475,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_cincinnati_ca",
+      "id": "idtech_cincinnati_oh",
       "name": "iD Tech Cincinnati",
       "city": "Cincinnati",
       "state": "OH",
@@ -41506,7 +41506,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_cleveland_ca",
+      "id": "idtech_cleveland_oh",
       "name": "iD Tech Cleveland",
       "city": "Cleveland",
       "state": "OH",
@@ -41537,7 +41537,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_collegepark_ca",
+      "id": "idtech_collegepark_md",
       "name": "iD Tech College Park",
       "city": "College Park",
       "state": "MD",
@@ -41568,7 +41568,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_coloradosprings_ca",
+      "id": "idtech_coloradosprings_co",
       "name": "iD Tech Colorado Springs",
       "city": "Colorado Springs",
       "state": "CO",
@@ -41599,7 +41599,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_columbus_ca",
+      "id": "idtech_columbus_oh",
       "name": "iD Tech Columbus",
       "city": "Columbus",
       "state": "OH",
@@ -41630,7 +41630,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_dallas_ca",
+      "id": "idtech_dallas_tx",
       "name": "iD Tech Dallas",
       "city": "Dallas",
       "state": "TX",
@@ -41661,7 +41661,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_davidson_ca",
+      "id": "idtech_davidson_nc",
       "name": "iD Tech Davidson",
       "city": "Davidson",
       "state": "NC",
@@ -41723,7 +41723,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_eastlansing_ca",
+      "id": "idtech_eastlansing_mi",
       "name": "iD Tech East Lansing",
       "city": "East Lansing",
       "state": "MI",
@@ -41754,7 +41754,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_elgin_ca",
+      "id": "idtech_elgin_il",
       "name": "iD Tech Elgin",
       "city": "Elgin",
       "state": "IL",
@@ -41816,7 +41816,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_evanston_ca",
+      "id": "idtech_evanston_il",
       "name": "iD Tech Evanston",
       "city": "Evanston",
       "state": "IL",
@@ -41847,7 +41847,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fairfax_ca",
+      "id": "idtech_fairfax_va",
       "name": "iD Tech Fairfax",
       "city": "Fairfax",
       "state": "VA",
@@ -41878,7 +41878,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fairfield_ca",
+      "id": "idtech_fairfield_ct",
       "name": "iD Tech Fairfield",
       "city": "Fairfield",
       "state": "CT",
@@ -41909,7 +41909,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fortcollins_ca",
+      "id": "idtech_fortcollins_co",
       "name": "iD Tech Fort Collins",
       "city": "Fort Collins",
       "state": "CO",
@@ -41940,7 +41940,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fortlauderdale_ca",
+      "id": "idtech_fortlauderdale_fl",
       "name": "iD Tech Fort Lauderdale",
       "city": "Fort Lauderdale",
       "state": "FL",
@@ -41971,7 +41971,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fortworth_ca",
+      "id": "idtech_fortworth_tx",
       "name": "iD Tech Fort Worth",
       "city": "Fort Worth",
       "state": "TX",
@@ -42002,7 +42002,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_framingham_ca",
+      "id": "idtech_framingham_ma",
       "name": "iD Tech Framingham",
       "city": "Framingham",
       "state": "MA",
@@ -42064,7 +42064,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_gainesville_ca",
+      "id": "idtech_gainesville_fl",
       "name": "iD Tech Gainesville",
       "city": "Gainesville",
       "state": "FL",
@@ -42095,7 +42095,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_gardencity_ca",
+      "id": "idtech_gardencity_ny",
       "name": "iD Tech Garden City",
       "city": "Garden City",
       "state": "NY",
@@ -42126,7 +42126,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_glassboro_ca",
+      "id": "idtech_glassboro_nj",
       "name": "iD Tech Glassboro",
       "city": "Glassboro",
       "state": "NJ",
@@ -42157,7 +42157,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_glenside_ca",
+      "id": "idtech_glenside_pa",
       "name": "iD Tech Glenside",
       "city": "Glenside",
       "state": "PA",
@@ -42188,7 +42188,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_greensboro_ca",
+      "id": "idtech_greensboro_nc",
       "name": "iD Tech Greensboro",
       "city": "Greensboro",
       "state": "NC",
@@ -42219,7 +42219,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_hartford_ca",
+      "id": "idtech_hartford_ct",
       "name": "iD Tech Hartford",
       "city": "Hartford",
       "state": "CT",
@@ -42250,7 +42250,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_houston_ca",
+      "id": "idtech_houston_tx",
       "name": "iD Tech Houston",
       "city": "Houston",
       "state": "TX",
@@ -42281,7 +42281,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_indianapolis_ca",
+      "id": "idtech_indianapolis_in",
       "name": "iD Tech Indianapolis",
       "city": "Indianapolis",
       "state": "IN",
@@ -42343,7 +42343,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_jacksonville_ca",
+      "id": "idtech_jacksonville_fl",
       "name": "iD Tech Jacksonville",
       "city": "Jacksonville",
       "state": "FL",
@@ -42374,7 +42374,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_kansascity_ca",
+      "id": "idtech_kansascity_mo",
       "name": "iD Tech Kansas City",
       "city": "Kansas City",
       "state": "MO",
@@ -42405,7 +42405,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_lakeforest_ca",
+      "id": "idtech_lakeforest_il",
       "name": "iD Tech Lake Forest",
       "city": "Lake Forest",
       "state": "IL",
@@ -42436,7 +42436,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_lisle_ca",
+      "id": "idtech_lisle_il",
       "name": "iD Tech Lisle",
       "city": "Lisle",
       "state": "IL",
@@ -42529,7 +42529,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_louisville_ca",
+      "id": "idtech_louisville_ky",
       "name": "iD Tech Louisville",
       "city": "Louisville",
       "state": "KY",
@@ -42560,7 +42560,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_lowell_ca",
+      "id": "idtech_lowell_ma",
       "name": "iD Tech Lowell",
       "city": "Lowell",
       "state": "MA",
@@ -42591,7 +42591,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_madison_ca",
+      "id": "idtech_madison_nj",
       "name": "iD Tech Madison",
       "city": "Madison",
       "state": "NJ",
@@ -42622,7 +42622,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_mahwah_ca",
+      "id": "idtech_mahwah_nj",
       "name": "iD Tech Mahwah",
       "city": "Mahwah",
       "state": "NJ",
@@ -42684,7 +42684,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_manchester_ca",
+      "id": "idtech_manchester_nh",
       "name": "iD Tech Manchester",
       "city": "Manchester",
       "state": "NH",
@@ -42715,7 +42715,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_memphis_ca",
+      "id": "idtech_memphis_tn",
       "name": "iD Tech Memphis",
       "city": "Memphis",
       "state": "TN",
@@ -42746,7 +42746,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_miami_ca",
+      "id": "idtech_miami_fl",
       "name": "iD Tech Miami",
       "city": "Miami",
       "state": "FL",
@@ -42777,7 +42777,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_middletown_ca",
+      "id": "idtech_middletown_ct",
       "name": "iD Tech Middletown",
       "city": "Middletown",
       "state": "CT",
@@ -42808,7 +42808,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_milton_ca",
+      "id": "idtech_milton_ma",
       "name": "iD Tech Milton",
       "city": "Milton",
       "state": "MA",
@@ -42839,7 +42839,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_milwaukee_ca",
+      "id": "idtech_milwaukee_wi",
       "name": "iD Tech Milwaukee",
       "city": "Milwaukee",
       "state": "WI",
@@ -42901,7 +42901,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_montclair_ca",
+      "id": "idtech_montclair_nj",
       "name": "iD Tech Montclair",
       "city": "Montclair",
       "state": "NJ",
@@ -42963,7 +42963,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_nashville_ca",
+      "id": "idtech_nashville_tn",
       "name": "iD Tech Nashville",
       "city": "Nashville",
       "state": "TN",
@@ -42994,7 +42994,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_needham_ca",
+      "id": "idtech_needham_ma",
       "name": "iD Tech Needham",
       "city": "Needham",
       "state": "MA",
@@ -43025,7 +43025,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newhaven_ca",
+      "id": "idtech_newhaven_ct",
       "name": "iD Tech New Haven",
       "city": "New Haven",
       "state": "CT",
@@ -43056,7 +43056,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newlondon_ca",
+      "id": "idtech_newlondon_ct",
       "name": "iD Tech New London",
       "city": "New London",
       "state": "CT",
@@ -43087,7 +43087,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_neworleans_ca",
+      "id": "idtech_neworleans_la",
       "name": "iD Tech New Orleans",
       "city": "New Orleans",
       "state": "LA",
@@ -43118,7 +43118,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newpaltz_ca",
+      "id": "idtech_newpaltz_ny",
       "name": "iD Tech New Paltz",
       "city": "New Paltz",
       "state": "NY",
@@ -43149,7 +43149,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newrochelle_ca",
+      "id": "idtech_newrochelle_ny",
       "name": "iD Tech New Rochelle",
       "city": "New Rochelle",
       "state": "NY",
@@ -43180,7 +43180,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newton_ca",
+      "id": "idtech_newton_ma",
       "name": "iD Tech Newton",
       "city": "Newton",
       "state": "MA",
@@ -43211,7 +43211,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_northandover_ca",
+      "id": "idtech_northandover_ma",
       "name": "iD Tech North Andover",
       "city": "North Andover",
       "state": "MA",
@@ -43273,7 +43273,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_oldwestbury_ca",
+      "id": "idtech_oldwestbury_ny",
       "name": "iD Tech Old Westbury",
       "city": "Old Westbury",
       "state": "NY",
@@ -43304,7 +43304,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_orlando_ca",
+      "id": "idtech_orlando_fl",
       "name": "iD Tech Orlando",
       "city": "Orlando",
       "state": "FL",
@@ -43397,7 +43397,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_phoenix_ca",
+      "id": "idtech_phoenix_az",
       "name": "iD Tech Phoenix",
       "city": "Phoenix",
       "state": "AZ",
@@ -43428,7 +43428,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_pittsburgh_ca",
+      "id": "idtech_pittsburgh_pa",
       "name": "iD Tech Pittsburgh",
       "city": "Pittsburgh",
       "state": "PA",
@@ -43459,7 +43459,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_pleasantville_ca",
+      "id": "idtech_pleasantville_ny",
       "name": "iD Tech Pleasantville",
       "city": "Pleasantville",
       "state": "NY",
@@ -43521,7 +43521,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_portland_ca",
+      "id": "idtech_portland_or",
       "name": "iD Tech Portland",
       "city": "Portland",
       "state": "OR",
@@ -43552,7 +43552,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_poughkeepsie_ca",
+      "id": "idtech_poughkeepsie_ny",
       "name": "iD Tech Poughkeepsie",
       "city": "Poughkeepsie",
       "state": "NY",
@@ -43583,7 +43583,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_princeton_ca",
+      "id": "idtech_princeton_nj",
       "name": "iD Tech Princeton",
       "city": "Princeton",
       "state": "NJ",
@@ -43614,7 +43614,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_providence_ca",
+      "id": "idtech_providence_ri",
       "name": "iD Tech Providence",
       "city": "Providence",
       "state": "RI",
@@ -43645,7 +43645,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_purchase_ca",
+      "id": "idtech_purchase_ny",
       "name": "iD Tech Purchase",
       "city": "Purchase",
       "state": "NY",
@@ -43676,7 +43676,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_queens_ca",
+      "id": "idtech_queens_ny",
       "name": "iD Tech Queens",
       "city": "Queens",
       "state": "NY",
@@ -43707,7 +43707,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_quincy_ca",
+      "id": "idtech_quincy_ma",
       "name": "iD Tech Quincy",
       "city": "Quincy",
       "state": "MA",
@@ -43738,7 +43738,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_raleigh_ca",
+      "id": "idtech_raleigh_nc",
       "name": "iD Tech Raleigh",
       "city": "Raleigh",
       "state": "NC",
@@ -43769,7 +43769,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_richmond_ca",
+      "id": "idtech_richmond_va",
       "name": "iD Tech Richmond",
       "city": "Richmond",
       "state": "VA",
@@ -43800,7 +43800,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_rochester_ca",
+      "id": "idtech_rochester_mi",
       "name": "iD Tech Rochester",
       "city": "Rochester",
       "state": "MI",
@@ -43862,7 +43862,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_rockville_ca",
+      "id": "idtech_rockville_md",
       "name": "iD Tech Rockville",
       "city": "Rockville",
       "state": "MD",
@@ -43893,7 +43893,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_saintlouis_ca",
+      "id": "idtech_saintlouis_mo",
       "name": "iD Tech Saint Louis",
       "city": "Saint Louis",
       "state": "MO",
@@ -43924,7 +43924,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_saintpaul_ca",
+      "id": "idtech_saintpaul_mn",
       "name": "iD Tech Saint Paul",
       "city": "Saint Paul",
       "state": "MN",
@@ -43986,7 +43986,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_sanantonio_ca",
+      "id": "idtech_sanantonio_tx",
       "name": "iD Tech San Antonio",
       "city": "San Antonio",
       "state": "TX",
@@ -44234,7 +44234,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_sarasota_ca",
+      "id": "idtech_sarasota_fl",
       "name": "iD Tech Sarasota",
       "city": "Sarasota",
       "state": "FL",
@@ -44296,7 +44296,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_southorange_ca",
+      "id": "idtech_southorange_nj",
       "name": "iD Tech South Orange",
       "city": "South Orange",
       "state": "NJ",
@@ -44327,7 +44327,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_stonybrook_ca",
+      "id": "idtech_stonybrook_ny",
       "name": "iD Tech Stony Brook",
       "city": "Stony Brook",
       "state": "NY",
@@ -44358,7 +44358,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_tacoma_ca",
+      "id": "idtech_tacoma_wa",
       "name": "iD Tech Tacoma",
       "city": "Tacoma",
       "state": "WA",
@@ -44389,7 +44389,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_tampa_ca",
+      "id": "idtech_tampa_fl",
       "name": "iD Tech Tampa",
       "city": "Tampa",
       "state": "FL",
@@ -44451,7 +44451,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_towson_ca",
+      "id": "idtech_towson_md",
       "name": "iD Tech Towson",
       "city": "Towson",
       "state": "MD",
@@ -44482,7 +44482,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_tucson_ca",
+      "id": "idtech_tucson_az",
       "name": "iD Tech Tucson",
       "city": "Tucson",
       "state": "AZ",
@@ -44513,7 +44513,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_union_ca",
+      "id": "idtech_union_nj",
       "name": "iD Tech Union",
       "city": "Union",
       "state": "NJ",
@@ -44544,7 +44544,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_villanova_ca",
+      "id": "idtech_villanova_pa",
       "name": "iD Tech Villanova",
       "city": "Villanova",
       "state": "PA",
@@ -44575,7 +44575,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_waltham_ca",
+      "id": "idtech_waltham_ma",
       "name": "iD Tech Waltham",
       "city": "Waltham",
       "state": "MA",
@@ -44606,7 +44606,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_washington_ca",
+      "id": "idtech_washington_dc",
       "name": "iD Tech Washington",
       "city": "Washington",
       "state": "DC",
@@ -44637,7 +44637,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_westchester_ca",
+      "id": "idtech_westchester_pa",
       "name": "iD Tech West Chester",
       "city": "West Chester",
       "state": "PA",
@@ -44668,7 +44668,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_westlafayette_ca",
+      "id": "idtech_westlafayette_in",
       "name": "iD Tech West Lafayette",
       "city": "West Lafayette",
       "state": "IN",
@@ -44699,7 +44699,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_westlongbranch_ca",
+      "id": "idtech_westlongbranch_nj",
       "name": "iD Tech West Long Branch",
       "city": "West Long Branch",
       "state": "NJ",
@@ -44730,7 +44730,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_williamsburg_ca",
+      "id": "idtech_williamsburg_va",
       "name": "iD Tech Williamsburg",
       "city": "Williamsburg",
       "state": "VA",
@@ -54588,7 +54588,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_castlehill_ca_fall",
+      "id": "magikidlab_castlehill_tx_fall",
       "name": "Magikid Robotics Castlehill (Fall)",
       "city": "Castlehill",
       "state": "TX",
@@ -54650,7 +54650,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_frisco_ca_fall",
+      "id": "magikidlab_frisco_tx_fall",
       "name": "Magikid Robotics Frisco (Fall)",
       "city": "Frisco",
       "state": "TX",
@@ -54712,7 +54712,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_burlington_ca_fall",
+      "id": "magikidlab_burlington_ma_fall",
       "name": "Magikid Robotics Burlington (Fall)",
       "city": "Burlington",
       "state": "MA",
@@ -54743,7 +54743,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_needhamboston_ca_fall",
+      "id": "magikidlab_needhamboston_ma_fall",
       "name": "Magikid Robotics Needham Boston (Fall)",
       "city": "Needham Boston",
       "state": "MA",
@@ -54774,7 +54774,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_highlandpark_ca_fall",
+      "id": "magikidlab_highlandpark_tx_fall",
       "name": "Magikid Robotics Highlandpark (Fall)",
       "city": "Highlandpark",
       "state": "TX",
@@ -54805,7 +54805,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_redmond_ca_fall",
+      "id": "magikidlab_redmond_wa_fall",
       "name": "Magikid Robotics Redmond (Fall)",
       "city": "Redmond",
       "state": "WA",
@@ -54929,7 +54929,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_sugarland_ca_fall",
+      "id": "magikidlab_sugarland_tx_fall",
       "name": "Magikid Robotics Sugarland (Fall)",
       "city": "Sugarland",
       "state": "TX",
@@ -54960,7 +54960,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_cedarpark_ca_fall",
+      "id": "magikidlab_cedarpark_tx_fall",
       "name": "Magikid Robotics Cedarpark (Fall)",
       "city": "Cedarpark",
       "state": "TX",
@@ -55022,7 +55022,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_birmingham_ca_fall",
+      "id": "magikidlab_birmingham_al_fall",
       "name": "Magikid Robotics Birmingham (Fall)",
       "city": "Birmingham",
       "state": "AL",
@@ -55084,7 +55084,7 @@
       "unverified": false
     },
     {
-      "id": "magikidlab_bellevue_ca_fall",
+      "id": "magikidlab_bellevue_wa_fall",
       "name": "Magikid Robotics Bellevue (Fall)",
       "city": "Bellevue",
       "state": "WA",
@@ -55146,7 +55146,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_alpharetta_ca_fall",
+      "id": "idtech_alpharetta_ga_fall",
       "name": "iD Tech Alpharetta (Fall)",
       "city": "Alpharetta",
       "state": "GA",
@@ -55177,7 +55177,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_amherst_ca_fall",
+      "id": "idtech_amherst_ma_fall",
       "name": "iD Tech Amherst (Fall)",
       "city": "Amherst",
       "state": "MA",
@@ -55208,7 +55208,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_annarbor_ca_fall",
+      "id": "idtech_annarbor_mi_fall",
       "name": "iD Tech Ann Arbor (Fall)",
       "city": "Ann Arbor",
       "state": "MI",
@@ -55239,7 +55239,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_arlington_ca_fall",
+      "id": "idtech_arlington_va_fall",
       "name": "iD Tech Arlington (Fall)",
       "city": "Arlington",
       "state": "VA",
@@ -55270,7 +55270,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_atlanta_ca_fall",
+      "id": "idtech_atlanta_ga_fall",
       "name": "iD Tech Atlanta (Fall)",
       "city": "Atlanta",
       "state": "GA",
@@ -55301,7 +55301,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_baltimore_ca_fall",
+      "id": "idtech_baltimore_md_fall",
       "name": "iD Tech Baltimore (Fall)",
       "city": "Baltimore",
       "state": "MD",
@@ -55332,7 +55332,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bellevue_ca_fall",
+      "id": "idtech_bellevue_wa_fall",
       "name": "iD Tech Bellevue (Fall)",
       "city": "Bellevue",
       "state": "WA",
@@ -55394,7 +55394,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bethlehem_ca_fall",
+      "id": "idtech_bethlehem_pa_fall",
       "name": "iD Tech Bethlehem (Fall)",
       "city": "Bethlehem",
       "state": "PA",
@@ -55425,7 +55425,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_beverly_ca_fall",
+      "id": "idtech_beverly_ma_fall",
       "name": "iD Tech Beverly (Fall)",
       "city": "Beverly",
       "state": "MA",
@@ -55456,7 +55456,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_birmingham_ca_fall",
+      "id": "idtech_birmingham_al_fall",
       "name": "iD Tech Birmingham (Fall)",
       "city": "Birmingham",
       "state": "AL",
@@ -55487,7 +55487,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_blacksburg_ca_fall",
+      "id": "idtech_blacksburg_va_fall",
       "name": "iD Tech Blacksburg (Fall)",
       "city": "Blacksburg",
       "state": "VA",
@@ -55518,7 +55518,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bocaraton_ca_fall",
+      "id": "idtech_bocaraton_fl_fall",
       "name": "iD Tech Boca Raton (Fall)",
       "city": "Boca Raton",
       "state": "FL",
@@ -55549,7 +55549,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_boise_ca_fall",
+      "id": "idtech_boise_id_fall",
       "name": "iD Tech Boise (Fall)",
       "city": "Boise",
       "state": "ID",
@@ -55580,7 +55580,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_boston_ca_fall",
+      "id": "idtech_boston_ma_fall",
       "name": "iD Tech Boston (Fall)",
       "city": "Boston",
       "state": "MA",
@@ -55611,7 +55611,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bothell_ca_fall",
+      "id": "idtech_bothell_wa_fall",
       "name": "iD Tech Bothell (Fall)",
       "city": "Bothell",
       "state": "WA",
@@ -55642,7 +55642,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_boulder_ca_fall",
+      "id": "idtech_boulder_co_fall",
       "name": "iD Tech Boulder (Fall)",
       "city": "Boulder",
       "state": "CO",
@@ -55673,7 +55673,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_bronxville_ca_fall",
+      "id": "idtech_bronxville_ny_fall",
       "name": "iD Tech Bronxville (Fall)",
       "city": "Bronxville",
       "state": "NY",
@@ -55704,7 +55704,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_brynmawr_ca_fall",
+      "id": "idtech_brynmawr_pa_fall",
       "name": "iD Tech Bryn Mawr (Fall)",
       "city": "Bryn Mawr",
       "state": "PA",
@@ -55735,7 +55735,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_burlington_ca_fall",
+      "id": "idtech_burlington_vt_fall",
       "name": "iD Tech Burlington (Fall)",
       "city": "Burlington",
       "state": "VT",
@@ -55766,7 +55766,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_cambridge_ca_fall",
+      "id": "idtech_cambridge_ma_fall",
       "name": "iD Tech Cambridge (Fall)",
       "city": "Cambridge",
       "state": "MA",
@@ -55797,7 +55797,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_chapelhill_ca_fall",
+      "id": "idtech_chapelhill_nc_fall",
       "name": "iD Tech Chapel Hill (Fall)",
       "city": "Chapel Hill",
       "state": "NC",
@@ -55828,7 +55828,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_charlottesville_ca_fall",
+      "id": "idtech_charlottesville_va_fall",
       "name": "iD Tech Charlottesville (Fall)",
       "city": "Charlottesville",
       "state": "VA",
@@ -55859,7 +55859,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_cincinnati_ca_fall",
+      "id": "idtech_cincinnati_oh_fall",
       "name": "iD Tech Cincinnati (Fall)",
       "city": "Cincinnati",
       "state": "OH",
@@ -55890,7 +55890,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_cleveland_ca_fall",
+      "id": "idtech_cleveland_oh_fall",
       "name": "iD Tech Cleveland (Fall)",
       "city": "Cleveland",
       "state": "OH",
@@ -55921,7 +55921,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_collegepark_ca_fall",
+      "id": "idtech_collegepark_md_fall",
       "name": "iD Tech College Park (Fall)",
       "city": "College Park",
       "state": "MD",
@@ -55952,7 +55952,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_coloradosprings_ca_fall",
+      "id": "idtech_coloradosprings_co_fall",
       "name": "iD Tech Colorado Springs (Fall)",
       "city": "Colorado Springs",
       "state": "CO",
@@ -55983,7 +55983,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_columbus_ca_fall",
+      "id": "idtech_columbus_oh_fall",
       "name": "iD Tech Columbus (Fall)",
       "city": "Columbus",
       "state": "OH",
@@ -56014,7 +56014,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_dallas_ca_fall",
+      "id": "idtech_dallas_tx_fall",
       "name": "iD Tech Dallas (Fall)",
       "city": "Dallas",
       "state": "TX",
@@ -56045,7 +56045,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_davidson_ca_fall",
+      "id": "idtech_davidson_nc_fall",
       "name": "iD Tech Davidson (Fall)",
       "city": "Davidson",
       "state": "NC",
@@ -56107,7 +56107,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_eastlansing_ca_fall",
+      "id": "idtech_eastlansing_mi_fall",
       "name": "iD Tech East Lansing (Fall)",
       "city": "East Lansing",
       "state": "MI",
@@ -56138,7 +56138,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_elgin_ca_fall",
+      "id": "idtech_elgin_il_fall",
       "name": "iD Tech Elgin (Fall)",
       "city": "Elgin",
       "state": "IL",
@@ -56200,7 +56200,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_evanston_ca_fall",
+      "id": "idtech_evanston_il_fall",
       "name": "iD Tech Evanston (Fall)",
       "city": "Evanston",
       "state": "IL",
@@ -56231,7 +56231,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fairfax_ca_fall",
+      "id": "idtech_fairfax_va_fall",
       "name": "iD Tech Fairfax (Fall)",
       "city": "Fairfax",
       "state": "VA",
@@ -56262,7 +56262,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fairfield_ca_fall",
+      "id": "idtech_fairfield_ct_fall",
       "name": "iD Tech Fairfield (Fall)",
       "city": "Fairfield",
       "state": "CT",
@@ -56293,7 +56293,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fortcollins_ca_fall",
+      "id": "idtech_fortcollins_co_fall",
       "name": "iD Tech Fort Collins (Fall)",
       "city": "Fort Collins",
       "state": "CO",
@@ -56324,7 +56324,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fortlauderdale_ca_fall",
+      "id": "idtech_fortlauderdale_fl_fall",
       "name": "iD Tech Fort Lauderdale (Fall)",
       "city": "Fort Lauderdale",
       "state": "FL",
@@ -56355,7 +56355,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_fortworth_ca_fall",
+      "id": "idtech_fortworth_tx_fall",
       "name": "iD Tech Fort Worth (Fall)",
       "city": "Fort Worth",
       "state": "TX",
@@ -56386,7 +56386,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_framingham_ca_fall",
+      "id": "idtech_framingham_ma_fall",
       "name": "iD Tech Framingham (Fall)",
       "city": "Framingham",
       "state": "MA",
@@ -56448,7 +56448,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_gainesville_ca_fall",
+      "id": "idtech_gainesville_fl_fall",
       "name": "iD Tech Gainesville (Fall)",
       "city": "Gainesville",
       "state": "FL",
@@ -56479,7 +56479,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_gardencity_ca_fall",
+      "id": "idtech_gardencity_ny_fall",
       "name": "iD Tech Garden City (Fall)",
       "city": "Garden City",
       "state": "NY",
@@ -56510,7 +56510,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_glassboro_ca_fall",
+      "id": "idtech_glassboro_nj_fall",
       "name": "iD Tech Glassboro (Fall)",
       "city": "Glassboro",
       "state": "NJ",
@@ -56541,7 +56541,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_glenside_ca_fall",
+      "id": "idtech_glenside_pa_fall",
       "name": "iD Tech Glenside (Fall)",
       "city": "Glenside",
       "state": "PA",
@@ -56572,7 +56572,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_greensboro_ca_fall",
+      "id": "idtech_greensboro_nc_fall",
       "name": "iD Tech Greensboro (Fall)",
       "city": "Greensboro",
       "state": "NC",
@@ -56603,7 +56603,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_hartford_ca_fall",
+      "id": "idtech_hartford_ct_fall",
       "name": "iD Tech Hartford (Fall)",
       "city": "Hartford",
       "state": "CT",
@@ -56634,7 +56634,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_houston_ca_fall",
+      "id": "idtech_houston_tx_fall",
       "name": "iD Tech Houston (Fall)",
       "city": "Houston",
       "state": "TX",
@@ -56665,7 +56665,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_indianapolis_ca_fall",
+      "id": "idtech_indianapolis_in_fall",
       "name": "iD Tech Indianapolis (Fall)",
       "city": "Indianapolis",
       "state": "IN",
@@ -56727,7 +56727,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_jacksonville_ca_fall",
+      "id": "idtech_jacksonville_fl_fall",
       "name": "iD Tech Jacksonville (Fall)",
       "city": "Jacksonville",
       "state": "FL",
@@ -56758,7 +56758,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_kansascity_ca_fall",
+      "id": "idtech_kansascity_mo_fall",
       "name": "iD Tech Kansas City (Fall)",
       "city": "Kansas City",
       "state": "MO",
@@ -56789,7 +56789,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_lakeforest_ca_fall",
+      "id": "idtech_lakeforest_il_fall",
       "name": "iD Tech Lake Forest (Fall)",
       "city": "Lake Forest",
       "state": "IL",
@@ -56820,7 +56820,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_lisle_ca_fall",
+      "id": "idtech_lisle_il_fall",
       "name": "iD Tech Lisle (Fall)",
       "city": "Lisle",
       "state": "IL",
@@ -56913,7 +56913,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_louisville_ca_fall",
+      "id": "idtech_louisville_ky_fall",
       "name": "iD Tech Louisville (Fall)",
       "city": "Louisville",
       "state": "KY",
@@ -56944,7 +56944,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_lowell_ca_fall",
+      "id": "idtech_lowell_ma_fall",
       "name": "iD Tech Lowell (Fall)",
       "city": "Lowell",
       "state": "MA",
@@ -56975,7 +56975,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_madison_ca_fall",
+      "id": "idtech_madison_nj_fall",
       "name": "iD Tech Madison (Fall)",
       "city": "Madison",
       "state": "NJ",
@@ -57006,7 +57006,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_mahwah_ca_fall",
+      "id": "idtech_mahwah_nj_fall",
       "name": "iD Tech Mahwah (Fall)",
       "city": "Mahwah",
       "state": "NJ",
@@ -57068,7 +57068,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_manchester_ca_fall",
+      "id": "idtech_manchester_nh_fall",
       "name": "iD Tech Manchester (Fall)",
       "city": "Manchester",
       "state": "NH",
@@ -57099,7 +57099,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_memphis_ca_fall",
+      "id": "idtech_memphis_tn_fall",
       "name": "iD Tech Memphis (Fall)",
       "city": "Memphis",
       "state": "TN",
@@ -57130,7 +57130,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_miami_ca_fall",
+      "id": "idtech_miami_fl_fall",
       "name": "iD Tech Miami (Fall)",
       "city": "Miami",
       "state": "FL",
@@ -57161,7 +57161,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_middletown_ca_fall",
+      "id": "idtech_middletown_ct_fall",
       "name": "iD Tech Middletown (Fall)",
       "city": "Middletown",
       "state": "CT",
@@ -57192,7 +57192,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_milton_ca_fall",
+      "id": "idtech_milton_ma_fall",
       "name": "iD Tech Milton (Fall)",
       "city": "Milton",
       "state": "MA",
@@ -57223,7 +57223,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_milwaukee_ca_fall",
+      "id": "idtech_milwaukee_wi_fall",
       "name": "iD Tech Milwaukee (Fall)",
       "city": "Milwaukee",
       "state": "WI",
@@ -57285,7 +57285,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_montclair_ca_fall",
+      "id": "idtech_montclair_nj_fall",
       "name": "iD Tech Montclair (Fall)",
       "city": "Montclair",
       "state": "NJ",
@@ -57347,7 +57347,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_nashville_ca_fall",
+      "id": "idtech_nashville_tn_fall",
       "name": "iD Tech Nashville (Fall)",
       "city": "Nashville",
       "state": "TN",
@@ -57378,7 +57378,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_needham_ca_fall",
+      "id": "idtech_needham_ma_fall",
       "name": "iD Tech Needham (Fall)",
       "city": "Needham",
       "state": "MA",
@@ -57409,7 +57409,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newhaven_ca_fall",
+      "id": "idtech_newhaven_ct_fall",
       "name": "iD Tech New Haven (Fall)",
       "city": "New Haven",
       "state": "CT",
@@ -57440,7 +57440,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newlondon_ca_fall",
+      "id": "idtech_newlondon_ct_fall",
       "name": "iD Tech New London (Fall)",
       "city": "New London",
       "state": "CT",
@@ -57471,7 +57471,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_neworleans_ca_fall",
+      "id": "idtech_neworleans_la_fall",
       "name": "iD Tech New Orleans (Fall)",
       "city": "New Orleans",
       "state": "LA",
@@ -57502,7 +57502,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newpaltz_ca_fall",
+      "id": "idtech_newpaltz_ny_fall",
       "name": "iD Tech New Paltz (Fall)",
       "city": "New Paltz",
       "state": "NY",
@@ -57533,7 +57533,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newrochelle_ca_fall",
+      "id": "idtech_newrochelle_ny_fall",
       "name": "iD Tech New Rochelle (Fall)",
       "city": "New Rochelle",
       "state": "NY",
@@ -57564,7 +57564,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_newton_ca_fall",
+      "id": "idtech_newton_ma_fall",
       "name": "iD Tech Newton (Fall)",
       "city": "Newton",
       "state": "MA",
@@ -57595,7 +57595,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_northandover_ca_fall",
+      "id": "idtech_northandover_ma_fall",
       "name": "iD Tech North Andover (Fall)",
       "city": "North Andover",
       "state": "MA",
@@ -57657,7 +57657,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_oldwestbury_ca_fall",
+      "id": "idtech_oldwestbury_ny_fall",
       "name": "iD Tech Old Westbury (Fall)",
       "city": "Old Westbury",
       "state": "NY",
@@ -57688,7 +57688,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_orlando_ca_fall",
+      "id": "idtech_orlando_fl_fall",
       "name": "iD Tech Orlando (Fall)",
       "city": "Orlando",
       "state": "FL",
@@ -57781,7 +57781,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_phoenix_ca_fall",
+      "id": "idtech_phoenix_az_fall",
       "name": "iD Tech Phoenix (Fall)",
       "city": "Phoenix",
       "state": "AZ",
@@ -57812,7 +57812,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_pittsburgh_ca_fall",
+      "id": "idtech_pittsburgh_pa_fall",
       "name": "iD Tech Pittsburgh (Fall)",
       "city": "Pittsburgh",
       "state": "PA",
@@ -57843,7 +57843,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_pleasantville_ca_fall",
+      "id": "idtech_pleasantville_ny_fall",
       "name": "iD Tech Pleasantville (Fall)",
       "city": "Pleasantville",
       "state": "NY",
@@ -57905,7 +57905,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_portland_ca_fall",
+      "id": "idtech_portland_or_fall",
       "name": "iD Tech Portland (Fall)",
       "city": "Portland",
       "state": "OR",
@@ -57936,7 +57936,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_poughkeepsie_ca_fall",
+      "id": "idtech_poughkeepsie_ny_fall",
       "name": "iD Tech Poughkeepsie (Fall)",
       "city": "Poughkeepsie",
       "state": "NY",
@@ -57967,7 +57967,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_princeton_ca_fall",
+      "id": "idtech_princeton_nj_fall",
       "name": "iD Tech Princeton (Fall)",
       "city": "Princeton",
       "state": "NJ",
@@ -57998,7 +57998,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_providence_ca_fall",
+      "id": "idtech_providence_ri_fall",
       "name": "iD Tech Providence (Fall)",
       "city": "Providence",
       "state": "RI",
@@ -58029,7 +58029,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_purchase_ca_fall",
+      "id": "idtech_purchase_ny_fall",
       "name": "iD Tech Purchase (Fall)",
       "city": "Purchase",
       "state": "NY",
@@ -58060,7 +58060,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_queens_ca_fall",
+      "id": "idtech_queens_ny_fall",
       "name": "iD Tech Queens (Fall)",
       "city": "Queens",
       "state": "NY",
@@ -58091,7 +58091,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_quincy_ca_fall",
+      "id": "idtech_quincy_ma_fall",
       "name": "iD Tech Quincy (Fall)",
       "city": "Quincy",
       "state": "MA",
@@ -58122,7 +58122,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_raleigh_ca_fall",
+      "id": "idtech_raleigh_nc_fall",
       "name": "iD Tech Raleigh (Fall)",
       "city": "Raleigh",
       "state": "NC",
@@ -58153,7 +58153,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_richmond_ca_fall",
+      "id": "idtech_richmond_va_fall",
       "name": "iD Tech Richmond (Fall)",
       "city": "Richmond",
       "state": "VA",
@@ -58184,7 +58184,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_rochester_ca_fall",
+      "id": "idtech_rochester_mi_fall",
       "name": "iD Tech Rochester (Fall)",
       "city": "Rochester",
       "state": "MI",
@@ -58246,7 +58246,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_rockville_ca_fall",
+      "id": "idtech_rockville_md_fall",
       "name": "iD Tech Rockville (Fall)",
       "city": "Rockville",
       "state": "MD",
@@ -58277,7 +58277,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_saintlouis_ca_fall",
+      "id": "idtech_saintlouis_mo_fall",
       "name": "iD Tech Saint Louis (Fall)",
       "city": "Saint Louis",
       "state": "MO",
@@ -58308,7 +58308,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_saintpaul_ca_fall",
+      "id": "idtech_saintpaul_mn_fall",
       "name": "iD Tech Saint Paul (Fall)",
       "city": "Saint Paul",
       "state": "MN",
@@ -58370,7 +58370,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_sanantonio_ca_fall",
+      "id": "idtech_sanantonio_tx_fall",
       "name": "iD Tech San Antonio (Fall)",
       "city": "San Antonio",
       "state": "TX",
@@ -58618,7 +58618,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_sarasota_ca_fall",
+      "id": "idtech_sarasota_fl_fall",
       "name": "iD Tech Sarasota (Fall)",
       "city": "Sarasota",
       "state": "FL",
@@ -58680,7 +58680,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_southorange_ca_fall",
+      "id": "idtech_southorange_nj_fall",
       "name": "iD Tech South Orange (Fall)",
       "city": "South Orange",
       "state": "NJ",
@@ -58711,7 +58711,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_stonybrook_ca_fall",
+      "id": "idtech_stonybrook_ny_fall",
       "name": "iD Tech Stony Brook (Fall)",
       "city": "Stony Brook",
       "state": "NY",
@@ -58742,7 +58742,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_tacoma_ca_fall",
+      "id": "idtech_tacoma_wa_fall",
       "name": "iD Tech Tacoma (Fall)",
       "city": "Tacoma",
       "state": "WA",
@@ -58773,7 +58773,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_tampa_ca_fall",
+      "id": "idtech_tampa_fl_fall",
       "name": "iD Tech Tampa (Fall)",
       "city": "Tampa",
       "state": "FL",
@@ -58835,7 +58835,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_towson_ca_fall",
+      "id": "idtech_towson_md_fall",
       "name": "iD Tech Towson (Fall)",
       "city": "Towson",
       "state": "MD",
@@ -58866,7 +58866,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_tucson_ca_fall",
+      "id": "idtech_tucson_az_fall",
       "name": "iD Tech Tucson (Fall)",
       "city": "Tucson",
       "state": "AZ",
@@ -58897,7 +58897,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_union_ca_fall",
+      "id": "idtech_union_nj_fall",
       "name": "iD Tech Union (Fall)",
       "city": "Union",
       "state": "NJ",
@@ -58928,7 +58928,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_villanova_ca_fall",
+      "id": "idtech_villanova_pa_fall",
       "name": "iD Tech Villanova (Fall)",
       "city": "Villanova",
       "state": "PA",
@@ -58959,7 +58959,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_waltham_ca_fall",
+      "id": "idtech_waltham_ma_fall",
       "name": "iD Tech Waltham (Fall)",
       "city": "Waltham",
       "state": "MA",
@@ -58990,7 +58990,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_washington_ca_fall",
+      "id": "idtech_washington_dc_fall",
       "name": "iD Tech Washington (Fall)",
       "city": "Washington",
       "state": "DC",
@@ -59021,7 +59021,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_westchester_ca_fall",
+      "id": "idtech_westchester_pa_fall",
       "name": "iD Tech West Chester (Fall)",
       "city": "West Chester",
       "state": "PA",
@@ -59052,7 +59052,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_westlafayette_ca_fall",
+      "id": "idtech_westlafayette_in_fall",
       "name": "iD Tech West Lafayette (Fall)",
       "city": "West Lafayette",
       "state": "IN",
@@ -59083,7 +59083,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_westlongbranch_ca_fall",
+      "id": "idtech_westlongbranch_nj_fall",
       "name": "iD Tech West Long Branch (Fall)",
       "city": "West Long Branch",
       "state": "NJ",
@@ -59114,7 +59114,7 @@
       "unverified": false
     },
     {
-      "id": "idtech_williamsburg_ca_fall",
+      "id": "idtech_williamsburg_va_fall",
       "name": "iD Tech Williamsburg (Fall)",
       "city": "Williamsburg",
       "state": "VA",
@@ -135513,7 +135513,7 @@
       "unverified": false
     },
     {
-      "id": "allen_ssa_sports_camp_-_dodgeball_&_agility_ga",
+      "id": "allen_ssa_sports_camp_-_dodgeball_&_agility_tx",
       "name": "SSA Sports Camp - Dodgeball & Agility Games",
       "city": "Allen",
       "state": "TX",
@@ -136140,7 +136140,7 @@
       "unverified": false
     },
     {
-      "id": "allen_skyhawks_sports:_mini-hawk_single_day_ca",
+      "id": "allen_skyhawks_sports:_mini-hawk_single_day_tx",
       "name": "Skyhawks Sports: Mini-Hawk Single Day Camp",
       "city": "Allen",
       "state": "TX",
@@ -136800,7 +136800,7 @@
       "unverified": false
     },
     {
-      "id": "allen_fastforward_kids_camp_-_learning_stem_ma",
+      "id": "allen_fastforward_kids_camp_-_learning_stem_tx",
       "name": "FastForward Kids Camp - Learning STEM Math with Hot Wheels!",
       "city": "Allen",
       "state": "TX",
@@ -140968,7 +140968,7 @@
       "unverified": false
     },
     {
-      "id": "austin_gustavo_gus_l_garcia_recreation_center_teen_summer_ca",
+      "id": "austin_gustavo_gus_l_garcia_recreation_center_teen_summer_tx",
       "name": "Gustavo Gus L. Garcia Recreation Center Teen Summer Camp",
       "city": "Austin",
       "state": "TX",
@@ -142915,7 +142915,7 @@
       "unverified": false
     },
     {
-      "id": "portland_charles_jordan_community_center_ppandr_preschool_ca",
+      "id": "portland_charles_jordan_community_center_ppandr_preschool_or",
       "name": "Charles Jordan Community Center PP&R Preschool Camp",
       "city": "Portland",
       "state": "OR",
@@ -142981,7 +142981,7 @@
       "unverified": false
     },
     {
-      "id": "portland_charles_jordan_community_center_ppandr_inclusion_ca",
+      "id": "portland_charles_jordan_community_center_ppandr_inclusion_or",
       "name": "Charles Jordan Community Center PP&R Inclusion Camp",
       "city": "Portland",
       "state": "OR",
@@ -143509,7 +143509,7 @@
       "unverified": false
     },
     {
-      "id": "portland_peninsula_park_community_center_ppandr_preschool_ca",
+      "id": "portland_peninsula_park_community_center_ppandr_preschool_or",
       "name": "Peninsula Park Community Center PP&R Preschool Camp",
       "city": "Portland",
       "state": "OR",
@@ -143575,7 +143575,7 @@
       "unverified": false
     },
     {
-      "id": "portland_peninsula_park_community_center_ppandr_inclusion_ca",
+      "id": "portland_peninsula_park_community_center_ppandr_inclusion_or",
       "name": "Peninsula Park Community Center PP&R Inclusion Camp",
       "city": "Portland",
       "state": "OR",

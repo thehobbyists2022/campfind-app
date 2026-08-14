@@ -202,6 +202,12 @@ def main():
     v36_extra_path = os.path.join(ROOT, "app", "aca_camps_brands_v36_extra.json")
     if os.path.exists(v36_extra_path):
         v36_extra = json.load(open(v36_extra_path, encoding="utf-8"))["camps"]
+    # v37 id state-suffix fix: rename ids whose state suffix doesn't match
+    # actual state (verified by coords). Applied AFTER merge + patch.
+    v37_renames = {}
+    v37_renames_path = os.path.join(ROOT, "app", "aca_camps_idfix_v37.json")
+    if os.path.exists(v37_renames_path):
+        v37_renames = json.load(open(v37_renames_path, encoding="utf-8"))["renames"]
 
     # Drop legacy synthetic brand entries from v2 — replaced by the real
     # per-location brand camps in v5/v6 (R1: their fabricated price/age/shuttle
@@ -479,6 +485,14 @@ def main():
                 c[k] = v
             patched += 1
 
+    # v37 id state-suffix fix: apply renames (id is used as stable key, so
+    # rename BEFORE dedup bookkeeping downstream; collisions verified = 0).
+    renamed = 0
+    for c in merged:
+        if c["id"] in v37_renames:
+            c["id"] = v37_renames[c["id"]]
+            renamed += 1
+
     # ensure every record has needed fields
     for c in merged:
         c.setdefault("unverified", True)
@@ -709,7 +723,7 @@ def main():
     fn3 = os.path.join(ROOT, "mobile", "assets", "aca_camps.json")
     json.dump(out, open(fn3, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)} + v20 {len(v20)} + v21 {len(v21)} + v22 {len(v22)} + v23 {len(v23)} + v24 {len(v24)} + v25 {len(v25)} + v26 {len(v26)} + v27 {len(v27)} + v28 {len(v28)} + v29 {len(v29)} + v30 {len(v30)} + v31 {len(v31)} + v32 {len(v32)} + v33 {len(v33)} + v34 {len(v34)} + v35 {len(v35)} + v36extra {len(v36_extra)}, dup skipped {dup_skipped}, v36 patched {patched})")
+    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)} + v20 {len(v20)} + v21 {len(v21)} + v22 {len(v22)} + v23 {len(v23)} + v24 {len(v24)} + v25 {len(v25)} + v26 {len(v26)} + v27 {len(v27)} + v28 {len(v28)} + v29 {len(v29)} + v30 {len(v30)} + v31 {len(v31)} + v32 {len(v32)} + v33 {len(v33)} + v34 {len(v34)} + v35 {len(v35)} + v36extra {len(v36_extra)}, dup skipped {dup_skipped}, v36 patched {patched}, v37 renamed {renamed})")
     print(f"verified: {verified}, unverified: {len(merged) - verified}")
     print(f"seasons: {seasons}")
     print(f"wrote: {fn1}")
