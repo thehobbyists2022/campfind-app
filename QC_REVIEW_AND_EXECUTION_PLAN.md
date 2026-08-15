@@ -733,6 +733,13 @@
 - 州覆蓋：<10 筆的州 **2 → 1**（剩 AK 9；WV 9→12）。**全美 51 州 ≥9 筆**。
 - 資產：`scrapers/v42_ymca_akwv.py`、`app/aca_camps_brands_v42.json`。
 
+### v43 — Snapology 全量補齊：+73 個官方地點（本次，待 commit）
+- **發現**：Snapology 官網 `/locations/` 是 **GeoDirectory 分頁列表**（30 頁、schema.org microdata、內嵌完整地址）— 非 JS locator，可完整爬取。
+- 對比現有 129 筆（v13 時代）→ **73 個新城市|州**（UT 11、NC 11、CO 14、TX 10、NJ 8、NY 4、OR 3、WA 3、VA 3、MI 2 等），全部附官方地址。
+- 座標：地址級 geocode（全部 73 筆成功）。
+- **+73**：4,789 → **4,862**；三副本同步，**零違規**、零 id 衝突。
+- 資產：`app/aca_camps_brands_v43.json`（爬蟲邏輯在 /tmp/cf_v43_build.py，可重跑）。
+
 ---
 
 ## 第八部分：风险与备注
