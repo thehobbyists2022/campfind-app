@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/camp_model.dart';
 
-class CampDetailScreen extends StatelessWidget {
+class CampDetailScreen extends StatefulWidget {
   final Camp camp;
   final bool isFavorite;
   final VoidCallback onFavoriteTap;
@@ -13,6 +13,22 @@ class CampDetailScreen extends StatelessWidget {
     required this.isFavorite,
     required this.onFavoriteTap,
   });
+
+  @override
+  State<CampDetailScreen> createState() => _CampDetailScreenState();
+}
+
+class _CampDetailScreenState extends State<CampDetailScreen> {
+  // Selected session week (0 = none). Tapping a week chip toggles selection.
+  int _selectedWeek = 0;
+
+  Camp get camp => widget.camp;
+
+  void _toggleWeek(int weekNum) {
+    setState(() {
+      _selectedWeek = _selectedWeek == weekNum ? 0 : weekNum;
+    });
+  }
 
   Future<void> _launchUrl(BuildContext context, String urlString) async {
     String cleanUrl = urlString.trim();
@@ -57,7 +73,7 @@ class CampDetailScreen extends StatelessWidget {
         elevation: 0.5,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color(0xFF1A1A2E)),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context, _selectedWeek),
         ),
         title: Text(
           camp.name,
@@ -70,10 +86,10 @@ class CampDetailScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(
-              isFavorite ? Icons.favorite : Icons.favorite_border,
-              color: isFavorite ? const Color(0xFFFF6B6B) : Colors.grey,
+              widget.isFavorite ? Icons.favorite : Icons.favorite_border,
+              color: widget.isFavorite ? const Color(0xFFFF6B6B) : Colors.grey,
             ),
-            onPressed: onFavoriteTap,
+            onPressed: widget.onFavoriteTap,
           ),
         ],
       ),
@@ -325,33 +341,77 @@ class CampDetailScreen extends StatelessWidget {
                         height: 1.5,
                       ),
                     )
-                  else
+                  else ...[
                     Wrap(
                       spacing: 8,
                       runSpacing: 8,
                       children: List.generate(8, (index) {
-                      final weekNum = index + 1;
-                      final isAvailable = camp.weeks.contains(weekNum);
-                      return Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: isAvailable ? const Color(0xFF4ECDC4).withValues(alpha: 0.15) : const Color(0xFFF4F6F9),
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: isAvailable ? const Color(0xFF4ECDC4) : Colors.grey.shade300,
+                        final weekNum = index + 1;
+                        final isAvailable = camp.weeks.contains(weekNum);
+                        final isSelected = _selectedWeek == weekNum;
+                        return GestureDetector(
+                          onTap: isAvailable
+                              ? () => _toggleWeek(weekNum)
+                              : null,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: isSelected
+                                  ? const Color(0xFF4ECDC4)
+                                  : isAvailable ? const Color(0xFF4ECDC4).withValues(alpha: 0.15) : const Color(0xFFF4F6F9),
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: isSelected
+                                    ? const Color(0xFF2C9C94)
+                                    : isAvailable ? const Color(0xFF4ECDC4) : Colors.grey.shade300,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  'Week $weekNum ${isAvailable ? "✓" : "—"}',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: isAvailable ? FontWeight.bold : FontWeight.normal,
+                                    color: isSelected
+                                        ? Colors.white
+                                        : isAvailable ? const Color(0xFF3AB5AD) : Colors.grey,
+                                  ),
+                                ),
+                                if (isSelected) ...[
+                                  const SizedBox(width: 4),
+                                  const Icon(Icons.check, size: 12, color: Colors.white),
+                                ],
+                              ],
+                            ),
                           ),
-                        ),
-                        child: Text(
-                          'Week $weekNum ${isAvailable ? "✓" : "—"}',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: isAvailable ? FontWeight.bold : FontWeight.normal,
-                            color: isAvailable ? const Color(0xFF3AB5AD) : Colors.grey,
-                          ),
-                        ),
-                      );
+                        );
                       }),
                     ),
+                    if (_selectedWeek > 0) ...[
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.filter_alt,
+                            size: 14,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                          const SizedBox(width: 6),
+                          Expanded(
+                            child: Text(
+                              'Week $_selectedWeek selected — back to list to filter camps by this week.',
+                              style: const TextStyle(
+                                fontSize: 12,
+                                color: Color(0xFF5A6A7C),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ],
                 ],
               ),
             ),

@@ -205,6 +205,45 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     const SizedBox(height: 16),
 
+                    // Session Week Picker
+                    const Text('Session Week', style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 6),
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: [
+                        ChoiceChip(
+                          label: const Text('Any Week'),
+                          selected: _filters.sessionWeek == 0,
+                          selectedColor: const Color(0xFFFF6B6B),
+                          labelStyle: TextStyle(
+                            color: _filters.sessionWeek == 0 ? Colors.white : const Color(0xFF2C3E50),
+                            fontWeight: FontWeight.w600,
+                          ),
+                          onSelected: (_) {
+                            setModalState(() => _filters.sessionWeek = 0);
+                            _applyFilters();
+                          },
+                        ),
+                        for (int w = 1; w <= 8; w++)
+                          ChoiceChip(
+                            label: Text('Week $w'),
+                            selected: _filters.sessionWeek == w,
+                            selectedColor: const Color(0xFF4ECDC4),
+                            labelStyle: TextStyle(
+                              color: _filters.sessionWeek == w ? Colors.white : const Color(0xFF2C3E50),
+                              fontWeight: FontWeight.w600,
+                            ),
+                            onSelected: (_) {
+                              setModalState(() => _filters.sessionWeek = w);
+                              _applyFilters();
+                            },
+                          ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 16),
+
                     // Theme & Focus
                     const Text('Theme & Focus', style: TextStyle(fontWeight: FontWeight.bold)),
                     const SizedBox(height: 6),
@@ -436,8 +475,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         onCompareTap: () => _toggleCompare(camp.id),
                         isSelectedForCompare: isComp,
-                        onTap: () {
-                          Navigator.push(
+                        onTap: () async {
+                          final selectedWeek = await Navigator.push<int>(
                             context,
                             MaterialPageRoute(
                               builder: (context) => CampDetailScreen(
@@ -450,6 +489,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           );
+                          if (selectedWeek != null && selectedWeek > 0) {
+                            setState(() {
+                              _filters.sessionWeek = selectedWeek;
+                            });
+                            _applyFilters();
+                          }
                         },
                       );
                     },
