@@ -740,6 +740,16 @@
 - **+73**：4,789 → **4,862**；三副本同步，**零違規**、零 id 衝突。
 - 資產：`app/aca_camps_brands_v43.json`（爬蟲邏輯在 /tmp/cf_v43_build.py，可重跑）。
 
+### v44 — ACA 認證營地 138 筆，達成 5,000 里程碑（本次，待 commit）
+- **重大發現**：`find.acacamps.org`（美國露營協會官方資料庫）是 **server-side PHP**——`camp_profile.php?camp_id=N` 無需 session 即可列舉，內含完整地址/電話/email/官網。
+- 平行 8 workers 爬完 camp_id 1–5,900 → **5,427 個有效 ACA 認證營地**（官方宣稱 3,920 camps）。
+- 去重（camp_id + name|state + city|state）→ **4,481 個全新美國認證營地**候選。
+- **選取策略**（精準補到 5,000）：優先 AK 及偏少州 → 每州 ≥10 → ≥15 → 其餘 round-robin 均分；共 **+138**：4,862 → **5,000**。
+- 座標：地址級 + 城市級 geocode，**全部 138 筆 reverse-geocode 驗證落在正確州內（0 mismatch）**；修正 10 筆 name-query 誤匹配（如 Camp Phoenix 誤解到德國）。
+- **零違規、三副本同步、51 州全部 ≥15 筆**（ND 15 最低）。
+- 資產：`app/aca_camps_brands_v44.json`（acaVerified: true，source: aca_finder）。
+- **⚠️ 依 Tony 指示：5,000 家達成，資料擴充暫時停止。**
+
 ---
 
 ## 第八部分：风险与备注
