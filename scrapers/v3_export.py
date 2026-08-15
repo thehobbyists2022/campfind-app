@@ -214,6 +214,12 @@ def main():
     v38_path = os.path.join(ROOT, "app", "aca_camps_brands_v38.json")
     if os.path.exists(v38_path):
         v38 = json.load(open(v38_path, encoding="utf-8"))["camps"]
+    # v39 Galileo venue-address fix (from orphaned v37 patch + zip evidence):
+    # 12 wrong-state records re-stated (extend v37 fix) + 51 official addresses.
+    v39 = {}
+    v39_path = os.path.join(ROOT, "app", "aca_camps_v39.json")
+    if os.path.exists(v39_path):
+        v39 = json.load(open(v39_path, encoding="utf-8"))
 
     # Drop legacy synthetic brand entries from v2 — replaced by the real
     # per-location brand camps in v5/v6 (R1: their fabricated price/age/shuttle
@@ -499,6 +505,15 @@ def main():
             c["id"] = v37_renames[c["id"]]
             renamed += 1
 
+    # v39 Galileo re-state: extend the v37 id-state fix to Galileo records whose
+    # state+coords were BOTH wrong (zip evidence in official venue addresses).
+    v39_renames = v39.get("renames", {})
+    v39_renamed = 0
+    for c in merged:
+        if c["id"] in v39_renames:
+            c["id"] = v39_renames[c["id"]]
+            v39_renamed += 1
+
     # v38 thin-state city camps: add (unique ids).
     for c in v38:
         if c["id"] in seen_ids:
@@ -506,6 +521,16 @@ def main():
             continue
         seen_ids.add(c["id"])
         merged.append(c)
+
+    # v39 Galileo venue addresses: patch existing records in place (address +
+    # precise coords + state where the record was re-stated). Applied AFTER
+    # renames so keys are the current ids.
+    v39_patched = 0
+    for c in merged:
+        if c["id"] in v39.get("updates", {}):
+            for k, v in v39["updates"][c["id"]].items():
+                c[k] = v
+            v39_patched += 1
 
     # ensure every record has needed fields
     for c in merged:
@@ -748,7 +773,7 @@ def main():
     fn3 = os.path.join(ROOT, "mobile", "assets", "aca_camps.json")
     json.dump(out, open(fn3, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)} + v20 {len(v20)} + v21 {len(v21)} + v22 {len(v22)} + v23 {len(v23)} + v24 {len(v24)} + v25 {len(v25)} + v26 {len(v26)} + v27 {len(v27)} + v28 {len(v28)} + v29 {len(v29)} + v30 {len(v30)} + v31 {len(v31)} + v32 {len(v32)} + v33 {len(v33)} + v34 {len(v34)} + v35 {len(v35)} + v36extra {len(v36_extra)} + v38 {len(v38)}, dup skipped {dup_skipped}, v36 patched {patched}, v37 renamed {renamed})")
+    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)} + v20 {len(v20)} + v21 {len(v21)} + v22 {len(v22)} + v23 {len(v23)} + v24 {len(v24)} + v25 {len(v25)} + v26 {len(v26)} + v27 {len(v27)} + v28 {len(v28)} + v29 {len(v29)} + v30 {len(v30)} + v31 {len(v31)} + v32 {len(v32)} + v33 {len(v33)} + v34 {len(v34)} + v35 {len(v35)} + v36extra {len(v36_extra)} + v38 {len(v38)}, dup skipped {dup_skipped}, v36 patched {patched}, v37 renamed {renamed}, v39 renamed {v39_renamed}, v39 patched {v39_patched})")
     print(f"verified: {verified}, unverified: {len(merged) - verified}")
     print(f"seasons: {seasons}")
     print(f"wrote: {fn1}")

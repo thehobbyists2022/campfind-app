@@ -695,6 +695,15 @@
 - **順手清理**：v3_export 新增「555 電話 → null」通用規則，清掉 6 筆 v1/v2 合成殘留假電話（Oceanside/Victorville/Buffalo/Snapology）。
 - 資產：`scrapers/v38_thin_states.py`（內嵌 76 站點資料 + 官方來源）、`app/aca_camps_brands_v38.json`。
 
+### v39 — Galileo 官方地址補全 + 12 筆州別修正（本次，待 commit）
+- **發現**：v37 session 遺留的未套用 patch（`app/aca_camps_updates_v37.json`，51 筆 Galileo JSON-LD 官方場地地址）。
+- **重大發現**：地址內的郵遞區號證明 **12 筆 Galileo 記錄州別仍錯**（v37 的 bounding-box 檢查漏掉——因為 state 和坐標「都是 CA」，v3 時代預設值）：
+  - `evanston_ca` → **IL**（60202）、`wheaton_ca` → **IL**（60189）、`lagrange_ca` → **IL**（60525）、`stvincentferrer_ca` → **IL**（60305）、`ourladyofthewayside_ca` → **IL**（60005）、`boulder_ca` → **CO**（80305）、`broomfield_ca` → **CO**（80020）、`parker_ca` → **CO**（80134）、`bellevue_ca` → **WA**（98004）、`thebush_ca` → **WA**（98112）、`northseattle_ca` → **WA**（98125）、`littletongreenwoodvillage_ca` → **CO**（80123）。
+- **修正**：12 筆 id 州後綴 + state 欄位 + 座標全改（地址級 geocode）；地址文字內的錯誤州名一併修正（R2：官方模板錯誤要修復而非照抄）。
+- **+51 筆官方地址**：Galileo 有地址記錄 53/74 → **69/74（93%）**；49 筆地址級座標、2 筆街道不在 OSM（littleton/cupertino→cupertino 已補）保留城市座標 + 地址（R1 誠實）。
+- 總數不變 4,764（純修正），三副本同步，**零違規**。
+- 資產：`app/aca_camps_v39.json`（renames + updates）+ v3_export 應用邏輯（v39 rename 接在 v37 後、patch 接在 rename 後）。
+
 ---
 
 ## 第八部分：风险与备注
