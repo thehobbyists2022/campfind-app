@@ -231,6 +231,11 @@ def main():
     v41_path = os.path.join(ROOT, "app", "aca_camps_brands_v41.json")
     if os.path.exists(v41_path):
         v41 = json.load(open(v41_path, encoding="utf-8"))["camps"]
+    # v42 final thin-state push — AK YMCA 2 + WV YMCA 3.
+    v42 = []
+    v42_path = os.path.join(ROOT, "app", "aca_camps_brands_v42.json")
+    if os.path.exists(v42_path):
+        v42 = json.load(open(v42_path, encoding="utf-8"))["camps"]
 
     # Drop legacy synthetic brand entries from v2 — replaced by the real
     # per-location brand camps in v5/v6 (R1: their fabricated price/age/shuttle
@@ -559,6 +564,14 @@ def main():
         seen_ids.add(c["id"])
         merged.append(c)
 
+    # v42 final thin-state YMCA camps: add (unique ids).
+    for c in v42:
+        if c["id"] in seen_ids:
+            dup_skipped += 1
+            continue
+        seen_ids.add(c["id"])
+        merged.append(c)
+
     # ensure every record has needed fields
     for c in merged:
         c.setdefault("unverified", True)
@@ -800,7 +813,7 @@ def main():
     fn3 = os.path.join(ROOT, "mobile", "assets", "aca_camps.json")
     json.dump(out, open(fn3, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)} + v20 {len(v20)} + v21 {len(v21)} + v22 {len(v22)} + v23 {len(v23)} + v24 {len(v24)} + v25 {len(v25)} + v26 {len(v26)} + v27 {len(v27)} + v28 {len(v28)} + v29 {len(v29)} + v30 {len(v30)} + v31 {len(v31)} + v32 {len(v32)} + v33 {len(v33)} + v34 {len(v34)} + v35 {len(v35)} + v36extra {len(v36_extra)} + v38 {len(v38)} + v40 {len(v40)} + v41 {len(v41)}, dup skipped {dup_skipped}, v36 patched {patched}, v37 renamed {renamed}, v39 renamed {v39_renamed}, v39 patched {v39_patched})")
+    print(f"merged total: {len(merged)} (v2 {len(v2)} + v3 {len(v3)} + v4 {len(v4)} + v5 {len(v5)} + v6 {len(v6)} + v7 {len(v7)} + v8 {len(v8)} + v9 {len(v9)} + v12 {len(v12)} + v13 {len(v13)} + v14 {len(v14)} + v15 {len(v15)} + v16 {len(v16)} + v17 {len(v17)} + v18 {len(v18)} + v19 {len(v19)} + v20 {len(v20)} + v21 {len(v21)} + v22 {len(v22)} + v23 {len(v23)} + v24 {len(v24)} + v25 {len(v25)} + v26 {len(v26)} + v27 {len(v27)} + v28 {len(v28)} + v29 {len(v29)} + v30 {len(v30)} + v31 {len(v31)} + v32 {len(v32)} + v33 {len(v33)} + v34 {len(v34)} + v35 {len(v35)} + v36extra {len(v36_extra)} + v38 {len(v38)} + v40 {len(v40)} + v41 {len(v41)} + v42 {len(v42)}, dup skipped {dup_skipped}, v36 patched {patched}, v37 renamed {renamed}, v39 renamed {v39_renamed}, v39 patched {v39_patched})")
     print(f"verified: {verified}, unverified: {len(merged) - verified}")
     print(f"seasons: {seasons}")
     print(f"wrote: {fn1}")

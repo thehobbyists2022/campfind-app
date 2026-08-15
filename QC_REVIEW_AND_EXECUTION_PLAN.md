@@ -726,6 +726,13 @@
 - 州覆蓋：<10 筆的州 **5 → 2**（剩 AK 7 / WV 9；SD 5→11、ME 8→12、WY 9→10）。
 - 資產：`scrapers/v41_ymca_camps.py`、`app/aca_camps_brands_v41.json`。
 
+### v42 — 偏少州收尾：AK/WV YMCA（本次，待 commit）
+- **AK +2（YMCA of Alaska，ymcaalaska.org）**：Summer Day Camp at Camp Parker Peggy Lake（1st–8th 年級分組 Pioneers→Leaders-in-Training，Kincaid Park）、STEM track（5–8 年級）。
+- **WV +3**：YMCA of Kanawha Valley（Charleston）Funshine Camp（K 入學、$135/週 5 天 / $90/週 3 天）+ Summer Day Camp（6–12 歲）；YMCA of Huntington 青少年籃球營（4 週、教練指導）。
+- **+5**：4,784 → **4,789**；三副本同步，**零違規**。
+- 州覆蓋：<10 筆的州 **2 → 1**（剩 AK 9；WV 9→12）。**全美 51 州 ≥9 筆**。
+- 資產：`scrapers/v42_ymca_akwv.py`、`app/aca_camps_brands_v42.json`。
+
 ---
 
 ## 第八部分：风险与备注
