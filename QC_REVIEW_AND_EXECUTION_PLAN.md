@@ -704,6 +704,19 @@
 - 總數不變 4,764（純修正），三副本同步，**零違規**。
 - 資產：`app/aca_camps_v39.json`（renames + updates）+ v3_export 應用邏輯（v39 rename 接在 v37 後、patch 接在 rename 後）。
 
+### v40 — 偏少州第二波：AK/ME/WV/MS 官方營地（本次，待 commit）
+- **策略**：城市站點被封鎖的州（Sioux Falls SD Access Denied、Anchorage 註冊入口、Portland ME 連線失敗、Jackson MS 佔位頁）→ 改用**可爬取的官方營地頁** + DuckDuckGo 找真實營地。
+- **AK +3（Camp Fire Alaska 官方站）**：
+  - Camp Fireweed — APU 校園日間營（6/1–8/14 週週開、游泳/划船/射箭、7:30–17:30）
+  - Camp K — Kenai Lake 過夜營（Cooper Landing、6–17 歲、5天4夜、阿拉斯加最老全性別過夜營）
+  - Summer Adventure — 安克拉治/Eagle River 小學日間營（$415/週、含 Camp Fireweed 週週校外教學）
+- **ME +1**：Camp Chewonki（Wiscasset、grades 3–8 過夜營、ACA 會員）
+- **WV +1**：Camp Alleghany for Girls（Caldwell、1922 年起全女生過夜營）
+- **MS +4**：Gulfport Summer Day Camp 四站（Harrison Central 5–8 歲 + Bel-Aire/Wilson/Three Rivers 5–12 歲；免費午餐、MS 衛生部核可、官方電話/email）
+- **+9**：4,764 → **4,773**；三副本同步，**零違規**。
+- 州覆蓋：<10 筆的州 **9 → 5**（剩 SD 5 / AK 7→7（+3 但原本含城市營）/ ME 8 / WY 9 / WV 9；MS 6→10、AK 4→7、ME 7→8、WV 8→9）。
+- 資產：`scrapers/v40_thin_states2.py`、`app/aca_camps_brands_v40.json`。
+
 ---
 
 ## 第八部分：风险与备注
