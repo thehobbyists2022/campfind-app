@@ -717,6 +717,15 @@
 - 州覆蓋：<10 筆的州 **9 → 5**（剩 SD 5 / AK 7→7（+3 但原本含城市營）/ ME 8 / WY 9 / WV 9；MS 6→10、AK 4→7、ME 7→8、WV 8→9）。
 - 資產：`scrapers/v40_thin_states2.py`、`app/aca_camps_brands_v40.json`。
 
+### v41 — YMCA 攻堅偏少州：SD/ME/WY（本次，待 commit）
+- **策略**：市府站被封鎖的州 → 改用 **YMCA 官方營地頁**（每州都有 YMCA，官方站可爬、有真實年齡/地址/電話）。
+- **SD +6（Sioux Falls Family YMCA）**：Little Vikes（4-5）、Camp Leif Ericson（6-9，Great Plains Zoo 合作）、Camp Tepeetonka（10-13）、TLC Leadership（14-15）、Ranch Camp（9-13）、Venture Vikes（6-13）；營地辦公室 2301 E 26th St, Sioux Falls SD 57103，電話 605-336-2267。
+- **ME +4（Bangor Region YMCA）**：Camp Jordan Sleep Away（7-15 過夜營，Camp Jordan Way Ellsworth ME 04605）、Camp G. Peirce Webber Day Camp、Camp Acorn（K-3 年級）、Adventure Day Camp。
+- **WY +1（YMCA of Natrona County）**：Summer Day Camp（K-5 年級，Casper Mountain Rd，電話 307-234-9187）。
+- **+11**：4,773 → **4,784**；三副本同步，**零違規**。
+- 州覆蓋：<10 筆的州 **5 → 2**（剩 AK 7 / WV 9；SD 5→11、ME 8→12、WY 9→10）。
+- 資產：`scrapers/v41_ymca_camps.py`、`app/aca_camps_brands_v41.json`。
+
 ---
 
 ## 第八部分：风险与备注
