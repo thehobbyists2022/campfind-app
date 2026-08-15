@@ -685,7 +685,7 @@
 - 可重現（R6）：`app/aca_camps_idfix_v37.json`（239 筆 renames）+ v3_export 應用邏輯。
 - 總數不變 4,681，三副本同步，**零違規**。
 
-### v38 — 偏少州真實營地擴充（本次，待 commit）
+### v38 — 偏少州真實營地擴充（commit 5a80fa5）
 - **目標**：9 個 <10 筆的州直接補真實官方資料（城市公園局模式，同 v4/v22–v32）。
 - **Honolulu HI +76**（Summer Fun 2026）：DPR 官方 Google My Maps 站點圖 KML（mid=1lZQPIVFgHtBSub6t8HKSoGiuB3SW5xET，76 站含座標）→ 每個公園站點一筆 day camp；年齡 6–13、註冊費 $25 + 活動費 ≤$100、6/8–7/24 平日 8:30–14:00；座標 = 官方地圖公園級精度，城市 = OSM reverse geocode（Honolulu 37 / Waipahu 21 / Kapolei 6 / East Honolulu 5 / Honolulu County 7→Honolulu）。
 - **Washington DC +3**：DPR Summer Camp 2026（4 個 session 6/22–8/14，樂透註冊，電話/email 官方）、Winter Wondercamp（6–12 歲、冬假、$40/人/session）、Fun Day Camp（6–12 歲、DCPS 全校關閉日、居民 $10/日）。
@@ -695,7 +695,7 @@
 - **順手清理**：v3_export 新增「555 電話 → null」通用規則，清掉 6 筆 v1/v2 合成殘留假電話（Oceanside/Victorville/Buffalo/Snapology）。
 - 資產：`scrapers/v38_thin_states.py`（內嵌 76 站點資料 + 官方來源）、`app/aca_camps_brands_v38.json`。
 
-### v39 — Galileo 官方地址補全 + 12 筆州別修正（本次，待 commit）
+### v39 — Galileo 官方地址補全 + 12 筆州別修正（commit ff40115）
 - **發現**：v37 session 遺留的未套用 patch（`app/aca_camps_updates_v37.json`，51 筆 Galileo JSON-LD 官方場地地址）。
 - **重大發現**：地址內的郵遞區號證明 **12 筆 Galileo 記錄州別仍錯**（v37 的 bounding-box 檢查漏掉——因為 state 和坐標「都是 CA」，v3 時代預設值）：
   - `evanston_ca` → **IL**（60202）、`wheaton_ca` → **IL**（60189）、`lagrange_ca` → **IL**（60525）、`stvincentferrer_ca` → **IL**（60305）、`ourladyofthewayside_ca` → **IL**（60005）、`boulder_ca` → **CO**（80305）、`broomfield_ca` → **CO**（80020）、`parker_ca` → **CO**（80134）、`bellevue_ca` → **WA**（98004）、`thebush_ca` → **WA**（98112）、`northseattle_ca` → **WA**（98125）、`littletongreenwoodvillage_ca` → **CO**（80123）。
@@ -704,7 +704,7 @@
 - 總數不變 4,764（純修正），三副本同步，**零違規**。
 - 資產：`app/aca_camps_v39.json`（renames + updates）+ v3_export 應用邏輯（v39 rename 接在 v37 後、patch 接在 rename 後）。
 
-### v40 — 偏少州第二波：AK/ME/WV/MS 官方營地（本次，待 commit）
+### v40 — 偏少州第二波：AK/ME/WV/MS 官方營地（commit 8047a76）
 - **策略**：城市站點被封鎖的州（Sioux Falls SD Access Denied、Anchorage 註冊入口、Portland ME 連線失敗、Jackson MS 佔位頁）→ 改用**可爬取的官方營地頁** + DuckDuckGo 找真實營地。
 - **AK +3（Camp Fire Alaska 官方站）**：
   - Camp Fireweed — APU 校園日間營（6/1–8/14 週週開、游泳/划船/射箭、7:30–17:30）
