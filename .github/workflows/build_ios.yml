@@ -26,6 +26,10 @@ jobs:
           channel: 'stable'
           cache: true
 
+      - name: Compute match git auth
+        id: git-auth
+        run: echo "auth=$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64)" >> "$GITHUB_OUTPUT"
+
       - name: Configure Ruby environment
         working-directory: mobile/ios
         run: |
@@ -44,6 +48,7 @@ jobs:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ steps.git-auth.outputs.auth }}
         run: |
           export LANG=en_US.UTF-8
           bundle exec fastlane release
