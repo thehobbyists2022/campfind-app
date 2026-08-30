@@ -40,8 +40,10 @@ platform :ios do
       scheme: "Runner",
       clean: true,
       export_method: "app-store",
+      team_id: "VNTPT66236",
       export_options: {
         signingStyle: "manual",
+        teamID: "VNTPT66236",
         provisioningProfiles: {
           "com.campfind.app" => lane_context[SharedValues::SIGH_PROFILE_PATH]
         }
