@@ -26,23 +26,30 @@ def api(method, path, body=None):
     except urllib.error.HTTPError as e:
         return {"__e__": e.code, "b": e.read().decode()[:500]}
 
-# Create an INTERNAL beta group
-grp = api("POST", "/v1/betaGroups", {"data":{"type":"betaGroups","attributes":{"name":"Internal Testing"},"relationships":{"app":{"data":{"type":"apps","id":app_id}}}}})
-if "__e__" in grp:
-    print("CREATE INTERNAL GROUP err:", grp["__e__"], grp["b"])
-    gid = None
-else:
-    gid = grp["data"][0]["id"]
-    print("INTERNAL GROUP CREATED:", gid, grp["data"][0]["attributes"].get("name"), "| internal:", grp["data"][0]["attributes"].get("isInternalGroup"))
+# Try to find an existing internal group first
+groups = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=50")
+gid = None
+for g in groups.get("data", []):
+    if g["attributes"].get("isInternalGroup"):
+        gid = g["id"]; print("FOUND existing INTERNAL group:", gid, g["attributes"].get("name")); break
+
+if not gid:
+    grp = api("POST", "/v1/betaGroups", {"data":{"type":"betaGroups","attributes":{"name":"Internal Testing"},"relationships":{"app":{"data":{"type":"apps","id":app_id}}}}})
+    print("POST response raw:", json.dumps(grp)[:400])
+    if "__e__" in grp:
+        print("CREATE INTERNAL GROUP err:", grp["__e__"], grp["b"])
+    elif grp.get("data"):
+        gid = grp["data"][0]["id"]
+        print("INTERNAL GROUP CREATED:", gid, grp["data"][0]["attributes"].get("name"))
+    else:
+        # maybe POST 204 no body but created; re-list to find
+        groups2 = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=50")
+        for g in groups2.get("data", []):
+            if g["attributes"].get("isInternalGroup"):
+                gid = g["id"]; print("Re-listed INTERNAL group:", gid); break
 
 if gid:
-    # add build to group
     r = api("POST", f"/v1/betaGroups/{gid}/relationships/builds", {"data":[{"type":"builds","id":build_id}]})
-    print("ADD BUILD:", "OK" if "__e__" not in r else f"err {r['__e__']} {r['b']}")
-
-# List team users (internal testers) — they are team members
-users = api("GET", "/v1/users?limit=50")
-print("TEAM USERS:")
-for u in users.get("data", []):
-    print(" -", u["attributes"].get("username"), u["attributes"].get("roles"))
+    if "__e__" in r: print("ADD BUILD err:", r["__e__"], r["b"])
+    else: print("ADD BUILD OK to group", gid)
 print("DONE")
