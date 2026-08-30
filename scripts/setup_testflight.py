@@ -29,23 +29,22 @@ def api(method, path, body=None):
     except urllib.error.HTTPError as e:
         return {"__e__": e.code, "b": e.read().decode()[:500]}
 
-groups = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=50")
-target = None
-for g in groups.get("data", []):
-    print("GROUP:", g["attributes"].get("name"), "| publicLinkEnabled:", g["attributes"].get("publicLinkEnabled"))
-    if g["attributes"].get("name") == "CampFind Testers": target = g
-if not target:
-    print("CampFind Testers group not found"); sys.exit(1)
-gid = target["id"]
+# latest build
+b = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=1")
+if not b.get("data"): print("no build"); sys.exit(1)
+bid = b["data"][0]["id"]
+print("BUILD:", bid, "| processing:", b["data"][0]["attributes"].get("processingState"))
 
-# Enable public link on the group (needs beta review passed for external; PATCH attrs only)
-patch = api("PATCH", f"/v1/betaGroups/{gid}", {"data":{"type":"betaGroups","id":gid,"attributes":{"publicLinkEnabled":True,"publicLinkLimit":100}}})
-if "__e__" in patch: print("PATCH err:", patch["__e__"], patch["b"])
-else: print("PATCH OK:", json.dumps(patch.get("data",{}).get("attributes",{})))
+# beta review state
+beta = api("GET", f"/v1/betaAppReviewDetails?filter[app]={app_id}")
+if beta.get("data"):
+    a = beta["data"][0]["attributes"]
+    print("BETA REVIEW:", json.dumps(a))
+else:
+    print("No betaAppReviewDetails: ", beta.get("__e__"), beta.get("b",""))
 
-# Re-fetch to get the public link
-g2 = api("GET", f"/v1/betaGroups/{gid}")
-attrs = (g2.get("data",{}).get("attributes",{})) if g2.get("data") else {}
-print("PUBLIC LINK:", attrs.get("publicLink"))
-print("PUBLIC LINK ENABLED:", attrs.get("publicLinkEnabled"))
+# build's beta build state
+b2 = api("GET", f"/v1/builds/{bid}")
+if b2.get("data"):
+    print("BUILD DETAIL:", json.dumps(b2["data"][0]["attributes"]))
 print("DONE")
