@@ -10,6 +10,8 @@ platform :ios do
       is_key_content_base64: false
     )
 
+    kc_path = File.expand_path("~/Library/Keychains/ci_keychain-db")
+
     create_keychain(
       name: "ci_keychain",
       password: "ci_password",
@@ -18,8 +20,6 @@ platform :ios do
       timeout: 3600,
       lock_when_sleeps: false
     )
-
-    kc_path = File.expand_path("~/Library/Keychains/ci_keychain-db")
 
     get_certificates(
       api_key: api_key,
@@ -32,10 +32,13 @@ platform :ios do
       app_identifier: "com.campfind.app"
     )
 
+    # Unlock keychain for codesign toolchain
+    sh("security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k ci_password #{kc_path}")
+
     # Build iOS IPA using native Flutter CLI from mobile directory
     sh("cd .. && flutter build ipa --release --export-options-plist=ios/ExportOptions.plist")
 
-    ipa_path = Dir[File.expand_path("../build/ios/ipa/*.ipa")].first
+    ipa_path = Dir[File.expand_path("../../build/ios/ipa/*.ipa")].first || Dir[File.expand_path("../build/ios/ipa/*.ipa")].first
 
     upload_to_testflight(
       api_key: api_key,
