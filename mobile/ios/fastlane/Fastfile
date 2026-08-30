@@ -1,7 +1,7 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Build and deploy to App Store Connect (fastlane match, reuses signing cert)"
+  desc "Build and deploy to App Store Connect (fastlane match + flutter build ipa)"
   lane :release do
     api_key = app_store_connect_api_key(
       key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
@@ -32,25 +32,17 @@ platform :ios do
       force_for_new_devices: false
     )
 
+    # flutter build ipa performs archive + export using the installed cert/profile
+    # (automatic signing with the DEVELOPMENT_TEAM). Produces build/ios/ipa/*.ipa
     sh "flutter pub get"
-    sh "flutter build ios --release --no-codesign"
+    sh "flutter build ipa --release --export-options-plist=#{File.expand_path('../ExportOptions.plist')}"
 
-    build_app(
-      workspace: "Runner.xcworkspace",
-      scheme: "Runner",
-      clean: true,
-      export_method: "app-store",
-      export_options: {
-        signingStyle: "manual",
-        teamID: "VNTPT66236",
-        provisioningProfiles: {
-          "com.campfind.app" => lane_context[SharedValues::SIGH_PROFILE_PATH]
-        }
-      }
-    )
+    ipa = Dir["build/ios/ipa/*.ipa"].first
+    raise "IPA not found" unless ipa
 
     upload_to_testflight(
       api_key: api_key,
+      ipa: ipa,
       skip_waiting_for_build_processing: true
     )
   end
