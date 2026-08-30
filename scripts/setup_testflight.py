@@ -6,7 +6,6 @@ from cryptography.hazmat.primitives.asymmetric.utils import decode_dss_signature
 key_id = os.environ["ASC_KEY_ID"]; issuer = os.environ["ASC_ISSUER_ID"]
 key_pem = os.environ["ASC_KEY"].replace("\\n", "\n")
 app_id = "6806695913"
-build_id = "3f1c2cf7-89cb-44ee-a937-5661a8ebe102"
 pk = serialization.load_pem_private_key(key_pem.encode(), password=None)
 def b64u(d): return base64.urlsafe_b64encode(d).rstrip(b"=").decode()
 def jwt():
@@ -26,30 +25,29 @@ def api(method, path, body=None):
     except urllib.error.HTTPError as e:
         return {"__e__": e.code, "b": e.read().decode()[:500]}
 
-# Try to find an existing internal group first
-groups = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=50")
-gid = None
-for g in groups.get("data", []):
-    if g["attributes"].get("isInternalGroup"):
-        gid = g["id"]; print("FOUND existing INTERNAL group:", gid, g["attributes"].get("name")); break
+# App info
+app = api("GET", f"/v1/apps/{app_id}")
+if app.get("data"):
+    a = app["data"][0]["attributes"]
+    print("APP:", a.get("name"), "| bundleId:", a.get("bundleId"), "| sku:", a.get("sku"), "| primaryLocale:", a.get("primaryLocale"))
+else:
+    print("app err", app.get("__e__"), app.get("b"))
 
-if not gid:
-    grp = api("POST", "/v1/betaGroups", {"data":{"type":"betaGroups","attributes":{"name":"Internal Testing"},"relationships":{"app":{"data":{"type":"apps","id":app_id}}}}})
-    print("POST response raw:", json.dumps(grp)[:400])
-    if "__e__" in grp:
-        print("CREATE INTERNAL GROUP err:", grp["__e__"], grp["b"])
-    elif grp.get("data"):
-        gid = grp["data"][0]["id"]
-        print("INTERNAL GROUP CREATED:", gid, grp["data"][0]["attributes"].get("name"))
-    else:
-        # maybe POST 204 no body but created; re-list to find
-        groups2 = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=50")
-        for g in groups2.get("data", []):
-            if g["attributes"].get("isInternalGroup"):
-                gid = g["id"]; print("Re-listed INTERNAL group:", gid); break
+# Latest build full state (include beta build state)
+b = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=1&fields[build]=version,shortVersion,buildNumber,processingState,buildState,betaBuildState,expirationDate,uploadedDate")
+if b.get("data"):
+    x = b["data"][0]
+    print("BUILD:", x["id"])
+    print("  shortVersion:", x["attributes"].get("shortVersion"))
+    print("  buildNumber:", x["attributes"].get("buildNumber"))
+    print("  processingState:", x["attributes"].get("processingState"))
+    print("  buildState:", x["attributes"].get("buildState"))
+    print("  betaBuildState:", x["attributes"].get("betaBuildState"))
+    print("  expirationDate:", x["attributes"].get("expirationDate"))
 
-if gid:
-    r = api("POST", f"/v1/betaGroups/{gid}/relationships/builds", {"data":[{"type":"builds","id":build_id}]})
-    if "__e__" in r: print("ADD BUILD err:", r["__e__"], r["b"])
-    else: print("ADD BUILD OK to group", gid)
+# App Store version state (does the app have an App Store presence yet?)
+ver = api("GET", f"/v1/appStoreVersions?filter[app]={app_id}&limit=5")
+print("APP STORE VERSIONS:", len(ver.get("data",[])) if ver.get("data") else 0)
+for v in ver.get("data", []):
+    print("  version:", v["attributes"].get("versionString"), "| state:", v["attributes"].get("appStoreState"))
 print("DONE")
