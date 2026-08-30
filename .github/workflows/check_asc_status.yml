@@ -1,0 +1,20 @@
+name: Check App Store Connect Status
+
+on:
+  workflow_dispatch:
+
+jobs:
+  status:
+    name: Query latest build beta state
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cryptography
+        run: pip install --quiet cryptography
+      - name: Run status query
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          APP_ID: 6806695913
+        run: python3 scripts/status_asc.py
