@@ -26,8 +26,6 @@ jobs:
 
       - name: Configure git auth for fastlane match (clone + push)
         run: |
-          AUTH=$(printf 'basic %s' "$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64)")
-          git config --global http.https://github.com/.extraheader "AUTHORIZATION: $AUTH"
           git config --global user.email "thehobbyists2022@gmail.com"
           git config --global user.name "thehobbyists2022"
 
@@ -48,6 +46,7 @@ jobs:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_GIT_TOKEN: ${{ secrets.MATCH_GIT_TOKEN }}
         run: |
           export LANG=en_US.UTF-8
           bundle exec fastlane release

@@ -24,8 +24,9 @@ platform :ios do
       api_key: api_key,
       app_identifier: "com.campfind.app",
       readonly: false,
-      git_url: "https://github.com/thehobbyists2022/campfind-app.git",
+      git_url: "https://github.com/thehobbyists2022/campfind-signing.git",
       git_branch: "certificates",
+      git_basic_authorization: Base64.strict_encode64("x-access-token:#{ENV['MATCH_GIT_TOKEN']}"),
       keychain_name: "ci_keychain",
       keychain_password: "ci_password",
       force_for_new_devices: false
