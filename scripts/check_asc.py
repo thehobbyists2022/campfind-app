@@ -22,8 +22,19 @@ sig = b64url(sig.stdout)
 jwt = f"{signing_input}.{sig}"
 
 url = "https://api.appstoreconnect.apple.com/v1/builds?sort=-uploadedDate&limit=10&fields[build]=version,shortVersion,buildNumber,uploadedDate,processingState,exportComplianceState,buildState"
-res = subprocess.run(["curl", "-sS", "-H", f"Authorization: Bearer {jwt}", url], capture_output=True, text=True)
-d = json.loads(res.stdout)
+res = subprocess.run(["curl", "-sS", "-w", "\\nHTTP_CODE:%{http_code}", "-H", f"Authorization: Bearer {jwt}", url], capture_output=True, text=True)
+print("CURL_STDOUT_BYTES:", len(res.stdout))
+print("CURL_STDERR:", res.stderr[:300])
+try:
+    lines = res.stdout.split("\n")
+    body = "\n".join(lines[:-1])
+    code_line = lines[-1]
+    d = json.loads(body)
+except Exception as e:
+    print("RAW_RESPONSE:", res.stdout[:800])
+    print("PARSE_ERROR:", e)
+    sys.exit(1)
+print("HTTP:", code_line) if code_line.startswith("HTTP_CODE:") else None
 if "errors" in d:
     print("API ERRORS:", json.dumps(d["errors"])[:600])
     sys.exit(0)
