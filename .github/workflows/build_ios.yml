@@ -5,10 +5,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-permissions:
-  contents: write   # fastlane match stores certs on the 'certificates' branch
-  id-token: write
-
 jobs:
   build-and-upload:
     name: Build & Upload iOS App
@@ -18,7 +14,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ github.token }}
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -26,35 +21,45 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Compute match git auth
-        id: git-auth
+      - name: Install Apple certificate & provisioning profile (legacy p12)
+        env:
+          BUILD_CERTIFICATE_BASE64: ${{ secrets.APPLE_CERT_P12_BASE64 }}
+          P12_PASSWORD: ${{ secrets.APPLE_CERT_PASSWORD }}
+          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.APPLE_PROVISIONING_PROFILE_BASE64 }}
+          KEYCHAIN_PASSWORD: "ci_build_keychain_password"
         run: |
-          echo "auth=$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64)" >> "$GITHUB_OUTPUT"
-          # Rewrite all GitHub URLs to include the token so fastlane match can
-          # clone AND push to the 'certificates' branch consistently.
-          git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
-          git config --global user.email "thehobbyists2022@gmail.com"
-          git config --global user.name "thehobbyists2022"
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+
+          echo "$BUILD_CERTIFICATE_BASE64" | base64 --decode > "${RUNNER_TEMP}/build_certificate.p12"
+          # macOS 'security' cannot read OpenSSL 3.x PBS2/AES-256 p12; re-export legacy so it imports.
+          openssl pkcs12 -in "${RUNNER_TEMP}/build_certificate.p12" -nodes -passin pass:"$P12_PASSWORD" -out "${RUNNER_TEMP}/combined.pem" 2>/dev/null || true
+          openssl pkcs12 -export -legacy -in "${RUNNER_TEMP}/combined.pem" -out "${RUNNER_TEMP}/legacy.p12" -passout pass:"$P12_PASSWORD"
+          security import "${RUNNER_TEMP}/legacy.p12" -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security list-keychains -d user -s $KEYCHAIN_PATH $(security list-keychains -d user | sed -e 's/"//g')
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/appstore.mobileprovision
 
       - name: Configure Ruby environment
         working-directory: mobile/ios
         run: |
           gem install bundler
           bundle config path vendor/bundle
-          export LANG=en_US.UTF-8
 
       - name: Bundle install (fastlane)
         working-directory: mobile/ios
         run: bundle install
 
-      - name: fastlane match + build + upload to TestFlight
+      - name: fastlane build + upload to TestFlight
         working-directory: mobile/ios
         env:
           APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-          MATCH_GIT_BASIC_AUTHORIZATION: ${{ steps.git-auth.outputs.auth }}
         run: |
           export LANG=en_US.UTF-8
           bundle exec fastlane release
