@@ -12,16 +12,16 @@ TESTER_EMAIL = os.environ.get("TESTER_EMAIL", "clarityclinicalsolutions@gmail.co
 
 private_key = serialization.load_pem_private_key(key_pem.encode(), password=None)
 
-def b64url(data: bytes) -> str:
+def b64url(data):
     return base64.urlsafe_b64encode(data).rstrip(b"=").decode()
 
 def jwt():
-    h = b64url(json.dumps({"alg": "ES256", "kid": key_id, "typ": "JWT"}).encode())
-    p = b64url(json.dumps({"iss": issuer, "iat": int(time.time()), "exp": int(time.time()) + 1200, "aud": "appstoreconnect-v1"}).encode())
+    h = b64url(json.dumps({"alg":"ES256","kid":key_id,"typ":"JWT"}).encode())
+    p = b64url(json.dumps({"iss":issuer,"iat":int(time.time()),"exp":int(time.time())+1200,"aud":"appstoreconnect-v1"}).encode())
     si = f"{h}.{p}"
     der = private_key.sign(si.encode(), ec.ECDSA(hashes.SHA256()))
     r, s = decode_dss_signature(der)
-    sig = b64url(r.to_bytes(32, "big") + s.to_bytes(32, "big"))
+    sig = b64url(r.to_bytes(32,"big") + s.to_bytes(32,"big"))
     return f"{si}.{sig}"
 
 TOKEN = jwt()
@@ -36,56 +36,56 @@ def api(method, path, body=None):
             raw = r.read().decode()
             return json.loads(raw) if raw else {}
     except urllib.error.HTTPError as e:
-        print(f"API {method} {path} -> HTTP {e.code}: {e.read().decode()[:600]}")
-        return None
+        return {"__error__": e.code, "body": e.read().decode()[:600]}
 
-# 1. find app by bundle id
-apps = api("GET", "/v1/apps?filter[bundleId]=com.campfind.app&limit=5")
-if not apps or not apps.get("data"):
-    print("APP NOT FOUND for com.campfind.app"); sys.exit(1)
-app_id = apps["data"][0]["id"]
-print("APP_ID:", app_id, "| name:", apps["data"][0]["attributes"].get("name"))
+def get_tester(email):
+    t = api("GET", f"/v1/betaTesters?filter[email]={urllib.parse.quote(email)}&limit=5")
+    if t.get("data"): return t["data"][0]
+    return None
 
-# 2. existing beta groups for app
-groups = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=20")
-if groups and groups.get("data"):
-    print("EXISTING BETA GROUPS:", [g["attributes"].get("name") for g in groups["data"]])
-else:
-    print("NO BETA GROUPS yet")
+def get_group(app_id, name):
+    g = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=50")
+    if g.get("data"):
+        for x in g["data"]:
+            if x["attributes"].get("name") == name: return x
+    return None
 
-# 3. does tester exist
-t = api("GET", f"/v1/betaTesters?filter[email]={urllib.parse.quote(TESTER_EMAIL)}&limit=5")
-tester_id = None
-if t and t.get("data"):
-    tester_id = t["data"][0]["id"]
-    print("TESTER EXISTS:", tester_id, t["data"][0]["attributes"].get("email"))
-else:
-    nt = api("POST", "/v1/betaTesters", {"data": {"type": "betaTesters", "attributes": {
-        "email": TESTER_EMAIL, "firstName": "Clarity", "lastName": "Tester"}}})
-    if nt and nt.get("data"):
-        tester_id = nt["data"][0]["id"]
-        print("TESTER CREATED:", tester_id)
+app_id = "6806695913"
+print("APP:", app_id)
+
+# tester
+tester = get_tester(TESTER_EMAIL)
+if not tester:
+    r = api("POST", "/v1/betaTesters", {"data":{"type":"betaTesters","attributes":{"email":TESTER_EMAIL,"firstName":"Clarity","lastName":"Tester"}}})
+    if "__error__" in r:
+        print("CREATE TESTER err:", r["__error__"], r["body"])
+        tester = get_tester(TESTER_EMAIL)  # 409 -> likely already exists
     else:
-        print("COULD NOT CREATE TESTER (may need to be a team user for internal groups)")
-        print("Try listing testers or check roles.")
+        tester = r["data"][0]
+print("TESTER:", (tester.get("id") if tester else None), (tester.get("attributes",{}).get("email") if tester else None))
 
-# 4. create a beta group (external) named CampFind Testers
-grp = api("POST", "/v1/betaGroups", {"data": {"type": "betaGroups", "attributes": {"name": "CampFind Testers"}, "relationships": {"app": {"data": {"type": "apps", "id": app_id}}}}})
-group_id = None
-if grp and grp.get("data"):
-    group_id = grp["data"][0]["id"]
-    print("BETA GROUP CREATED:", group_id, grp["data"][0]["attributes"].get("name"))
-    if tester_id:
-        # add tester to group
-        r1 = api("POST", f"/v1/betaGroups/{group_id}/relationships/betaTesters",
-                 {"data": [{"type": "betaTesters", "id": tester_id}]})
-        print("ADD TESTER to group:", "OK" if r1 is not None else "FAILED")
-        # add latest build to group
-        builds = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=1")
-        if builds and builds.get("data"):
-            build_id = builds["data"][0]["id"]
-            print("LATEST BUILD ID:", build_id, builds["data"][0]["attributes"].get("processingState"))
-            r2 = api("POST", f"/v1/betaGroups/{group_id}/relationships/builds",
-                     {"data": [{"type": "builds", "id": build_id}]})
-            print("ADD BUILD to group:", "OK" if r2 is not None else "FAILED")
+# group
+group = get_group(app_id, "CampFind Testers")
+if not group:
+    r = api("POST", "/v1/betaGroups", {"data":{"type":"betaGroups","attributes":{"name":"CampFind Testers"},"relationships":{"app":{"data":{"type":"apps","id":app_id}}}}})
+    if "__error__" in r:
+        print("CREATE GROUP err:", r["__error__"], r["body"])
+        group = get_group(app_id, "CampFind Testers")
+    else:
+        group = r["data"][0]
+print("GROUP:", (group.get("id") if group else None), (group.get("attributes",{}).get("name") if group else None))
+
+if tester and group:
+    # add tester
+    r1 = api("POST", f"/v1/betaGroups/{group['id']}/relationships/betaTesters", {"data":[{"type":"betaTesters","id":tester["id"]}]})
+    print("ADD TESTER:", "OK" if "__error__" not in r1 else f"err {r1['__error__']} {r1['body']}")
+    # add latest build to group
+    builds = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=1")
+    if builds.get("data"):
+        b = builds["data"][0]
+        r2 = api("POST", f"/v1/betaGroups/{group['id']}/relationships/builds", {"data":[{"type":"builds","id":b["id"]}]})
+        print("ADD BUILD:", "OK" if "__error__" not in r2 else f"err {r2['__error__']} {r2['body']}")
+        print("BUILD:", b["attributes"].get("processingState"), b["id"])
+    else:
+        print("NO BUILD FOUND")
 print("DONE")
