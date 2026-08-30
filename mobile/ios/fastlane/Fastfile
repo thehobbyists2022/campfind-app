@@ -32,10 +32,10 @@ platform :ios do
       app_identifier: "com.campfind.app"
     )
 
-    # Build iOS IPA using native Flutter CLI with generated profile
-    sh("cd ../.. && cd mobile && flutter build ipa --release --export-options-plist=ios/ExportOptions.plist")
+    # Build iOS IPA using native Flutter CLI from mobile directory
+    sh("cd .. && flutter build ipa --release --export-options-plist=ios/ExportOptions.plist")
 
-    ipa_path = Dir[File.expand_path("../../build/ios/ipa/*.ipa")].first
+    ipa_path = Dir[File.expand_path("../build/ios/ipa/*.ipa")].first
 
     upload_to_testflight(
       api_key: api_key,
