@@ -15,31 +15,27 @@ def jwt():
     r,s = decode_dss_signature(der); sig = b64u(r.to_bytes(32,"big")+s.to_bytes(32,"big"))
     return f"{si}.{sig}"
 TOKEN = jwt()
-def api(method, path, body=None):
-    url = "https://api.appstoreconnect.apple.com"+path
-    data = json.dumps(body).encode() if body is not None else None
-    req = urllib.request.Request(url, data=data, method=method, headers={"Authorization":f"Bearer {TOKEN}","Content-Type":"application/json"})
+def api(method, path):
+    req = urllib.request.Request("https://api.appstoreconnect.apple.com"+path, headers={"Authorization": f"Bearer {TOKEN}"})
     try:
         with urllib.request.urlopen(req) as r:
             raw = r.read().decode(); return json.loads(raw) if raw else {}
     except urllib.error.HTTPError as e:
         return {"__e__": e.code, "b": e.read().decode()[:500]}
 
-# check existing submission
+# confirm submission exists + state
 sub = api("GET", f"/v1/builds/{build_id}/betaAppReviewSubmission")
-print("existing submission:", json.dumps(sub)[:200])
-
-# Set Beta App Description (optional beta app localizations)
-desc = api("POST", "/v1/betaAppLocalizations", {"data":{"type":"betaAppLocalizations","attributes":{"locale":"en-US","description":"CampFind helps families discover accredited summer and winter camps. This beta is for testing camp search, filters, favorites and detail views.","feedbackEmail":"clarityclinicalsolutions@gmail.com","marketingUrl":""},"relationships":{"app":{"data":{"type":"apps","id":"6806695913"}}}}})
-if "__e__" in desc: print("SET DESC err:", desc["__e__"], desc["b"])
-else: print("SET DESC OK:", json.dumps(desc.get("data",{}).get("attributes",{}))[:200])
-
-# create (submit for beta review)
-r = api("POST", "/v1/betaAppReviewSubmissions", {"data":{"type":"betaAppReviewSubmissions","relationships":{"build":{"data":{"type":"builds","id":build_id}}}}})
-if "__e__" in r:
-    print("SUBMIT err:", r["__e__"], r["b"])
-elif r.get("data"):
-    print("SUBMITTED:", json.dumps(r["data"][0]["attributes"]), r["data"][0]["id"])
+if sub.get("data"):
+    d = sub["data"]
+    print("SUBMISSION EXISTS:", d.get("id"), json.dumps(d.get("attributes",{})))
 else:
-    print("SUBMIT response:", json.dumps(r)[:300])
+    print("NO SUBMISSION:", sub.get("__e__"), sub.get("b",""))
+
+# look at review submission state from the app side
+st = api("GET", "/v1/betaAppReviewSubmissions?filter[build]="+build_id)
+if st.get("data"):
+    for x in st["data"]:
+        print("SUBMISSION STATE:", json.dumps(x["attributes"]))
+else:
+    print("query submissions:", st.get("__e__"), st.get("b",""))
 print("DONE")
