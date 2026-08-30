@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write   # required for fastlane match to store certs in the signing git repo
+
 jobs:
   build-and-upload:
     name: Build & Upload iOS App
@@ -19,50 +22,25 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Install Apple Certificate & Provisioning Profile
-        env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.APPLE_CERT_P12_BASE64 }}
-          P12_PASSWORD: ${{ secrets.APPLE_CERT_PASSWORD }}
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.APPLE_PROVISIONING_PROFILE_BASE64 }}
-          KEYCHAIN_PASSWORD: "ci_build_keychain_password"
+      - name: Install Ruby + Bundler
         run: |
-          # 1. Create temporary keychain
-          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
-          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          gem install bundler
+          bundle config path vendor/bundle
 
-          # 2. Import certificate into keychain
-          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
-          echo "$BUILD_CERTIFICATE_BASE64" | base64 --decode > $CERTIFICATE_PATH
-          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
-          security list-keychains -d user -s $KEYCHAIN_PATH $(security list-keychains -d user | sed -e 's/"//g')
-          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+      - name: Bundle install (fastlane)
+        working-directory: mobile/ios
+        run: bundle install
 
-          # 3. Install provisioning profile
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          PROFILE_PATH=~/Library/MobileDevice/Provisioning\ Profiles/app_store.mobileprovision
-          echo "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode > "$PROFILE_PATH"
-
-      - name: Build Flutter iOS IPA
-        working-directory: mobile
-        run: |
-          flutter pub get
-          flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
-
-      - name: Upload IPA to App Store Connect
+      - name: Fastlane match + build + upload (reuses signing cert)
+        working-directory: mobile/ios
         env:
           APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_READONLY: "false"
         run: |
-          # 1. Save Apple API Private Key
-          mkdir -p ~/.appstoreconnect/private_keys
-          echo "$APP_STORE_CONNECT_PRIVATE_KEY" > ~/.appstoreconnect/private_keys/AuthKey_${APP_STORE_CONNECT_KEY_ID}.p8
-
-          # 2. Find the generated IPA
-          IPA_FILE=$(find mobile/build/ios/ipa -name "*.ipa" | head -n 1)
-          echo "Found IPA to upload: $IPA_FILE"
-
-          # 3. Upload using Apple's official xcrun altool
-          xcrun altool --upload-app --type ios --file "$IPA_FILE" --apiKey "$APP_STORE_CONNECT_KEY_ID" --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID"
+          export LANG=en_US.UTF-8
+          bundle exec fastlane release

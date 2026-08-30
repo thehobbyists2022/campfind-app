@@ -1,7 +1,7 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Build and deploy to TestFlight and App Store Connect"
+  desc "Build and deploy to App Store Connect via fastlane match (reuses existing signing cert)"
   lane :release do
     api_key = app_store_connect_api_key(
       key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
@@ -10,26 +10,18 @@ platform :ios do
       is_key_content_base64: false
     )
 
-    create_keychain(
-      name: "ci_keychain",
-      password: "ci_password",
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      lock_when_sleeps: false
-    )
-
-    kc_path = File.expand_path("~/Library/Keychains/ci_keychain-db")
-
-    get_certificates(
+    # match REUSES the existing distribution certificate + profile stored in the
+    # signing git repo. Unlike `get_certificates`, it will NOT generate a new
+    # certificate on every CI run, so it can never hit Apple's 2-cert limit.
+    match(
+      type: "app_store",
       api_key: api_key,
-      keychain_path: kc_path,
+      app_identifier: "com.campfind.app",
+      readonly: ENV["MATCH_READONLY"] == "true",
+      git_url: ENV["MATCH_GIT_URL"],
+      git_branch: ENV["MATCH_GIT_BRANCH"] || "certificates",
+      keychain_name: "ci_keychain",
       keychain_password: "ci_password"
-    )
-
-    get_provisioning_profile(
-      api_key: api_key,
-      app_identifier: "com.campfind.app"
     )
 
     build_app(
@@ -40,14 +32,16 @@ platform :ios do
       export_options: {
         signingStyle: "manual",
         provisioningProfiles: {
-          "com.campfind.app" => lane_context[SharedValues::SIGH_NAME]
+          "com.campfind.app" => lane_context[SharedValues::SIGH_PROFILE_PATH]
         }
       }
     )
 
-    upload_to_testflight(
+    upload_to_app_store(
       api_key: api_key,
-      skip_waiting_for_build_processing: true
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: false
     )
   end
 end
