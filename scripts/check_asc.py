@@ -27,8 +27,7 @@ signature = b64url(raw_sig)
 jwt = f"{signing_input}.{signature}"
 
 url = ("https://api.appstoreconnect.apple.com/v1/builds"
-       "?sort=-uploadedDate&limit=10"
-       "&fields[build]=version,shortVersion,buildNumber,uploadedDate,processingState,exportComplianceState,buildState")
+       "?sort=-uploadedDate&limit=10")
 req = urllib.request.Request(url, headers={"Authorization": f"Bearer {jwt}"})
 try:
     with urllib.request.urlopen(req) as resp:
