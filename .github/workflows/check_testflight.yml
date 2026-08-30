@@ -10,39 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Query TestFlight builds via App Store Connect API (openssl JWT)
+      - name: Query TestFlight builds via App Store Connect API
         env:
           ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           ASC_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
-        run: |
-          set -e
-          # Ensure the .p8 is written with real newlines
-          printf '%s' "$ASC_KEY" | sed 's/\\n/\n/g' > authkey.p8
-          # JWT helpers
-          b64url() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
-          NOW=$(date +%s)
-          EXP=$((NOW+1200))
-          HEADER=$(printf '{"alg":"ES256","kid":"%s","typ":"JWT"}' "$ASC_KEY_ID" | b64url)
-          PAYLOAD=$(printf '{"iss":"%s","iat":%s,"exp":%s,"aud":"appstoreconnect-v1"}' "$ASC_ISSUER_ID" "$NOW" "$EXP" | b64url)
-          SIGNING_INPUT="$HEADER.$PAYLOAD"
-          SIGNATURE=$(printf '%s' "$SIGNING_INPUT" | openssl dgst -sha256 -sign authkey.p8 -binary | b64url)
-          JWT="$SIGNING_INPUT.$SIGNATURE"
-          echo "Querying App Store Connect API..."
-          curl -sS -H "Authorization: Bearer $JWT" \
-            "https://api.appstoreconnect.apple.com/v1/builds?sort=-uploadedDate&limit=10&fields[build]=version,shortVersion,buildNumber,uploadedDate,processingState,exportComplianceState,buildState" \
-            | python3 -c '
-import sys, json
-d = json.load(sys.stdin)
-if "errors" in d:
-    print("API ERRORS:", json.dumps(d["errors"])[:600]); sys.exit(0)
-print("LATEST BUILDS:")
-for b in d.get("data", []):
-    a = b["attributes"]
-    print(" -", a.get("shortVersion"), "(" + str(a.get("buildNumber")) + ")",
-          "| processing:", a.get("processingState"),
-          "| buildState:", a.get("buildState"),
-          "| exportCompliance:", a.get("exportComplianceState"),
-          "| uploaded:", a.get("uploadedDate"))
-print("TOTAL:", d.get("meta", {}).get("paging", {}).get("total"))
-'
+        run: python3 scripts/check_asc.py
