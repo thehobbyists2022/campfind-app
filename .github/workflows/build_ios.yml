@@ -1,4 +1,4 @@
-name: Build Flutter iOS & Android
+name: Deploy iOS to App Store Connect
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-ios:
-    name: Build iOS IPA
+  deploy-ios:
+    name: Build & Upload to App Store Connect
     runs-on: macos-14
     steps:
       - name: Checkout Code
@@ -23,12 +23,18 @@ jobs:
         working-directory: mobile
         run: flutter pub get
 
-      - name: Build iOS IPA
+      - name: Build Flutter iOS Bundle
         working-directory: mobile
-        run: flutter build ipa --release --no-codesign
+        run: flutter build ios --release --no-codesign
 
-      - name: Upload iOS Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: CampFind-iOS-Build
-          path: mobile/build/ios/archive/Runner.xcarchive
+      - name: Set up Fastlane
+        working-directory: mobile/ios
+        run: gem install bundler fastlane
+
+      - name: Build & Upload via Fastlane
+        working-directory: mobile/ios
+        env:
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+        run: fastlane release
