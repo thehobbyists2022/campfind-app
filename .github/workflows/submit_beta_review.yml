@@ -1,0 +1,19 @@
+name: Submit Beta App Review
+
+on:
+  workflow_dispatch:
+
+jobs:
+  submit:
+    name: Submit latest build for Beta Review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cryptography
+        run: pip install --quiet cryptography
+      - name: Submit beta review
+        env:
+          ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          ASC_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+        run: python3 scripts/submit_review.py
