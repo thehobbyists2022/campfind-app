@@ -51,7 +51,7 @@ platform :ios do
       }
     )
 
-    ipa = Dir["build/ios/ipa/*.ipa"].first
+    ipa = lane_context[SharedValues::IPA_OUTPUT_PATH] || Dir["build/ios/ipa/*.ipa"].first
     raise "IPA not found" unless ipa
 
     upload_to_testflight(
