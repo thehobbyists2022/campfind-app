@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, sys, json, time, base64, urllib.request, urllib.parse
+import os, sys, json, time, base64, urllib.request
 
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec
@@ -7,7 +7,6 @@ from cryptography.hazmat.primitives.asymmetric.utils import decode_dss_signature
 
 key_id = os.environ["ASC_KEY_ID"]; issuer = os.environ["ASC_ISSUER_ID"]
 key_pem = os.environ["ASC_KEY"].replace("\\n", "\n")
-email = os.environ.get("TESTER_EMAIL", "clarityclinicalsolutions@gmail.com")
 app_id = "6806695913"
 
 pk = serialization.load_pem_private_key(key_pem.encode(), password=None)
@@ -30,30 +29,23 @@ def api(method, path, body=None):
     except urllib.error.HTTPError as e:
         return {"__e__": e.code, "b": e.read().decode()[:500]}
 
-# 1. is the email a team user?
-users = api("GET", f"/v1/users?filter[username]={urllib.parse.quote(email)}&limit=5")
-if users.get("data"):
-    u = users["data"][0]
-    print("TEAM USER:", u["attributes"].get("username"), "| roles:", u["attributes"].get("roles"))
-else:
-    print("NOT A TEAM USER (external)")
-
-# 2. groups for app
 groups = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=50")
+target = None
 for g in groups.get("data", []):
-    a = g["attributes"]
-    print("GROUP:", g["id"], a.get("name"), "| publicLinkEnabled:", a.get("publicLinkEnabled"), "| publicLink:", a.get("publicLink"), "| betaReviewState:", a.get("betaReviewState"))
+    print("GROUP:", g["attributes"].get("name"), "| publicLinkEnabled:", g["attributes"].get("publicLinkEnabled"))
+    if g["attributes"].get("name") == "CampFind Testers": target = g
+if not target:
+    print("CampFind Testers group not found"); sys.exit(1)
+gid = target["id"]
 
-# 3. add latest build to the FIRST group
-gid = groups["data"][0]["id"] if groups.get("data") else None
-if gid:
-    builds = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=1")
-    if builds.get("data"):
-        b = builds["data"][0]
-        print("BUILD:", b["attributes"].get("shortVersion"), "(" + str(b["attributes"].get("buildNumber")) + ")", "| processing:", b["attributes"].get("processingState"))
-        r = api("POST", f"/v1/betaGroups/{gid}/relationships/builds", {"data":[{"type":"builds","id":b["id"]}]})
-        if "__e__" in r: print("ADD BUILD err:", r["__e__"], r["b"])
-        else: print("ADD BUILD OK -> group", gid)
-    else:
-        print("NO BUILD")
+# Enable public link on the group (needs beta review passed for external; PATCH attrs only)
+patch = api("PATCH", f"/v1/betaGroups/{gid}", {"data":{"type":"betaGroups","id":gid,"attributes":{"publicLinkEnabled":True,"publicLinkLimit":100}}})
+if "__e__" in patch: print("PATCH err:", patch["__e__"], patch["b"])
+else: print("PATCH OK:", json.dumps(patch.get("data",{}).get("attributes",{})))
+
+# Re-fetch to get the public link
+g2 = api("GET", f"/v1/betaGroups/{gid}")
+attrs = (g2.get("data",{}).get("attributes",{})) if g2.get("data") else {}
+print("PUBLIC LINK:", attrs.get("publicLink"))
+print("PUBLIC LINK ENABLED:", attrs.get("publicLinkEnabled"))
 print("DONE")
