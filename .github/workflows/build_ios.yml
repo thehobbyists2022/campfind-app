@@ -28,7 +28,13 @@ jobs:
 
       - name: Compute match git auth
         id: git-auth
-        run: echo "auth=$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "auth=$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64)" >> "$GITHUB_OUTPUT"
+          # Rewrite all GitHub URLs to include the token so fastlane match can
+          # clone AND push to the 'certificates' branch consistently.
+          git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
+          git config --global user.email "thehobbyists2022@gmail.com"
+          git config --global user.name "thehobbyists2022"
 
       - name: Configure Ruby environment
         working-directory: mobile/ios
