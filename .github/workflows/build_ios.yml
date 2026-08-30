@@ -18,14 +18,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Select Xcode 26+ (iOS 26 SDK required by App Store Connect)
-        run: |
-          for x in /Applications/Xcode_26*.app /Applications/Xcode_26.0.app /Applications/Xcode_25*.app /Applications/Xcode*.app; do
-            if [ -d "$x" ]; then echo "sudo xcode-select -s $x"; sudo xcode-select -s "$x"; break; fi
-          done
-          xcodebuild -version
-          xcrun --show-sdk-version 2>/dev/null || true
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
