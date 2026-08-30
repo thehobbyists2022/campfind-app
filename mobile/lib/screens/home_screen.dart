@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/camp_model.dart';
 import '../services/camp_repository.dart';
 import '../widgets/camp_card.dart';
-import '../widgets/paywall_modal.dart';
+
 import 'camp_detail_screen.dart';
 import 'comparison_screen.dart';
+import 'claim_camp_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final CampRepository repository;
@@ -20,26 +23,33 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Camp> _filteredCamps = [];
   final List<String> _comparedCampIds = [];
   bool _isMapView = false;
-  bool _isProUser = false;
-
-  void _openPaywall(String featureName) async {
-    final result = await showModalBottomSheet<bool>(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) => PaywallModal(featureTrigger: featureName),
-    );
-    if (result == true) {
-      setState(() {
-        _isProUser = true;
-      });
-    }
-  }
+  bool _showOnboardingTip = false;
 
   @override
   void initState() {
     super.initState();
     _applyFilters();
+    _checkOnboardingTip();
+  }
+
+  Future<void> _checkOnboardingTip() async {
+    final prefs = await SharedPreferences.getInstance();
+    final hasSeen = prefs.getBool('seen_onboarding_guide_v1') ?? false;
+    if (!hasSeen && mounted) {
+      setState(() {
+        _showOnboardingTip = true;
+      });
+    }
+  }
+
+  Future<void> _dismissOnboardingTip() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('seen_onboarding_guide_v1', true);
+    if (mounted) {
+      setState(() {
+        _showOnboardingTip = false;
+      });
+    }
   }
 
   void _applyFilters() {
@@ -130,28 +140,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                     ),
 
-                    // Multi-Child Sibling Mode Toggle (Pro Feature)
+                    // Multi-Child Sibling Mode Toggle
                     SwitchListTile(
-                      title: Row(
-                        children: [
-                          const Text('👨‍👩‍👧‍👦 Multi-Child / Sibling Mode', style: TextStyle(fontWeight: FontWeight.w600)),
-                          const SizedBox(width: 6),
-                          if (!_isProUser)
-                            Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                              decoration: BoxDecoration(color: const Color(0xFFFFD700), borderRadius: BorderRadius.circular(6)),
-                              child: const Text('PRO', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.black)),
-                            ),
-                        ],
-                      ),
+                      title: const Text('👨‍👩‍👧‍👦 Multi-Child / Sibling Mode', style: TextStyle(fontWeight: FontWeight.w600)),
                       subtitle: const Text('Find camps suitable for 2 children'),
                       value: _filters.isSiblingMode,
                       activeThumbColor: const Color(0xFF4ECDC4),
                       onChanged: (val) {
-                        if (val && !_isProUser) {
-                          _openPaywall('Sibling Mode');
-                          return;
-                        }
                         setModalState(() => _filters.isSiblingMode = val);
                         _applyFilters();
                       },
@@ -203,43 +198,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
 
-                    const SizedBox(height: 16),
-
                     // Session Week Picker
                     const Text('Session Week', style: TextStyle(fontWeight: FontWeight.bold)),
                     const SizedBox(height: 6),
                     Wrap(
                       spacing: 8,
                       runSpacing: 8,
-                      children: [
-                        ChoiceChip(
-                          label: const Text('Any Week'),
-                          selected: _filters.sessionWeek == 0,
-                          selectedColor: const Color(0xFFFF6B6B),
-                          labelStyle: TextStyle(
-                            color: _filters.sessionWeek == 0 ? Colors.white : const Color(0xFF2C3E50),
-                            fontWeight: FontWeight.w600,
-                          ),
-                          onSelected: (_) {
-                            setModalState(() => _filters.sessionWeek = 0);
-                            _applyFilters();
-                          },
-                        ),
-                        for (int w = 1; w <= 8; w++)
-                          ChoiceChip(
-                            label: Text('Week $w'),
-                            selected: _filters.sessionWeek == w,
-                            selectedColor: const Color(0xFF4ECDC4),
-                            labelStyle: TextStyle(
-                              color: _filters.sessionWeek == w ? Colors.white : const Color(0xFF2C3E50),
-                              fontWeight: FontWeight.w600,
-                            ),
-                            onSelected: (_) {
-                              setModalState(() => _filters.sessionWeek = w);
-                              _applyFilters();
-                            },
-                          ),
-                      ],
+                      children: _buildDynamicWeekChips(setModalState),
                     ),
 
                     const SizedBox(height: 16),
@@ -343,6 +308,67 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  List<Widget> _buildDynamicWeekChips(StateSetter setModalState) {
+    final season = _filters.season.toLowerCase();
+
+    List<Map<String, dynamic>> options = [];
+
+    if (season == 'spring') {
+      options = [
+        {'label': 'Any Spring Session', 'week': 0},
+        {'label': '🌸 Week 1 (Mar 16–27)', 'week': 1},
+        {'label': '🌸 Week 2 (Mar 30–Apr 10)', 'week': 2},
+      ];
+    } else if (season == 'fall') {
+      options = [
+        {'label': 'Any Fall Session', 'week': 0},
+        {'label': '🍂 Fall Break (Oct 12–16)', 'week': 1},
+        {'label': '🦃 Thanksgiving (Nov 23–27)', 'week': 2},
+      ];
+    } else if (season == 'winter') {
+      options = [
+        {'label': 'Any Winter Week', 'week': 0},
+        {'label': '🎄 Christmas (Dec 22–26)', 'week': 1},
+        {'label': '🎆 New Year (Dec 29–Jan 2)', 'week': 2},
+        {'label': '❄️ Week 3 (Jan 5–9)', 'week': 3},
+      ];
+    } else if (season == 'summer') {
+      options = [
+        {'label': 'Any Summer Week', 'week': 0},
+        {'label': 'Week 1 (Jun 2–13)', 'week': 1},
+        {'label': 'Week 2 (Jun 16–27)', 'week': 2},
+        {'label': 'Week 3 (Jun 30–Jul 11)', 'week': 3},
+        {'label': 'Week 4 (Jul 14–25)', 'week': 4},
+        {'label': 'Week 5 (Jul 28–Aug 8)', 'week': 5},
+        {'label': 'Week 6 (Aug 11–22)', 'week': 6},
+      ];
+    } else {
+      options = [
+        {'label': 'Any Week', 'week': 0},
+        for (int w = 1; w <= 8; w++) {'label': 'Week $w', 'week': w},
+      ];
+    }
+
+    return options.map((opt) {
+      final int weekVal = opt['week'] as int;
+      final String label = opt['label'] as String;
+      final bool isSelected = _filters.sessionWeek == weekVal;
+      return ChoiceChip(
+        label: Text(label),
+        selected: isSelected,
+        selectedColor: weekVal == 0 ? const Color(0xFFFF6B6B) : const Color(0xFF4ECDC4),
+        labelStyle: TextStyle(
+          color: isSelected ? Colors.white : const Color(0xFF2C3E50),
+          fontWeight: FontWeight.w600,
+        ),
+        onSelected: (_) {
+          setModalState(() => _filters.sessionWeek = weekVal);
+          _applyFilters();
+        },
+      );
+    }).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -377,6 +403,28 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         actions: [
+          IconButton(
+            tooltip: 'For Camp Directors',
+            icon: const Icon(Icons.storefront_outlined, color: Color(0xFF16A34A)),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ClaimCampScreen(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            tooltip: 'Privacy Policy',
+            icon: const Icon(Icons.privacy_tip_outlined, color: Color(0xFF64748B)),
+            onPressed: () {
+              launchUrl(
+                Uri.parse('https://campfind-app.netlify.app/privacy.html'),
+                mode: LaunchMode.externalApplication,
+              );
+            },
+          ),
           IconButton(
             icon: Icon(_isMapView ? Icons.list_alt : Icons.map, color: const Color(0xFF2C3E50)),
             onPressed: () {
@@ -425,6 +473,51 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+
+          // Welcome / Onboarding Walkthrough Banner
+          if (_showOnboardingTip)
+            Container(
+              margin: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: const Color(0xFFFFF9E6),
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(color: const Color(0xFFFFD700).withValues(alpha: 0.8)),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Row(
+                        children: [
+                          Icon(Icons.lightbulb_outline, color: Color(0xFFD97706), size: 20),
+                          SizedBox(width: 6),
+                          Text(
+                            'Welcome to CampFind!',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: Color(0xFF92400E),
+                            ),
+                          ),
+                        ],
+                      ),
+                      GestureDetector(
+                        onTap: _dismissOnboardingTip,
+                        child: const Icon(Icons.close, size: 18, color: Color(0xFFB45309)),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    '• Filter by Age & Sibling Mode to find camps matching multiple kids.\n• Tap the Compare button on cards to compare up to 3 camps side-by-side.\n• Toggle the Map icon at the top right to explore camps by location.',
+                    style: TextStyle(fontSize: 12, color: Color(0xFF78350F), height: 1.4),
+                  ),
+                ],
+              ),
+            ),
 
           // Count & Active Filter Indicator
           Padding(

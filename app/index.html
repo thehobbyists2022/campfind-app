@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <!-- Anti-Cache & Mobile Refresh Meta Tags -->
+    <!-- Content Security Policy (defense-in-depth for XSS; full policy also set via _headers for Netlify) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org; connect-src 'self' https://formsubmit.co; font-src 'self' data:; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'">
+    <!-- Anti-Cache (for fresh data) — keep cache-friendly to avoid stale searches -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <!-- Anti-Scraper & Anti-Indexing Meta Tags -->
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <meta name="googlebot" content="noindex, nofollow, noarchive">
-    <meta name="bingbot" content="noindex, nofollow, noarchive">
-    <title>CampFind — Find the Perfect Summer & Winter Camp</title>
+    <!-- Indexing: allow Google/Bing to index for SEO & Amazon Associates traction -->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="description" content="Find the perfect summer, winter, spring & fall camp for your kids. Search 5,000+ verified US camps by location, age, theme, price, extended care & shuttle. Compare camps side-by-side and get smart gear recommendations.">
+    <title>CampFind — Find Summer, Winter, Spring & Fall Camps for Kids (5,000+ US Camps)</title>
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
     <!-- Leaflet CSS & JS for Interactive Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Load CampFind Camps Dataset with Cache-busting -->
     <script src="aca_camps_data.js?v=3.0.0"></script>
+    <!-- Load Amazon Associates Gear Catalog -->
+    <script src="gear_catalog.js?v=1.1.0"></script>
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -65,110 +72,11 @@
             background-attachment: fixed;
         }
 
-        /* ---- PASSCODE OVERLAY ---- */
-        #passcodeOverlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(26, 37, 47, 0.98));
-            backdrop-filter: blur(10px);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .passcode-card {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 40px 32px;
-            max-width: 420px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .passcode-icon {
-            font-size: 3.2rem;
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        .passcode-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 6px;
-        }
-
-        .passcode-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            line-height: 1.4;
-        }
-
-        .passcode-input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .passcode-input-group input[type="password"] {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid #cbd5e1;
-            border-radius: var(--radius-sm);
-            font-size: 1.4rem;
-            letter-spacing: 8px;
-            text-align: center;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .passcode-input-group input[type="password"]:focus {
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 4px rgba(78, 205, 196, 0.2);
-        }
-
-        .passcode-btn {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #fff;
-            border: none;
-            padding: 14px;
-            border-radius: var(--radius-sm);
-            font-size: 1.05rem;
-            font-weight: 800;
-            cursor: pointer;
-            touch-action: manipulation;
-            transition: var(--transition);
-        }
-
-        .passcode-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .passcode-error {
-            color: var(--primary-dark);
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-top: 10px;
-            display: none;
-        }
-
         .app-container {
             max-width: 1240px;
             margin: 0 auto;
             padding: 20px 24px 80px;
             position: relative;
-            display: none; /* hidden until passcode unlocked */
         }
 
         /* ---- HEADER ---- */
@@ -605,35 +513,155 @@
         }
 
         .compare-table th { background: var(--bg-alt); font-weight: 700; }
+
+        /* ---- GEAR & PACKING RECOMMENDATIONS (AMAZON ASSOCIATES) ---- */
+        .gear-section {
+            background: linear-gradient(135deg, #FFFDF8, #FFF7ED);
+            border: 1.5px solid #FED7AA;
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            margin: 18px 0;
+        }
+        .gear-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .gear-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #7C2D12;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .gear-disclaimer {
+            font-size: 0.75rem;
+            color: #9A3412;
+            margin-top: 10px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        .gear-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .gear-item-card {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid #FFEDD5;
+            border-radius: var(--radius-xs);
+            padding: 10px 14px;
+            gap: 12px;
+            transition: var(--transition);
+        }
+        .gear-item-card:hover {
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.12);
+            border-color: #FB923C;
+        }
+        .gear-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+        .gear-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .gear-name {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--accent);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .gear-meta {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        .gear-buy-btn {
+            background: #FF9900;
+            color: #111;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-decoration: none;
+            padding: 7px 14px;
+            border-radius: 8px;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: var(--transition);
+        }
+        .gear-buy-btn:hover {
+            background: #FA8900;
+            transform: translateY(-1px);
+        }
+        .claim-camp-banner {
+            background: #F0FDF4;
+            border: 1.5px dashed #22C55E;
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: #166534;
+        }
+        .claim-camp-btn {
+            background: #16A34A;
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+        .claim-camp-btn:hover {
+            background: #15803D;
+        }
+        .director-nav-btn {
+            background: rgba(44, 62, 80, 0.08);
+            border: 1px solid rgba(44, 62, 80, 0.15);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .director-nav-btn:hover {
+            background: var(--accent);
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-
-    <!-- PASSCODE OVERLAY -->
-    <div id="passcodeOverlay" style="display: none;">
-        <div class="passcode-card">
-            <span class="passcode-icon">🔐</span>
-            <div class="passcode-title">CampFind Private Preview</div>
-            <div class="passcode-desc">This is a private prototype. Please enter the access passcode to unlock the application.</div>
-            <div class="passcode-input-group">
-                <input type="password" id="passcodeInput" maxlength="10" placeholder="••••" />
-                <button class="passcode-btn" id="btnUnlock">🔓 Unlock App</button>
-            </div>
-            <div class="passcode-error" id="passcodeError">❌ Incorrect passcode. Please try again.</div>
-        </div>
-    </div>
 
     <!-- MAIN APP CONTAINER -->
     <div class="app-container" id="appContainer" style="display: block;">
         <!-- HEADER -->
         <header class="header">
-            <div class="lang-picker">
-                <span>🌐</span>
-                <select id="langSelect">
-                    <option value="en">🇺🇸 English</option>
-                    <option value="zh">🇹🇼 繁體中文</option>
-                    <option value="es">🇲🇽 Español</option>
-                </select>
+            <div style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:12px;">
+                <button type="button" class="director-nav-btn" id="btnDirectorNav" onclick="window.openClaimModal && window.openClaimModal('', '')">🏕️ For Camp Directors: Claim / List Camp</button>
+                <div class="lang-picker" style="margin-bottom:0;">
+                    <span>🌐</span>
+                    <select id="langSelect">
+                        <option value="en">🇺🇸 English</option>
+                        <option value="zh">🇹🇼 繁體中文</option>
+                        <option value="es">🇲🇽 Español</option>
+                    </select>
+                </div>
             </div>
 
             <div class="app-logo">
@@ -641,13 +669,13 @@
                 <h1 style="font-weight:900; font-size:2.5rem; letter-spacing:-0.5px;"><span style="color:#FF6B6B;">Camp</span><span style="color:#4ECDC4;">Find</span></h1>
             </div>
             <p class="tagline" id="txtTagline">Find Summer, Winter, Spring & Fall Camps Across the USA</p>
-            <div class="data-badge" id="txtBadge">✨ Live Search &middot; Updated 2026</div>
+            <div class="data-badge" id="txtBadge">✨ 5,000+ Camps &middot; Live Search &middot; Updated 2026</div>
         </header>
 
         <!-- APP PROMOTION BANNER (WEB TO APP FUNNEL) -->
         <div style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4); color:#fff; padding: 12px 18px; border-radius: 14px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; box-shadow: 0 4px 15px rgba(255,107,107,0.25);">
             <span>📱 <strong>Get CampFind Android App</strong> — Live Availability Alerts, Sibling Matching & Calendar Sync!</span>
-            <a href="#" onclick="alert('🎉 Google Play Store link will open here once approved!')" style="background:#fff; color:#1A1A2E; text-decoration:none; padding:8px 16px; border-radius:20px; font-weight:800; font-size:0.85rem; transition: transform 0.2s;">Download App &rarr;</a>
+            <a href="https://play.google.com/store/apps/details?id=com.campfind.app" target="_blank" rel="noopener" style="background:#fff; color:#1A1A2E; text-decoration:none; padding:8px 16px; border-radius:20px; font-weight:800; font-size:0.85rem; transition: transform 0.2s; white-space:nowrap;">Get on Google Play &rarr;</a>
         </div>
 
         <!-- SEARCH & FILTER PANEL -->
@@ -724,10 +752,10 @@
                     <label id="lblWeek">Session Week Picker</label>
                     <div class="select-wrapper">
                         <select id="weekSelect">
-                            <option value="0">Any Week</option>
-                            <option value="1">Week 1 (Jun 2 – Jun 13 / Dec 22–Dec 26)</option>
-                            <option value="2">Week 2 (Jun 16 – Jun 27 / Dec 29–Jan 2)</option>
-                            <option value="3">Week 3 (Jun 30 – Jul 11 / Jan 5–Jan 9)</option>
+                            <option value="0">Any Session / Week</option>
+                            <option value="1">Week 1 (Jun 2–13 / Dec 22–26 / Mar 16–27)</option>
+                            <option value="2">Week 2 (Jun 16–27 / Dec 29–Jan 2 / Mar 30–Apr 10)</option>
+                            <option value="3">Week 3 (Jun 30–Jul 11 / Jan 5–9 / Nov 23–27)</option>
                             <option value="4">Week 4 (Jul 14 – Jul 25)</option>
                             <option value="5">Week 5 (Jul 28 – Aug 8)</option>
                             <option value="6">Week 6 (Aug 11 – Aug 22)</option>
@@ -759,7 +787,7 @@
         <div class="results-header">
             <div>
                 <h2 style="font-size:1.3rem; font-weight:700; color:var(--accent);">
-                    <span id="lblResultsTitle">Available Camps</span> <span id="resultsCount" style="background:#e2e8f0; padding:2px 10px; border-radius:12px; font-size:0.85rem;">(1,050 camps)</span>
+                    <span id="lblResultsTitle">Available Camps</span> <span id="resultsCount" style="background:#e2e8f0; padding:2px 10px; border-radius:12px; font-size:0.85rem;">(5,000 camps)</span>
                 </h2>
                 <div id="resultSubtitle" style="font-size:0.85rem; color:var(--text-secondary); margin-top:2px;">Showing nationwide camps</div>
             </div>
@@ -808,13 +836,75 @@
         </div>
     </div>
 
+    <!-- CAMP DIRECTOR CLAIM & LISTING MODAL -->
+    <div class="modal-overlay" id="claimModal">
+        <div class="modal-card" style="max-width: 620px;">
+            <button type="button" class="modal-close" id="claimModalClose">&times;</button>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                <span style="font-size:2rem;">🏕️</span>
+                <div>
+                    <h2 style="font-size:1.35rem; color:var(--accent); margin:0;">Camp Director Portal</h2>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); margin:0;">Claim listing, update real-time seats, or list a new camp</p>
+                </div>
+            </div>
+
+            <form id="claimForm" name="camp-director-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="event.preventDefault(); handleClaimSubmit();" style="margin-top:16px;">
+                <input type="hidden" name="form-name" value="camp-director-inquiry" />
+                <input type="hidden" name="_subject" value="🏕️ New Camp Director Inquiry from CampFind App" />
+                <p style="display:none"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+                <div style="margin-bottom:14px;">
+                    <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:6px;">Inquiry Type</label>
+                    <select id="claimType" name="inquiry_type" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.9rem;">
+                        <option value="claim">✅ Claim Existing Camp (Update Availability & Info)</option>
+                        <option value="new_listing">➕ Submit a New Camp Listing</option>
+                        <option value="featured_ad">⭐ Featured / Top Placement Inquiry</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom:14px;">
+                    <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:6px;">Camp Name *</label>
+                    <input type="text" id="claimCampName" name="camp_name" required placeholder="e.g. Carlsbad Day Camp" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.9rem;" />
+                </div>
+
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:14px;">
+                    <div>
+                        <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:6px;">Director / Contact Name *</label>
+                        <input type="text" id="claimDirectorName" name="director_name" required placeholder="e.g. Jane Doe" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.9rem;" />
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:6px;">Official Work Email *</label>
+                        <input type="email" id="claimEmail" name="email" required placeholder="director@camp.com" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.9rem;" />
+                    </div>
+                </div>
+
+                <div style="margin-bottom:14px;">
+                    <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:6px;">Phone & Official Website</label>
+                    <input type="text" id="claimWebsite" name="phone_website" placeholder="e.g. (760) 555-0199 | https://mycamp.org" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.9rem;" />
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:6px;">Notes / Updates (Sessions, Open Seats, Early Bird)</label>
+                    <textarea id="claimNotes" name="notes" rows="3" placeholder="Describe your updates or new camp features..." style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.9rem; resize:vertical;"></textarea>
+                </div>
+
+                <div id="claimSuccessMsg" style="display:none; background:#ecfdf5; border:1px solid #6ee7b7; color:#065f46; padding:12px; border-radius:8px; font-size:0.9rem; margin-bottom:14px; text-align:center;">
+                    🎉 <strong>Thank you!</strong> Your claim request has been received. Our team will verify your ownership and update your listing within 24 hours.
+                </div>
+
+                <div style="display:flex; justify-content:flex-end; gap:10px;">
+                    <button type="button" class="btn-reset" onclick="document.getElementById('claimModal').style.display='none'" style="padding:10px 18px;">Cancel</button>
+                    <button type="submit" id="btnSubmitClaim" style="background:#16A34A; color:#fff; font-weight:700; border:none; padding:10px 24px; border-radius:8px; cursor:pointer; font-size:0.95rem;">Submit Application &rarr;</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
         (function() {
             'use strict';
 
-            const PASSCODE = '8888';
-
-            // ---- I18N DICTIONARY ----
+            // Apply Language
             const I18N = {
                 en: {
                     tagline: "Find Summer, Winter, Spring & Fall Camps Across the USA",
@@ -949,6 +1039,18 @@
             // ---- DATA ----
             const ALL_CAMPS = window.ACA_CAMPS || [];
 
+            // HTML-escape untrusted values before inserting into innerHTML
+            // to prevent stored XSS from scraped camp data.
+            function escapeHtml(value) {
+                if (value === null || value === undefined) return '';
+                return String(value)
+                    .replaceAll('&', '&amp;')
+                    .replaceAll('<', '&lt;')
+                    .replaceAll('>', '&gt;')
+                    .replaceAll('"', '&quot;')
+                    .replaceAll("'", '&#39;');
+            }
+
             const zipStateMap = {
                 '9': 'CA', '90': 'CA', '91': 'CA', '92': 'CA', '93': 'CA', '94': 'CA', '95': 'CA', '96': 'CA',
                 '10': 'NY', '11': 'NY', '12': 'NY', '13': 'NY', '14': 'NY', '1': 'NY',
@@ -980,10 +1082,6 @@
 
             // ---- DOM REFS ----
             const $ = id => document.getElementById(id);
-            const passcodeOverlay = $('passcodeOverlay');
-            const passcodeInput = $('passcodeInput');
-            const btnUnlock = $('btnUnlock');
-            const passcodeError = $('passcodeError');
             const appContainer = $('appContainer');
             const langSelect = $('langSelect');
             const searchInput = $('searchInput');
@@ -1011,27 +1109,6 @@
             const modalBody = $('modalBody');
             const compareModal = $('compareModal');
             const compareTableContainer = $('compareTableContainer');
-
-            // Passcode Verification
-            function verifyPasscode() {
-                const val = passcodeInput.value.trim();
-                if (val === PASSCODE) {
-                    sessionStorage.setItem('campfind_authenticated', 'true');
-                    passcodeOverlay.style.display = 'none';
-                    appContainer.style.display = 'block';
-                    render();
-                } else {
-                    passcodeError.style.display = 'block';
-                    passcodeInput.value = '';
-                    passcodeInput.focus();
-                }
-            }
-
-            function checkAuth() {
-                passcodeOverlay.style.display = 'none';
-                appContainer.style.display = 'block';
-                return true;
-            }
 
             // Apply Language
             function updateLanguage(lang) {
@@ -1257,35 +1334,35 @@
                     const isChecked = selectedCompareIds.includes(c.id) ? 'checked' : '';
                     const seasonIcon = c.season === 'winter' ? '❄️ WINTER' : (c.season === 'spring' ? '🌸 SPRING' : (c.season === 'fall' ? '🍂 FALL' : '🌞 SUMMER'));
                     return `
-                        <div class="camp-card" data-id="${c.id}">
+                        <div class="camp-card" data-id="${escapeHtml(c.id)}">
                             <div class="camp-card-header">
                                 <div>
-                                    <div class="camp-title">${c.name}</div>
-                                    <div class="meta-text" style="margin-top:2px;">📍 ${c.city}, ${c.state}${c.zip ? ' (' + c.zip + ')' : ''}</div>
+                                    <div class="camp-title">${escapeHtml(c.name)}</div>
+                                    <div class="meta-text" style="margin-top:2px;">📍 ${escapeHtml(c.city)}, ${escapeHtml(c.state)}${c.zip ? ' (' + escapeHtml(c.zip) + ')' : ''}</div>
                                 </div>
                             </div>
 
                             <div class="camp-body">
                                 <div class="badges-row">
                                     <span class="badge badge-season">${seasonIcon}</span>
-                                    <span class="badge badge-type">${c.type.toUpperCase()}</span>
-                                    <span class="badge badge-theme">${c.theme || 'GENERAL'}</span>
+                                    <span class="badge badge-type">${escapeHtml((c.type || '').toUpperCase())}</span>
+                                    <span class="badge badge-theme">${escapeHtml(c.theme || 'GENERAL')}</span>
                                     ${(c.provider || '').toLowerCase() === 'city' ? '<span class="badge badge-city">🏛️ City-Run</span>' : ''}
                                     ${c.beforeCare ? '<span class="badge badge-care">🌅 Early</span>' : ''}
                                     ${c.afterCare ? '<span class="badge badge-care">🌆 Late</span>' : ''}
                                     ${c.shuttle ? '<span class="badge badge-care">🚌 Shuttle</span>' : ''}
                                 </div>
 
-                                <div class="meta-text">${c.rating != null ? '⭐ ' + c.rating + (c.reviewCount != null ? ' (' + c.reviewCount + ' reviews)' : '') : ''}${c.acaVerified ? ' ✓ ACA Accredited' : ''}</div>
-                                <div class="meta-text">👶 Ages ${c.ageMin ?? '—'}–${c.ageMax ?? '—'} yrs ${c.price != null ? '&middot; 💵 <strong>$' + c.price + '</strong>/wk' : ''}</div>
+                                <div class="meta-text">${c.rating != null ? '⭐ ' + escapeHtml(c.rating) + (c.reviewCount != null ? ' (' + escapeHtml(c.reviewCount) + ' reviews)' : '') : ''}${c.acaVerified ? ' ✓ ACA Accredited' : ''}</div>
+                                <div class="meta-text">👶 Ages ${escapeHtml(c.ageMin ?? '—')}–${escapeHtml(c.ageMax ?? '—')} yrs ${c.price != null ? '&middot; 💵 <strong>$' + escapeHtml(c.price) + '</strong>/wk' : ''}</div>
                             </div>
 
                             <div class="camp-footer">
                                 <label class="compare-toggle">
-                                    <input type="checkbox" class="chk-compare" data-id="${c.id}" ${isChecked} />
+                                    <input type="checkbox" class="chk-compare" data-id="${escapeHtml(c.id)}" ${isChecked} />
                                     <span>${dict.compareToggle}</span>
                                 </label>
-                                <button type="button" class="btn-action btn-details" data-id="${c.id}">${dict.btnDetails}</button>
+                                <button type="button" class="btn-action btn-details" data-id="${escapeHtml(c.id)}">${dict.btnDetails}</button>
                             </div>
                         </div>
                     `;
@@ -1333,10 +1410,10 @@
                         const marker = L.marker([c.lat, c.lng]).addTo(mapInstance);
                         marker.bindPopup(`
                             <div style="font-family:sans-serif; min-width:180px;">
-                                <strong style="font-size:0.95rem; color:#2C3E50;">${c.name}</strong><br/>
-                                <small>📍 ${c.city}, ${c.state}${c.zip ? ' (' + c.zip + ')' : ''}</small><br/>
-                                <small>👶 Ages ${c.ageMin != null ? c.ageMin + '-' + (c.ageMax ?? '—') : '—'} ${c.price != null ? '| 💰 $' + c.price + '/wk' : ''}</small><br/>
-                                <button onclick="window.showCampModal('${c.id}')" style="margin-top:6px; background:#4ECDC4; color:#fff; border:none; padding:4px 10px; border-radius:4px; font-weight:bold; cursor:pointer;">View Camp</button>
+                                <strong style="font-size:0.95rem; color:#2C3E50;">${escapeHtml(c.name)}</strong><br/>
+                                <small>📍 ${escapeHtml(c.city)}, ${escapeHtml(c.state)}${c.zip ? ' (' + escapeHtml(c.zip) + ')' : ''}</small><br/>
+                                <small>👶 Ages ${c.ageMin != null ? escapeHtml(c.ageMin) + '-' + escapeHtml(c.ageMax ?? '—') : '—'} ${c.price != null ? '| 💰 $' + escapeHtml(c.price) + '/wk' : ''}</small><br/>
+                                <button onclick="window.showCampModal('${escapeHtml(c.id)}')" style="margin-top:6px; background:#4ECDC4; color:#fff; border:none; padding:4px 10px; border-radius:4px; font-weight:bold; cursor:pointer;">View Camp</button>
                             </div>
                         `);
                         mapMarkers.push(marker);
@@ -1398,25 +1475,25 @@
                         <thead>
                             <tr>
                                 <th>Feature</th>
-                                ${camps.map(c => `<th>${c.name}</th>`).join('')}
+                                ${camps.map(c => `<th>${escapeHtml(c.name)}</th>`).join('')}
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>Season & Location</strong></td>
-                                ${camps.map(c => `<td>${(c.season||'summer').toUpperCase()} &middot; 📍 ${c.city}, ${c.state}</td>`).join('')}
+                                ${camps.map(c => `<td>${escapeHtml((c.season||'summer').toUpperCase())} &middot; 📍 ${escapeHtml(c.city)}, ${escapeHtml(c.state)}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Type & Theme</strong></td>
-                                ${camps.map(c => `<td>${c.type.toUpperCase()} / ${c.theme || 'General'}</td>`).join('')}
+                                ${camps.map(c => `<td>${escapeHtml((c.type||'').toUpperCase())} / ${escapeHtml(c.theme || 'General')}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Price / Session</strong></td>
-                                ${camps.map(c => `<td>${c.price != null ? '💵 <strong>$' + c.price + '</strong>' : '—'}</td>`).join('')}
+                                ${camps.map(c => `<td>${c.price != null ? '💵 <strong>$' + escapeHtml(c.price) + '</strong>' : '—'}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Age Range</strong></td>
-                                ${camps.map(c => `<td>👶 ${c.ageMin != null ? c.ageMin + '–' + (c.ageMax ?? '—') : '—'}</td>`).join('')}
+                                ${camps.map(c => `<td>👶 ${c.ageMin != null ? escapeHtml(c.ageMin) + '–' + escapeHtml(c.ageMax ?? '—') : '—'}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Extended Care</strong></td>
@@ -1424,7 +1501,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Rating</strong></td>
-                                ${camps.map(c => `<td>${c.rating != null ? '⭐ ' + c.rating + ' / 5.0' : '—'}</td>`).join('')}
+                                ${camps.map(c => `<td>${c.rating != null ? '⭐ ' + escapeHtml(c.rating) + ' / 5.0' : '—'}</td>`).join('')}
                             </tr>
                             <tr>
                                 <td><strong>Action</strong></td>
@@ -1446,40 +1523,156 @@
 
                 const sessionsHtml = (c.sessions || []).map(s => `
                     <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid #f1f5f9; font-size:0.88rem;">
-                        <span>📅 ${s.date || s.name}</span>
-                        <strong>$${s.price || c.price}</strong>
+                        <span>📅 ${escapeHtml(s.date || s.name)}</span>
+                        <strong>$${escapeHtml(s.price || c.price)}</strong>
                     </div>
                 `).join('');
 
                 const safeUrl = getSafeWebsiteUrl(c);
 
                 modalBody.innerHTML = `
-                    <span class="badge badge-season" style="font-size:0.8rem;">${(c.season||'summer').toUpperCase()} CAMP</span>
-                    <span class="badge badge-type" style="font-size:0.8rem;">${c.type.toUpperCase()}</span>
-                    <span class="badge badge-theme" style="font-size:0.8rem;">${c.theme || 'GENERAL'}</span>
-                    <h2 style="font-size:1.5rem; color:var(--accent); margin-top:8px;">${c.name}</h2>
-                    <div style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:12px;">📍 ${c.city}, ${c.state}${c.zip ? ' &middot; ZIP: ' + c.zip : ''}</div>
+                    <span class="badge badge-season" style="font-size:0.8rem;">${escapeHtml((c.season||'summer').toUpperCase())} CAMP</span>
+                    <span class="badge badge-type" style="font-size:0.8rem;">${escapeHtml((c.type||'').toUpperCase())}</span>
+                    <span class="badge badge-theme" style="font-size:0.8rem;">${escapeHtml(c.theme || 'GENERAL')}</span>
+                    <h2 style="font-size:1.5rem; color:var(--accent); margin-top:8px;">${escapeHtml(c.name)}</h2>
+                    <div style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:12px;">📍 ${escapeHtml(c.city)}, ${escapeHtml(c.state)}${c.zip ? ' &middot; ZIP: ' + escapeHtml(c.zip) : ''}</div>
                     
-                    <div style="margin-bottom:16px; line-height:1.5; font-size:0.92rem; color:var(--text-secondary);">${c.description || ''}</div>
+                    <div style="margin-bottom:16px; line-height:1.5; font-size:0.92rem; color:var(--text-secondary);">${escapeHtml(c.description || '')}</div>
 
                     <div style="background:var(--bg-alt); padding:14px; border-radius:10px; margin-bottom:16px; font-size:0.9rem;">
-                        <div>👶 <strong>Age Range:</strong> ${c.ageMin != null ? c.ageMin + '–' + (c.ageMax ?? '—') + ' years old' : 'Contact camp for details'}</div>
-                        ${c.price != null ? '<div>💰 <strong>Starting Price:</strong> $' + c.price + ' / session</div>' : ''}
+                        <div>👶 <strong>Age Range:</strong> ${c.ageMin != null ? escapeHtml(c.ageMin) + '–' + escapeHtml(c.ageMax ?? '—') + ' years old' : 'Contact camp for details'}</div>
+                        ${c.price != null ? '<div>💰 <strong>Starting Price:</strong> $' + escapeHtml(c.price) + ' / session</div>' : ''}
                         ${c.acaVerified ? '<div>✓ <strong>ACA Status:</strong> Accredited Camp</div>' : ''}
                         <div>🚌 <strong>Logistics:</strong> ${(c.beforeCare || c.afterCare) ? [c.beforeCare ? 'Before Care' : '', c.afterCare ? 'After Care' : ''].filter(Boolean).join(' | ') + (c.shuttle ? ' | Shuttle Bus' : '') : (c.shuttle ? 'Shuttle Bus Service' : 'Contact camp for logistics details')}</div>
                     </div>
 
                     <h4 style="font-size:1rem; margin-bottom:8px;">Available Sessions & Dates</h4>
-                    <div style="margin-bottom:20px;">${sessionsHtml}</div>
+                    <div style="margin-bottom:16px;">${sessionsHtml}</div>
 
-                    <div style="display:flex; gap:12px;">
+                    <!-- AMAZON ASSOCIATES RECOMMENDED GEAR SECTION -->
+                    ${(() => {
+                        if (typeof window.getRecommendedGearForCamp !== 'function') return '';
+                        const gearList = window.getRecommendedGearForCamp(c);
+                        if (!gearList || gearList.length === 0) return '';
+                        return `
+                            <div class="gear-section">
+                                <div class="gear-header">
+                                    <div class="gear-title">🎒 Recommended Gear & Packing Essentials</div>
+                                    <span style="font-size:0.75rem; background:#FFEDD5; color:#9A3412; font-weight:700; padding:3px 8px; border-radius:12px;">Amazon Picks</span>
+                                </div>
+                                <div style="font-size:0.82rem; color:#7C2D12; margin-bottom:10px;">
+                                    Top parent-tested essentials recommended for <strong>${escapeHtml(c.theme || (c.season||'summer').toUpperCase() + ' Camp')}</strong>:
+                                </div>
+                                <div class="gear-list">
+                                    ${gearList.map(item => {
+                                        const buyUrl = window.getAmazonAffiliateUrl ? window.getAmazonAffiliateUrl(item) : `https://www.amazon.com/s?k=${encodeURIComponent(item.name)}&tag=campfind-20`;
+                                        return `
+                                            <div class="gear-item-card">
+                                                <div class="gear-icon">${item.icon || '📦'}</div>
+                                                <div class="gear-info">
+                                                    <div class="gear-name" title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</div>
+                                                    <div class="gear-meta">
+                                                        <span style="color:#EA580C; font-weight:700;">${item.price}</span> &middot; 
+                                                        <span>${item.rating}</span> &middot; 
+                                                        <span style="color:#64748B;">${escapeHtml(item.category)}</span>
+                                                    </div>
+                                                    <div style="font-size:0.75rem; color:#64748B; margin-top:2px;">${escapeHtml(item.reason)}</div>
+                                                </div>
+                                                <a href="${buyUrl}" target="_blank" rel="noopener sponsored" class="gear-buy-btn">
+                                                    Shop Amazon ↗
+                                                </a>
+                                            </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                                <div class="gear-disclaimer">
+                                    🛒 <em>* As an Amazon Associate, CampFind earns from qualifying purchases. Only verified kid-safe gear is recommended.</em>
+                                </div>
+                            </div>
+                        `;
+                    })()}
+
+                    <div style="display:flex; gap:12px; margin-top:14px;">
                         <a href="${safeUrl}" target="_blank" rel="noopener" style="flex:1; text-align:center; background:var(--secondary); color:#fff; padding:12px; border-radius:10px; text-decoration:none; font-weight:700;">Visit Official Website</a>
-                        <a href="tel:${c.phone}" style="background:var(--accent); color:#fff; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700;">📞 Call</a>
+                        <a href="tel:${escapeHtml(c.phone)}" style="background:var(--accent); color:#fff; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700;">📞 Call</a>
+                    </div>
+
+                    <!-- CLAIM LISTING BANNER -->
+                    <div class="claim-camp-banner">
+                        <div>
+                            <strong>Are you the Camp Director at ${escapeHtml(c.name)}?</strong>
+                            <div style="font-size:0.78rem; opacity:0.9;">Claim this listing to update real-time seats & session dates.</div>
+                        </div>
+                        <button type="button" class="claim-camp-btn" onclick="window.openClaimModal('${escapeHtml(c.id)}', '${escapeHtml(c.name).replace(/'/g, "\\'")}')">Claim Listing &rarr;</button>
                     </div>
                 `;
 
                 detailModal.style.display = 'flex';
             }
+
+            // Global Claim Modal Helpers
+            window.openClaimModal = function(campId, campName) {
+                const modal = document.getElementById('claimModal');
+                const nameInput = document.getElementById('claimCampName');
+                const successMsg = document.getElementById('claimSuccessMsg');
+                if (successMsg) successMsg.style.display = 'none';
+                if (nameInput && campName) {
+                    nameInput.value = campName;
+                }
+                if (modal) modal.style.display = 'flex';
+            };
+
+            window.handleClaimSubmit = function() {
+                const form = document.getElementById('claimForm');
+                const successMsg = document.getElementById('claimSuccessMsg');
+                const btn = document.getElementById('btnSubmitClaim');
+                if (btn) {
+                    btn.disabled = true;
+                    btn.textContent = 'Submitting...';
+                }
+
+                const formData = new FormData(form);
+
+                // 1. Post to Netlify Forms (records submission in Netlify dashboard)
+                const netlifyPost = fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                }).catch(e => console.log('Netlify Form notice', e));
+
+                // 2. Direct email delivery to wingsoar2023@gmail.com
+                const emailPost = fetch('https://formsubmit.co/ajax/wingsoar2023@gmail.com', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        _subject: '🏕️ CampFind Inquiry: ' + (formData.get('camp_name') || 'New Application'),
+                        Inquiry_Type: formData.get('inquiry_type'),
+                        Camp_Name: formData.get('camp_name'),
+                        Director_Name: formData.get('director_name'),
+                        Email: formData.get('email'),
+                        Phone_Website: formData.get('phone_website'),
+                        Notes: formData.get('notes'),
+                        Submitted_At: new Date().toISOString()
+                    })
+                }).catch(e => console.log('Email delivery notice', e));
+
+                Promise.allSettled([netlifyPost, emailPost]).then(() => {
+                    if (successMsg) successMsg.style.display = 'block';
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.textContent = 'Submitted Successfully ✓';
+                    }
+                    setTimeout(() => {
+                        const modal = document.getElementById('claimModal');
+                        if (modal) modal.style.display = 'none';
+                        if (btn) btn.textContent = 'Submit Application →';
+                        if (form) form.reset();
+                    }, 2500);
+                });
+            };
 
             function bindEventListeners() {
                 langSelect.addEventListener('change', function() { updateLanguage(this.value); });
@@ -1505,6 +1698,54 @@
                 chkAfterCare.addEventListener('change', render);
                 chkShuttle.addEventListener('change', render);
 
+                const SEASON_WEEK_OPTIONS = {
+                    all: [
+                        { value: '0', text: 'Any Session / Week' },
+                        { value: '1', text: 'Week 1 (Jun 2–13 / Dec 22–26 / Mar 16–27)' },
+                        { value: '2', text: 'Week 2 (Jun 16–27 / Dec 29–Jan 2 / Mar 30–Apr 10)' },
+                        { value: '3', text: 'Week 3 (Jun 30–Jul 11 / Jan 5–9 / Nov 23–27)' },
+                        { value: '4', text: 'Week 4 (Jul 14 – Jul 25)' },
+                        { value: '5', text: 'Week 5 (Jul 28 – Aug 8)' },
+                        { value: '6', text: 'Week 6 (Aug 11 – Aug 22)' }
+                    ],
+                    summer: [
+                        { value: '0', text: 'Any Summer Week' },
+                        { value: '1', text: 'Week 1 (Jun 2 – Jun 13)' },
+                        { value: '2', text: 'Week 2 (Jun 16 – Jun 27)' },
+                        { value: '3', text: 'Week 3 (Jun 30 – Jul 11)' },
+                        { value: '4', text: 'Week 4 (Jul 14 – Jul 25)' },
+                        { value: '5', text: 'Week 5 (Jul 28 – Aug 8)' },
+                        { value: '6', text: 'Week 6 (Aug 11 – Aug 22)' }
+                    ],
+                    spring: [
+                        { value: '0', text: 'Any Spring Break Session' },
+                        { value: '1', text: '🌸 Spring Break Week 1 (Mid-March: Mar 16 – 27)' },
+                        { value: '2', text: '🌸 Spring Break Week 2 (Easter / Early April: Mar 30 – Apr 10)' }
+                    ],
+                    fall: [
+                        { value: '0', text: 'Any Fall Session' },
+                        { value: '1', text: '🍂 Fall Break / Indigenous Day (Oct 12 – 16)' },
+                        { value: '2', text: '🦃 Thanksgiving Camp Week (Nov 23 – 27)' }
+                    ],
+                    winter: [
+                        { value: '0', text: 'Any Winter Break Week' },
+                        { value: '1', text: '🎄 Christmas Camp Week (Dec 22 – Dec 26)' },
+                        { value: '2', text: '🎆 New Year Camp Week (Dec 29 – Jan 2)' },
+                        { value: '3', text: '❄️ Winter Week 3 (Jan 5 – Jan 9)' }
+                    ]
+                };
+
+                function updateWeekSelectOptions(season) {
+                    const options = SEASON_WEEK_OPTIONS[season] || SEASON_WEEK_OPTIONS.all;
+                    const prevVal = weekSelect.value;
+                    weekSelect.innerHTML = options.map(opt => `<option value="${opt.value}">${opt.text}</option>`).join('');
+                    if (options.some(opt => opt.value === prevVal)) {
+                        weekSelect.value = prevVal;
+                    } else {
+                        weekSelect.value = '0';
+                    }
+                }
+
                 btnResetFilters.addEventListener('click', () => {
                     searchInput.value = '';
                     weekSelect.value = '0';
@@ -1515,6 +1756,7 @@
                     document.querySelectorAll('#seasonPills .pill-btn').forEach(b => b.classList.remove('active'));
                     document.querySelector('#seasonPills .pill-btn[data-season="all"]').classList.add('active');
                     activeSeasonFilter = 'all';
+                    updateWeekSelectOptions('all');
 
                     document.querySelectorAll('#typePills .pill-btn').forEach(b => b.classList.remove('active'));
                     document.querySelector('#typePills .pill-btn[data-filter="all"]').classList.add('active');
@@ -1536,6 +1778,7 @@
                         document.querySelectorAll('#seasonPills .pill-btn').forEach(b => b.classList.remove('active'));
                         btn.classList.add('active');
                         activeSeasonFilter = btn.dataset.season;
+                        updateWeekSelectOptions(activeSeasonFilter);
                         render();
                     });
                 }
@@ -1585,24 +1828,19 @@
 
                 $('modalClose').addEventListener('click', () => detailModal.style.display = 'none');
                 $('compareModalClose').addEventListener('click', () => compareModal.style.display = 'none');
+                const btnClaimClose = $('claimModalClose');
+                if (btnClaimClose) btnClaimClose.addEventListener('click', () => $('claimModal').style.display = 'none');
 
                 detailModal.addEventListener('click', (e) => { if (e.target === detailModal) detailModal.style.display = 'none'; });
                 compareModal.addEventListener('click', (e) => { if (e.target === compareModal) compareModal.style.display = 'none'; });
+                const claimModalEl = $('claimModal');
+                if (claimModalEl) claimModalEl.addEventListener('click', (e) => { if (e.target === claimModalEl) claimModalEl.style.display = 'none'; });
             }
 
             function init() {
-                // Check passcode authentication first
-                btnUnlock.addEventListener('click', verifyPasscode);
-                passcodeInput.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter') verifyPasscode();
-                });
-
-                // ALWAYS bind event listeners regardless of initial passcode state!
+                // App is public — no passcode gate. Always render.
                 bindEventListeners();
-
-                if (checkAuth()) {
-                    render();
-                }
+                render();
             }
 
             if (document.readyState === 'loading') {

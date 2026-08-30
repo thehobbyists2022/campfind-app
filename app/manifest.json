@@ -5,17 +5,19 @@
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FF6B6B",
-  "description": "Find 1,000+ verified ACA summer, winter and spring break camps across the US.",
+  "description": "Find 5,000+ verified summer, winter, spring and fall break camps across the US.",
   "icons": [
     {
-      "src": "https://img.icons8.com/emoji/192/000000/camping-emoji.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "https://img.icons8.com/emoji/512/000000/camping-emoji.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

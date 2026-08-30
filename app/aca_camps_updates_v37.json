@@ -1,0 +1,158 @@
+{
+ "source": "Galileo location JSON-LD venue addresses",
+ "updates": {
+  "galileo-camps_pleasanton_ca": {
+   "address": "3300 Dennis Dr Pleasanton, CA 94588"
+  },
+  "galileo-camps_placentia_ca": {
+   "address": "801 Bradford Avenue Placentia, CA 92870"
+  },
+  "galileo-camps_newhorizon_ca": {
+   "address": "651 Orange Grove Blvd Pasadena, CA 91103"
+  },
+  "galileo-camps_parker_ca": {
+   "address": "16700 Keystone Boulevard Parker, CA 80134"
+  },
+  "galileo-camps_palosverdes_ca": {
+   "address": "7032 Purple Ridge Drive Rancho Palos Verdes, CA 90275"
+  },
+  "galileo-camps_paloalto_ca": {
+   "address": "655 Arastradero Road Palo Alto, CA 94306"
+  },
+  "galileo-camps_chabotelementary_ca": {
+   "address": "6686 Chabot Road Oakland, CA 94618"
+  },
+  "galileo-camps_glenviewelementary_ca": {
+   "address": "4215 La Cresta Ave Oakland, CA 94602"
+  },
+  "galileo-camps_stvincentferrer_ca": {
+   "address": "1515 Lathrop Ave River Forest, CA 60305"
+  },
+  "galileo-camps_northseattle_ca": {
+   "address": "1230 Northeast 127th Street Seattle, WA 98125"
+  },
+  "galileo-camps_menlopark_ca": {
+   "address": "1100 Elder Avenue Menlo Park, CA 94025"
+  },
+  "galileo-camps_kentfield_ca": {
+   "address": "675 Sir Francis Drake Boulevard Kentfield, CA 94904"
+  },
+  "galileo-camps_robinsonelementary_ca": {
+   "address": "80 N Morningside Drive Manhattan Beach, CA 90266"
+  },
+  "galileo-camps_international_ca": {
+   "address": "4155 Russell Avenue Los Angeles, CA 90027"
+  },
+  "galileo-camps_losaltos_ca": {
+   "address": "550 Almond Avenue Los Altos, CA 94022"
+  },
+  "galileo-camps_irvine1_ca": {
+   "address": "500 Tomato Springs Irvine, CA 92618"
+  },
+  "galileo-camps_littletongreenwoodvillage_ca": {
+   "address": "5354 South Field St Littleton, CO 80123"
+  },
+  "galileo-camps_orangecountyacademyofsciencesandartslagunaniguel_ca": {
+   "address": "29296 Crown Valley Parkway Laguna Niguel, CA 92677"
+  },
+  "galileo-camps_lafayetteelementary_ca": {
+   "address": "950 Moraga Rd Lafayette, CA 94549"
+  },
+  "galileo-camps_lagrange_ca": {
+   "address": "145 N Waiola Ave LaGrange, CA 60525"
+  },
+  "galileo-camps_irvine2_ca": {
+   "address": "28 Carson Irvine, CA 92620"
+  },
+  "galileo-camps_fremontchristian_ca": {
+   "address": "4760 Thornton Ave Fremont, CA 94536"
+  },
+  "galileo-camps_evanston_ca": {
+   "address": "1120 Washington Street Evanston, CA 60202"
+  },
+  "galileo-camps_ourladyofthewayside_ca": {
+   "address": "432 South Mitchell Ave Arlington Heights, CA 60005"
+  },
+  "galileo-camps_cupertino_ca": {
+   "address": "10300 N. Blaney Avenue Cupertino, CA 95014"
+  },
+  "galileo-camps_echohorizon_ca": {
+   "address": "3430 McManus Ave Culver City, CA 90232"
+  },
+  "galileo-camps_claremont_ca": {
+   "address": "611 West Bonita Avenue Claremont, CA 91711"
+  },
+  "galileo-camps_carlsbad_ca": {
+   "address": "2445 Mica Rd Carlsbad, CA 92009"
+  },
+  "galileo-camps_burlingame_ca": {
+   "address": "1151 Vancouver Ave Burlingame, CA 94010"
+  },
+  "galileo-camps_broomfield_ca": {
+   "address": "1000 West 10th Avenue Broomfield, CA 80020"
+  },
+  "galileo-camps_stmartinoftours_ca": {
+   "address": "11955 Sunset Blvd. Los Angeles, CA 90049"
+  },
+  "galileo-camps_boulder_ca": {
+   "address": "2500 Table Mesa Drive Boulder, CA 80305"
+  },
+  "galileo-camps_berkeley_ca": {
+   "address": "1400 Ada Street Berkeley, CA 94702"
+  },
+  "galileo-camps_bellevue_ca": {
+   "address": "11033 Northeast 24th Street Bellevue, CA 98004"
+  },
+  "galileo-camps_arcadiasierramadre_ca": {
+   "address": "240 Colorado Boulevard Arcadia, CA 91007"
+  },
+  "galileo-camps_edisonelementaryalameda_ca": {
+   "address": "2700 Buena Vista Ave Alameda, CA 94501"
+  },
+  "galileo-camps_northsanjosesantaclara_ca": {
+   "address": "750 Laurie Avenue Santa Clara, CA 95054"
+  },
+  "galileo-camps_saratoga_ca": {
+   "address": "12211 Titus Ave Saratoga, CA 95070"
+  },
+  "galileo-camps_sandiegodowntown_ca": {
+   "address": "840 14th Street San Diego, CA 92101"
+  },
+  "galileo-camps_sancarlosbelmont_ca": {
+   "address": "1710 Arroyo Avenue San Carlos, CA 94070"
+  },
+  "galileo-camps_sanmateo_ca": {
+   "address": "2619 Dolores Street San Mateo, CA 94403"
+  },
+  "galileo-camps_sanfrancisconoevalley_ca": {
+   "address": "625 Douglass St San Francisco, CA 94114"
+  },
+  "galileo-camps_wheaton_ca": {
+   "address": "1620 Mayo Ave Wheaton, CA 60189"
+  },
+  "galileo-camps_walnutcreek_ca": {
+   "address": "1130 Winton Drive Concord, CA 94518"
+  },
+  "galileo-camps_thousandoaks_ca": {
+   "address": "1250 Erbes Road Thousand Oaks, CA 91362"
+  },
+  "galileo-camps_sunnyvale_ca": {
+   "address": "1500 Partridge Avenue Sunnyvale, CA 94087"
+  },
+  "galileo-camps_sanramon_ca": {
+   "address": "13000 Broadmoor Dr. San Ramon, CA 94583"
+  },
+  "galileo-camps_holyfamily_ca": {
+   "address": "1301 Rollin Street South Pasadena, CA 91030"
+  },
+  "galileo-camps_thebush_ca": {
+   "address": "3400 E Harrison St Seattle, CA 98112"
+  },
+  "galileo-camps_fairburnelementary_ca": {
+   "address": "1403 Fairburn Ave Los Angeles, CA 90024"
+  },
+  "galileo-camps_westchesterlutheran_ca": {
+   "address": "7831 S Sepulveda Blvd Los Angeles, CA 90045"
+  }
+ }
+}

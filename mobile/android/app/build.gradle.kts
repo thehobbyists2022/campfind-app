@@ -1,7 +1,20 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+}
+
+// Load release signing config from key.properties (never committed to git).
+// Falls back to built-in no-signing behavior when the file is absent so that
+// debug/local builds keep working; release builds require a real keystore.
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("key.properties")
+val loadKeystore = keystorePropertiesFile.exists()
+if (loadKeystore) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
 android {
@@ -21,22 +34,33 @@ android {
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-        versionCode = 17
-        versionName = "1.0.14"
+        versionCode = 19
+        versionName = "1.1.0"
     }
 
     signingConfigs {
         create("release") {
-            storeFile = file("../../upload-keystore.jks")
-            storePassword = "123456"
-            keyAlias = "key0"
-            keyPassword = "123456"
+            if (loadKeystore) {
+                storeFile = file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            } else {
+                // key.properties missing: leave the signing config unset so
+                // release builds fail with a clear message rather than using a
+                // hardcoded/weak credential from source.
+            }
         }
     }
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
+            signingConfig = if (loadKeystore) {
+                signingConfigs.getByName("release")
+            } else {
+                // Build without signing when no keystore is configured.
+                null
+            }
             isMinifyEnabled = false
             isShrinkResources = false
         }
