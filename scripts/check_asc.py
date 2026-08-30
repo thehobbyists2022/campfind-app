@@ -22,7 +22,7 @@ sig = b64url(sig.stdout)
 jwt = f"{signing_input}.{sig}"
 
 url = "https://api.appstoreconnect.apple.com/v1/builds?sort=-uploadedDate&limit=10&fields[build]=version,shortVersion,buildNumber,uploadedDate,processingState,exportComplianceState,buildState"
-res = subprocess.run(["curl", "-sS", "-w", "\\nHTTP_CODE:%{http_code}", "-H", f"Authorization: Bearer {jwt}", url], capture_output=True, text=True)
+res = subprocess.run(["curl", "-g", "-sS", "-w", "\\nHTTP_CODE:%{http_code}", "-H", f"Authorization: Bearer {jwt}", url], capture_output=True, text=True)
 print("CURL_STDOUT_BYTES:", len(res.stdout))
 print("CURL_STDERR:", res.stderr[:300])
 try:
