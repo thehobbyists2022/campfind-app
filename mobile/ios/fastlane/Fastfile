@@ -13,13 +13,12 @@ platform :ios do
     signing_git_url = "https://x-access-token:#{ENV['GITHUB_TOKEN']}@github.com/thehobbyists2022/campfind-app.git"
 
     match(
-      type: "app_store",
+      type: "appstore",
       api_key: api_key,
       app_identifier: "com.campfind.app",
       readonly: false,
       git_url: signing_git_url,
       git_branch: "certificates",
-      git_basic_authorization: nil,
       keychain_name: "ci_keychain",
       keychain_password: "ci_password",
       force_for_new_devices: false
