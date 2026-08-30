@@ -206,4 +206,38 @@ match 建證書/描述檔 → `flutter build ios` → build_app 簽名 → 出 `
 | External 測試「不接受新測試員」 | 這是 **Beta App Review 未通過**，等審查即可 |
 | 送審報 `MISSING_BETA_APP_DESCRIPTION` | 先填 **Beta App Description**（betaAppLocalizations）再送審 |
 | 送審報 `ENTITY_UNPROCESSABLE` / 或 build 無 submit | 送審一步 = `POST /v1/betaAppReviewSubmissions`（只填資料≠送審） |
+| 送審報 `Another build in the same train is already in beta review` | 同版本只能一支在審查；等前一隻審完再送 |
+| 上傳報 `Invalid large app icon ... alpha channel` | **1024 App icon 不能有透明/alpha**；用 24bppRgb 扁平化（填白底）再存 |
+
+---
+
+## App icon（App Icon）完整做法
+
+1. **母圖來源**：用「圖形 logo」而非文字版。高解析越好（512/1024）。Android `mipmap-xxxhdpi/ic_launcher.png`（192）或 `play_store_icon_512x512.png`（512）通常是圖形版。
+2. **生成 iOS 全部尺寸**：AppIcon.appiconset 有 15 張（`Icon-App-*@Nx.png`）。
+   - 用 PowerShell `System.Drawing` 把母圖放大到各尺寸（20/29/40/60/76/83.5/1024）。
+3. **⚠️ 必去 alpha**：1024 大圖**不能含透明通道**。用 `PixelFormat.Format24bppRgb` + `Graphics.Clear(White)` 扁平化。
+4. **bump build**：改 `pubspec.yaml` 的 `version: 1.1.0+N`（+N 遞增），否則 Apple 拒（bundle version 必須 > 上次）。
+5. 重新 `git push` → CI 自動出包上傳，換新 icon。
+
+> 備註：App Store 商店顯示的「icon」跟 bundle 的 AppIcon 是分開的（商店圖在 App Store 頁上傳）。TestFlight 裝機後首頁 icon 來自 bundle AppIcon。
+
+### PowerShell 生成 AppIcon 的腳本（母圖 → 全部尺寸、去 alpha）
+```powershell
+Add-Type -AssemblyName System.Drawing
+$master = "play_store_icon_512x512.png"
+$dir = "mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset"
+$src = [System.Drawing.Image]::FromFile($master)
+$map = @{ "Icon-App-1024x1024@1x.png"=1024; "Icon-App-20x20@1x.png"=20; "Icon-App-20x20@2x.png"=40; "Icon-App-20x20@3x.png"=60;
+  "Icon-App-29x29@1x.png"=29; "Icon-App-29x29@2x.png"=58; "Icon-App-29x29@3x.png"=87; "Icon-App-40x40@1x.png"=40;
+  "Icon-App-40x40@2x.png"=80; "Icon-App-40x40@3x.png"=120; "Icon-App-60x60@2x.png"=120; "Icon-App-60x60@3x.png"=180;
+  "Icon-App-76x76@1x.png"=76; "Icon-App-76x76@2x.png"=152; "Icon-App-83.5x83.5@2x.png"=167 }
+foreach($k in $map.Keys){ $sz=$map[$k]
+  $bmp=New-Object System.Drawing.Bitmap $sz,$sz,([System.Drawing.Imaging.PixelFormat]::Format24bppRgb)
+  $g=[System.Drawing.Graphics]::FromImage($bmp); $g.Clear([System.Drawing.Color]::White)
+  $g.InterpolationMode=[System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+  $g.SmoothingMode=[System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+  $g.DrawImage($src,0,0,$sz,$sz); $bmp.Save("$dir\$k",[System.Drawing.Imaging.ImageFormat]::Png); $g.Dispose(); $bmp.Dispose() }
+$src.Dispose()
+```
 ```
