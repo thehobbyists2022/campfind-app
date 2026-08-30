@@ -28,15 +28,19 @@ jobs:
           BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.APPLE_PROVISIONING_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: "ci_build_keychain_password"
         run: |
+          # macOS ships LibreSSL (no '-legacy', no PBES2). Install OpenSSL 3.x to
+          # decrypt the AES-256 p12 and re-export it in a macOS-compatible format.
+          brew install openssl@3
+          OPENSSL=$(ls /opt/homebrew/opt/openssl@3/bin/openssl /usr/local/opt/openssl@3/bin/openssl 2>/dev/null | head -n1)
+
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
 
           echo "$BUILD_CERTIFICATE_BASE64" | base64 --decode > "${RUNNER_TEMP}/build_certificate.p12"
-          # macOS 'security' cannot read OpenSSL 3.x PBS2/AES-256 p12; re-export legacy so it imports.
-          openssl pkcs12 -in "${RUNNER_TEMP}/build_certificate.p12" -nodes -passin pass:"$P12_PASSWORD" -out "${RUNNER_TEMP}/combined.pem" 2>/dev/null || true
-          openssl pkcs12 -export -legacy -in "${RUNNER_TEMP}/combined.pem" -out "${RUNNER_TEMP}/legacy.p12" -passout pass:"$P12_PASSWORD"
+          "$OPENSSL" pkcs12 -in "${RUNNER_TEMP}/build_certificate.p12" -nodes -passin pass:"$P12_PASSWORD" -out "${RUNNER_TEMP}/combined.pem"
+          "$OPENSSL" pkcs12 -export -legacy -in "${RUNNER_TEMP}/combined.pem" -out "${RUNNER_TEMP}/legacy.p12" -passout pass:"$P12_PASSWORD"
           security import "${RUNNER_TEMP}/legacy.p12" -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
           security list-keychains -d user -s $KEYCHAIN_PATH $(security list-keychains -d user | sed -e 's/"//g')
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
