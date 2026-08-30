@@ -32,10 +32,25 @@ platform :ios do
       force_for_new_devices: false
     )
 
-    # flutter build ipa performs archive + export using the installed cert/profile
-    # (automatic signing with the DEVELOPMENT_TEAM). Produces build/ios/ipa/*.ipa
     sh "flutter pub get"
-    sh "flutter build ipa --release --export-options-plist=#{File.expand_path('../ExportOptions.plist')}"
+    sh "flutter build ios --release --no-codesign"
+
+    profile_name = lane_context[SharedValues::SIGH_PROFILE_NAME] || "match AppStore com.campfind.app 1788094132"
+    profile = lane_context[SharedValues::SIGH_PROFILE_PATH]
+
+    build_app(
+      workspace: "Runner.xcworkspace",
+      scheme: "Runner",
+      clean: true,
+      export_method: "app-store",
+      export_options: {
+        signingStyle: "manual",
+        teamID: "VNTPT66236",
+        provisioningProfiles: {
+          "com.campfind.app" => profile_name
+        }
+      }
+    )
 
     ipa = Dir["build/ios/ipa/*.ipa"].first
     raise "IPA not found" unless ipa
