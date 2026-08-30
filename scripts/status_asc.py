@@ -29,6 +29,11 @@ def api(method, path, body=None):
 sub = api("GET", f"/v1/builds/{build_id}/betaAppReviewSubmission")
 print("existing submission:", json.dumps(sub)[:200])
 
+# Set Beta App Description (optional beta app localizations)
+desc = api("POST", "/v1/betaAppLocalizations", {"data":{"type":"betaAppLocalizations","attributes":{"locale":"en-US","description":"CampFind helps families discover accredited summer and winter camps. This beta is for testing camp search, filters, favorites and detail views.","feedbackEmail":"clarityclinicalsolutions@gmail.com","marketingUrl":""},"relationships":{"app":{"data":{"type":"apps","id":"6806695913"}}}}})
+if "__e__" in desc: print("SET DESC err:", desc["__e__"], desc["b"])
+else: print("SET DESC OK:", json.dumps(desc.get("data",{}).get("attributes",{}))[:200])
+
 # create (submit for beta review)
 r = api("POST", "/v1/betaAppReviewSubmissions", {"data":{"type":"betaAppReviewSubmissions","relationships":{"build":{"data":{"type":"builds","id":build_id}}}}})
 if "__e__" in r:
