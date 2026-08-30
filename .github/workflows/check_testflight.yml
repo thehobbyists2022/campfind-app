@@ -10,54 +10,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Query TestFlight builds via App Store Connect API
+      - name: Query TestFlight builds via App Store Connect API (openssl JWT)
         env:
           ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           ASC_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
         run: |
-          python3 - <<'PY'
-          import os, time, base64, json, urllib.request, urllib.error
-          key_id = os.environ["ASC_KEY_ID"]
-          issuer = os.environ["ASC_ISSUER_ID"]
-          key = os.environ["ASC_KEY"]  # PEM .p8 content
-          key = key.replace("\\n", "\n")
-
-          # Build ES256 JWT
-          header = base64.urlsafe_b64encode(json.dumps({"alg":"ES256","kid":key_id,"typ":"JWT"}).encode()).rstrip(b"=").decode()
-          payload = base64.urlsafe_b64encode(json.dumps({"iss":issuer,"iat":int(time.time()),"exp":int(time.time())+1200,"aud":"appstoreconnect-v1"}).encode()).rstrip(b"=").decode()
-          signing_input = f"{header}.{payload}".encode()
-          # parse PEM private key
-          body = key.split("-----BEGIN")[1].split("-----END")[0]
-          import hashlib
-          # decode the base64 DER of the EC key
-          der = base64.b64decode("".join(body.split()))
-          # Use cryptography if available; else fallback minimal EC signing
-          try:
-            from cryptography.hazmat.primitives import hashes, serialization
-            from cryptography.hazmat.primitives.asymmetric import ec
-            parsed = serialization.load_der_private_key(der, password=None)
-            sig = parsed.sign(signing_input, ec.ECDSA(hashes.SHA256()))
-            signature = base64.urlsafe_b64encode(sig).rstrip(b"=").decode()
-          except Exception as e:
-            print("CRYPTO ERROR:", e); raise SystemExit(2)
-
-          jwt = f"{header}.{payload}.{signature}"
-          req = urllib.request.Request(
-            "https://api.appstoreconnect.apple.com/v1/builds?sort=-uploadedDate&limit=10&fields[build]=version,shortVersion,buildNumber,uploadedDate,processingState,exportComplianceState,buildState",
-            headers={"Authorization": f"Bearer {jwt}"})
-          try:
-            with urllib.request.urlopen(req) as r:
-                data = json.load(r)
-          except urllib.error.HTTPError as e:
-            print("HTTP", e.code, e.read().decode()[:800]); raise SystemExit(3)
-          print("LATEST BUILDS:")
-          for b in data.get("data", []):
-            a = b["attributes"]
-            print(" -", a.get("shortVersion"), "(" + str(a.get("buildNumber")) + ")",
-                  "| processingState:", a.get("processingState"),
-                  "| buildState:", a.get("buildState"),
-                  "| exportCompliance:", a.get("exportComplianceState"),
-                  "| uploaded:", a.get("uploadedDate"))
-          print("TOTAL:", data.get("meta", {}).get("paging", {}).get("total"))
-          PY
+          set -e
+          # Ensure the .p8 is written with real newlines
+          printf '%s' "$ASC_KEY" | sed 's/\\n/\n/g' > authkey.p8
+          # JWT helpers
+          b64url() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
+          NOW=$(date +%s)
+          EXP=$((NOW+1200))
+          HEADER=$(printf '{"alg":"ES256","kid":"%s","typ":"JWT"}' "$ASC_KEY_ID" | b64url)
+          PAYLOAD=$(printf '{"iss":"%s","iat":%s,"exp":%s,"aud":"appstoreconnect-v1"}' "$ASC_ISSUER_ID" "$NOW" "$EXP" | b64url)
+          SIGNING_INPUT="$HEADER.$PAYLOAD"
+          SIGNATURE=$(printf '%s' "$SIGNING_INPUT" | openssl dgst -sha256 -sign authkey.p8 -binary | b64url)
+          JWT="$SIGNING_INPUT.$SIGNATURE"
+          echo "Querying App Store Connect API..."
+          curl -sS -H "Authorization: Bearer $JWT" \
+            "https://api.appstoreconnect.apple.com/v1/builds?sort=-uploadedDate&limit=10&fields[build]=version,shortVersion,buildNumber,uploadedDate,processingState,exportComplianceState,buildState" \
+            | python3 -c '
+import sys, json
+d = json.load(sys.stdin)
+if "errors" in d:
+    print("API ERRORS:", json.dumps(d["errors"])[:600]); sys.exit(0)
+print("LATEST BUILDS:")
+for b in d.get("data", []):
+    a = b["attributes"]
+    print(" -", a.get("shortVersion"), "(" + str(a.get("buildNumber")) + ")",
+          "| processing:", a.get("processingState"),
+          "| buildState:", a.get("buildState"),
+          "| exportCompliance:", a.get("exportComplianceState"),
+          "| uploaded:", a.get("uploadedDate"))
+print("TOTAL:", d.get("meta", {}).get("paging", {}).get("total"))
+'
