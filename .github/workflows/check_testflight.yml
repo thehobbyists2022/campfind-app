@@ -1,0 +1,38 @@
+name: Check TestFlight Build Status
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: Query latest TestFlight build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Ruby
+        run: |
+          gem install bundler
+          bundle config path vendor/bundle
+          export LANG=en_US.UTF-8
+
+      - name: Bundle install
+        working-directory: mobile/ios
+        run: bundle install
+
+      - name: Query TestFlight build status (fastlane pilot list)
+        working-directory: mobile/ios
+        env:
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+        run: |
+          export LANG=en_US.UTF-8
+          echo "APP_STORE_CONNECT_KEY_ID=$APP_STORE_CONNECT_KEY_ID"
+          echo "APP_STORE_CONNECT_ISSUER_ID=$APP_STORE_CONNECT_ISSUER_ID"
+          # fastlane pilot list lists all builds for the app with version info
+          bundle exec fastlane run pilot list \
+            api_key_id:"$APP_STORE_CONNECT_KEY_ID" \
+            api_key_issuer_id:"$APP_STORE_CONNECT_ISSUER_ID" \
+            api_key:"$APP_STORE_CONNECT_PRIVATE_KEY" \
+            2>&1 | tail -60
