@@ -166,9 +166,19 @@ match 建證書/描述檔 → `flutter build ios` → build_app 簽名 → 出 `
 ## 4. TestFlight 開放給測試員（需等 Apple 審查）
 
 - 用 API 或 App Store Connect UI：**建測試群組 → 把 build 加進群組 → 開啟 Public Link**
-- 填 **Beta App Review 資料**（聯絡人 + 測試說明）。
+- **很重要（常被漏掉）**：
+  1. 填 **Beta App Description**（TestFlight 描述，測試員可看到）— 缺了會無法送審。
+     - API：`POST /v1/betaAppLocalizations`（`locale`、`description`、`feedbackEmail`、`marketingUrl`）。
+  2. 填 **Beta App Review 資料**（聯絡人 + 測試說明）— `PATCH /v1/betaAppReviewDetails`。
+  3. **提交 Beta App Review**：`POST /v1/betaAppReviewSubmissions`（relationship → build）。
+     - 只填描述/聯絡資料「不等於送審」，一定要做這一步。
 - ⚠️ **第一次「外部」測試**必須等 Apple 的 **Beta App Review** 通過（幾小時~一天）。
   通過前，Public Link 會顯示「不接受新測試員」，屬正常。
+- **如何知道通過**：
+  - 查 build 的 `betaReviewState`：`POST` 送審後為 `WAITING_FOR_REVIEW` → 通過後變 `APPROVED`。
+  - App Store Connect → TestFlight 看 build 狀態變「已通過/可測試」。
+  - Public Link 不再顯示「不接受新測試員」。
+  - ⚠️ Apple **不會**主動 email 通知 Beta 審查通過，需自己看 App Store Connect。
 - 團員要「立刻」測：走 **Internal**（內部）測試群組——不需審查，但要在 App Store Connect 介面操作（API 建不出內部群組）。
 
 ---
@@ -194,4 +204,6 @@ match 建證書/描述檔 → `flutter build ios` → build_app 簽名 → 出 `
 | pbxproj 用 `$1` sed 誤刪 bundle id | 用編輯器 / Xcode 改，別亂 replace |
 | 找不到 ipa 路徑 | 用 `lane_context[SharedValues::IPA_OUTPUT_PATH]` |
 | External 測試「不接受新測試員」 | 這是 **Beta App Review 未通過**，等審查即可 |
+| 送審報 `MISSING_BETA_APP_DESCRIPTION` | 先填 **Beta App Description**（betaAppLocalizations）再送審 |
+| 送審報 `ENTITY_UNPROCESSABLE` / 或 build 無 submit | 送審一步 = `POST /v1/betaAppReviewSubmissions`（只填資料≠送審） |
 ```
