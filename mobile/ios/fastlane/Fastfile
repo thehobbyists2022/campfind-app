@@ -35,10 +35,12 @@ platform :ios do
     # Unlock keychain for codesign toolchain
     sh("security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k ci_password #{kc_path}")
 
-    # Build iOS IPA using native Flutter CLI from mobile directory
-    sh("cd .. && flutter build ipa --release --export-options-plist=ios/ExportOptions.plist")
+    export_plist = File.expand_path("../ExportOptions.plist")
 
-    ipa_path = Dir[File.expand_path("../../build/ios/ipa/*.ipa")].first || Dir[File.expand_path("../build/ios/ipa/*.ipa")].first
+    # Build iOS IPA using native Flutter CLI
+    sh("cd .. && flutter build ipa --release --export-options-plist=#{export_plist}")
+
+    ipa_path = Dir[File.expand_path("../build/ios/ipa/*.ipa")].first || Dir[File.expand_path("../../build/ios/ipa/*.ipa")].first
 
     upload_to_testflight(
       api_key: api_key,
