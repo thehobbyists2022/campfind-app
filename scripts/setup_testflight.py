@@ -29,22 +29,26 @@ def api(method, path, body=None):
     except urllib.error.HTTPError as e:
         return {"__e__": e.code, "b": e.read().decode()[:500]}
 
-# latest build
+# get betaAppReviewDetails id
+det = api("GET", f"/v1/betaAppReviewDetails?filter[app]={app_id}")
+if not det.get("data"): print("no beta review details", det); sys.exit(1)
+did = det["data"][0]["id"]
+print("REVIEW DETAIL ID:", did)
+
+contact = {
+    "contactFirstName": "Tony",
+    "contactLastName": "Kuo",
+    "contactEmail": "clarityclinicalsolutions@gmail.com",
+    "contactPhone": "+1-415-555-0000",
+    "demoAccountRequired": False,
+    "notes": "CampFind helps families discover accredited summer and winter camps. This build is the first iOS release for beta testing the camp search, filters, favorites and detail views."
+}
+r = api("PATCH", f"/v1/betaAppReviewDetails/{did}", {"data":{"type":"betaAppReviewDetails","id":did,"attributes":contact}})
+if "__e__" in r: print("PATCH err:", r["__e__"], r["b"])
+else: print("PATCH OK:", json.dumps(r["data"][0]["attributes"]))
+
+# check build beta state
 b = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=1")
-if not b.get("data"): print("no build"); sys.exit(1)
-bid = b["data"][0]["id"]
-print("BUILD:", bid, "| processing:", b["data"][0]["attributes"].get("processingState"))
-
-# beta review state
-beta = api("GET", f"/v1/betaAppReviewDetails?filter[app]={app_id}")
-if beta.get("data"):
-    a = beta["data"][0]["attributes"]
-    print("BETA REVIEW:", json.dumps(a))
-else:
-    print("No betaAppReviewDetails: ", beta.get("__e__"), beta.get("b",""))
-
-# build's beta build state
-b2 = api("GET", f"/v1/builds/{bid}")
-if b2.get("data"):
-    print("BUILD DETAIL:", json.dumps(b2["data"][0]["attributes"]))
+if b.get("data"):
+    print("BUILD:", b["data"][0]["id"], "| processing:", b["data"][0]["attributes"].get("processingState"))
 print("DONE")
