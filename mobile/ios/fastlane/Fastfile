@@ -12,6 +12,15 @@ platform :ios do
 
     signing_git_url = "https://x-access-token:#{ENV['GITHUB_TOKEN']}@github.com/thehobbyists2022/campfind-app.git"
 
+    create_keychain(
+      name: "ci_keychain",
+      password: "ci_password",
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: false
+    )
+
     match(
       type: "appstore",
       api_key: api_key,
