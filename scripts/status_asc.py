@@ -25,16 +25,22 @@ def api(method, path):
         return {"__e__": e.code, "b": e.read().decode()[:500]}
 
 # build beta state
-b = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=1&fields[build]=shortVersion,buildNumber,processingState,buildState,betaBuildState,expirationDate,uploadedDate")
+b = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=1")
 if b.get("data"):
     x = b["data"][0]
     print("BUILD:", x["id"])
-    print("  shortVersion:", x["attributes"].get("shortVersion"))
-    print("  buildNumber:", x["attributes"].get("buildNumber"))
-    print("  processingState:", x["attributes"].get("processingState"))
-    print("  buildState:", x["attributes"].get("buildState"))
-    print("  betaBuildState:", x["attributes"].get("betaBuildState"))
-    print("  expirationDate:", x["attributes"].get("expirationDate"))
+    for k in ["shortVersion","buildNumber","processingState","buildState","expirationDate","uploadedDate","betaBuildState","betaReviewState"]:
+        print("  ", k, ":", x["attributes"].get(k))
+    # beta review submission relationship
+    if "relationships" in x and "betaAppReviewSubmission" in x["relationships"]:
+        sub = api("GET", "/v1/builds/"+x["id"]+"/betaAppReviewSubmission")
+        if sub.get("data"):
+            print("  betaAppReviewSubmission:", json.dumps(sub["data"][0]["attributes"]))
+        else:
+            print("  betaAppReviewSubmission: none", sub.get("__e__"), sub.get("b",""))
+        break
+else:
+    print("no build", b.get("__e__"), b.get("b",""))
 # beta review details
 det = api("GET", f"/v1/betaAppReviewDetails?filter[app]={app_id}")
 if det.get("data"):
