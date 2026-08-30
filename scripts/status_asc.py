@@ -38,7 +38,6 @@ if b.get("data"):
             print("  betaAppReviewSubmission:", json.dumps(sub["data"][0]["attributes"]))
         else:
             print("  betaAppReviewSubmission: none", sub.get("__e__"), sub.get("b",""))
-        break
 else:
     print("no build", b.get("__e__"), b.get("b",""))
 # beta review details
