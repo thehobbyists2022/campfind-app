@@ -10,12 +10,30 @@ platform :ios do
       is_key_content_base64: false
     )
 
-    get_certificates(api_key: api_key)
-    get_provisioning_profile(api_key: api_key)
+    create_keychain(
+      name: "ci_keychain",
+      password: "ci_password",
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: false
+    )
+
+    get_certificates(
+      api_key: api_key,
+      keychain_name: "ci_keychain",
+      keychain_password: "ci_password"
+    )
+
+    get_provisioning_profile(
+      api_key: api_key,
+      app_identifier: "com.campfind.app"
+    )
 
     build_app(
       workspace: "Runner.xcworkspace",
       scheme: "Runner",
+      export_method: "app-store",
       export_options: "ExportOptions.plist"
     )
 
