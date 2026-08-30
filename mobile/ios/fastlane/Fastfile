@@ -35,8 +35,7 @@ platform :ios do
     sh "flutter pub get"
     sh "flutter build ios --release --no-codesign"
 
-    profile_name = lane_context[SharedValues::SIGH_PROFILE_NAME] || "match AppStore com.campfind.app 1788094132"
-    profile = lane_context[SharedValues::SIGH_PROFILE_PATH]
+    profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]["com.campfind.app"] || "match AppStore com.campfind.app 1788094132"
 
     build_app(
       workspace: "Runner.xcworkspace",
