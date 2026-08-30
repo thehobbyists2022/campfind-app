@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-import os, sys, json, time, base64, urllib.request, urllib.parse
+import os, sys, json, time, base64, urllib.request
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec
 from cryptography.hazmat.primitives.asymmetric.utils import decode_dss_signature
 key_id = os.environ["ASC_KEY_ID"]; issuer = os.environ["ASC_ISSUER_ID"]
 key_pem = os.environ["ASC_KEY"].replace("\\n", "\n")
 app_id = "6806695913"
-email = "clarityclinicalsolutions@gmail.com"
+build_id = "3f1c2cf7-89cb-44ee-a937-5661a8ebe102"
 pk = serialization.load_pem_private_key(key_pem.encode(), password=None)
 def b64u(d): return base64.urlsafe_b64encode(d).rstrip(b"=").decode()
 def jwt():
@@ -26,24 +26,23 @@ def api(method, path, body=None):
     except urllib.error.HTTPError as e:
         return {"__e__": e.code, "b": e.read().decode()[:500]}
 
-# list all beta groups (with isInternalGroup + builds relationships)
-groups = api("GET", f"/v1/betaGroups?filter[app]={app_id}&limit=50&include=builds,betaTesters")
-print("=== ALL BETA GROUPS ===")
-for g in groups.get("data", []):
-    a = g["attributes"]
-    print(" -", g["id"], a.get("name"), "| internal:", a.get("isInternalGroup"), "| builds:", len(g.get("relationships",{}).get("builds",{}).get("data",[])), "| testers:", len(g.get("relationships",{}).get("betaTesters",{}).get("data",[])))
+# Create an INTERNAL beta group
+grp = api("POST", "/v1/betaGroups", {"data":{"type":"betaGroups","attributes":{"name":"Internal Testing"},"relationships":{"app":{"data":{"type":"apps","id":app_id}}}}})
+if "__e__" in grp:
+    print("CREATE INTERNAL GROUP err:", grp["__e__"], grp["b"])
+    gid = None
+else:
+    gid = grp["data"][0]["id"]
+    print("INTERNAL GROUP CREATED:", gid, grp["data"][0]["attributes"].get("name"), "| internal:", grp["data"][0]["attributes"].get("isInternalGroup"))
 
-# check betaTesters (team users see internal automatically; external testers listed here)
-bt = api("GET", f"/v1/betaTesters?filter[email]={urllib.parse.quote(email)}&limit=5")
-print("BETA TESTER (by email):", bt.get("data",[{}])[0].get("id") if bt.get("data") else "none")
+if gid:
+    # add build to group
+    r = api("POST", f"/v1/betaGroups/{gid}/relationships/builds", {"data":[{"type":"builds","id":build_id}]})
+    print("ADD BUILD:", "OK" if "__e__" not in r else f"err {r['__e__']} {r['b']}")
 
-# any existing INTERNAL group?
-internal = [g for g in groups.get("data",[]) if g["attributes"].get("isInternalGroup")]
-print("INTERNAL GROUPS:", [(g["id"], g["attributes"].get("name")) for g in internal])
-
-# list builds usable
-b = api("GET", f"/v1/builds?filter[app]={app_id}&sort=-uploadedDate&limit=3")
-print("=== BUILDS ===")
-for x in b.get("data", []):
-    print(" -", x["id"], x["attributes"].get("shortVersion"), "("+str(x["attributes"].get("buildNumber"))+")", x["attributes"].get("processingState"))
+# List team users (internal testers) — they are team members
+users = api("GET", "/v1/users?limit=50")
+print("TEAM USERS:")
+for u in users.get("data", []):
+    print(" -", u["attributes"].get("username"), u["attributes"].get("roles"))
 print("DONE")
