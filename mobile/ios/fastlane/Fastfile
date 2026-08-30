@@ -1,7 +1,7 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Build and upload to App Store Connect using existing cert & profile from secrets"
+  desc "Build and deploy to App Store Connect (fastlane match, reuses signing cert)"
   lane :release do
     api_key = app_store_connect_api_key(
       key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
@@ -10,11 +10,29 @@ platform :ios do
       is_key_content_base64: false
     )
 
+    create_keychain(
+      name: "ci_keychain",
+      password: "ci_password",
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: false
+    )
+
+    match(
+      type: "appstore",
+      api_key: api_key,
+      app_identifier: "com.campfind.app",
+      readonly: false,
+      git_url: "https://github.com/thehobbyists2022/campfind-app.git",
+      git_branch: "certificates",
+      keychain_name: "ci_keychain",
+      keychain_password: "ci_password",
+      force_for_new_devices: false
+    )
+
     sh "flutter pub get"
     sh "flutter build ios --release --no-codesign"
-
-    profile = Dir[File.expand_path("~/Library/MobileDevice/Provisioning Profiles/*.mobileprovision")].sort.last
-    raise "Provisioning profile not found" unless profile
 
     build_app(
       workspace: "Runner.xcworkspace",
@@ -24,17 +42,13 @@ platform :ios do
       export_options: {
         signingStyle: "manual",
         provisioningProfiles: {
-          "com.campfind.app" => profile
+          "com.campfind.app" => lane_context[SharedValues::SIGH_PROFILE_PATH]
         }
       }
     )
 
-    ipa = Dir["build/ios/ipa/*.ipa"].first || Dir["*.ipa"].first
-    raise "IPA not found" unless ipa
-
     upload_to_testflight(
       api_key: api_key,
-      ipa: ipa,
       skip_waiting_for_build_processing: true
     )
   end
