@@ -29,7 +29,7 @@ JBR = r"C:\Program Files\Android\Android Studio\jbr"
 
 def run(cmd, cwd=MOBILE):
     print("  $ " + " ".join(cmd))
-    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, encoding="utf-8")
     out = (r.stdout or "") + (r.stderr or "")
     print(out[-1500:])
     return r.returncode
@@ -52,7 +52,7 @@ def main():
         # actual errors reported in output.
         out = ""
         try:
-            r = subprocess.run([FLUTTER, "analyze"], cwd=MOBILE, env=env, capture_output=True, text=True)
+            r = subprocess.run([FLUTTER, "analyze"], cwd=MOBILE, env=env, capture_output=True, text=True, encoding="utf-8")
             out = (r.stdout or "") + (r.stderr or "")
         except Exception:
             pass
@@ -63,8 +63,8 @@ def main():
     else:
         print("  跳过 analyze")
 
-    print(f"[2/3] flutter build appbundle --release")
-    code = run([FLUTTER, "build", "appbundle", "--release"])
+    print(f"[2/3] flutter build appbundle --release --obfuscate")
+    code = run([FLUTTER, "build", "appbundle", "--release", "--obfuscate", "--split-debug-info=build/app/outputs/symbols"])
 
     aab = os.path.join(MOBILE, "build", "app", "outputs", "bundle", "release", "app-release.aab")
     if code != 0 or not os.path.exists(aab):

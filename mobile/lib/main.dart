@@ -12,10 +12,36 @@ void main() async {
   runApp(CampFindApp(repository: repository));
 }
 
-class CampFindApp extends StatelessWidget {
+class CampFindApp extends StatefulWidget {
   final CampRepository repository;
 
   const CampFindApp({super.key, required this.repository});
+
+  @override
+  State<CampFindApp> createState() => _CampFindAppState();
+}
+
+class _CampFindAppState extends State<CampFindApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused || state == AppLifecycleState.hidden) {
+      // Clear image cache when the app goes into the background
+      PaintingBinding.instance.imageCache.clear();
+      PaintingBinding.instance.imageCache.clearLiveImages();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +65,7 @@ class CampFindApp extends StatelessWidget {
           scrolledUnderElevation: 0.5,
         ),
       ),
-      home: HomeScreen(repository: repository),
+      home: HomeScreen(repository: widget.repository),
     );
   }
 }

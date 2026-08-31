@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/camp_model.dart';
@@ -47,10 +48,10 @@ class CampRepository {
 
     try {
       final jsonString = await rootBundle.loadString('assets/aca_camps.json');
-      final Map<String, dynamic> data = json.decode(jsonString);
-      final List<dynamic> rawList = data['camps'] ?? [];
       
-      _allCamps = rawList.map((c) => Camp.fromJson(c)).toList();
+      // Run heavy JSON decoding and mapping in a background isolate (Flutter compute)
+      _allCamps = await compute(_parseCampsJson, jsonString);
+
       await _loadFavorites();
       _isInitialized = true;
     } catch (e) {
@@ -58,6 +59,13 @@ class CampRepository {
       print('Error loading camp dataset: $e');
       _allCamps = [];
     }
+  }
+
+  // Top-level or static function required for isolate execution
+  static List<Camp> _parseCampsJson(String jsonString) {
+    final Map<String, dynamic> data = json.decode(jsonString);
+    final List<dynamic> rawList = data['camps'] ?? [];
+    return rawList.map((c) => Camp.fromJson(c)).toList();
   }
 
   Future<void> _loadFavorites() async {
