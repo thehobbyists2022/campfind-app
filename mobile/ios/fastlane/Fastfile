@@ -23,7 +23,7 @@ platform :ios do
       type: "appstore",
       api_key: api_key,
       app_identifier: "com.campfind.app",
-      readonly: false,
+      readonly: true,
       git_url: "https://github.com/thehobbyists2022/campfind-signing.git",
       git_branch: "certificates",
       git_basic_authorization: Base64.strict_encode64("x-access-token:#{ENV['MATCH_GIT_TOKEN']}"),
@@ -33,23 +33,9 @@ platform :ios do
     )
 
     sh "flutter pub get"
-    sh "flutter build ios --release --no-codesign"
-
-    profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]["com.campfind.app"] || "match AppStore com.campfind.app 1788094132"
-
-    build_app(
-      workspace: "Runner.xcworkspace",
-      scheme: "Runner",
-      clean: true,
-      export_method: "app-store",
-      export_options: {
-        signingStyle: "manual",
-        teamID: "VNTPT66236",
-        provisioningProfiles: {
-          "com.campfind.app" => profile_name
-        }
-      }
-    )
+    # Use automatic signing so Xcode picks up the match-imported Distribution certificate +
+    # provisioning profile from the keychain. Do NOT use --no-codesign (it breaks signing).
+    sh "flutter build ipa --release"
 
     ipa = lane_context[SharedValues::IPA_OUTPUT_PATH] || Dir["build/ios/ipa/*.ipa"].first
     raise "IPA not found" unless ipa
