@@ -19,11 +19,9 @@ platform :ios do
       lock_when_sleeps: false
     )
 
-    # readonly: false lets match sync the active distribution cert (1006FD15...) from
-    # Apple via the API key into the signing repo. It reuses the existing valid cert
-    # rather than creating a new one (so it does NOT hit the 2-cert cap and does not
-    # revoke anything). The .p12 password is NOT needed — match gets the private key
-    # directly from the App Store Connect API key.
+    # Sync the active API-key distribution cert (1006FD15) from Apple into the
+    # dedicated 'campfind' branch of the signing repo. Reuses the existing cert
+    # (no new cert, no cap hit), and leaves TaiwanBite's TONY KUO cert untouched.
     match(
       type: "appstore",
       api_key: api_key,
@@ -37,10 +35,28 @@ platform :ios do
       force_for_new_devices: false
     )
 
+    # Build unsigned first, then sign with the match-imported cert + profile via
+    # manual signing. Use the exact profile name match generated (from lane_context)
+    # so Xcode doesn't look for a stale hardcoded profile name.
     sh "flutter pub get"
-    # Automatic signing: Xcode picks up the match-imported distribution cert + profile
-    # from the keychain. No --no-codesign (that breaks signatures).
-    sh "flutter build ipa --release"
+    sh "flutter build ios --release --no-codesign"
+
+    profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]["com.campfind.app"]
+    raise "match profile not found" unless profile_name
+
+    build_app(
+      workspace: "Runner.xcworkspace",
+      scheme: "Runner",
+      clean: true,
+      export_method: "app-store",
+      export_options: {
+        signingStyle: "manual",
+        teamID: "VNTPT66236",
+        provisioningProfiles: {
+          "com.campfind.app" => profile_name
+        }
+      }
+    )
 
     ipa = lane_context[SharedValues::IPA_OUTPUT_PATH] || Dir["build/ios/ipa/*.ipa"].first
     raise "IPA not found" unless ipa
