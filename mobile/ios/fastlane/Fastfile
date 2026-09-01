@@ -20,15 +20,15 @@ platform :ios do
     )
 
     # Sync the active API-key distribution cert (1006FD15) from Apple into the
-    # dedicated 'campfind' branch of the signing repo. Reuses the existing cert
-    # (no new cert, no cap hit), and leaves TaiwanBite's TONY KUO cert untouched.
+    # 'certificates' branch (same branch build 22 used). Reuses the existing cert
+    # (no new cert, no cap hit), leaves TaiwanBite's TONY KUO cert untouched.
     match(
       type: "appstore",
       api_key: api_key,
       app_identifier: "com.campfind.app",
       readonly: false,
       git_url: "https://github.com/thehobbyists2022/campfind-signing.git",
-      git_branch: "campfind",
+      git_branch: "certificates",
       git_basic_authorization: Base64.strict_encode64("x-access-token:#{ENV['MATCH_GIT_TOKEN']}"),
       keychain_name: "ci_keychain",
       keychain_password: "ci_password",
