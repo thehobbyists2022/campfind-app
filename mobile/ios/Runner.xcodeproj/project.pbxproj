@@ -383,7 +383,7 @@
 					"@executable_path/Frameworks",
 				);
 				DEVELOPMENT_TEAM = VNTPT66236;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.campfind.app 1788094132";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.campfind.app 1788286025";
 				PRODUCT_BUNDLE_IDENTIFIER = com.campfind.app;
 	
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,7 +565,7 @@
 					"@executable_path/Frameworks",
 				);
 				DEVELOPMENT_TEAM = VNTPT66236;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.campfind.app 1788094132";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.campfind.app 1788286025";
 				PRODUCT_BUNDLE_IDENTIFIER = com.campfind.app;
 	
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -590,7 +590,7 @@
 					"@executable_path/Frameworks",
 				);
 				DEVELOPMENT_TEAM = VNTPT66236;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.campfind.app 1788094132";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.campfind.app 1788286025";
 				PRODUCT_BUNDLE_IDENTIFIER = com.campfind.app;
 	
 				PRODUCT_NAME = "$(TARGET_NAME)";
