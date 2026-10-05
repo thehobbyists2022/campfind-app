@@ -1,0 +1,7 @@
+{
+  "version": "2026.10.04-v2",
+  "total_camps": 5012,
+  "updated_at": "2026-10-04T21:30:00Z",
+  "download_url": "https://campfind.netlify.app/app/aca_camps.json",
+  "fallback_url": "https://raw.githubusercontent.com/thehobbyists2022/campfind-app/main/app/aca_camps.json"
+}

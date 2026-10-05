@@ -18,14 +18,14 @@ workflows:
       - name: Configure iOS version & set codesigning team
         script: |
           cd ios
-          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString 1.1.0" Runner/Info.plist || true
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion 20" Runner/Info.plist || true
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString 1.1.1" Runner/Info.plist || true
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion 24" Runner/Info.plist || true
           cd ..
       - name: Build App Store IPA
         script: |
           flutter build ipa --release \
-            --build-name=1.1.0 \
-            --build-number=20
+            --build-name=1.1.1 \
+            --build-number=24
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:

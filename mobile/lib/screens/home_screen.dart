@@ -28,8 +28,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    widget.repository.addListener(_onRepositoryUpdated);
     _applyFilters();
     _checkOnboardingTip();
+  }
+
+  @override
+  void dispose() {
+    widget.repository.removeListener(_onRepositoryUpdated);
+    super.dispose();
+  }
+
+  void _onRepositoryUpdated() {
+    if (mounted) {
+      _applyFilters();
+    }
   }
 
   Future<void> _checkOnboardingTip() async {

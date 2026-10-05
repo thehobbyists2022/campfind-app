@@ -1,0 +1,623 @@
+Total missing: 410
+
+=== CITY CAMPS (262) ===
+
+--- State: AK (1 camps) ---
+ID city_anchorage_anchorageparks&recdaycamp | Anchorage | Anchorage Parks & Rec Day Camp | https://www.muni.org/departments/parks/Pages/default.aspx | Phone: (907) 343-7529
+
+--- State: AL (4 camps) ---
+ID city_birmingham_birminghamparks&recdaycamp | Birmingham | Birmingham Parks & Rec Day Camp | https://www.birminghamal.gov/government/city-departments/parks-recreation | Phone: (205) 254-2391
+ID city_montgomery_montgomeryparks&recdaycamp | Montgomery | Montgomery Parks & Rec Day Camp | https://www.montgomeryal.gov/play/explore-montgomery/parks-trails-and-natural-areas/parks/ | Phone: (334) 625-2300
+ID city_huntsville_huntsvilleparks&recdaycamp | Huntsville | Huntsville Parks & Rec Day Camp | https://www.huntsvilleal.gov/parks-recreation/ | Phone: (256) 564-8026
+ID city_mobile_mobileparks&recdaycamp | Mobile | Mobile Parks & Rec Day Camp | https://www.cityofmobile.gov/departments/parks-recreation/ | Phone: 
+
+--- State: AR (2 camps) ---
+ID city_littlerock_littlerockparks&recdaycamp | Little Rock | Little Rock Parks & Rec Day Camp | https://littlerock.gov/residents/parks-and-recreation/ | Phone: (501) 371-4510
+ID city_fayetteville_fayettevillearparks&recdaycamp | Fayetteville | Fayetteville AR Parks & Rec Day Camp | https://www.fayetteville-ar.gov/parks | Phone: (479) 444-3471
+
+--- State: AZ (9 camps) ---
+ID city_phoenix_phoenixparks&recdaycamp | Phoenix | Phoenix Parks & Rec Day Camp | https://www.phoenix.gov/parks | Phone: (602) 262-6251
+ID city_tucson_tucsonparks&recdaycamp | Tucson | Tucson Parks & Rec Day Camp | https://www.tucsonaz.gov/Departments/Parks-and-Recreation | Phone: (520) 791-4873
+ID city_mesa_mesaparks&recdaycamp | Mesa | Mesa Parks & Rec Day Camp | https://www.mesaaz.gov/Activities-Culture/Parks-Recreation-and-Community-Facilities | Phone: (480) 644-7529
+ID city_scottsdale_scottsdaleparks&recdaycamp | Scottsdale | Scottsdale Parks & Rec Day Camp | https://www.scottsdaleaz.gov/Parks/ | Phone: (480) 312-7957
+ID city_glendale_glendaleazparks&recdaycamp | Glendale | Glendale AZ Parks & Rec Day Camp | https://www.glendaleaz.gov/Explore/Parks-and-Recreation | Phone: 
+ID city_chandler_chandlercommunityservicesdayca | Chandler | Chandler Community Services Day Camp | https://www.chandleraz.gov/government/departments/community-services | Phone: (480) 782-2727
+ID city_tempe_tempecommunityservicesdaycamp | Tempe | Tempe Community Services Day Camp | https://www.tempe.gov/government/community-services | Phone: (480) 350-5200
+ID city_peoria_peoriaazparks&recdaycamp | Peoria | Peoria AZ Parks & Rec Day Camp | https://www.peoriaaz.gov/government/departments/parks-recreation-and-community-facilities/recreation-programs | Phone: (623) 773-7137
+ID city_surprise_surpriseazparks&recdaycamp | Surprise | Surprise AZ Parks & Rec Day Camp | https://www.surpriseaz.gov/parks | Phone: 
+
+--- State: CA (89 camps) ---
+ID city_sandiego_sandiegojuniorlifeguards | San Diego | San Diego Junior Lifeguards | https://www.sandiego.gov/lifeguards/junior | Phone: 
+ID city_sandiego_sandiegocivicdanceartsprogram | San Diego | San Diego Civic Dance Arts Program | https://www.sandiego.gov/park-and-recreation/activities/dance | Phone: 
+ID city_sandiego_sandiegorecreationcenterdaycam | San Diego | San Diego Recreation Center Day Camp | https://www.sandiego.gov/park-and-recreation/centers | Phone: 
+ID city_encinitas_encinitasrecreationdaycamp | Encinitas | Encinitas Recreation Day Camp | https://www.encinitasca.gov/community/recreation-programs | Phone: (760) 633-2600
+ID city_temecula_temeculacommunityservicesdayca | Temecula | Temecula Community Services Day Camp | https://temeculaca.gov/101/City-Services | Phone: (951) 694-6444
+ID city_corona_coronacommunityservicesdaycamp | Corona | Corona Community Services Day Camp | https://www.coronaca.gov/government/departments/community-services | Phone: (951) 736-2258
+ID city_morenovalley_morenovalleyparks&communityday | Moreno Valley | Moreno Valley Parks & Community Day Camp | https://www.moval.org/parks-comm-svc/index.html | Phone: (951) 413-3000
+ID city_irvine_irvinecommunityservicesdaycamp | Irvine | Irvine Community Services Day Camp | https://www.cityofirvine.org/community-services | Phone: (949) 724-6600
+ID city_burbank_burbankparks&recdaycamp | Burbank | Burbank Parks & Rec Day Camp | https://www.burbankca.gov/parks-recreation | Phone: (818) 238-5300
+ID city_fontana_fontanacommunityservicesdaycam | Fontana | Fontana Community Services Day Camp | https://www.fontana.org/3579/Community-Services | Phone: (909) 350-7600
+ID city_fontana_fontanacommunitycenterdaycamp | Fontana | Fontana Community Center Day Camp | https://www.fontana.org/3579/Community-Services | Phone: (909) 350-7600
+ID city_pasadena_pasadenaparks&recdaycamp | Pasadena | Pasadena Parks & Rec Day Camp | https://www.cityofpasadena.net/parks-and-recreation/ | Phone: (626) 744-4000
+ID city_fremont_fremontrecreationdaycamp | Fremont | Fremont Recreation Day Camp | https://www.fremont.gov/community-services/recreation-services | Phone: (510) 494-4300
+ID city_paloalto_paloaltocommunityservicesdayca | Palo Alto | Palo Alto Community Services Day Camp | https://www.cityofpaloalto.org/Departments/Community-Services | Phone: (650) 617-3100
+ID city_sanmateo_sanmateoparks&recdaycamp | San Mateo | San Mateo Parks & Rec Day Camp | https://www.cityofsanmateo.org/1193/Parks-and-Recreation | Phone: (650) 522-7400
+ID city_redwoodcity_redwoodcityparks&recdaycamp | Redwood City | Redwood City Parks & Rec Day Camp | https://www.redwoodcity.org/departments/parks-recreation | Phone: (650) 780-7311
+ID city_santacruz_santacruzparks&recdaycamp | Santa Cruz | Santa Cruz Parks & Rec Day Camp | https://www.cityofsantacruz.com/government/city-departments/parks-and-recreation | Phone: (831) 420-5270
+ID city_stockton_stocktonparks&recdaycamp | Stockton | Stockton Parks & Rec Day Camp | https://www.stocktonca.gov/government/departments/parks-recreation | Phone: (209) 937-8206
+ID city_modesto_modestoparks&recdaycamp | Modesto | Modesto Parks & Rec Day Camp | https://www.modestogov.com/parks-recreation | Phone: (209) 577-5344
+ID city_fresno_fresnoparks&recdaycamp | Fresno | Fresno Parks & Rec Day Camp | https://www.fresno.gov/parks/ | Phone: (559) 621-8400
+ID city_fresno_fresnocommunitycenterdaycamp | Fresno | Fresno Community Center Day Camp | https://www.fresno.gov/parks/ | Phone: (559) 621-8400
+ID city_salinas_salinasparks&communitydaycamp | Salinas | Salinas Parks & Community Day Camp | https://www.cityofsalinas.org/parks-and-community-services | Phone: (831) 758-7200
+ID city_santamonica_santamonicacommunityservicesda | Santa Monica | Santa Monica Community Services Day Camp | https://www.smgov.net/departments/ccs/ | Phone: (310) 458-8300
+ID city_ventura_venturacommunityservicesdaycam | Ventura | Ventura Community Services Day Camp | https://www.cityofventura.ca.gov/139/Community-Services | Phone: (805) 658-4726
+ID city_santabarbara_santabarbaraparks&recdaycamp | Santa Barbara | Santa Barbara Parks & Rec Day Camp | https://www.santabarbaraca.gov/gov/depts/parksrec/ | Phone: (805) 564-5418
+ID city_oxnard_oxnardcommunityservicesdaycamp | Oxnard | Oxnard Community Services Day Camp | https://www.oxnard.org/community-services/ | Phone: (805) 385-8100
+ID city_sanluisobispo_sanluisobispoparks&recdaycamp | San Luis Obispo | San Luis Obispo Parks & Rec Day Camp | https://www.slocity.org/government/departments/parks-and-recreation | Phone: (805) 781-7300
+ID city_simivalley_simivalleyrecreationdaycamp | Simi Valley | Simi Valley Recreation Day Camp | https://www.simivalley.org/departments/recreation | Phone: (805) 583-6300
+ID city_thousandoaks_thousandoakscommunityservicesd | Thousand Oaks | Thousand Oaks Community Services Day Camp | https://www.toaks.org/government/departments/community-services | Phone: (805) 449-2100
+ID city_santaclarita_santaclaritaparks&recdaycamp | Santa Clarita | Santa Clarita Parks & Rec Day Camp | https://santaclarita.gov/parks-recreation | Phone: (661) 250-3700
+ID city_ranchocucamonga_ranchocucamongacommunityservic | Rancho Cucamonga | Rancho Cucamonga Community Services Day Camp | https://www.ranchocucamonga.gov/our-community/community-services | Phone: (909) 477-2750
+ID city_palmsprings_palmspringsparks&recdaycamp | Palm Springs | Palm Springs Parks & Rec Day Camp | https://www.palmspringsca.gov/government/departments/parks-and-recreation | Phone: (760) 323-8200
+ID city_torrance_torrancecommunityservicesdayca | Torrance | Torrance Community Services Day Camp | https://www.torranceca.gov/City-Services/Parks-Recreation-Community/Parks-Recreation-Community-Services | Phone: (310) 328-5310
+ID city_glendale_glendalecommunityservicesdayca | Glendale | Glendale Community Services Day Camp | https://www.glendaleca.gov/government/departments/community-services-parks | Phone: (818) 548-2000
+ID city_fullerton_fullertonparks&recdaycamp | Fullerton | Fullerton Parks & Rec Day Camp | https://www.cityoffullerton.com/government/departments/parks-recreation | Phone: (714) 738-6575
+ID city_anaheim_anaheimcommunityservicesdaycam | Anaheim | Anaheim Community Services Day Camp | https://www.anaheim.net/6769/OAKS-Day-Camp | Phone: (714) 765-4311
+ID city_bakersfield_bakersfieldparks&recdaycamp | Bakersfield | Bakersfield Parks & Rec Day Camp | https://www.bakersfieldcity.us/parks | Phone: (661) 326-3761
+ID city_napa_napaparks&recdaycamp | Napa | Napa Parks & Rec Day Camp | https://www.cityofnapa.org/1123/Parks-Recreation-Services | Phone: (707) 257-9529
+ID city_vallejo_vallejoparks&recdaycamp | Vallejo | Vallejo Parks & Rec Day Camp | https://www.cityofvallejo.net/residents/parks___recreation | Phone: (707) 648-4600
+ID city_santarosa_santarosarecreationdaycamp | Santa Rosa | Santa Rosa Recreation Day Camp | https://www.srcity.org/150/Recreation-Parks | Phone: (707) 543-3800
+ID city_chico_chicoparks&recdaycamp | Chico | Chico Parks & Rec Day Camp | https://chico.ca.us/Our-Community/Parks-Recreation-and-Experience-the-Outdoors/index.html | Phone: (530) 895-4711
+ID city_eureka_eurekaparks&recdaycamp | Eureka | Eureka Parks & Rec Day Camp | https://www.eurekaca.gov/161/Programs-Experiences | Phone: (707) 441-4200
+ID city_sanbernardino_sanbernardinoparks&recdaycamp | San Bernardino | San Bernardino Parks & Rec Day Camp | https://www.ci.san-bernardino.ca.us/services/parks-and-recreation | Phone: (909) 998-2000
+ID city_gardengrove_gardengrovecommunityservicesda | Garden Grove | Garden Grove Community Services Day Camp | https://ggcity.org/community-services | Phone: (714) 741-5200
+ID city_palmdale_palmdaleparks&recdaycamp | Palmdale | Palmdale Parks & Rec Day Camp | https://www.cityofpalmdaleca.gov/174/Parks-and-Recreation | Phone: (661) 267-5611
+ID city_lancaster_camplancaster | Lancaster | Camp Lancaster | https://www.cityoflancasterca.gov/ | Phone: (661) 723-6000
+ID city_pomona_pomonacommunityservicesdaycamp | Pomona | Pomona Community Services Day Camp | https://www.pomonaca.gov/government/departments/community-services | Phone: (909) 802-7730
+ID city_victorville_victorvillerecreationdaycamp | Victorville | Victorville Recreation Day Camp | https://www.victorvilleca.gov/Government/City-Departments/Recreation | Phone: 
+ID city_downey_downeyparks&recdaycamp | Downey | Downey Parks & Rec Day Camp | https://www.downeyca.org/our-city/departments/parks-recreation/ | Phone: (562) 904-7238
+ID city_costamesa_costamesaparks&recdaycamp | Costa Mesa | Costa Mesa Parks & Rec Day Camp | https://www.costamesaca.gov/government/departments-and-divisions/parks-and-community-services | Phone: (714) 754-5000
+ID city_murrieta_murrietaparks&recdaycamp | Murrieta | Murrieta Parks & Rec Day Camp | https://www.murrietaca.gov/795/Parks-Recreation | Phone: (951) 304-7275
+ID city_santamaria_santamariarecreationdaycamp | Santa Maria | Santa Maria Recreation Day Camp | https://www.cityofsantamaria.org/services/departments/recreation-and-parks-5013 | Phone: (805) 925-0951
+ID city_westminster_westminstercommunityservicesda | Westminster | Westminster Community Services Day Camp | https://www.westminster-ca.gov/departments/community-services | Phone: (714) 895-2860
+ID city_orange_orangerecreationdaycamp | Orange | Orange Recreation Day Camp | https://www.cityoforange.org/our-city/departments/community-services/recreation | Phone: (714) 744-7274
+ID city_redlands_redlandsrecreationdaycamp | Redlands | Redlands Recreation Day Camp | https://www.cityofredlands.org/departments/parks-and-recreation | Phone: 
+ID city_cerritos_cerritosrecreationdaycamp | Cerritos | Cerritos Recreation Day Camp | https://www.cerritos.us/recreation/ | Phone: (562) 860-0311
+ID city_picorivera_picoriveraparks&recdaycamp | Pico Rivera | Pico Rivera Parks & Rec Day Camp | https://www.pico-rivera.org/departments/parks-recreation | Phone: (562) 801-4332
+ID city_roseville_rosevilleparks&recdaycamp | Roseville | Roseville Parks & Rec Day Camp | https://www.roseville.ca.gov/prl/parks_recreation/index.php | Phone: 
+ID city_elkgrove_elkgroveparks&recdaycamp | Elk Grove | Elk Grove Parks & Rec Day Camp | https://www.cosumnescsd.gov/1358/Parks-Recreation | Phone: (916) 405-5600
+ID city_davis_davisparks&recdaycamp | Davis | Davis Parks & Rec Day Camp | https://www.cityofdavis.org/city-hall/parks-and-community-services | Phone: (530) 757-5626
+ID city_vacaville_vacavilleparks&recdaycamp | Vacaville | Vacaville Parks & Rec Day Camp | https://www.cityofvacaville.gov/government/parks-and-recreation | Phone: (707) 449-5100
+ID city_fairfield_fairfieldparks&recdaycamp | Fairfield | Fairfield Parks & Rec Day Camp | https://www.fairfield.ca.gov/government/city-departments/parks-and-recreation | Phone: (707) 428-7435
+ID city_concord_concordrecreationservicesdayca | Concord | Concord Recreation Services Day Camp | https://www.cityofconcord.org/328/Recreation-Services | Phone: (925) 671-3430
+ID city_hayward_h.a.r.d.summercamps | Hayward | H.A.R.D. Summer Camps | https://www.haywardrec.org/296/Summer-Camps | Phone: (510) 881-6700
+ID city_hayward_haywardparks&recdaycamp | Hayward | Hayward Parks & Rec Day Camp | https://www.hayward-ca.gov/residents/arts-leisure/parks-recreation | Phone: 
+ID city_santaclara_santaclaraparks&recdaycamp | Santa Clara | Santa Clara Parks & Rec Day Camp | https://www.santaclaraca.gov/our-city/departments-g-z/parks-recreation | Phone: (408) 615-3140
+ID city_mountainview_mountainviewcommunityservicesd | Mountain View | Mountain View Community Services Day Camp | https://www.mountainview.gov/our-city/departments/community-services | Phone: (650) 903-6300
+ID city_petaluma_petalumaparks&recdaycamp | Petaluma | Petaluma Parks & Rec Day Camp | https://cityofpetaluma.org/departments/parks-recreation | Phone: (707) 778-4380
+ID city_redding_reddingparks&recdaycamp | Redding | Redding Parks & Rec Day Camp | https://www.cityofredding.gov/government/departments/parks_and_recreation/index.php | Phone: (530) 225-4095
+ID city_merced_mercedparks&communitydaycamp | Merced | Merced Parks & Community Day Camp | https://www.cityofmerced.gov/parks-and-community | Phone: (209) 385-6855
+ID city_tracy_tracyparks&recdaycamp | Tracy | Tracy Parks & Rec Day Camp | https://www.cityoftracy.org/Departments/Parks-Recreation-Community-Services | Phone: (209) 831-6200
+ID city_sanrafael_sanrafaelrecreationdaycamp | San Rafael | San Rafael Recreation Day Camp | https://www.cityofsanrafael.org/recreation/ | Phone: (415) 485-3077
+ID city_unioncity_unioncitycommunityrecreationda | Union City | Union City Community Recreation Day Camp | https://www.unioncityca.gov/192/Community-Recreation-Services | Phone: (510) 471-3232
+ID city_dalycity_dalycityrecreationdaycamp | Daly City | Daly City Recreation Day Camp | https://www.dalycity.org/807/Programs-Information | Phone: (650) 991-8001
+ID city_novato_novatoparks&recdaycamp | Novato | Novato Parks & Rec Day Camp | https://www.novato.gov/government/parks-recreation-community-services | Phone: (415) 899-8279
+ID city_livermore_larpdsummerdaycamp | Livermore | LARPD Summer Day Camp | https://www.larpd.org/ | Phone: (925) 373-5700
+ID city_walnutcreek_walnutcreekarts&recdaycamp | Walnut Creek | Walnut Creek Arts & Rec Day Camp | https://www.walnutcreekartsrec.org/programs-activities | Phone: (925) 295-1490
+ID city_milpitas_milpitasrecreationdaycamp | Milpitas | Milpitas Recreation Day Camp | https://www.milpitas.gov/1104/Recreation-Community-Services | Phone: (408) 586-3210
+ID city_cupertino_cupertinoparks&recdaycamp | Cupertino | Cupertino Parks & Rec Day Camp | https://www.cupertino.gov/Parks-Recreation | Phone: (408) 777-3120
+ID city_southsanfrancisco_southsfparks&recdaycamp | South San Francisco | South SF Parks & Rec Day Camp | https://www.ssfca.gov/Departments/Parks-Recreation | Phone: (650) 829-3800
+ID poway_lake_poway_day_camp | Poway | Lake Poway Day Camp | https://poway.org/217/Lake-Poway-Day-Camp | Phone: (858) 668-4770
+ID poway_lake_poway_day_camp___teen_counselo | Poway | Lake Poway Day Camp - Teen Counselor in Training | https://poway.org/217/Lake-Poway-Day-Camp | Phone: (858) 668-4770
+ID solana_beach_solana_beach_kids_summer_day_camp | Solana Beach | Solana Beach Kids Summer Day Camp | https://cityofsolanabeach.ca.gov/en/parks-recreation/summer-day-camps | Phone: (858) 720-2430
+ID solana_beach_solana_beach_summer_day_camp___lead | Solana Beach | Solana Beach Summer Day Camp - Leader in Training | https://cityofsolanabeach.ca.gov/en/parks-recreation/summer-day-camps | Phone: (858) 720-2430
+ID lemon_grove_lemon_grove_day_camp | Lemon Grove | Lemon Grove Day Camp | https://www.lemongrove.ca.gov/parks-events/day-camp/ | Phone: (619) 825-3800
+ID whittier_whittier_spring_day_camp | Whittier | Whittier Spring Day Camp | https://secure.rec1.com/CA/city-of-whittier-ca/catalog | Phone: 
+ID fremont_fremont_spring_break_camp | Fremont | Fremont Spring Break Camp | https://www.regerec.com/ | Phone: 
+ID lacounty_la_county_esteam_summer_camp | Los Angeles | LA County ESTEAM Summer Camp | https://anc.apm.activecommunities.com/losangelescounty/activity/search?onlineSiteId=0&locale=en-US&activity_select_param=2&viewMode=list | Phone: 
+ID whittier_whittier_summer_day_camp | Whittier | Whittier Summer Day Camp | https://secure.rec1.com/CA/city-of-whittier-ca/catalog | Phone: 
+
+--- State: CO (9 camps) ---
+ID city_denver_denverparks&recdaycamp | Denver | Denver Parks & Rec Day Camp | https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Parks-Recreation | Phone: (720) 913-1311
+ID city_boulder_boulderparks&recdaycamp | Boulder | Boulder Parks & Rec Day Camp | https://bouldercolorado.gov/government/departments/parks-recreation | Phone: (303) 413-7200
+ID city_coloradosprings_coloradospringsparks&recdaycam | Colorado Springs | Colorado Springs Parks & Rec Day Camp | https://coloradosprings.gov/PRCS | Phone: (719) 385-5940
+ID city_fortcollins_fortcollinsrecreationdaycamp | Fort Collins | Fort Collins Recreation Day Camp | https://www.fortcollins.gov/Activities/Recreation | Phone: 
+ID city_aurora_auroracorecreationdaycamp | Aurora | Aurora CO Recreation Day Camp | https://www.auroragov.org/recreation | Phone: (303) 326-8315
+ID city_lakewood_lakewoodcorecreationdaycamp | Lakewood | Lakewood CO Recreation Day Camp | https://www.lakewoodco.gov/Local-Government/Departments/Community-Resources/Recreation | Phone: (303) 987-7800
+ID city_pueblo_puebloparks&recdaycamp | Pueblo | Pueblo Parks & Rec Day Camp | https://www.pueblo.us/306/Parks-Recreation | Phone: (719) 553-2489
+ID city_greeley_greeleyrecreationdaycamp | Greeley | Greeley Recreation Day Camp | https://greeleyco.gov/recreation/ | Phone: (970) 350-9400
+ID city_westminster_westminstercoparks&recdaycamp | Westminster | Westminster CO Parks & Rec Day Camp | https://www.cityofwestminster.us/parks | Phone: (303) 658-2192
+
+--- State: CT (3 camps) ---
+ID city_bridgeport_bridgeportparks&recdaycamp | Bridgeport | Bridgeport Parks & Rec Day Camp | https://www.bridgeportct.gov/government/departments/parks-recreation | Phone: (203) 576-7233
+ID city_hartford_hartfordparks&recdaycamp | Hartford | Hartford Parks & Rec Day Camp | https://www.hartfordct.gov/Residents/Explore-Hartford/Parks-and-Recreation | Phone: (860) 757-9311
+ID city_newhaven_newhavenparksdeptdaycamp | New Haven | New Haven Parks Dept Day Camp | https://www.newhavenct.gov/government/departments-divisions/parks-department | Phone: (203) 946-6960
+
+--- State: DC (1 camps) ---
+ID dc_dc_dpr_summer_camp_2026 | Washington | DC DPR Summer Camp 2026 | https://dprprograms.com/ | Phone: (202) 671-0372
+
+--- State: DE (1 camps) ---
+ID city_wilmington_wilmingtondeparks&recdaycamp | Wilmington | Wilmington DE Parks & Rec Day Camp | https://www.wilmingtonde.gov/government/city-departments/department-of-parks-and-recreation | Phone: (302) 576-3822
+
+--- State: FL (8 camps) ---
+ID city_miami_miamiparks&recdaycamp | Miami | Miami Parks & Rec Day Camp | https://www.miami.gov/My-Government/Departments/Parks-and-Recreation | Phone: (305) 416-1300
+ID city_jacksonville_jacksonvilleparks&recdaycamp | Jacksonville | Jacksonville Parks & Rec Day Camp | https://www.jacksonville.gov/departments/parks-and-recreation | Phone: (904) 630-2489
+ID city_tampa_tampaparks&recdaycamp | Tampa | Tampa Parks & Rec Day Camp | https://www.tampa.gov/parks-and-recreation | Phone: (813) 274-8615
+ID city_orlando_orlandoparks&recdaycamp | Orlando | Orlando Parks & Rec Day Camp | https://www.orlando.gov/Parks-The-Environment | Phone: (407) 246-2121
+ID city_st.petersburg_stpeteparks&recdaycamp | St. Petersburg | St Pete Parks & Rec Day Camp | https://www.stpeteparksrec.org/ | Phone: (727) 893-7441
+ID city_gainesville_gainesvilleflparks&recdaycamp | Gainesville | Gainesville FL Parks & Rec Day Camp | https://www.cityofgainesville.org/parks | Phone: 
+ID city_tallahassee_tallahasseeparks&recdaycamp | Tallahassee | Tallahassee Parks & Rec Day Camp | https://www.talgov.com/parks/ParksHome | Phone: (850) 891-3866
+ID city_fortlauderdale_fortlauderdaleparks&recdaycamp | Fort Lauderdale | Fort Lauderdale Parks & Rec Day Camp | https://www.fortlauderdale.gov/Government/Departments/Parks-Recreation | Phone: (954) 828-7275
+
+--- State: GA (5 camps) ---
+ID city_atlanta_atlantaparks&recdaycamp | Atlanta | Atlanta Parks & Rec Day Camp | https://www.atlantaga.gov/government/departments/department-parks-recreation | Phone: (404) 546-6788
+ID city_savannah_savannahrecreationdaycamp | Savannah | Savannah Recreation Day Camp | https://www.savannahga.gov/4044/Recreation-and-Leisure-Services | Phone: (912) 351-3841
+ID city_macon_macon-bibbparks&recdaycamp | Macon | Macon-Bibb Parks & Rec Day Camp | https://www.maconbibb.us/recreation/ | Phone: (478) 219-0291
+ID city_augusta_augustaparks&recdaycamp | Augusta | Augusta Parks & Rec Day Camp | https://www.augustaga.gov/parks | Phone: (706) 821-1754
+ID city_athens_athensgaparks&recdaycamp | Athens | Athens GA Parks & Rec Day Camp | https://www.accgov.com/parks | Phone: 
+
+--- State: HI (1 camps) ---
+ID city_honolulu_honoluluparks&recdaycamp | Honolulu | Honolulu Parks & Rec Day Camp | https://www.honolulu.gov/dpr/ | Phone: (808) 768-3003
+
+--- State: IA (2 camps) ---
+ID city_desmoines_desmoinesparks&recdaycamp | Des Moines | Des Moines Parks & Rec Day Camp | https://www.dsm.city/departments/parks_recreation/index.php | Phone: 
+ID city_cedarrapids_cedarrapidsparks&recdaycamp | Cedar Rapids | Cedar Rapids Parks & Rec Day Camp | https://www.cedar-rapids.org/residents/parks_and_recreation/index.php | Phone: (319) 286-5566
+
+--- State: ID (2 camps) ---
+ID city_boise_boiseparks&recdaycamp | Boise | Boise Parks & Rec Day Camp | https://www.cityofboise.org/departments/parks-and-recreation/ | Phone: 
+ID city_idahofalls_idahofallsparks&recdaycamp | Idaho Falls | Idaho Falls Parks & Rec Day Camp | https://www.idahofallsidaho.gov/parks | Phone: (208) 612-8479
+
+--- State: IL (6 camps) ---
+ID city_chicago_chicagoparkdistrictdaycamp | Chicago | Chicago Park District Day Camp | https://www.chicagoparkdistrict.com/ | Phone: (312) 742-7529
+ID city_aurora_aurorailparks&recdaycamp | Aurora | Aurora IL Parks & Rec Day Camp | https://www.aurora.il.us/Recreation-and-Amenities/Parks | Phone: (630) 256-4636
+ID city_rockford_rockfordparkdistrictdaycamp | Rockford | Rockford Park District Day Camp | https://rockfordparkdistrict.org/ | Phone: (815) 987-8800
+ID city_peoria_peoriaparkdistrictdaycamp | Peoria | Peoria Park District Day Camp | https://peoriaparks.org/ | Phone: 
+ID city_springfield_springfieldilparkdistrictdayca | Springfield | Springfield IL Park District Day Camp | https://springfieldparks.org/ | Phone: (217) 544-1751
+ID city_naperville_napervilleparkdistrictdaycamp | Naperville | Naperville Park District Day Camp | https://www.napervilleparks.org/ | Phone: (630) 848-3575
+
+--- State: IN (4 camps) ---
+ID city_indianapolis_indyparksdaycamp | Indianapolis | Indy Parks Day Camp | https://parks.indy.gov | Phone: (317) 327-7275
+ID city_fortwayne_fortwayneparks&recdaycamp | Fort Wayne | Fort Wayne Parks & Rec Day Camp | https://www.cityoffortwayne.in.gov/461/Parks-Recreation | Phone: (260) 427-6000
+ID city_southbend_southbendparks&recdaycamp | South Bend | South Bend Parks & Rec Day Camp | https://www.southbendin.gov/parks | Phone: (574) 235-5567
+ID city_evansville_evansvilleparks&recdaycamp | Evansville | Evansville Parks & Rec Day Camp | https://www.evansvillegov.org/city/department/index.php?structureid=22 | Phone: 
+
+--- State: KS (2 camps) ---
+ID city_wichita_wichitaparks&recdaycamp | Wichita | Wichita Parks & Rec Day Camp | https://www.wichita.gov/515/City-Parks | Phone: 
+ID city_topeka_topekaparks&recdaycamp | Topeka | Topeka Parks & Rec Day Camp | https://www.topeka.org/parks | Phone: 
+
+--- State: KY (3 camps) ---
+ID city_louisville_louisvilleparks&recdaycamp | Louisville | Louisville Parks & Rec Day Camp | https://louisvilleky.gov/government/parks-and-recreation | Phone: (502) 574-6454
+ID city_lexington_lexingtonparks&recdaycamp | Lexington | Lexington Parks & Rec Day Camp | https://www.lexingtonky.gov/government/departments-programs/general-services/parks-recreation | Phone: (859) 288-2900
+ID city_bowlinggreen_bowlinggreenkyparks&recdaycamp | Bowling Green | Bowling Green KY Parks & Rec Day Camp | https://www.bgky.org/parks | Phone: (270) 393-3249
+
+--- State: LA (2 camps) ---
+ID city_neworleans_neworleansrecreationdaycamp | New Orleans | New Orleans Recreation Day Camp | https://nordc.org/home/ | Phone: (504) 658-3052
+ID city_batonrouge_batonrougeparks&recdaycamp | Baton Rouge | Baton Rouge Parks & Rec Day Camp | https://www.brla.gov/1265/Recreation-and-Park-Commission | Phone: (225) 389-3000
+
+--- State: MA (3 camps) ---
+ID city_boston_bostonparks&recdaycamp | Boston | Boston Parks & Rec Day Camp | https://www.boston.gov/departments/parks-and-recreation | Phone: (617) 635-4505
+ID city_worcester_worcesterparks&recdaycamp | Worcester | Worcester Parks & Rec Day Camp | https://www.worcesterma.gov/parks | Phone: (508) 799-1190
+ID city_cambridge_cambridgemarecreationdaycamp | Cambridge | Cambridge MA Recreation Day Camp | https://www.cambridgema.gov/departments/humanserviceprograms/recreation | Phone: (617) 349-6229
+
+--- State: MD (1 camps) ---
+ID city_annapolis_annapolisrecreation&parksdayca | Annapolis | Annapolis Recreation & Parks Day Camp | https://www.annapolis.gov/189/Recreation-Parks | Phone: (410) 263-7958
+
+--- State: ME (1 camps) ---
+ID city_portland_portlandmeparks&recdaycamp | Portland | Portland ME Parks & Rec Day Camp | https://www.portlandmaine.gov/parks | Phone: (207) 874-8493
+
+--- State: MI (5 camps) ---
+ID city_detroit_detroitparks&recdaycamp | Detroit | Detroit Parks & Rec Day Camp | https://detroitmi.gov/departments/detroit-parks-recreation | Phone: (313) 224-1100
+ID city_grandrapids_grandrapidsparks&recdaycamp | Grand Rapids | Grand Rapids Parks & Rec Day Camp | https://www.grandrapidsmi.gov/Departments/Parks-Recreation | Phone: (616) 456-3000
+ID city_annarbor_annarborparks&recdaycamp | Ann Arbor | Ann Arbor Parks & Rec Day Camp | https://www.a2gov.org/parks-and-recreation/ | Phone: (734) 794-6230
+ID city_lansing_lansingparks&recdaycamp | Lansing | Lansing Parks & Rec Day Camp | https://www.lansingmi.gov/parks | Phone: 
+ID city_flint_flintparks&recdaycamp | Flint | Flint Parks & Rec Day Camp | https://www.cityofflint.com/parks | Phone: (810) 766-7346
+
+--- State: MN (3 camps) ---
+ID city_saintpaul_stpaulparks&recdaycamp | Saint Paul | St Paul Parks & Rec Day Camp | https://www.stpaul.gov/departments/parks-and-recreation | Phone: (651) 266-6400
+ID city_duluth_duluthparks&recdaycamp | Duluth | Duluth Parks & Rec Day Camp | https://duluthmn.gov/parks/ | Phone: (218) 730-4300
+ID city_rochester_rochestermnparks&recdaycamp | Rochester | Rochester MN Parks & Rec Day Camp | https://www.rochestermn.gov/activities-parks-culture/ | Phone: (507) 328-2525
+
+--- State: MO (2 camps) ---
+ID city_kansascity_kansascityparks&recdaycamp | Kansas City | Kansas City Parks & Rec Day Camp | https://kcparks.org/ | Phone: (816) 513-7500
+ID city_st.louis_stlouisparks&recdaycamp | St. Louis | St Louis Parks & Rec Day Camp | https://www.stlouis-mo.gov/government/departments/parks/ | Phone: (314) 622-4800
+
+--- State: MS (1 camps) ---
+ID city_gulfport_gulfportleisureservicesdaycamp | Gulfport | Gulfport Leisure Services Day Camp | https://gulfport-ms.gov/government/leisure_services.php | Phone: (228) 868-5881
+
+--- State: MT (2 camps) ---
+ID city_billings_billingsparks&recdaycamp | Billings | Billings Parks & Rec Day Camp | https://www.billingsparks.org | Phone: (406) 657-8371
+ID city_greatfalls_greatfallsparks&recdaycamp | Great Falls | Great Falls Parks & Rec Day Camp | https://greatfallsmt.gov/287/Park-and-Recreation | Phone: (406) 771-1265
+
+--- State: NC (4 camps) ---
+ID city_charlotte_charlotteparks&recdaycamp | Charlotte | Charlotte Parks & Rec Day Camp | https://parkandrec.mecknc.gov/ | Phone: (980) 314-1000
+ID city_raleigh_raleighparks&recdaycamp | Raleigh | Raleigh Parks & Rec Day Camp | https://raleighnc.gov/parks-and-recreation | Phone: (919) 996-3285
+ID city_greensboro_greensboroparks&recdaycamp | Greensboro | Greensboro Parks & Rec Day Camp | https://www.greensboro-nc.gov/departments/parks-recreation | Phone: (336) 373-2558
+ID city_durham_durhamparks&recdaycamp | Durham | Durham Parks & Rec Day Camp | https://www.dprplaymore.org/ | Phone: (919) 560-4355
+
+--- State: ND (3 camps) ---
+ID city_fargo_fargoparkdistrictdaycamp | Fargo | Fargo Park District Day Camp | https://www.fargoparks.com | Phone: (701) 499-6060
+ID city_bismarck_bismarckparks&recdaycamp | Bismarck | Bismarck Parks & Rec Day Camp | https://www.bisparks.org | Phone: (701) 222-6455
+ID fargo_fargo_adaptive_camp-a-day | Fargo | Fargo Adaptive Camp-A-Day | https://www.fargoparks.com/youth-programs/adaptive-programs | Phone: 
+
+--- State: NE (2 camps) ---
+ID city_omaha_omahaparks&recdaycamp | Omaha | Omaha Parks & Rec Day Camp | https://parks.cityofomaha.org | Phone: (402) 444-5900
+ID city_lincoln_lincolnneparks&recdaycamp | Lincoln | Lincoln NE Parks & Rec Day Camp | https://www.lincoln.ne.gov/City/Departments/Parks-and-Recreation | Phone: (402) 441-7847
+
+--- State: NH (1 camps) ---
+ID city_manchester_manchesternhparks&recdaycamp | Manchester | Manchester NH Parks & Rec Day Camp | https://www.manchesternh.gov/Departments/Parks-and-Recreation | Phone: 
+
+--- State: NJ (3 camps) ---
+ID city_newark_newarknjparks&recdaycamp | Newark | Newark NJ Parks & Rec Day Camp | https://www.newarknj.gov/482/Parks | Phone: (973) 733-4311
+ID city_jerseycity_jerseycityparks&recdaycamp | Jersey City | Jersey City Parks & Rec Day Camp | https://www.jerseycitynj.gov/cityhall/deptofparksrecreationyouthdevelopment | Phone: (201) 547-5000
+ID city_trenton_trentonrecreationdaycamp | Trenton | Trenton Recreation Day Camp | https://www.trentonnj.org/338/Recreation-Natural-Resources-Culture | Phone: (609) 989-3635
+
+--- State: NM (3 camps) ---
+ID city_albuquerque_albuquerqueparks&recdaycamp | Albuquerque | Albuquerque Parks & Rec Day Camp | https://www.cabq.gov/parksandrecreation | Phone: (505) 768-2000
+ID city_santafe_santafenmrecreationdaycamp | Santa Fe | Santa Fe NM Recreation Day Camp | https://santafenm.gov/community-services/recreation | Phone: (505) 955-4000
+ID city_lascruces_lascrucesparks&recdaycamp | Las Cruces | Las Cruces Parks & Rec Day Camp | https://www.lascruces.gov/parks-and-recreation | Phone: (575) 541-2563
+
+--- State: NV (4 camps) ---
+ID city_lasvegas_lasvegasparks&recdaycamp | Las Vegas | Las Vegas Parks & Rec Day Camp | https://www.lasvegasnevada.gov/Residents/Parks-Facilities | Phone: (702) 229-6011
+ID city_henderson_hendersonparks&recdaycamp | Henderson | Henderson Parks & Rec Day Camp | https://www.cityofhenderson.com/government/departments/parks-and-recreation | Phone: (702) 267-4000
+ID city_reno_renoparks&recdaycamp | Reno | Reno Parks & Rec Day Camp | https://www.reno.gov/parks-and-recreation/index.php | Phone: (775) 334-2262
+ID city_northlasvegas_northlasvegasparks&recdaycamp | North Las Vegas | North Las Vegas Parks & Rec Day Camp | https://www.cityofnorthlasvegas.com/things-to-do/parks-and-recreation | Phone: (702) 633-1171
+
+--- State: NY (6 camps) ---
+ID city_newyork_nycparkssummerdaycamp | New York | NYC Parks Summer Day Camp | https://www.nycgovparks.org/ | Phone: 
+ID city_buffalo_buffaloparks&recdaycamp | Buffalo | Buffalo Parks & Rec Day Camp | https://www.buffalony.gov/332/Department-of-Parks-Recreation | Phone: 
+ID city_rochester_rochesterrecreationdaycamp | Rochester | Rochester Recreation Day Camp | https://www.cityofrochester.gov/departments/department-recreation-and-human-services-drhs | Phone: (585) 428-6755
+ID city_yonkers_yonkersparks&recdaycamp | Yonkers | Yonkers Parks & Rec Day Camp | https://www.yonkersny.gov/291/Parks-Recreation-Conservation | Phone: (914) 377-6450
+ID city_albany_albanynyparks&recdaycamp | Albany | Albany NY Parks & Rec Day Camp | https://www.albanyny.gov/parks | Phone: (518) 434-5707
+ID city_syracuse_syracuseparks&recdaycamp | Syracuse | Syracuse Parks & Rec Day Camp | https://www.syr.gov/Departments/Parks-Recreation | Phone: (315) 473-4330
+
+--- State: OH (5 camps) ---
+ID city_cleveland_clevelandparks&recdaycamp | Cleveland | Cleveland Parks & Rec Day Camp | https://www.clevelandohio.gov/city-hall/departments/parks-recreation | Phone: (216) 664-2561
+ID city_cincinnati_cincinnatiparksdaycamp | Cincinnati | Cincinnati Parks Day Camp | https://www.cincinnati-oh.gov/cincyparks/ | Phone: (513) 352-4000
+ID city_dayton_daytonrecreationdaycamp | Dayton | Dayton Recreation Day Camp | https://www.daytonohio.gov/422/Recreation | Phone: (937) 333-8400
+ID city_toledo_toledoparks&recdaycamp | Toledo | Toledo Parks & Rec Day Camp | https://toledo.oh.gov/residents/parks | Phone: 
+ID city_akron_akronrecreation&parksdaycamp | Akron | Akron Recreation & Parks Day Camp | https://www.akronohio.gov/departments/recreation_and_parks/index.php | Phone: (330) 375-2311
+
+--- State: OK (2 camps) ---
+ID city_oklahomacity_oklahomacityparks&recdaycamp | Oklahoma City | Oklahoma City Parks & Rec Day Camp | https://www.okc.gov/Community-Recreation/OKC-Parks | Phone: (405) 297-3882
+ID city_tulsa_tulsaparks&recdaycamp | Tulsa | Tulsa Parks & Rec Day Camp | https://www.cityoftulsa.org/parks | Phone: (918) 596-7275
+
+--- State: OR (4 camps) ---
+ID city_eugene_eugenerecreationdaycamp | Eugene | Eugene Recreation Day Camp | https://www.eugene-or.gov/4424/Recreation | Phone: (541) 682-5333
+ID city_salem_salemorparks&recdaycamp | Salem | Salem OR Parks & Rec Day Camp | https://www.cityofsalem.net/community/things-to-do/recreation-sports-and-activities | Phone: (503) 588-6336
+ID city_beaverton_beavertonparks&recdaycamp | Beaverton | Beaverton Parks & Rec Day Camp | https://www.beavertonoregon.gov/parks | Phone: (503) 217-1618
+ID city_bend_bendpark&recdistrictdaycamp | Bend | Bend Park & Rec District Day Camp | https://www.bendparksandrec.org | Phone: (541) 389-7275
+
+--- State: PA (3 camps) ---
+ID city_philadelphia_philadelphiaparks&recdaycamp | Philadelphia | Philadelphia Parks & Rec Day Camp | https://www.phila.gov/departments/philadelphia-parks-recreation/ | Phone: (215) 683-3600
+ID city_pittsburgh_pittsburghcitiparksdaycamp | Pittsburgh | Pittsburgh CitiParks Day Camp | https://www.pittsburghpa.gov/Recreation-Events | Phone: (412) 255-2621
+ID city_allentown_allentownparks&recdaycamp | Allentown | Allentown Parks & Rec Day Camp | https://www.allentownpa.gov/en-us/Government/Departments/Parks-Recreation | Phone: (610) 437-7757
+
+--- State: RI (1 camps) ---
+ID city_providence_providenceparks&recdaycamp | Providence | Providence Parks & Rec Day Camp | https://www.providenceri.gov/parks | Phone: (401) 680-5000
+
+--- State: SC (3 camps) ---
+ID city_columbia_columbiascparks&recdaycamp | Columbia | Columbia SC Parks & Rec Day Camp | https://parksandrec.columbiasc.gov | Phone: (803) 545-3100
+ID city_charleston_charlestonscrecreationdaycamp | Charleston | Charleston SC Recreation Day Camp | https://www.charleston-sc.gov/357/Recreation | Phone: (843) 724-7327
+ID city_greenville_greenvillescparks&recdaycamp | Greenville | Greenville SC Parks & Rec Day Camp | https://www.greenvillesc.gov/parks | Phone: 
+
+--- State: SD (2 camps) ---
+ID city_siouxfalls_siouxfallsparks&recdaycamp | Sioux Falls | Sioux Falls Parks & Rec Day Camp | https://www.siouxfalls.gov/government/departments/parks-recreation | Phone: (605) 367-8150
+ID city_rapidcity_rapidcityparks&recdaycamp | Rapid City | Rapid City Parks & Rec Day Camp | https://www.rcgov.org/departments/parks-recreation.html | Phone: (605) 394-5223
+
+--- State: TN (5 camps) ---
+ID city_nashville_nashvilleparks&recdaycamp | Nashville | Nashville Parks & Rec Day Camp | https://www.nashville.gov/departments/parks | Phone: (615) 862-8400
+ID city_memphis_memphisparks&recdaycamp | Memphis | Memphis Parks & Rec Day Camp | https://memphisparks.com/ | Phone: (901) 636-4200
+ID city_knoxville_knoxvilleparks&recdaycamp | Knoxville | Knoxville Parks & Rec Day Camp | https://www.knoxvilletn.gov/recreation | Phone: (865) 215-4311
+ID city_chattanooga_chattanoogaparks&recdaycamp | Chattanooga | Chattanooga Parks & Rec Day Camp | https://chattanooga.gov/government/parks-and-outdoors | Phone: (423) 643-7866
+ID city_murfreesboro_murfreesboroparks&recdaycamp | Murfreesboro | Murfreesboro Parks & Rec Day Camp | https://www.murfreesborotn.gov/parks | Phone: (615) 890-5333
+
+--- State: TX (11 camps) ---
+ID city_dallas_dallasparks&recdaycamp | Dallas | Dallas Parks & Rec Day Camp | https://www.dallasparks.org/ | Phone: (214) 670-4100
+ID city_sanantonio_sanantonioparks&recdaycamp | San Antonio | San Antonio Parks & Rec Day Camp | https://www.sa.gov/Directory/Departments/Parks | Phone: (210) 207-6000
+ID city_fortworth_fortworthparks&recdaycamp | Fort Worth | Fort Worth Parks & Rec Day Camp | https://www.fortworthtexas.gov/departments/parks | Phone: (817) 392-5700
+ID city_elpaso_elpasoparks&recdaycamp | El Paso | El Paso Parks & Rec Day Camp | https://www.elpasotexas.gov/parks/ | Phone: (915) 212-0092
+ID city_arlington_arlingtontxparks&recdaycamp | Arlington | Arlington TX Parks & Rec Day Camp | https://www.arlingtontx.gov/Government/Departments/Department-Directory/Parks-Recreation-Culture | Phone: (817) 459-5474
+ID city_plano_planoparks&recdaycamp | Plano | Plano Parks & Rec Day Camp | https://www.plano.gov/parks-and-recreation | Phone: (972) 941-7000
+ID city_irving_irvingparks&recdaycamp | Irving | Irving Parks & Rec Day Camp | https://irvingtx.gov/parks | Phone: (972) 721-2501
+ID city_lubbock_lubbockparks&recdaycamp | Lubbock | Lubbock Parks & Rec Day Camp | https://www.mylubbock.us/368/Parks-Recreation | Phone: (806) 775-2687
+ID city_corpuschristi_corpuschristiparks&recdaycamp | Corpus Christi | Corpus Christi Parks & Rec Day Camp | https://www.cctexas.com/parks | Phone: (361) 826-2489
+ID fortworth_fort_worth_rec_leader_in_training_rlit | Fort Worth | Fort Worth Rec Leader in Training (RLIT) | https://anc.apm.activecommunities.com/cityoffortworth/activity/search | Phone: (817) 392-5700
+ID fortworth_fort_worth_rising_stars_program | Fort Worth | Fort Worth Rising Stars Program | https://anc.apm.activecommunities.com/cityoffortworth/activity/search | Phone: (817) 392-5700
+
+--- State: UT (5 camps) ---
+ID city_saltlakecity_slcparks&recdaycamp | Salt Lake City | SLC Parks & Rec Day Camp | https://www.slc.gov/parks/ | Phone: (801) 972-7800
+ID city_provo_provoparks&recdaycamp | Provo | Provo Parks & Rec Day Camp | https://www.provo.gov/184/Parks-Recreation | Phone: (801) 852-6600
+ID city_westvalleycity_westvalleycityparks&recdaycamp | West Valley City | West Valley City Parks & Rec Day Camp | https://www.wvc-ut.gov/95/Parks-Recreation | Phone: (801) 966-3600
+ID city_ogden_ogdenrecreationdaycamp | Ogden | Ogden Recreation Day Camp | https://www.ogdencity.gov/3406/Recreation | Phone: (801) 629-8253
+ID city_sandy_sandyutparks&recdaycamp | Sandy | Sandy UT Parks & Rec Day Camp | https://www.sandy.utah.gov/government/departments/parks-and-recreation | Phone: (801) 568-7100
+
+--- State: VA (6 camps) ---
+ID city_virginiabeach_virginiabeachparks&recdaycamp | Virginia Beach | Virginia Beach Parks & Rec Day Camp | https://parks.virginiabeach.gov | Phone: (757) 385-1100
+ID city_richmond_richmondvaparks&recdaycamp | Richmond | Richmond VA Parks & Rec Day Camp | https://www.rva.gov/parks-recreation | Phone: (804) 646-7000
+ID city_norfolk_norfolkparks&recdaycamp | Norfolk | Norfolk Parks & Rec Day Camp | https://www.norfolk.gov/5380/Parks-and-Recreation | Phone: (757) 823-4291
+ID city_alexandria_alexandriavaparks&recdaycamp | Alexandria | Alexandria VA Parks & Rec Day Camp | https://www.alexandriava.gov/parks | Phone: (703) 746-4311
+ID city_newportnews_newportnewsparks&recdaycamp | Newport News | Newport News Parks & Rec Day Camp | https://www.nnva.gov/parks | Phone: (757) 926-1400
+ID city_chesapeake_chesapeakeparks&recdaycamp | Chesapeake | Chesapeake Parks & Rec Day Camp | https://www.cityofchesapeake.net/parks | Phone: (757) 382-6411
+
+--- State: VT (1 camps) ---
+ID city_burlington_burlingtonvtparks&recdaycamp | Burlington | Burlington VT Parks & Rec Day Camp | https://www.burlingtonvt.gov/parks | Phone: (802) 864-0123
+
+--- State: WA (10 camps) ---
+ID city_spokane_spokaneparks&recdaycamp | Spokane | Spokane Parks & Rec Day Camp | https://my.spokanecity.org/parksrec/ | Phone: (509) 625-6200
+ID city_tacoma_tacomametroparksdaycamp | Tacoma | Tacoma Metro Parks Day Camp | https://www.cityoftacoma.org/government/city_departments/parks | Phone: (253) 591-5000
+ID city_bellevue_bellevueparks&recdaycamp | Bellevue | Bellevue Parks & Rec Day Camp | https://bellevuewa.gov/city-government/departments/parks | Phone: (425) 452-6800
+ID city_vancouver_vancouverwaparks&recdaycamp | Vancouver | Vancouver WA Parks & Rec Day Camp | https://www.cityofvancouver.us/departments/parks-recreation-and-cultural-services/ | Phone: (360) 487-8311
+ID city_everett_everettparks&recdaycamp | Everett | Everett Parks & Rec Day Camp | https://www.everettwa.gov/parks | Phone: (425) 257-8300
+ID city_olympia_olympiaparks&recdaycamp | Olympia | Olympia Parks & Rec Day Camp | https://www.olympiawa.gov/services/parks___recreation/index.php | Phone: (360) 753-8380
+ID city_bellingham_bellinghamparks&recdaycamp | Bellingham | Bellingham Parks & Rec Day Camp | https://cob.org/services/recreation | Phone: (360) 778-8000
+ID city_kent_kentwaparks&recdaycamp | Kent | Kent WA Parks & Rec Day Camp | https://www.kentwa.gov/departments/kent-parks | Phone: (253) 856-5000
+ID city_renton_rentonparks&recdaycamp | Renton | Renton Parks & Rec Day Camp | https://www.rentonwa.gov/Government/Departments-and-Offices/Parks-and-Recreation | Phone: (425) 430-6700
+ID city_redmond_redmondparks&recdaycamp | Redmond | Redmond Parks & Rec Day Camp | https://www.redmond.gov/parks | Phone: (425) 556-2900
+
+--- State: WI (3 camps) ---
+ID city_milwaukee_milwaukeerecreationdaycamp | Milwaukee | Milwaukee Recreation Day Camp | https://www.milwaukeerecreation.net | Phone: (414) 475-8180
+ID city_madison_madisonparks&recdaycamp | Madison | Madison Parks & Rec Day Camp | https://www.cityofmadison.com/parks | Phone: (608) 266-4711
+ID city_greenbay_greenbayparks&recdaycamp | Green Bay | Green Bay Parks & Rec Day Camp | https://greenbaywi.gov/parks | Phone: (920) 448-3000
+
+--- State: WV (2 camps) ---
+ID city_charleston_charlestonwvparks&recdaycamp | Charleston | Charleston WV Parks & Rec Day Camp | https://www.charlestonwv.gov/government/city-departments/parks-recreation | Phone: (304) 348-6860
+ID city_huntington_huntingtonghprddaycamp | Huntington | Huntington GHPRD Day Camp | https://ghprd.org/ | Phone: (304) 696-5954
+
+--- State: WY (1 camps) ---
+ID city_cheyenne_cheyennerecreationdaycamp | Cheyenne | Cheyenne Recreation Day Camp | https://www.cheyennecity.org/Your-Government/Departments/Community-Recreation-Events | Phone: (307) 637-6423
+
+
+=== ACA CAMPS (129) ===
+
+--- State: AK (7 camps) ---
+ID aca_178_victory-bible-camps-and-conference-center | Matanuska-Susitna Borough | Victory Bible Camps and Conference Center | http://www.victorymin.org | Phone: 800-428-2267
+ID aca_327_trailside-discovery-kincaid-park | Anchorage | Trailside Discovery- Kincaid Park | https://find.acacamps.org/camp_profile.php?camp_id=327 | Phone: 800-428-2267
+ID aca_328_trailside-discovery | Anchorage | Trailside Discovery | http://akcentereducationfund.org/trailside-discovery-camp/ | Phone: 907-274-5437
+ID aca_332_singing-hills | Anchorage | Singing Hills | http://www.girlscoutsalaska.org | Phone: 907-248-2250
+ID aca_333_camp-togowoods | Wasilla | Camp Togowoods | http://www.girlscoutsalaska.org | Phone: 907-248-2250
+ID aca_868_birchwood-camp | Anchorage | Birchwood Camp | http://www.birchwoodcamp.org | Phone: 907-688-2734
+ID aca_1512_anchorage-museum-summer-camps | Anchorage | Anchorage Museum Summer Camps | http://www.anchoragemuseum.org | Phone: 800-428-2267
+
+--- State: AL (2 camps) ---
+ID aca_481_laney-for-boys | Mentone | Laney for Boys | http://www.camplaney.com | Phone: 256-634-4066
+ID aca_517_sumatanga | Etowah County | Sumatanga | http://www.sumatanga.org | Phone: 800-428-2267
+
+--- State: AR (2 camps) ---
+ID aca_20_camp-ozark | Montgomery County | Camp Ozark | http://www.campozark.com | Phone: 870-867-4131
+ID aca_832_camp-tanako | Garland County | Camp Tanako | http://www.tanako.org | Phone: 800-428-2267
+
+--- State: AZ (2 camps) ---
+ID aca_91_chapel-rock-camp-and-conference-center | Prescott | Chapel Rock Camp and Conference Center | http://www.chapelrock.net | Phone: 800-428-2267
+ID aca_568_camp-civitan | Williams | Camp Civitan | http://www.civitanfoundationaz.org | Phone: 800-428-2267
+
+--- State: CA (2 camps) ---
+ID aca_47_schoepe-scout-reservation-lost-valley | San Diego County | Schoepe Scout Reservation @ Lost Valley | https://ocscoutingoutdoors.org/schoepe-scout-reservation-at-lost-valley/ | Phone: 714-546-4990
+ID aca_48_camp-osito-rancho | San Bernardino County | Camp Osito Rancho | http://www.girlscoutsla.org | Phone: 909-866-7205
+
+--- State: CO (1 camps) ---
+ID aca_77_sky-high-ranch | Woodland Park | Sky High Ranch | http://www.girlscoutsofcolorado.org | Phone: 719-687-3278
+
+--- State: CT (2 camps) ---
+ID aca_110_camp-mt-laurel | Hamden | Camp Mt Laurel | http://www.cccymca.org/ | Phone: 203-777-9622
+ID aca_126_buck-s-rock-performing-and-creative-arts-camp | New Milford | Buck's Rock Performing and Creative Arts Camp | https://www.bucksrockcamp.com/ | Phone: 860-354-5030
+
+--- State: DC (6 camps) ---
+ID aca_101_fonz-safari-day-camp | Washington | FONZ Safari Day Camp | http://www.fonz.org | Phone: 202-633-3024
+ID aca_1223_georgetown-day-school | Washington | Georgetown Day School | https://find.acacamps.org/camp_profile.php?camp_id=1223 | Phone: 202-274-1683
+ID aca_1675_leaders-program | Washington | Leaders Program | http://www.leaders.org | Phone: 202-439-3506
+ID aca_1784_the-beauvoir-summer-program | Washington | The Beauvoir Summer Program | http://www.summer.beauvoirschool.org | Phone: 800-428-2267
+ID aca_1878_the-studio-theatre-acting-conservatory | Washington | The Studio Theatre Acting Conservatory | http://www.studiotheatre.org/education/classes/youngactorsprogram.aspx | Phone: 202-232-7267
+ID aca_3485_tu-tri-state-conservation-and-fishing-camp | Washington | TU Tri-State Conservation and Fishing Camp | https://find.acacamps.org/camp_profile.php?camp_id=3485 | Phone: 202 904-3547
+
+--- State: DE (2 camps) ---
+ID aca_705_camp-arrowhead | Cabell County | Camp Arrowhead | http://www.camparrowhead.net | Phone: 302-645-5348
+ID aca_1098_children-s-beach-house | Lewes | Children's Beach House | http://www.cbhinc.org | Phone: 800-428-2267
+
+--- State: FL (2 camps) ---
+ID aca_29_jca-summer-camp | Jacksonville | JCA Summer Camp | http://www.jcajax.org/jcamp | Phone: 800-428-2267
+ID aca_44_pine-tree-camps | Boca Raton | Pine Tree Camps | http://www.pinetreecamp.com | Phone: 561-237-7310
+
+--- State: GA (2 camps) ---
+ID aca_105_camp-jam | Atlanta | Camp Jam | http://campjam.com | Phone: 800-513-0930
+ID aca_112_strong-rock-camp-and-retreat | Cleveland | Strong Rock Camp and Retreat | http://www.strongrockcamp.com | Phone: 706-348-1533
+
+--- State: HI (2 camps) ---
+ID aca_252_kama-aina-kids | C Kailua | Kama'aina Kids | http://www.kamaainakids.com | Phone: 800-428-2267
+ID aca_930_ymca-camp-h-r-erdman | Honolulu County | YMCA Camp H R Erdman | https://www.ymcahonolulu.org/camp-erdman | Phone: 808-637-4615
+
+--- State: IA (2 camps) ---
+ID aca_142_summer-day-camp-cedar-rapids | Cedar Rapids | Summer Day Camp- Cedar Rapids | https://find.acacamps.org/camp_profile.php?camp_id=142 | Phone: 800-428-2267
+ID aca_306_waukee-family-ymca-day-camp | Waukee | Waukee Family YMCA Day Camp | http://www.dmymca.org | Phone: 800-428-2267
+
+--- State: ID (2 camps) ---
+ID aca_152_camp-goodtimes-east | Kootenai County | Camp Goodtimes East | http://www.cancer.org | Phone: 509-242-8302
+ID aca_175_twinlow | Kootenai County | Twinlow | http://www.twinlowcamp.org | Phone: 208-352-2671
+
+--- State: IL (2 camps) ---
+ID aca_158_camp-discovery | Stephenson County | Camp Discovery | http://www.freeportymca.org | Phone: 800-428-2267
+ID aca_165_camp-red-leaf | Lake County | Camp Red Leaf | https://www.campredleaf.org/?gclid=EAIaIQobChMIp836m6in6AIVBY3ICh2GyAYiEAAYASAAEgIHS_D_BwE | Phone: 800-428-2267
+
+--- State: IN (2 camps) ---
+ID aca_79_champ-camp | N Martinsville | CHAMP Camp | http://www.champcamp.org | Phone: 317-679-1860
+ID aca_164_rawhide-ranch | S Nashville | Rawhide Ranch | http://www.rawhideranchusa.com | Phone: 812)988-0085
+
+--- State: KS (2 camps) ---
+ID aca_97_camp-hope | Lumpkin County | Camp Hope | http://camphopeheartland.com | Phone: 620-786-4055
+ID aca_313_starwoods-outdoor-center | Ohio Township | Starwoods Outdoor Center | http://www.starwoodsoutdoorcenter.org | Phone: 620-545-8310
+
+--- State: KY (2 camps) ---
+ID aca_26_tim-horton-camp-kentahten | Campbellsville | Tim Horton Camp Kentahten | http://www.timscamps.com | Phone: 800-428-2267
+ID aca_35_camp-pennyroyal | Daviess County | Camp Pennyroyal | http://www.gskentuckiana.org | Phone: 800-428-2267
+
+--- State: LA (2 camps) ---
+ID aca_236_feliciana-retreat-conference-center | New York | Feliciana Retreat  & Conference Center | http://www.felicianaretreat.org/ | Phone: 800-428-2267
+ID aca_446_camp-hardtner | Grant Parish | Camp Hardtner | http://www.camphardtner.org | Phone: 318-765-3794
+
+--- State: MA (2 camps) ---
+ID aca_2_stony-brook-nature-camp | Norfolk | Stony Brook Nature Camp | http://www.massaudubon.org/stonybrook | Phone: 508-613-8052
+ID aca_3_wachusett-meadow-nature-camp | Princeton | Wachusett Meadow Nature Camp | http://www.massaudubon.org/wachusettmeadow | Phone: 800-428-2267
+
+--- State: MD (2 camps) ---
+ID aca_144_y-camp-at-whippoorwill | Towson | Y Camp at Whippoorwill | http://ymaryland.org/camps | Phone: 800-428-2267
+ID aca_163_lions-camp-merrick-inc | Place Nanjemoy | Lions Camp Merrick Inc | http://www.lionscampmerrick.org | Phone: 301-870-5858
+
+--- State: ME (5 camps) ---
+ID aca_149_camp-micah | Bridgton | Camp Micah | http://www.campmicah.com | Phone: 617-244-6540
+ID aca_174_camp-pinecliffe | Harrison | Camp Pinecliffe | http://www.pinecliffe.com | Phone: 800-428-2267
+ID aca_193_camp-o-at-ka | Sebago | Camp O-AT-KA | http://www.campoatka.org | Phone: 207-787-3401
+ID aca_206_camp-runoia | Belgrade | Camp Runoia | http://www.runoia.com | Phone: 207 495 2228
+ID aca_240_camp-matoaka | Smithfield | Camp Matoaka | http://www.matoaka.com | Phone: 781-449-0222
+
+--- State: MI (2 camps) ---
+ID aca_15_catch-a-rainbow | Columbia Township | Catch A Rainbow | https://www.ymcastorercamps.org/ccar/camp-catch-a-rainbow/ | Phone: 517-664-1314
+ID aca_21_ymca-camp-ohiyesa | Oakland County | YMCA Camp Ohiyesa | https://ymcadetroit.org/ohiyesa/ | Phone: 248-887-4533
+
+--- State: MN (2 camps) ---
+ID aca_150_camp-voyageur | Ely | Camp Voyageur | http://www.campvoyageur.com | Phone: 218-365-6042
+ID aca_179_good-earth-village | Spring Valley | Good Earth Village | http://www.goodearthvillage.org | Phone: 507-346-2494
+
+--- State: MO (2 camps) ---
+ID aca_148_taum-sauk | Reynolds County | Taum Sauk | http://www.taumsauk.com | Phone: 314-993-1655
+ID aca_349_camp-fiddlecreek | Franklin County | Camp Fiddlecreek | http://www.girlscoutsem.org | Phone: 314-592-2353
+
+--- State: MS (7 camps) ---
+ID aca_343_camp-of-the-rising-son | French Camp | Camp of the Rising Son | http://www.campoftherisingson.com | Phone: 662-547-6169
+ID aca_495_urj-henry-s-jacobs-camp | Hinds County | URJ Henry S Jacobs Camp | https://jacobscamp.org/ | Phone: 601-885-6042
+ID aca_614_tik-a-witha | Chickasaw County | Tik-A-Witha | http://www.girlscoutshs.org | Phone: 662-350-6046
+ID aca_1525_center-ridge-outpost | 37 Mize | Center Ridge Outpost | http://www.AutismCamps.org | Phone: 601-782-9005
+ID aca_1762_camp-lake-stephens | Oxford | Camp Lake Stephens | http://www.camplakestephens.com | Phone: 800-428-2267
+ID aca_1800_camp-hopewell | Knox Township | Camp Hopewell | http://www.camphopewell.com | Phone: 800-428-2267
+ID aca_2466_camp-phoenix | Como | Camp Phoenix | http://www.bgcm.org | Phone: 662-526-5970
+
+--- State: MT (5 camps) ---
+ID aca_154_montana-youth-retreat-ada | Billings | Montana Youth Retreat - ADA | http://www.ciymca.org | Phone: 800-428-2267
+ID aca_155_camp-paxson | Seeley Lake | Camp Paxson | http://www.dec.ny.gov/things-to-do/summer-camps/camp-colby-debrucerushford-park-forest | Phone: 800-428-2267
+ID aca_746_christikon | Park County | Christikon | http://www.christikon.org | Phone: 406 656-1969
+ID aca_1104_trails-end-ranch | Ekalaka | Trails End Ranch | http://www.ter.org | Phone: 406-775-6401
+ID aca_3930_flathead-lutheran-bible-camp | Flathead County | Flathead Lutheran Bible Camp | http://www.flbc.net | Phone: 406-752-6602
+
+--- State: NC (2 camps) ---
+ID aca_146_simmons-ymca-day-camp | Charlotte | Simmons YMCA Day Camp | http://www.ymcacharlotte.org | Phone: 800-428-2267
+ID aca_153_pond-hollow-farm | Henderson County | Pond Hollow Farm | https://find.acacamps.org/camp_profile.php?camp_id=153 | Phone: 800-428-2267
+
+--- State: ND (4 camps) ---
+ID aca_797_park-river-bible-camp | Park River | Park River Bible Camp | http://www.parkriverbiblecamp.org | Phone: 701.284.6795
+ID aca_1860_metigoshe-ministries | Bottineau County | Metigoshe Ministries | http://www.metigosheministries.com | Phone: 701-263-4788
+ID aca_2506_wesley-acres | Dazey Township | Wesley Acres | http://dakcamps.org | Phone: 701-733-2413
+ID aca_2720_red-willow-bible-camp | Binford | Red Willow Bible Camp | http://www.redwillowministries.com | Phone: 701-676-2681
+
+--- State: NE (4 camps) ---
+ID aca_89_camp-crossed-arrows | P1 Nickerson | Camp Crossed Arrows | http://girlscoutsnebraska.org/our-camps/camp-crossed-arrows/ | Phone: 800-428-2267
+ID aca_273_calvin-crest-camp-conference-center | 13 Fremont | Calvin Crest Camp Conference Center | http://www.calvincrest.org | Phone: 402-628-6455
+ID aca_466_ymca-camp-kitaki | Louisville Precinct | YMCA Camp Kitaki | http://www.ymcacampkitaki.org | Phone: 402-434-9222
+ID aca_494_carol-joy-holling-camp-conference-and-retreats | Ashland Township | Carol Joy Holling Camp Conference and Retreats | http://www.nlom.org | Phone: 800-428-2267
+
+--- State: NH (2 camps) ---
+ID aca_99_camp-winaukee | Moultonborough | Camp Winaukee | http://www.winaukee.com | Phone: 800-428-2267
+ID aca_106_copper-cannon | Bethlehem | Copper Cannon | http://www.coppercannon.org | Phone: 603-823-8107
+
+--- State: NJ (2 camps) ---
+ID aca_160_east-orange-ymca-summer-camps | East Orange | East Orange YMCA Summer Camps | http://www.eastorangeymca.org | Phone: 800-428-2267
+ID aca_161_super-summer-day-camp | Livingston | Super Summer Day Camp | http://www.westessexymca.org | Phone: 973-992-7500
+
+--- State: NM (7 camps) ---
+ID aca_217_brush-ranch-camps | Santa Fe | Brush Ranch Camps | http://www.brushranchcamps.com | Phone: 800-428-2267
+ID aca_669_ymca-camp-shaver | Sandoval County | YMCA Camp Shaver | http://www.campshaver.com | Phone: 800-428-2267
+ID aca_1515_bishop-s-ridge-stoney-camp-and-recreation-center | Santa Fe County | Bishop's Ridge: Stoney Camp and Recreation Center | http://www.bishopsridge.org | Phone: 505-980-5371
+ID aca_1799_fort-lone-tree | 006 Capitan | Fort Lone Tree | http://www.lonetree.org | Phone: 575-354-4265
+ID aca_2130_philmont-scout-ranch-bsa | Colfax County | Philmont Scout Ranch BSA | http://www.philmontscountranch.org | Phone: 575-376-2281
+ID aca_2197_lone-tree-ranch | Capitan | Lone Tree Ranch | http://www.lonetree.org | Phone: 575-354-2523
+ID aca_2926_lone-tree-lakeshore-camp | Elephant Butte | Lone Tree Lakeshore Camp | http://www.lonetree.org | Phone: 505-744-9164
+
+--- State: NV (2 camps) ---
+ID aca_770_potosi-pines | Las Vegas | Potosi Pines | http://www.potosipinescamp.org/index.html | Phone: 800-428-2267
+ID aca_1180_wild-willy-s-horse-camp | Gardnerville | Wild Willy's Horse Camp | https://find.acacamps.org/camp_profile.php?camp_id=1180 | Phone: 800-428-2267
+
+--- State: NY (2 camps) ---
+ID aca_92_william-smith-lacrosse-camp | City of Geneva | William Smith Lacrosse Camp | http://www.hws.edu/conferences | Phone: 800-428-2267
+ID aca_93_caedmon-school-discovery-camp | New York | Caedmon School Discovery Camp | http://www.caedmondiscoverycamp.org/ | Phone: 212-879-2297
+
+--- State: OH (2 camps) ---
+ID aca_45_camp-christian | Leesburg Township | Camp Christian | http://www.ccinoh.com/ | Phone: 800-428-2267
+ID aca_219_agape-resident-camp | Cleveland | Agape Resident Camp | http://www.theafterschoolclub.org | Phone: 800-428-2267
+
+--- State: OK (2 camps) ---
+ID aca_561_new-life-ranch | Delaware County | New Life Ranch | http://www.newliferanch.com | Phone: 800-428-2267
+ID aca_700_camp-classen-ymca | Murray County | Camp Classen YMCA | https://campclassen.org/ | Phone: 580-369-2272
+
+--- State: OR (1 camps) ---
+ID aca_63_camp-ukandu | Multnomah County | Camp Ukandu | http://www.ukandu.org | Phone: 503.276.2178
+
+--- State: PA (1 camps) ---
+ID aca_16_rainbow-inc | Whitpain Township | Rainbow Inc | https://find.acacamps.org/camp_profile.php?camp_id=16 | Phone: 800-428-2267
+
+--- State: RI (3 camps) ---
+ID aca_277_camp-hoffman | South Kingstown | Camp Hoffman | http://www.gsri.org | Phone: 401-331-4500
+ID aca_279_camp-rocky-farm | Newport | Camp Rocky Farm | http://www.gsri.org | Phone: 401-331-4500
+ID aca_284_mother-of-hope-day-camp | 44 Chepachet | Mother of Hope Day Camp | http://www.motherofhopecamp.com/ | Phone: 401-568-3580
+
+--- State: SC (1 camps) ---
+ID aca_111_pine-st-ymca-summer-day-camp | Spartanburg | Pine St YMCA Summer Day Camp | http://www.spartanburgymca.org/ | Phone: 800-428-2267
+
+--- State: SD (5 camps) ---
+ID aca_879_outlaw-ranch | Custer County | Outlaw Ranch | http://www.losd.org | Phone: 605-673-4040
+ID aca_1859_joy-ranch | Sioux Falls | Joy Ranch | https://www.joyranchofsd.org/ | Phone: 800-428-2267
+ID aca_2878_nesodak-bible-camp | Waubay Township | NeSoDak Bible Camp | http://www.lutheransoutdoors.org | Phone: 605-274-5326
+ID aca_4176_dakota-frontier-camp | Lawrence County | Dakota Frontier Camp | http://www.dakotafrontiercamp.com/index.html | Phone: 800-428-2267
+ID aca_4470_klein-ranch | 65 Isabel | Klein Ranch | http://www.lutheransoutdoors.org | Phone: 800-428-2267
+
+--- State: TN (1 camps) ---
+ID aca_172_camp-holloway | Smyrna | Camp Holloway | https://www.gsmidtn.org/en/camp-and-outdoors/summer-camp.html | Phone: 800-428-2267
+
+--- State: TX (1 camps) ---
+ID aca_51_texas-elks-camp | Gonzales | Texas Elks Camp | http://www.texaselkscamp.com | Phone: 830-875-2425
+
+--- State: UT (1 camps) ---
+ID aca_1391_camp-cloud-rim | Wasatch County | Camp Cloud Rim | https://www.gsutah.org/en/camp/ways-to-camp/summer-camp-.html | Phone: 800-265-8472
+
+--- State: VA (1 camps) ---
+ID aca_25_camp-roanoke | Roanoke County | Camp Roanoke | http://www.camproanoke.com | Phone: 800-428-2267
+
+--- State: VT (2 camps) ---
+ID aca_30_songadeewin-of-keewaydin | Salisbury | Songadeewin of Keewaydin | http://www.keewaydin.org | Phone: 802 352-9860
+ID aca_39_farnsworth | Thetford | Farnsworth | http://www.girlscoutsgwm.org/ | Phone: 800-428-2267
+
+--- State: WA (1 camps) ---
+ID aca_46_girl-scouts-of-western-washington | Seattle | Girl Scouts of Western Washington | http://www.girlscoutsww.org | Phone: 800-428-2267
+
+--- State: WI (1 camps) ---
+ID aca_18_camp-timber-lee | Town of Troy | Camp Timber-Lee | http://www.timber-lee.com | Phone: 800-428-2267
+
+--- State: WV (4 camps) ---
+ID aca_87_bluestone-camp-and-retreat | Summers County | Bluestone Camp and Retreat | http://www.bluestonecamp.org | Phone: 800-428-2267
+ID aca_409_camp-tall-timbers | High View | Camp Tall Timbers | http://www.camptalltimbers.com | Phone: 301-874-0111
+ID aca_455_timber-ridge-bible-camp | Hampshire County | Timber Ridge Bible Camp | https://www.camptimberridge.org | Phone: 304-756-8618
+ID aca_575_camp-greenbrier | Greenbrier County | Camp Greenbrier | http://www.campgreenbrier.com | Phone: 304 445 7168
+
+--- State: WY (4 camps) ---
+ID aca_1205_elk-creek-ranch | Park County | Elk Creek Ranch | http://www.elkcreekranch.com | Phone: 307-587-8828
+ID aca_2997_american-wilderness-leadership-school | 9400 MacLeod Jackson | American Wilderness Leadership School | http://www.safariclubfoundation.org | Phone: 520-620-1220
+ID aca_4536_wilderness-adventures-trips | Jackson | Wilderness Adventures - Trips | http://www.wildernessadventures.com/ | Phone: 307-733-2122
+ID aca_4669_cyber-science-camp | Casper | Cyber Science Camp | http://www.caspercollege.edu/events/cyber-science-camp | Phone: 307-268-3399
+
+
+=== OTHER INDEPENDENT CAMPS (19) ===
+ID vosj_campkochavim | [AZ] Scottsdale | Camp Kochavim | https://valleyofthesunj.org | Phone: 
+ID real_camp_kushtaka | [AK] Cooper Landing | Camp Kushtaka | https://www.salvationarmy.org | Phone: 
+ID real_camp_caribou_for_boys | [ME] Winslow | Camp Caribou for Boys | https://www.campcaribou.com | Phone: 
+ID real_camp_androscoggin | [ME] Wayne | Camp Androscoggin | https://www.campandro.com | Phone: 
+ID real_ymca_camp_abnaki | [VT] North Hero | YMCA Camp Abnaki | https://www.campabnaki.org | Phone: 
+ID real_camp_downer | [VT] Sharon | Camp Downer | https://www.campdowner.com | Phone: 
+ID real_camp_mokuleia | [HI] Waialua | Camp Mokuleia | https://www.campmokuleia.com | Phone: 
+ID campfire_camp_fireweed | [AK] Anchorage | Camp Fireweed | https://campfireak.org/ | Phone: 
+ID campfire_camp_k | [AK] Cooper Landing | Camp K | https://campfireak.org/ | Phone: 
+ID chewonki_camp_chewonki | [ME] Wiscasset | Camp Chewonki | https://camp.chewonki.org | Phone: 
+ID alleghany_camp_alleghany_for_girls | [WV] Caldwell | Camp Alleghany for Girls | https://www.campalleghany.com/ | Phone: 
+ID gulfport_gulfport_summer_day_camp_-_harrison_central_element | [MS] Gulfport | Gulfport Summer Day Camp - Harrison Central Elementary | https://www.gulfport-ms.gov/ | Phone: 228-868-5881
+ID gulfport_gulfport_summer_day_camp_-_bel-aire_elementary | [MS] Gulfport | Gulfport Summer Day Camp - Bel-Aire Elementary | https://www.gulfport-ms.gov/ | Phone: 228-868-5881
+ID gulfport_gulfport_summer_day_camp_-_herbert_wilson_center | [MS] Gulfport | Gulfport Summer Day Camp - Herbert Wilson Center | https://www.gulfport-ms.gov/ | Phone: 228-868-5881
+ID gulfport_gulfport_summer_day_camp_-_three_rivers_elementary | [MS] Gulfport | Gulfport Summer Day Camp - Three Rivers Elementary | https://www.gulfport-ms.gov/ | Phone: 228-868-5881
+ID ymca_bangor_camp_jordan_sleep_away_camp | [ME] Ellsworth | Camp Jordan Sleep Away Camp | https://www.campjordan.org/ | Phone: 
+ID ymca_casper_ymca_of_natrona_county_summer_day_camp | [WY] Casper | YMCA of Natrona County Summer Day Camp | https://casperymca.org/ | Phone: 307-234-9187
+ID ymca_kanawha_kanawha_valley_summer_day_camp | [WV] Charleston | Kanawha Valley Summer Day Camp | https://www.ymcaofkv.org/ | Phone: 304-340-3527
+ID ymca_huntington_ymca_of_huntington_youth_basketball_camp | [WV] Huntington | YMCA of Huntington Youth Basketball Camp | https://huntingtonymca.org/ | Phone: 

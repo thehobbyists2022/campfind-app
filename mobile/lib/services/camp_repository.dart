@@ -1,8 +1,15 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/camp_model.dart';
+
+const String kCampsDataVersionKey = 'camps_data_version';
+const String kDefaultBundledVersion = '2026.10.04-v1';
+const String kRemoteVersionUrl = 'https://campfind.netlify.app/app/version.json';
+const String kFallbackVersionUrl = 'https://raw.githubusercontent.com/thehobbyists2022/campfind-app/main/app/version.json';
 
 class FilterOptions {
   String searchQuery;
@@ -34,32 +41,120 @@ class FilterOptions {
   });
 }
 
-class CampRepository {
+class CampRepository extends ChangeNotifier {
   List<Camp> _allCamps = [];
   Set<String> _favoriteIds = {};
   bool _isInitialized = false;
+  String _currentVersion = kDefaultBundledVersion;
 
   bool get isInitialized => _isInitialized;
   List<Camp> get allCamps => List.unmodifiable(_allCamps);
   Set<String> get favoriteIds => Set.unmodifiable(_favoriteIds);
+  String get currentVersion => _currentVersion;
 
   Future<void> initialize() async {
     if (_isInitialized) return;
 
+    File? cacheFile;
     try {
-      final jsonString = await rootBundle.loadString('assets/aca_camps.json');
-      
+      final docDir = await getApplicationDocumentsDirectory();
+      cacheFile = File('${docDir.path}/camps_cache.json');
+
+      String jsonString;
+      if (await cacheFile.exists()) {
+        jsonString = await cacheFile.readAsString();
+      } else {
+        jsonString = await rootBundle.loadString('assets/aca_camps.json');
+      }
+
       // Run heavy JSON decoding and mapping in a background isolate (Flutter compute)
       _allCamps = await compute(_parseCampsJson, jsonString);
 
+      final prefs = await SharedPreferences.getInstance();
+      _currentVersion = prefs.getString(kCampsDataVersionKey) ?? kDefaultBundledVersion;
+
       await _loadFavorites();
       _isInitialized = true;
+      notifyListeners();
     } catch (e) {
-      // ignore: avoid_print
-      print('Error loading camp dataset: $e');
-      _allCamps = [];
+      try {
+        final fallbackJson = await rootBundle.loadString('assets/aca_camps.json');
+        _allCamps = await compute(_parseCampsJson, fallbackJson);
+        await _loadFavorites();
+        _isInitialized = true;
+      } catch (innerError) {
+        // ignore: avoid_print
+        print('Error loading camp dataset: $innerError');
+        _allCamps = [];
+      }
+    }
+
+    // Trigger non-blocking silent background OTA sync
+    if (cacheFile != null) {
+      _silentBackgroundSync(cacheFile);
     }
   }
+
+  Future<void> _silentBackgroundSync(File cacheFile) async {
+    try {
+      final client = HttpClient()..connectionTimeout = const Duration(seconds: 6);
+
+      Map<String, dynamic>? meta = await _fetchJson(client, kRemoteVersionUrl);
+      meta ??= await _fetchJson(client, kFallbackVersionUrl);
+
+      if (meta == null) {
+        client.close();
+        return;
+      }
+
+      final remoteVersion = meta['version']?.toString() ?? '';
+      final downloadUrl = meta['download_url']?.toString() ?? meta['fallback_url']?.toString() ?? '';
+
+      final prefs = await SharedPreferences.getInstance();
+      final localVersion = prefs.getString(kCampsDataVersionKey) ?? kDefaultBundledVersion;
+
+      if (remoteVersion.isNotEmpty && remoteVersion != localVersion && downloadUrl.isNotEmpty) {
+        final newJsonString = await _fetchString(client, downloadUrl);
+        if (newJsonString != null && newJsonString.length > 50000) {
+          final updatedCamps = await compute(_parseCampsJson, newJsonString);
+          if (updatedCamps.isNotEmpty) {
+            await cacheFile.writeAsString(newJsonString);
+            await prefs.setString(kCampsDataVersionKey, remoteVersion);
+            _currentVersion = remoteVersion;
+            _allCamps = updatedCamps;
+            notifyListeners();
+          }
+        }
+      }
+      client.close();
+    } catch (_) {
+      // Silent error: offline or network issue never affects user experience
+    }
+  }
+
+  static Future<Map<String, dynamic>?> _fetchJson(HttpClient client, String url) async {
+    try {
+      final req = await client.getUrl(Uri.parse(url));
+      final res = await req.close();
+      if (res.statusCode == 200) {
+        final body = await res.transform(utf8.decoder).join();
+        return json.decode(body) as Map<String, dynamic>;
+      }
+    } catch (_) {}
+    return null;
+  }
+
+  static Future<String?> _fetchString(HttpClient client, String url) async {
+    try {
+      final req = await client.getUrl(Uri.parse(url));
+      final res = await req.close();
+      if (res.statusCode == 200) {
+        return await res.transform(utf8.decoder).join();
+      }
+    } catch (_) {}
+    return null;
+  }
+
 
   // Top-level or static function required for isolate execution
   static List<Camp> _parseCampsJson(String jsonString) {

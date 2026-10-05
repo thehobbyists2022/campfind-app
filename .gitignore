@@ -14,3 +14,5 @@ scrapers/geocode_cache.json
 scrapers/reverse_cache.json
 scrapers/ridb_api_key.txt
 scrapers/aca_verify_cache.json
+*.jks
+key.properties
