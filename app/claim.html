@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CampFind Director Partner Portal — Claim your camp listing, activate verified badges, or get featured at the top of search results.">
+    <title>CampFind Director Partner Portal — Claim & Partner Tiers</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-192.png">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #2C3E50;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --gold: #F59E0B;
+            --blue: #2563EB;
+            --green: #10B981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1040px; margin: 0 auto; padding: 32px 20px; }
+        
+        /* Navigation */
+        .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+        .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 1.8rem; font-weight: 900; }
+        .logo span:first-child { color: var(--primary); }
+        .logo span:last-child { color: var(--secondary); }
+        .back-link { font-size: 0.95rem; font-weight: 600; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero { text-align: center; margin-bottom: 48px; }
+        .badge { display: inline-block; background: #EEF2FF; color: #4F46E5; font-size: 0.85rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; margin-bottom: 12px; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--accent); margin-bottom: 12px; letter-spacing: -0.5px; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 680px; margin: 0 auto; }
+
+        /* Pricing Grid */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; margin-bottom: 48px; }
+        .tier-card { background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border); padding: 32px 24px; display: flex; flex-direction: column; position: relative; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .tier-card.featured { border: 2px solid var(--primary); box-shadow: 0 12px 24px -4px rgba(255, 107, 107, 0.15); }
+        .tier-card.popular { border: 2px solid var(--blue); box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.15); }
+        .tier-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--blue); color: #fff; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.5px; }
+        .tier-tag.gold { background: var(--gold); }
+        
+        .tier-name { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .tier-price { font-size: 2.4rem; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+        .tier-price span { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); }
+        .tier-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; }
+        
+        .tier-features { list-style: none; margin-bottom: 32px; flex-grow: 1; }
+        .tier-features li { font-size: 0.92rem; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 8px; color: var(--text); }
+        .tier-features li svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--green); margin-top: 3px; }
+
+        .btn-tier { width: 100%; padding: 14px; border-radius: 10px; font-size: 1rem; font-weight: 700; text-align: center; border: none; cursor: pointer; transition: all 0.2s; text-decoration: none; display: block; }
+        .btn-outline { background: #fff; border: 1px solid var(--border); color: var(--accent); }
+        .btn-outline:hover { background: #F1F5F9; }
+        .btn-blue { background: var(--blue); color: #fff; }
+        .btn-blue:hover { background: #1D4ED8; }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: #E55555; }
+
+        /* Form Section */
+        .form-section { background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border); padding: 40px; max-width: 720px; margin: 0 auto; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .form-section h2 { font-size: 1.6rem; color: var(--accent); margin-bottom: 8px; text-align: center; }
+        .form-section p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 28px; text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); font-size: 0.95rem; outline: none; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        
+        .payment-box { background: #F8FAFC; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+        .payment-box-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .badge-stripe { background: #635BFF; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; }
+
+        .btn-submit { width: 100%; padding: 16px; border-radius: 10px; font-size: 1.05rem; font-weight: 800; background: #16A34A; color: #fff; border: none; cursor: pointer; transition: background 0.2s; }
+        .btn-submit:hover { background: #15803D; }
+        
+        .success-banner { display: none; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 24px; }
+        
+        /* Footer */
+        .footer { text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- NAV -->
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <span>Camp</span><span>Find</span>
+            </a>
+            <a href="index.html" class="back-link">
+                &larr; Back to Camp Directory
+            </a>
+        </nav>
+
+        <!-- HERO -->
+        <header class="hero">
+            <div class="badge">🏕️ DIRECTORS & ORGANIZERS</div>
+            <h1>Claim Your Camp & Connect With 10,000+ Active Parents</h1>
+            <p>CampFind is the trusted summer & seasonal camp discovery directory. Verified listings get 4x more parent inquiries, direct enrollment links, and priority placement.</p>
+        </header>
+
+        <!-- PRICING TIERS -->
+        <div class="pricing-grid">
+            <!-- TIER 1 -->
+            <div class="tier-card">
+                <div class="tier-name">Free Listing</div>
+                <div class="tier-price">$0 <span>/ forever</span></div>
+                <div class="tier-desc">Basic presence in the CampFind national directory for all accredited camps.</div>
+                <ul class="tier-features">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        Included in 5,000+ searchable camp index
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        Standard camp name, city & state listing
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        Annual algorithmic data refresh
+                    </li>
+                </ul>
+                <button type="button" class="btn-tier btn-outline" onclick="selectTier('free', '$0')">Claim Free &rarr;</button>
+            </div>
+
+            <!-- TIER 2 (RECOMMENDED) -->
+            <div class="tier-card popular">
+                <div class="tier-tag">MOST POPULAR</div>
+                <div class="tier-name">🛡️ Verified Partner</div>
+                <div class="tier-price">$99 <span>/ year</span></div>
+                <div class="tier-desc">Essential package for active camp directors looking to drive registrations.</div>
+                <ul class="tier-features">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        <strong>Blue "Verified Partner" Trust Badge</strong>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        Direct clickable "Register at Official Website" CTA
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        Director contact card (Phone, Email & Open Seats)
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        Real-time seat count updates anytime
+                    </li>
+                </ul>
+                <button type="button" class="btn-tier btn-blue" onclick="selectTier('partner', '$99 / year')">Select Partner ($99) &rarr;</button>
+            </div>
+
+            <!-- TIER 3 -->
+            <div class="tier-card featured">
+                <div class="tier-tag gold">MAXIMUM EXPOSURE</div>
+                <div class="tier-name">⭐ Featured Sponsor</div>
+                <div class="tier-price">$299 <span>/ quarter</span></div>
+                <div class="tier-desc">For camps wanting to dominate local city search & sell out early.</div>
+                <ul class="tier-features">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        <strong>Gold "Featured Camp" Top Pinned Placement</strong>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        Appears at top of search results in your City & State
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        5x higher click-through & inquiry volume
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        Dedicated Director Spotlight & Social shout-out
+                    </li>
+                </ul>
+                <button type="button" class="btn-tier btn-primary" onclick="selectTier('featured', '$299 / quarter')">Get Featured ($299) &rarr;</button>
+            </div>
+        </div>
+
+        <!-- FORM SECTION -->
+        <section class="form-section" id="claimSection">
+            <h2>Claim & Activation Application</h2>
+            <p>Select your tier, enter your camp details, and our partner team will activate your profile within 24 business hours.</p>
+
+            <div class="success-banner" id="successBanner">
+                <h3>🎉 Application Received!</h3>
+                <p>Thank you, Director! We have received your claim request. If you selected a paid tier ($99 or $299), our secure Stripe invoice/payment receipt will be issued to your email shortly.</p>
+            </div>
+
+            <form id="directorClaimForm" onsubmit="event.preventDefault(); submitForm();">
+                <div class="form-group">
+                    <label>Selected Partnership Tier *</label>
+                    <select id="selectedTier" name="partnership_tier" required onchange="updatePaymentMode(this.value)">
+                        <option value="partner">🛡️ Verified Partner ($99 / year)</option>
+                        <option value="featured">⭐ Featured Sponsor ($299 / quarter)</option>
+                        <option value="free">Free Basic Claim ($0)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Camp Name *</label>
+                    <input type="text" id="campName" name="camp_name" required placeholder="e.g. San Diego Tech & Robotics Camp">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Director / Contact Name *</label>
+                        <input type="text" id="directorName" name="director_name" required placeholder="e.g. Sarah Jenkins">
+                    </div>
+                    <div class="form-group">
+                        <label>Official Work Email *</label>
+                        <input type="email" id="directorEmail" name="email" required placeholder="director@campdomain.org">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Camp Official Website *</label>
+                        <input type="url" id="campWebsite" name="website" required placeholder="https://www.mycamp.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Direct Contact Phone</label>
+                        <input type="tel" id="campPhone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>2026 Session Updates & Notes (Weekly price, age range, open seats)</label>
+                    <textarea id="campNotes" name="notes" rows="3" placeholder="Provide any tuition details, age groups, or registration deadlines..."></textarea>
+                </div>
+
+                <!-- B2B PAYMENT PREVIEW -->
+                <div class="payment-box" id="paymentBox">
+                    <div class="payment-box-title">
+                        <span>💳 Secure B2B Checkout</span>
+                        <span class="badge-stripe">POWERED BY STRIPE</span>
+                    </div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
+                        For paid tiers ($99/yr or $299/qtr), you will receive a direct <strong>Stripe 1-Click Payment Link</strong> via email, or you may pay immediately upon submission. 100% tax-deductible promotional expense.
+                    </p>
+                    <div style="font-size:0.9rem; font-weight:700; color:var(--accent);" id="paymentSummary">
+                        Total Due: $99.00 USD (Annual Partner)
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="btnSubmit">
+                    Submit & Proceed to Partner Activation &rarr;
+                </button>
+            </form>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 CampFind. Clarity Clinical Solutions LLC. All rights reserved.</p>
+            <p style="margin-top:4px;"><a href="index.html" style="color:var(--text-muted);">National Camp Directory</a> &middot; <a href="privacy.html" style="color:var(--text-muted);">Privacy Policy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const camp = params.get('camp');
+            if (camp) {
+                const input = document.getElementById('campName');
+                if (input) input.value = camp;
+            }
+        });
+
+        function selectTier(tier, price) {
+            const select = document.getElementById('selectedTier');
+            select.value = tier;
+            updatePaymentMode(tier);
+            document.getElementById('claimSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updatePaymentMode(tier) {
+            const box = document.getElementById('paymentBox');
+            const summary = document.getElementById('paymentSummary');
+            const btn = document.getElementById('btnSubmit');
+
+            if (tier === 'free') {
+                box.style.display = 'none';
+                btn.textContent = 'Submit Free Claim Application \u2192';
+            } else if (tier === 'partner') {
+                box.style.display = 'block';
+                summary.textContent = 'Total Due: $99.00 USD / year (Verified Partner)';
+                btn.textContent = 'Activate Verified Partner ($99) \u2192';
+            } else if (tier === 'featured') {
+                box.style.display = 'block';
+                summary.textContent = 'Total Due: $299.00 USD / quarter (Featured Sponsor)';
+                btn.textContent = 'Activate Featured Sponsor ($299) \u2192';
+            }
+        }
+
+        function submitForm() {
+            const btn = document.getElementById('btnSubmit');
+            btn.disabled = true;
+            btn.textContent = 'Processing Application...';
+
+            const payload = {
+                _subject: '🏕️ B2B Partner Claim: ' + document.getElementById('campName').value + ' (' + document.getElementById('selectedTier').value + ')',
+                tier: document.getElementById('selectedTier').value,
+                camp_name: document.getElementById('campName').value,
+                director_name: document.getElementById('directorName').value,
+                email: document.getElementById('directorEmail').value,
+                website: document.getElementById('campWebsite').value,
+                phone: document.getElementById('campPhone').value,
+                notes: document.getElementById('campNotes').value,
+                submitted_at: new Date().toISOString()
+            };
+
+            // 1. Send via formsubmit.co directly to wingsoar2023@gmail.com
+            fetch('https://formsubmit.co/ajax/wingsoar2023@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                document.getElementById('successBanner').style.display = 'block';
+                document.getElementById('directorClaimForm').style.display = 'none';
+            }).catch(e => {
+                console.error(e);
+                document.getElementById('successBanner').style.display = 'block';
+                document.getElementById('directorClaimForm').style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
