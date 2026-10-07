@@ -29,22 +29,24 @@ class _PaywallModalState extends State<PaywallModal> {
 
   void _handleUnlock() async {
     setState(() => _isLoading = true);
-    await Future.delayed(const Duration(milliseconds: 600)); // Smooth UX transition
+    final productId = _selectedPlanIndex == 0
+        ? SubscriptionService.kYearlySubscriptionId
+        : SubscriptionService.kMonthlySubscriptionId;
 
-    final tier = _selectedPlanIndex == 0 ? 'yearly' : 'monthly';
-    final days = _selectedPlanIndex == 0 ? 365 : 30;
-    await SubscriptionService().activateSubscription(tier: tier, days: days);
+    final success = await SubscriptionService().buyNativeSubscription(productId);
 
     if (mounted) {
       setState(() => _isLoading = false);
-      Navigator.pop(context, true);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('🎉 Welcome to CampFind Pro! All features unlocked.'),
-          backgroundColor: Color(0xFF16A34A),
-          duration: Duration(seconds: 3),
-        ),
-      );
+      if (success) {
+        Navigator.pop(context, true);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('🎉 Welcome to CampFind Pro! All features unlocked.'),
+            backgroundColor: Color(0xFF16A34A),
+            duration: Duration(seconds: 3),
+          ),
+        );
+      }
     }
   }
 
