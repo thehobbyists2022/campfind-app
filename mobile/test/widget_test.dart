@@ -12,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:campfind/models/camp_model.dart';
+import 'package:campfind/services/subscription_service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -45,6 +46,25 @@ void main() {
     expect(camp.name, 'Camp Sunshine');
     expect(camp.ageMin, 6);
     expect(camp.ageMax, 12);
+    expect(camp.isFeatured, false);
+    expect(camp.isClaimed, false);
+    expect(camp.sponsorTier, 'free');
+  });
+
+  test('SubscriptionService activates and redeems promo codes correctly', () async {
+    final sub = SubscriptionService();
+    await sub.initialize();
+    expect(sub.isPro, false);
+
+    // Test promo code redemption
+    final redeemed = await sub.redeemPromoCode('CAMPFINDVIP');
+    expect(redeemed, true);
+    expect(sub.isPro, true);
+    expect(sub.currentTier, 'vip');
+
+    // Test invalid code
+    final invalid = await sub.redeemPromoCode('INVALID_CODE');
+    expect(invalid, false);
   });
 
   testWidgets('CampFind app renders title and interface', (WidgetTester tester) async {

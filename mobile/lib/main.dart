@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'services/camp_repository.dart';
+import 'services/subscription_service.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
@@ -8,6 +9,7 @@ void main() async {
   
   final repository = CampRepository();
   await repository.initialize();
+  await SubscriptionService().initialize();
 
   runApp(CampFindApp(repository: repository));
 }

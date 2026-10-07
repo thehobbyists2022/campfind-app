@@ -54,7 +54,9 @@ class CampCard extends StatelessWidget {
         ],
         border: isSelectedForCompare
             ? Border.all(color: const Color(0xFFFF6B6B), width: 2)
-            : Border.all(color: Colors.grey.shade200),
+            : (camp.isFeatured
+                ? Border.all(color: const Color(0xFFF59E0B), width: 1.5)
+                : Border.all(color: Colors.grey.shade200)),
       ),
       child: Material(
         color: Colors.transparent,
@@ -162,6 +164,58 @@ class CampCard extends StatelessWidget {
                           ],
                         ),
                       ),
+                    if (camp.isFeatured) ...[
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFFEF3C7),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: const Color(0xFFF59E0B), width: 1),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.workspace_premium, size: 12, color: Color(0xFFD97706)),
+                            SizedBox(width: 3),
+                            Text(
+                              'Featured',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFD97706),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                    if (camp.isClaimed) ...[
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFEFF6FF),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: const Color(0xFF60A5FA), width: 1),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.verified_user, size: 12, color: Color(0xFF2563EB)),
+                            SizedBox(width: 3),
+                            Text(
+                              'Verified Partner',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF2563EB),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                     const Spacer(),
                     IconButton(
                       icon: Icon(

@@ -87,6 +87,7 @@ class ComparisonScreen extends StatelessWidget {
                       _buildRow('Early Care (Before 8 AM)', camps.map((c) => c.beforeCare == true ? '✓ Yes' : (c.beforeCare == false ? '✗ No' : '—')).toList()),
                       _buildRow('Late Care (After 5 PM)', camps.map((c) => c.afterCare == true ? '✓ Yes' : (c.afterCare == false ? '✗ No' : '—')).toList()),
                       _buildRow('Shuttle Bus', camps.map((c) => c.shuttle == true ? '✓ Yes' : (c.shuttle == false ? '✗ No' : '—')).toList()),
+                      _buildRow('Partner Status', camps.map((c) => c.isClaimed ? '🛡️ Verified Partner' : (c.isFeatured ? '⭐ Featured Sponsor' : 'Listed')).toList()),
                       _buildRow('Active Weeks', camps.map((c) => c.weeks.isNotEmpty ? '${c.weeks.length} Weeks' : 'On request').toList()),
                     ],
                   ),

@@ -3,7 +3,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/camp_model.dart';
 import '../services/camp_repository.dart';
+import '../services/subscription_service.dart';
 import '../widgets/camp_card.dart';
+import '../widgets/paywall_modal.dart';
 
 import 'camp_detail_screen.dart';
 import 'comparison_screen.dart';
@@ -29,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     widget.repository.addListener(_onRepositoryUpdated);
+    SubscriptionService().addListener(_onSubscriptionUpdated);
     _applyFilters();
     _checkOnboardingTip();
   }
@@ -36,12 +39,19 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     widget.repository.removeListener(_onRepositoryUpdated);
+    SubscriptionService().removeListener(_onSubscriptionUpdated);
     super.dispose();
   }
 
   void _onRepositoryUpdated() {
     if (mounted) {
       _applyFilters();
+    }
+  }
+
+  void _onSubscriptionUpdated() {
+    if (mounted) {
+      setState(() {});
     }
   }
 
@@ -76,10 +86,16 @@ class _HomeScreenState extends State<HomeScreen> {
       if (_comparedCampIds.contains(campId)) {
         _comparedCampIds.remove(campId);
       } else {
-        if (_comparedCampIds.length >= 3) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('You can compare up to 3 camps at a time.')),
-          );
+        final isPro = SubscriptionService().isPro;
+        final maxAllowed = isPro ? 5 : 2;
+        if (_comparedCampIds.length >= maxAllowed) {
+          if (!isPro) {
+            PaywallModal.show(context, featureTrigger: '3+ Camp Side-by-Side Comparison');
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('You can compare up to 5 camps at a time with Pro.')),
+            );
+          }
         } else {
           _comparedCampIds.add(campId);
         }
@@ -416,6 +432,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         actions: [
+          IconButton(
+            tooltip: 'CampFind Pro',
+            icon: Icon(
+              Icons.workspace_premium,
+              color: SubscriptionService().isPro ? const Color(0xFFD97706) : const Color(0xFFF59E0B),
+            ),
+            onPressed: () {
+              PaywallModal.show(context, featureTrigger: 'CampFind Pro Membership');
+            },
+          ),
           IconButton(
             tooltip: 'For Camp Directors',
             icon: const Icon(Icons.storefront_outlined, color: Color(0xFF16A34A)),

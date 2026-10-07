@@ -28,6 +28,10 @@ class Camp {
   final String? sourceUrl;
   final String? verificationMethod;
   final String provider;
+  final bool isFeatured;
+  final bool isClaimed;
+  final String sponsorTier;
+  final String? enrollmentUrl;
 
   Camp({
     required this.id,
@@ -57,6 +61,10 @@ class Camp {
     this.sourceUrl,
     this.verificationMethod,
     this.provider = '',
+    this.isFeatured = false,
+    this.isClaimed = false,
+    this.sponsorTier = 'free',
+    this.enrollmentUrl,
   });
 
   factory Camp.fromJson(Map<String, dynamic> json) {
@@ -93,6 +101,10 @@ class Camp {
       sourceUrl: json['sourceUrl']?.toString(),
       verificationMethod: json['verificationMethod']?.toString(),
       provider: json['provider']?.toString() ?? '',
+      isFeatured: json['isFeatured'] == true || json['is_featured'] == true,
+      isClaimed: json['isClaimed'] == true || json['is_claimed'] == true,
+      sponsorTier: json['sponsorTier']?.toString() ?? json['sponsor_tier']?.toString() ?? 'free',
+      enrollmentUrl: json['enrollmentUrl']?.toString() ?? json['enrollment_url']?.toString(),
     );
   }
 
@@ -125,6 +137,10 @@ class Camp {
       'sourceUrl': sourceUrl,
       'verificationMethod': verificationMethod,
       'provider': provider,
+      'isFeatured': isFeatured,
+      'isClaimed': isClaimed,
+      'sponsorTier': sponsorTier,
+      'enrollmentUrl': enrollmentUrl,
     };
   }
 

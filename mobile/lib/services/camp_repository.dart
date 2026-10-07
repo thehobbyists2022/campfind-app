@@ -182,7 +182,7 @@ class CampRepository extends ChangeNotifier {
   bool isFavorite(String campId) => _favoriteIds.contains(campId);
 
   List<Camp> filterCamps(FilterOptions options) {
-    return _allCamps.where((camp) {
+    final filtered = _allCamps.where((camp) {
       // 1. Search Query (ZIP / City / State / Name)
       if (options.searchQuery.isNotEmpty) {
         final query = options.searchQuery.trim().toLowerCase();
@@ -251,5 +251,14 @@ class CampRepository extends ChangeNotifier {
 
       return true;
     }).toList();
+
+    // Prioritize B2B Featured camps at the top of search results
+    filtered.sort((a, b) {
+      if (a.isFeatured && !b.isFeatured) return -1;
+      if (!a.isFeatured && b.isFeatured) return 1;
+      return 0;
+    });
+
+    return filtered;
   }
 }
