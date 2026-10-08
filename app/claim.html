@@ -154,7 +154,8 @@
                         Real-time seat count updates anytime
                     </li>
                 </ul>
-                <button type="button" class="btn-tier btn-blue" onclick="selectTier('partner', '$99 / year')">Select Partner ($99) &rarr;</button>
+                <button type="button" class="btn-tier btn-blue" onclick="selectTier('partner', '$99 / year')">Claim & Pay ($99) &rarr;</button>
+                <a href="https://buy.stripe.com/dRmbJ19pOb9bbiH2wC7Vm00" target="_blank" style="display:block; text-align:center; font-size:0.82rem; margin-top:10px; color:var(--blue); text-decoration:underline; font-weight:600;">⚡ Instant 1-Click Stripe Checkout &rarr;</a>
             </div>
 
             <!-- TIER 3 -->
@@ -181,7 +182,8 @@
                         Dedicated Director Spotlight & Social shout-out
                     </li>
                 </ul>
-                <button type="button" class="btn-tier btn-primary" onclick="selectTier('featured', '$299 / quarter')">Get Featured ($299) &rarr;</button>
+                <button type="button" class="btn-tier btn-primary" onclick="selectTier('featured', '$299 / quarter')">Claim & Pay ($299) &rarr;</button>
+                <a href="https://buy.stripe.com/7sYeVd6dCgtvgD10ou7Vm01" target="_blank" style="display:block; text-align:center; font-size:0.82rem; margin-top:10px; color:var(--primary); text-decoration:underline; font-weight:600;">⚡ Instant 1-Click Stripe Checkout &rarr;</a>
             </div>
         </div>
 
@@ -305,17 +307,34 @@
             btn.disabled = true;
             btn.textContent = 'Processing Application...';
 
+            const tier = document.getElementById('selectedTier').value;
+            const email = document.getElementById('directorEmail').value;
+
             const payload = {
-                _subject: '🏕️ B2B Partner Claim: ' + document.getElementById('campName').value + ' (' + document.getElementById('selectedTier').value + ')',
-                tier: document.getElementById('selectedTier').value,
+                _subject: '🏕️ B2B Partner Claim: ' + document.getElementById('campName').value + ' (' + tier + ')',
+                tier: tier,
                 camp_name: document.getElementById('campName').value,
                 director_name: document.getElementById('directorName').value,
-                email: document.getElementById('directorEmail').value,
+                email: email,
                 website: document.getElementById('campWebsite').value,
                 phone: document.getElementById('campPhone').value,
                 notes: document.getElementById('campNotes').value,
                 submitted_at: new Date().toISOString()
             };
+
+            const stripePartnerUrl = 'https://buy.stripe.com/dRmbJ19pOb9bbiH2wC7Vm00' + (email ? '?prefilled_email=' + encodeURIComponent(email) : '');
+            const stripeFeaturedUrl = 'https://buy.stripe.com/7sYeVd6dCgtvgD10ou7Vm01' + (email ? '?prefilled_email=' + encodeURIComponent(email) : '');
+
+            function onDone() {
+                if (tier === 'partner') {
+                    window.location.href = stripePartnerUrl;
+                } else if (tier === 'featured') {
+                    window.location.href = stripeFeaturedUrl;
+                } else {
+                    document.getElementById('successBanner').style.display = 'block';
+                    document.getElementById('directorClaimForm').style.display = 'none';
+                }
+            }
 
             // 1. Send via formsubmit.co directly to wingsoar2023@gmail.com
             fetch('https://formsubmit.co/ajax/wingsoar2023@gmail.com', {
@@ -323,12 +342,10 @@
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(payload)
             }).then(() => {
-                document.getElementById('successBanner').style.display = 'block';
-                document.getElementById('directorClaimForm').style.display = 'none';
+                onDone();
             }).catch(e => {
                 console.error(e);
-                document.getElementById('successBanner').style.display = 'block';
-                document.getElementById('directorClaimForm').style.display = 'none';
+                onDone();
             });
         }
     </script>

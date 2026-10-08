@@ -69,7 +69,8 @@ What you receive:
 ⚡ Updates anytime your sessions sell out or add new weeks
 
 You can activate your Verified Partner status directly via our secure Stripe portal:
-👉 https://campfind-app.netlify.app/claim.html?camp={{camp_name_encoded}}
+👉 Review & Claim Form: https://campfind-app.netlify.app/claim.html?camp={{camp_name_encoded}}
+💳 Instant 1-Click Stripe Checkout ($99/yr): https://buy.stripe.com/dRmbJ19pOb9bbiH2wC7Vm00
 
 If you prefer an invoice (Net 30) for your organization's accounting, just reply to this email with your preferred billing details.
 
@@ -107,7 +108,8 @@ As the Featured Sponsor ($299/quarter):
 Because we limit featured spots to ensure high ROI for our partners, this placement is available on a first-come, first-served basis.
 
 If you’d like {{camp_name}} to claim the top spot in {{city}}, you can secure it here today:
-👉 https://campfind-app.netlify.app/claim.html?camp={{camp_name_encoded}}
+👉 Review & Claim Form: https://campfind-app.netlify.app/claim.html?camp={{camp_name_encoded}}
+💳 Instant 1-Click Stripe Checkout ($299/quarter): https://buy.stripe.com/7sYeVd6dCgtvgD10ou7Vm01
 
 Happy to answer any questions or set up a corporate invoice if needed!
 
