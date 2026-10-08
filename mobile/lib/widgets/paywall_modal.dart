@@ -347,19 +347,25 @@ class _PaywallModalState extends State<PaywallModal> {
               ],
             ),
 
-            // Legal Footnote
-            const SizedBox(height: 4),
+            // Legal Footnote & Auto-Renewal Disclosure
+            const SizedBox(height: 6),
+            const Text(
+              'Subscriptions auto-renew unless canceled at least 24 hours before the end of the period. Manage or cancel in App Store Account Settings.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 10, color: Color(0xFF94A3B8), height: 1.3),
+            ),
+            const SizedBox(height: 6),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
                   onTap: () => launchUrl(Uri.parse('https://campfind-app.netlify.app/privacy.html'), mode: LaunchMode.externalApplication),
-                  child: const Text('Privacy Policy', style: TextStyle(fontSize: 10, color: Color(0xFF94A3B8), decoration: TextDecoration.underline)),
+                  child: const Text('Privacy Policy', style: TextStyle(fontSize: 10, color: Color(0xFF64748B), decoration: TextDecoration.underline)),
                 ),
-                const Text('  |  ', style: TextStyle(fontSize: 10, color: Color(0xFFCBD5E1))),
+                const Text('  •  ', style: TextStyle(fontSize: 10, color: Color(0xFFCBD5E1))),
                 InkWell(
-                  onTap: () => launchUrl(Uri.parse('https://campfind-app.netlify.app/privacy.html'), mode: LaunchMode.externalApplication),
-                  child: const Text('Terms of Use', style: TextStyle(fontSize: 10, color: Color(0xFF94A3B8), decoration: TextDecoration.underline)),
+                  onTap: () => launchUrl(Uri.parse('https://campfind-app.netlify.app/terms.html'), mode: LaunchMode.externalApplication),
+                  child: const Text('Terms of Use (EULA)', style: TextStyle(fontSize: 10, color: Color(0xFF64748B), decoration: TextDecoration.underline)),
                 ),
               ],
             ),
