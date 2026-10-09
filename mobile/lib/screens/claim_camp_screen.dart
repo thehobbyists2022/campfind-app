@@ -24,7 +24,6 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _notesController = TextEditingController();
 
-  String _partnerTier = 'featured'; // 'featured', 'verified', 'free'
   bool _isSubmitting = false;
 
   @override
@@ -50,26 +49,20 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
       _isSubmitting = true;
     });
 
-    final tierTitles = {
-      'featured': '⭐ Featured Regional Sponsor (\$299/Quarter)',
-      'verified': '🛡️ Verified Partner Badge (\$99/Year)',
-      'free': '✅ Free Listing Claim (\$0)',
-    };
-
     try {
       final client = HttpClient();
       final request = await client.postUrl(Uri.parse('https://formsubmit.co/ajax/wingsoar2023@gmail.com'));
       request.headers.set('content-type', 'application/json');
       request.headers.set('accept', 'application/json');
       final payload = jsonEncode({
-        '_subject': '🏕️ CampFind Partner Application: [${tierTitles[_partnerTier]}] ${_campNameController.text.trim()}',
-        'Selected_Tier': tierTitles[_partnerTier],
+        '_subject': '🏕️ CampFind Director Verification: ${_campNameController.text.trim()}',
+        'Request_Type': 'Free Director Listing Claim & Verification',
         'Camp_Name': _campNameController.text.trim(),
         'Director_Name': _directorNameController.text.trim(),
         'Email': _emailController.text.trim(),
         'Phone_Website': _phoneController.text.trim(),
-        'Notes': _notesController.text.trim(),
-        'Submitted_From': 'CampFind App (iOS & Android)',
+        'Notes_Updates': _notesController.text.trim(),
+        'Submitted_From': 'CampFind Mobile App',
         'Submitted_At': DateTime.now().toIso8601String(),
       });
       request.add(utf8.encode(payload));
@@ -90,9 +83,9 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
       barrierDismissible: false,
       builder: (ctx) => AlertDialog(
         icon: const Icon(Icons.check_circle, color: Color(0xFF16A34A), size: 48),
-        title: const Text('Partner Application Received'),
+        title: const Text('Verification Request Received'),
         content: Text(
-          'Thank you for submitting your partnership application for ${_campNameController.text.trim()}.\n\nOur CampFind partner team will review your credentials and send onboarding & verification details to ${_emailController.text.trim()} within 24 hours.',
+          'Thank you for submitting your verification details for ${_campNameController.text.trim()}.\n\nOur directory team will verify your credentials and update your listing within 24 hours.',
           style: const TextStyle(fontSize: 14, height: 1.4),
         ),
         actions: [
@@ -117,7 +110,7 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
         backgroundColor: Colors.white,
         elevation: 0.5,
         title: const Text(
-          'Camp Director Partner Portal',
+          'Camp Director Verification',
           style: TextStyle(
             color: Color(0xFF1A1A2E),
             fontSize: 18,
@@ -157,7 +150,7 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Reach Thousands of Local Families',
+                            'Verify & Update Your Camp Listing',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -166,7 +159,7 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            'CampFind helps parents discover summer & winter camps. Claim your listing, boost your visibility, or become a featured sponsor.',
+                            'Are you the official director or administrator? Submit your credentials to verify your camp listing and request updates to session dates, tuition, and enrollment links for free.',
                             style: TextStyle(fontSize: 12, color: Color(0xFF15803D), height: 1.3),
                           ),
                         ],
@@ -175,53 +168,6 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
                   ],
                 ),
               ),
-              const SizedBox(height: 24),
-
-              // Partnership Tier Selection
-              const Text(
-                'Select Partnership Tier *',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
-              ),
-              const SizedBox(height: 10),
-
-              // Tier 1: Featured Sponsor ($299/Quarter)
-              _buildTierCard(
-                tierId: 'featured',
-                badgeText: 'MOST POPULAR · TOP ROI',
-                badgeColor: const Color(0xFFEA580C),
-                title: 'Featured Regional Sponsor',
-                price: '\$299 / quarter',
-                description: 'Ranked at the top of search results in your city/category, official gold badge, direct enrollment link, and instant OTA live updates.',
-                icon: Icons.workspace_premium,
-                accentColor: const Color(0xFFF59E0B),
-              ),
-              const SizedBox(height: 10),
-
-              // Tier 2: Verified Partner ($99/Year)
-              _buildTierCard(
-                tierId: 'verified',
-                badgeText: 'RECOMMENDED',
-                badgeColor: const Color(0xFF2563EB),
-                title: 'Verified Partner Badge',
-                price: '\$99 / year',
-                description: 'Official blue Verified badge on your camp card, direct website & call links enabled, and 24-hr priority updates.',
-                icon: Icons.verified_user,
-                accentColor: const Color(0xFF3B82F6),
-              ),
-              const SizedBox(height: 10),
-
-              // Tier 3: Free Listing Claim ($0)
-              _buildTierCard(
-                tierId: 'free',
-                badgeText: 'BASIC',
-                badgeColor: const Color(0xFF64748B),
-                title: 'Free Listing Claim',
-                price: 'Free',
-                description: 'Verify identity as camp director and suggest corrections to contact info and address.',
-                icon: Icons.check_circle_outline,
-                accentColor: const Color(0xFF64748B),
-              ),
-
               const SizedBox(height: 24),
 
               // Camp Name
@@ -245,7 +191,7 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
 
               // Director Name
               const Text(
-                'Director / Contact Name *',
+                'Director / Administrator Name *',
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
               ),
               const SizedBox(height: 8),
@@ -284,7 +230,7 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
 
               // Phone / Website
               const Text(
-                'Phone & Official Website',
+                'Official Phone & Website',
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
               ),
               const SizedBox(height: 8),
@@ -302,15 +248,15 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
 
               // Notes / Updates
               const Text(
-                'Notes & Enrollment Details',
+                'Listing Corrections & Session Updates',
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color(0xFF1E293B)),
               ),
               const SizedBox(height: 8),
               TextFormField(
                 controller: _notesController,
-                maxLines: 3,
+                maxLines: 4,
                 decoration: InputDecoration(
-                  hintText: 'Mention open sessions, early-bird promo discounts, or registration URLs...',
+                  hintText: 'Describe session dates, age brackets, weekly tuition, or registration website link...',
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: Color(0xFFCBD5E1))),
@@ -337,7 +283,7 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
                           child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5),
                         )
                       : const Text(
-                          'Submit Partnership Application →',
+                          'Submit Verification Request →',
                           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                 ),
@@ -345,99 +291,6 @@ class _ClaimCampScreenState extends State<ClaimCampScreen> {
               const SizedBox(height: 24),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTierCard({
-    required String tierId,
-    required String badgeText,
-    required Color badgeColor,
-    required String title,
-    required String price,
-    required String description,
-    required IconData icon,
-    required Color accentColor,
-  }) {
-    final isSelected = _partnerTier == tierId;
-
-    return GestureDetector(
-      onTap: () => setState(() => _partnerTier = tierId),
-      child: Container(
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: isSelected ? accentColor.withValues(alpha: 0.08) : Colors.white,
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(
-            color: isSelected ? accentColor : const Color(0xFFE2E8F0),
-            width: isSelected ? 2 : 1,
-          ),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // ignore: deprecated_member_use
-            Radio<String>(
-              value: tierId,
-              // ignore: deprecated_member_use
-              groupValue: _partnerTier,
-              activeColor: accentColor,
-              // ignore: deprecated_member_use
-              onChanged: (val) => setState(() => _partnerTier = val ?? 'featured'),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: badgeColor,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Text(
-                          badgeText,
-                          style: const TextStyle(color: Colors.white, fontSize: 9, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        price,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: isSelected ? accentColor : const Color(0xFF1E293B),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 6),
-                  Row(
-                    children: [
-                      Icon(icon, size: 16, color: accentColor),
-                      const SizedBox(width: 6),
-                      Text(
-                        title,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF1E293B),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    description,
-                    style: const TextStyle(fontSize: 11, color: Color(0xFF64748B), height: 1.3),
-                  ),
-                ],
-              ),
-            ),
-          ],
         ),
       ),
     );

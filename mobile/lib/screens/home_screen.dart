@@ -443,7 +443,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
           IconButton(
-            tooltip: 'For Camp Directors',
+            tooltip: 'Director Verification',
             icon: const Icon(Icons.storefront_outlined, color: Color(0xFF16A34A)),
             onPressed: () {
               Navigator.push(

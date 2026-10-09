@@ -13,6 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:campfind/models/camp_model.dart';
 import 'package:campfind/services/subscription_service.dart';
+import 'package:campfind/screens/claim_camp_screen.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -102,5 +103,20 @@ void main() {
     );
 
     expect(find.text('CampFind'), findsOneWidget);
+  });
+
+  testWidgets('ClaimCampScreen renders as free director verification with zero unsubmitted IAP tiers', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ClaimCampScreen(initialCampName: 'Test Camp'),
+      ),
+    );
+
+    expect(find.text('Camp Director Verification'), findsOneWidget);
+    expect(find.text('Submit Verification Request →'), findsOneWidget);
+    // Explicitly verify absence of unsubmitted paid tier references:
+    expect(find.textContaining('\$299'), findsNothing);
+    expect(find.textContaining('\$99'), findsNothing);
+    expect(find.textContaining('Partnership Tier'), findsNothing);
   });
 }

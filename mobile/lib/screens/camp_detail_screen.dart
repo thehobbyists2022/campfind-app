@@ -684,7 +684,7 @@ class _CampDetailScreenState extends State<CampDetailScreen> {
                 ),
                 const SizedBox(height: 2),
                 const Text(
-                  'Claim this listing to update seats & session dates.',
+                  'Verify listing ownership to update session dates & info.',
                   style: TextStyle(fontSize: 11, color: Color(0xFF15803D)),
                 ),
               ],
@@ -709,7 +709,7 @@ class _CampDetailScreenState extends State<CampDetailScreen> {
                 ),
               );
             },
-            child: const Text('Claim →', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+            child: const Text('Verify →', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
           ),
         ],
       ),
