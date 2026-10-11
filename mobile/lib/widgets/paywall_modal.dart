@@ -50,68 +50,6 @@ class _PaywallModalState extends State<PaywallModal> {
     }
   }
 
-  void _showPromoCodeDialog() {
-    final controller = TextEditingController();
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Redeem Promo / VIP Code', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Enter your partner or early supporter code to unlock CampFind Pro:', style: TextStyle(fontSize: 13, color: Color(0xFF64748B))),
-            const SizedBox(height: 12),
-            TextField(
-              controller: controller,
-              textCapitalization: TextCapitalization.characters,
-              decoration: InputDecoration(
-                hintText: 'e.g. CAMPFINDVIP',
-                filled: true,
-                fillColor: const Color(0xFFF8FAFC),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('Cancel'),
-          ),
-          FilledButton(
-            style: FilledButton.styleFrom(backgroundColor: const Color(0xFFFF6B6B)),
-            onPressed: () async {
-              final code = controller.text.trim();
-              final success = await SubscriptionService().redeemPromoCode(code);
-              if (ctx.mounted) Navigator.pop(ctx);
-              if (!mounted) return;
-
-              if (success) {
-                Navigator.pop(context, true);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('🎉 Promo Code "$code" successfully activated!'),
-                    backgroundColor: const Color(0xFF16A34A),
-                  ),
-                );
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Invalid code. Please check and try again.'),
-                    backgroundColor: Color(0xFFDC2626),
-                  ),
-                );
-              }
-            },
-            child: const Text('Redeem'),
-          ),
-        ],
-      ),
-    );
-  }
-
   void _handleRestore() async {
     setState(() => _isLoading = true);
     final restored = await SubscriptionService().restorePurchases();
@@ -331,20 +269,12 @@ class _PaywallModalState extends State<PaywallModal> {
 
             const SizedBox(height: 14),
 
-            // Auxiliary Links (Redeem Promo Code & Restore)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: _showPromoCodeDialog,
-                  child: const Text('Redeem Promo Code', style: TextStyle(fontSize: 12, color: Color(0xFF64748B))),
-                ),
-                const Text('•', style: TextStyle(color: Color(0xFFCBD5E1))),
-                TextButton(
-                  onPressed: _handleRestore,
-                  child: const Text('Restore Purchases', style: TextStyle(fontSize: 12, color: Color(0xFF64748B))),
-                ),
-              ],
+            // Auxiliary Link (Restore Purchases)
+            Center(
+              child: TextButton(
+                onPressed: _handleRestore,
+                child: const Text('Restore Purchases', style: TextStyle(fontSize: 12, color: Color(0xFF64748B))),
+              ),
             ),
 
             // Legal Footnote & Auto-Renewal Disclosure

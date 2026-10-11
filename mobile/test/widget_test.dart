@@ -14,6 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:campfind/models/camp_model.dart';
 import 'package:campfind/services/subscription_service.dart';
 import 'package:campfind/screens/claim_camp_screen.dart';
+import 'package:campfind/widgets/paywall_modal.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -118,5 +119,19 @@ void main() {
     expect(find.textContaining('\$299'), findsNothing);
     expect(find.textContaining('\$99'), findsNothing);
     expect(find.textContaining('Partnership Tier'), findsNothing);
+  });
+
+  testWidgets('PaywallModal contains only compliant Restore Purchases and zero non-IAP promo code redemption inputs', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: Scaffold(
+          body: PaywallModal(),
+        ),
+      ),
+    );
+
+    expect(find.text('Restore Purchases'), findsOneWidget);
+    expect(find.text('Redeem Promo Code'), findsNothing);
+    expect(find.textContaining('CAMPFINDVIP'), findsNothing);
   });
 }
