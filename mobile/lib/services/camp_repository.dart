@@ -120,7 +120,11 @@ class CampRepository extends ChangeNotifier {
       }
 
       final remoteVersion = meta['version']?.toString() ?? '';
-      final downloadUrl = meta['download_url']?.toString() ?? meta['fallback_url']?.toString() ?? '';
+      final primaryUrl = meta['download_url']?.toString() ?? '';
+      final fallbackUrl = meta['fallback_url']?.toString() ?? '';
+      final downloadUrl = isTrustedOtaUrl(primaryUrl)
+          ? primaryUrl
+          : (isTrustedOtaUrl(fallbackUrl) ? fallbackUrl : '');
 
       final prefs = await SharedPreferences.getInstance();
       final localVersion = prefs.getString(kCampsDataVersionKey) ?? kDefaultBundledVersion;
