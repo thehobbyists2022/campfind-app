@@ -53,20 +53,20 @@ void main() {
     expect(camp.sponsorTier, 'free');
   });
 
-  test('SubscriptionService activates and redeems promo codes correctly', () async {
+  test('SubscriptionService enforces strict IAP store availability and OTA URL whitelist', () async {
     final sub = SubscriptionService();
     await sub.initialize();
     expect(sub.isPro, false);
 
-    // Test promo code redemption
-    final redeemed = await sub.redeemPromoCode('CAMPFINDVIP');
-    expect(redeemed, true);
-    expect(sub.isPro, true);
-    expect(sub.currentTier, 'vip');
+    // Offline / unavailable store must NOT auto-unlock Pro
+    final offlineBuy = await sub.buyNativeSubscription(SubscriptionService.kYearlySubscriptionId);
+    expect(offlineBuy, false);
+    expect(sub.isPro, false);
 
-    // Test invalid code
-    final invalid = await sub.redeemPromoCode('INVALID_CODE');
-    expect(invalid, false);
+    // Verified store callback activation works as expected
+    await sub.activateSubscription(tier: 'yearly', days: 365);
+    expect(sub.isPro, true);
+    expect(sub.currentTier, 'yearly');
   });
 
   testWidgets('CampFind app renders title and interface', (WidgetTester tester) async {

@@ -1,6 +1,8 @@
 import json
+import os
 
-js_file = r"C:\Users\Matrixkuo\Desktop\Antigravity\APP Design\CampFind\app\aca_camps_data.js"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+js_file = os.path.join(ROOT_DIR, "app", "aca_camps_data.js")
 with open(js_file, "r", encoding="utf-8") as f:
     text = f.read()
 

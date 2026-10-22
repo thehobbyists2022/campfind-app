@@ -26,6 +26,35 @@ class PaywallModal extends StatefulWidget {
 class _PaywallModalState extends State<PaywallModal> {
   int _selectedPlanIndex = 0; // 0 = Yearly ($19.99/yr), 1 = Monthly ($4.99/mo)
   bool _isLoading = false;
+  bool _hasPopped = false;
+
+  @override
+  void initState() {
+    super.initState();
+    SubscriptionService().addListener(_onSubscriptionChanged);
+  }
+
+  @override
+  void dispose() {
+    SubscriptionService().removeListener(_onSubscriptionChanged);
+    super.dispose();
+  }
+
+  void _onSubscriptionChanged() {
+    if (!mounted || _hasPopped) return;
+    if (SubscriptionService().isPro) {
+      _hasPopped = true;
+      setState(() => _isLoading = false);
+      Navigator.pop(context, true);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('🎉 Welcome to CampFind Pro! All features unlocked.'),
+          backgroundColor: Color(0xFF16A34A),
+          duration: Duration(seconds: 3),
+        ),
+      );
+    }
+  }
 
   void _handleUnlock() async {
     setState(() => _isLoading = true);
@@ -35,15 +64,22 @@ class _PaywallModalState extends State<PaywallModal> {
 
     final success = await SubscriptionService().buyNativeSubscription(productId);
 
-    if (mounted) {
+    if (mounted && !_hasPopped) {
       setState(() => _isLoading = false);
-      if (success) {
+      if (success && SubscriptionService().isPro) {
+        _hasPopped = true;
         Navigator.pop(context, true);
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('🎉 Welcome to CampFind Pro! All features unlocked.'),
             backgroundColor: Color(0xFF16A34A),
             duration: Duration(seconds: 3),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Unable to complete purchase. Please verify your store connection and try again.'),
           ),
         );
       }

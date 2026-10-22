@@ -1,8 +1,9 @@
 import os
 from PIL import Image
 
-icon_src = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\campfind_app_icon_512x512.png"
-res_dir = r"C:\Users\Matrixkuo\Desktop\Antigravity\APP Design\CampFind\mobile\android\app\src\main\res"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+icon_src = os.environ.get("CAMPFIND_ICON_SRC", os.path.join(ROOT_DIR, "store_assets", "play_store_icon_512x512.png"))
+res_dir = os.path.join(ROOT_DIR, "mobile", "android", "app", "src", "main", "res")
 
 sizes = {
     "mipmap-mdpi": (48, 48),

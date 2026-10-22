@@ -25,7 +25,7 @@
   - 原產出: mobile/build/app/outputs/bundle/release/app-release.aab
   - 根目錄發布歸檔: CampFind-v1.0.15-release.aab
 - **檔案大小**: **51.3 MB (53,806,741 bytes)**（較 1.0.14 版縮減近 10MB）。
-- **簽章配置**: 使用現有 upload-keystore.jks（密碼 123456，別名 key0），簽名相容性 100%。
+- **簽章配置**: 使用 `key.properties` 讀取本機 keystore（已由 `.gitignore` 排除），簽名相容性 100%。
 
 ---
 

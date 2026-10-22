@@ -2,7 +2,8 @@ import os, asyncio
 from playwright.async_api import async_playwright
 from PIL import Image
 
-OUTPUT_DIR = r"C:\Users\Matrixkuo\Desktop\Antigravity\APP Design\CampFind\store_assets\ios_screenshots"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+OUTPUT_DIR = os.path.join(ROOT_DIR, "store_assets", "ios_screenshots")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 HTML_TEMPLATES = [

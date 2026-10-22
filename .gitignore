@@ -1,10 +1,36 @@
 .DS_Store
 *.log
 node_modules/
-.env
 tmp/
 
-# Test/scratch caches
+# Environment variables & Secrets (NEVER commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.p8
+*.p12
+*.cer
+*.mobileprovision
+*.jks
+*.keystore
+key.properties
+local.properties
+*serviceAccount*.json
+*firebase-adminsdk*.json
+scrapers/ridb_api_key.txt
+
+# Build outputs & binary packages
+dist/
+build/
+*.aab
+*.apk
+*.ipa
+
+# Backup & scratch files
+*.bak
+*.bak-*
+*auditbackup*
 .playwright-mcp/
 scrapers/__pycache__/
 scrapers/v2_cache/
@@ -12,7 +38,4 @@ scrapers/v5_cache/
 .netlify/
 scrapers/geocode_cache.json
 scrapers/reverse_cache.json
-scrapers/ridb_api_key.txt
 scrapers/aca_verify_cache.json
-*.jks
-key.properties

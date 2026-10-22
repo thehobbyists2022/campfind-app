@@ -1,7 +1,7 @@
 # CampFind 安全與真實性審計報告
 
 - **專案**: CampFind — Summer & Winter Camp Finder
-- **位置**: `C:\Users\Matrixkuo\Desktop\Antigravity\APP Design\CampFind`
+- **位置**: `<REPO_ROOT>/CampFind`
 - **審計者**: opencode（依 `ai-generated-code-security-auditor` + `reality-checker` 方法論）
 - **審計模式**: 本地靜態掃描（未上傳任何資料）
 - **日期**: 2026-08-19
@@ -22,12 +22,12 @@ CampFind 是一個多端點專案：**web App**（`app/`，Vanilla HTML/JS + Lea
 **位置**: `mobile/android/app/build.gradle.kts`
 
 ```kotlin
-storePassword = "123456"
-keyPassword = "123456"
+storePassword = "<REDACTED_WEAK_PASSWORD>"
+keyPassword = "<REDACTED_WEAK_PASSWORD>"
 ```
 
 - 這是 **Google Play 正式 release 簽章**
-- 密碼為 `123456`（極弱），且**硬編碼在原始碼**中
+- 原密碼極弱，且**硬編碼在原始碼**中
 - 風險: 任何人取得 repo / keystore 檔即可偽造 App 更新，劫持使用者
 
 **修正（已執行）**:

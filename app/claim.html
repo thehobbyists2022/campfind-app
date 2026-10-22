@@ -343,8 +343,7 @@
                 body: JSON.stringify(payload)
             }).then(() => {
                 onDone();
-            }).catch(e => {
-                console.error(e);
+            }).catch(() => {
                 onDone();
             });
         }

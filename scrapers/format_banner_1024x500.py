@@ -1,8 +1,9 @@
 import os
 from PIL import Image
 
-banner_path = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\campfind_feature_banner_1785351508933.jpg"
-output_path = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\campfind_feature_banner_1024x500.png"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+banner_path = os.environ.get("CAMPFIND_BANNER_SRC", os.path.join(ROOT_DIR, "store_assets", "feature_graphic_1024x500.png"))
+output_path = os.environ.get("CAMPFIND_BANNER_OUT", os.path.join(ROOT_DIR, "store_assets", "feature_graphic_1024x500.png"))
 
 if os.path.exists(banner_path):
     img = Image.open(banner_path)

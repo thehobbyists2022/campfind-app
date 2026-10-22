@@ -1,8 +1,9 @@
 import os
 import shutil
 
-src_dir = r"C:\Users\Matrixkuo\Desktop\Antigravity\APP Design\CampFind\app"
-assets_dir = r"C:\Users\Matrixkuo\Desktop\Antigravity\APP Design\CampFind\mobile\android\app\src\main\assets"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+src_dir = os.path.join(ROOT_DIR, "app")
+assets_dir = os.path.join(ROOT_DIR, "mobile", "android", "app", "src", "main", "assets")
 
 os.makedirs(assets_dir, exist_ok=True)
 

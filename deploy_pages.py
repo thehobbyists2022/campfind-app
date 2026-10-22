@@ -25,7 +25,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 TMP = os.path.join(os.environ.get("TEMP", "/tmp"), "campfind_ghpages")
 # 网站运行需要同步到 gh-pages 根目录的文件（来自 main 分支 app/）
 SITE_FILES = ["index.html", "aca_camps_data.js", "aca_camps.json",
-              "manifest.json", "privacy.html"]
+              "manifest.json", "privacy.html", "terms.html", "claim.html",
+              "version.json", "gear_catalog.js", "_headers"]
 
 
 def run(cmd, cwd=None):

@@ -143,7 +143,7 @@
 3. 若全部通过，确认**没有任何**会导致 iOS 提审被拒的灰区。
 4. 若有需修改项，请列出**精确文件路径 + 行号 + 建议措辞**。
 
-请基于**实际读取仓库文件**作答（仓库根目录：`C:\Users\Matrixkuo\Desktop\Antigravity\APP Design\CampFind`），重点文件：
+请基于**实际读取仓库文件**作答（仓库根目录：`<REPO_ROOT>/CampFind`），重点文件：
 - `app/index.html`
 - `app/privacy.html`
 - `app/manifest.json`

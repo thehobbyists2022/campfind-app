@@ -1,8 +1,9 @@
 import os
 from PIL import Image
 
-uploaded_path = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\.user_uploaded\media__1785352297871.jpg"
-output_path = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\campfind_app_icon_512x512.png"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+uploaded_path = os.environ.get("CAMPFIND_ICON_SRC", os.path.join(ROOT_DIR, "store_assets", "original_google_play_icon_512x512.png"))
+output_path = os.environ.get("CAMPFIND_ICON_OUT", os.path.join(ROOT_DIR, "store_assets", "play_store_icon_512x512.png"))
 
 if os.path.exists(uploaded_path):
     img = Image.open(uploaded_path)

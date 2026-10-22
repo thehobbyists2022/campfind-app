@@ -8,7 +8,8 @@ import hashlib
 import json
 
 def generate_signed_bundle():
-    output_dir = r"C:\Users\Matrixkuo\Desktop\Antigravity\APP Design\CampFind\mobile\build\app\outputs\bundle\release"
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    output_dir = os.path.join(root_dir, "mobile", "build", "app", "outputs", "bundle", "release")
     os.makedirs(output_dir, exist_ok=True)
     aab_path = os.path.join(output_dir, "app-release-official-signed.aab")
 

@@ -1620,7 +1620,7 @@
                             <strong>Are you the Camp Director at ${escapeHtml(c.name)}?</strong>
                             <div style="font-size:0.78rem; opacity:0.9;">Claim this listing to update real-time seats & session dates.</div>
                         </div>
-                        <button type="button" class="claim-camp-btn" onclick="window.openClaimModal('${escapeHtml(c.id)}', '${escapeHtml(c.name).replace(/'/g, "\\'")}')">Claim Listing &rarr;</button>
+                        <button type="button" class="claim-camp-btn" data-camp-id="${escapeHtml(c.id)}" data-camp-name="${escapeHtml(c.name)}" onclick="window.openClaimModal(this.dataset.campId, this.dataset.campName)">Claim Listing &rarr;</button>
                     </div>
                 `;
 
@@ -1655,7 +1655,7 @@
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams(formData).toString()
-                }).catch(e => console.log('Netlify Form notice', e));
+                }).catch(() => {});
 
                 // 2. Direct email delivery to wingsoar2023@gmail.com
                 const emailPost = fetch('https://formsubmit.co/ajax/wingsoar2023@gmail.com', {
@@ -1674,7 +1674,7 @@
                         Notes: formData.get('notes'),
                         Submitted_At: new Date().toISOString()
                     })
-                }).catch(e => console.log('Email delivery notice', e));
+                }).catch(() => {});
 
                 Promise.allSettled([netlifyPost, emailPost]).then(() => {
                     if (successMsg) successMsg.style.display = 'block';

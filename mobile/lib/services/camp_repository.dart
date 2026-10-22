@@ -8,8 +8,20 @@ import '../models/camp_model.dart';
 
 const String kCampsDataVersionKey = 'camps_data_version';
 const String kDefaultBundledVersion = '2026.10.04-v1';
-const String kRemoteVersionUrl = 'https://campfind.netlify.app/app/version.json';
+const String kRemoteVersionUrl = 'https://campfind-app.netlify.app/version.json';
 const String kFallbackVersionUrl = 'https://raw.githubusercontent.com/thehobbyists2022/campfind-app/main/app/version.json';
+
+const Set<String> kTrustedOtaHosts = {
+  'campfind-app.netlify.app',
+  'raw.githubusercontent.com',
+  'thehobbyists2022.github.io',
+};
+
+bool isTrustedOtaUrl(String url) {
+  final uri = Uri.tryParse(url);
+  if (uri == null || uri.scheme != 'https') return false;
+  return kTrustedOtaHosts.contains(uri.host.toLowerCase());
+}
 
 class FilterOptions {
   String searchQuery;
@@ -113,7 +125,9 @@ class CampRepository extends ChangeNotifier {
       final prefs = await SharedPreferences.getInstance();
       final localVersion = prefs.getString(kCampsDataVersionKey) ?? kDefaultBundledVersion;
 
-      if (remoteVersion.isNotEmpty && remoteVersion != localVersion && downloadUrl.isNotEmpty) {
+      if (remoteVersion.isNotEmpty &&
+          remoteVersion != localVersion &&
+          isTrustedOtaUrl(downloadUrl)) {
         final newJsonString = await _fetchString(client, downloadUrl);
         if (newJsonString != null && newJsonString.length > 50000) {
           final updatedCamps = await compute(_parseCampsJson, newJsonString);

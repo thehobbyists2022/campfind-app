@@ -1,11 +1,12 @@
 import os
 from PIL import Image
 
-sc_home = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\campfind_screenshot_home_1785351525649.jpg"
-sc_compare = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\campfind_screenshot_compare_1785351542890.jpg"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sc_home = os.environ.get("CAMPFIND_SC_HOME_SRC", os.path.join(ROOT_DIR, "store_assets", "screenshots", "raw_1.png"))
+sc_compare = os.environ.get("CAMPFIND_SC_COMPARE_SRC", os.path.join(ROOT_DIR, "store_assets", "screenshots", "raw_4.png"))
 
-out_home = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\campfind_screenshot_home_1080x1920.png"
-out_compare = r"C:\Users\Matrixkuo\.gemini\antigravity\brain\84c663b4-dccb-4a9f-bdef-9340979e07ee\campfind_screenshot_compare_1080x1920.png"
+out_home = os.environ.get("CAMPFIND_SC_HOME_OUT", os.path.join(ROOT_DIR, "store_assets", "screenshots", "01_playstore_search_map.png"))
+out_compare = os.environ.get("CAMPFIND_SC_COMPARE_OUT", os.path.join(ROOT_DIR, "store_assets", "screenshots", "04_playstore_compare.png"))
 
 if os.path.exists(sc_home):
     img = Image.open(sc_home)
